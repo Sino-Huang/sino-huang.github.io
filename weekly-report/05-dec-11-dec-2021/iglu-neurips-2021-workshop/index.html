@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Iglu Neurips 2021 Workshop | Sukai Huang</title>
+<meta content="NeurIPS-2021, IGLU" name="keywords"/>
+<meta content="[TOC]
+IGLU Minecraft challenge NeurIPS 2021 workshop
+https://nips.cc/virtual/2021/competition/22444
+The organiser introduced a Web environment for data collection
+
+CraftAssist and VoxelWorld.js
+
+
+
+
+
+Architect task
+Baseline model
+
+Ha! No winner that outperforms the baseline?!
+
+…. which means I have a chance !
+Builder task
+
+
+
+
+
+the organiser found out that the reward function would motivate the agent to break blocks
+
+Their Future direction
+
+Breakout session
+
+" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Iglu Neurips 2021 Workshop" property="og:title"/>
+<meta content="[TOC]
+IGLU Minecraft challenge NeurIPS 2021 workshop https://nips.cc/virtual/2021/competition/22444
+The organiser introduced a Web environment for data collection
+CraftAssist and VoxelWorld.js Architect task Baseline model
+Ha! No winner that outperforms the baseline?!
+…. which means I have a chance !
+Builder task the organiser found out that the reward function would motivate the agent to break blocks Their Future direction Breakout session " property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="Iglu Neurips 2021 Workshop" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Weekly-Reports",
+      "item": "https://sino-huang.github.io/weekly-report/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "05 December -- 11 December, 2021",
+      "item": "https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Iglu Neurips 2021 Workshop",
+      "item": "https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/weekly-report/">Weekly-Reports</a> » <a href="https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/">05 December -- 11 December, 2021</a></div>
+<h1>
+    Iglu Neurips 2021 Workshop
+    <a aria-label="RSS" href="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><p>[TOC]</p>
+<h2 id="iglu-minecraft-challenge-neurips-2021-workshop">IGLU Minecraft challenge NeurIPS 2021 workshop<a aria-hidden="true" class="anchor" hidden="" href="#iglu-minecraft-challenge-neurips-2021-workshop">#</a></h2>
+<p><a href="https://nips.cc/virtual/2021/competition/22444">https://nips.cc/virtual/2021/competition/22444</a></p>
+<p>The organiser introduced a Web environment for data collection</p>
+<ul>
+<li>CraftAssist and VoxelWorld.js
+<ul>
+<li><img alt="image-20211210065730299" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210065730299.png"/></li>
+</ul>
+</li>
+</ul>
+<h3 id="architect-task">Architect task<a aria-hidden="true" class="anchor" hidden="" href="#architect-task">#</a></h3>
+<p><strong>Baseline model</strong></p>
+<p><img alt="image-20211210070437284" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210070437284.png"/></p>
+<p>Ha! No winner that outperforms the baseline?!</p>
+<p><img alt="image-20211210070601738" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210070601738.png"/></p>
+<p>…. which means I have a chance !</p>
+<h3 id="builder-task">Builder task<a aria-hidden="true" class="anchor" hidden="" href="#builder-task">#</a></h3>
+<p><img alt="image-20211210070730935" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210070730935.png"/></p>
+<p><img alt="image-20211210070753279" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210070753279.png"/></p>
+<p><img alt="image-20211210071041719" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210071041719.png"/></p>
+<p><img alt="image-20211210071153129" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210071153129.png"/></p>
+<ul>
+<li>the organiser found out that the reward function would motivate the agent to break blocks</li>
+</ul>
+<h3 id="their-future-direction">Their Future direction<a aria-hidden="true" class="anchor" hidden="" href="#their-future-direction">#</a></h3>
+<p><img alt="image-20211210071234132" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210071234132.png"/></p>
+<h2 id="breakout-session">Breakout session<a aria-hidden="true" class="anchor" hidden="" href="#breakout-session">#</a></h2>
+<p><img alt="image-20211210072219363" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210072219363.png"/></p>
+<p><img alt="image-20211210073221055" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210073221055.png"/></p>
+<p><img alt="image-20211210073323939" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210073323939.png"/></p>
+<p><img alt="image-20211210073440925" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210073440925.png"/></p>
+<p><img alt="image-20211210073515210" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210073515210.png"/></p>
+<p><img alt="image-20211210073601431" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210073601431.png"/></p>
+<h2 id="winner-solution">Winner Solution<a aria-hidden="true" class="anchor" hidden="" href="#winner-solution">#</a></h2>
+<p><img alt="image-20211210073944203" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210073944203.png"/></p>
+<p><img alt="image-20211210074011100" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210074011100.png"/></p>
+<p><img alt="image-20211210074034922" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210074034922.png"/></p>
+<p><img alt="image-20211210074101709" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210074101709.png"/></p>
+<p><img alt="image-20211210074138037" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210074138037.png"/></p>
+<p><img alt="image-20211210074226923" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210074226923.png"/></p>
+<p><img alt="image-20211210074253093" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210074253093.png"/></p>
+<p><img alt="image-20211210074330927" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210074330927.png"/></p>
+<p><img alt="image-20211210074349681" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210074349681.png"/></p>
+<p><img alt="image-20211210074512479" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210074512479.png"/></p>
+<p><img alt="image-20211210074553334" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210074553334.png"/></p>
+<p><img alt="image-20211210074649058" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210074649058.png"/></p>
+<p><img alt="image-20211210074719218" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210074719218.png"/></p>
+<p><img alt="image-20211210074737579" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210074737579.png"/></p>
+<p><a href="https://github.com/LinarAbdrazakov/IGLU-Minecraft">https://github.com/LinarAbdrazakov/IGLU-Minecraft</a></p>
+<p><strong>Highlight</strong>:</p>
+<p>the data augmentation method</p>
+<p>they tried to change the colour of objects / translate position in the training dataset so as to increase the number of training data</p>
+<hr/>
+<p>Evaluation metric brainstorm discussion</p>
+<p><a href="https://docs.google.com/document/d/1e9zBuX50JDpuF9JBfKMRT1S9yXb_W4KLevH3PtmfYvM/edit">https://docs.google.com/document/d/1e9zBuX50JDpuF9JBfKMRT1S9yXb_W4KLevH3PtmfYvM/edit</a></p>
+<p>They are struggling to get a automatic evaluation metric that can evaluate actions that reflect high level instructions</p>
+<p><img alt="image-20211210082931320" loading="lazy" src="/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210082931320.png"/></p>
+<p>They freeze the Architect task since it seems too difficult to do.</p>
+<p>They want to get more people to participate next year.</p>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

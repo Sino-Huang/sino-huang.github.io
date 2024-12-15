@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Large Language Model on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/large-language-model/</link>
+    <description>Recent content in Large Language Model on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 27 Oct 2023 16:44:22 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/large-language-model/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Yecheng Jason Ma Eureka Human Level Reward Design via Coding Large Language Models 2023</title>
+      <link>https://sino-huang.github.io/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/</link>
+      <pubDate>Fri, 27 Oct 2023 16:44:22 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Eureka Human Level Reward Design via Coding Large Language Models 2023&lt;/li&gt;
+&lt;li&gt;Author: Yecheng Jason Ma et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 19 Oct 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Fri, Oct 27, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2310.12931.pdf&#34;&gt;https://arxiv.org/pdf/2310.12931.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20231027164539472&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;harnessing LLMs to learn complex low-level manipulation tasks, remains an open problem.&lt;/li&gt;
+&lt;li&gt;we bridge this fundamental gap by using LLMs to produce rewards that can be used to acquire conplex skill via reinforcement learning.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Eureka generate reward functions that outperform expert human-engineered rewards.&lt;/li&gt;
+&lt;li&gt;the generality of Eureka also enables a new gradient-free in-context learning approach to reinforcement learning from human feedback (RLHF)&lt;/li&gt;
+&lt;li&gt;&lt;img alt=&#34;image-20231030132136067&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/image-assets/image-20231030132136067.png&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;given detailed environmental code and natural language description about the task, the LLMs can generate reward function candidate sampling.&lt;/li&gt;
+&lt;li&gt;As many real-world RL tasks admit sparse rewards that are difficult for learning, reward shaping that provides incremental learning signals is necessary in practice&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;reward design problem&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

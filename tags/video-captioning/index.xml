@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Video Captioning on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/video-captioning/</link>
+    <description>Recent content in Video Captioning on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 06 Apr 2023 10:02:22 +0800</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/video-captioning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Qinghao_hitea Hierarchical Temporal Aware Video Language Pre Training 2022</title>
+      <link>https://sino-huang.github.io/posts/qinghao_hitea-hierarchical-temporal-aware-video-language-pre-training-2022/</link>
+      <pubDate>Thu, 06 Apr 2023 10:02:22 +0800</pubDate>
+      <guid>https://sino-huang.github.io/posts/qinghao_hitea-hierarchical-temporal-aware-video-language-pre-training-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Hierarchical Temporal Aware Video Language Pre Training&lt;/li&gt;
+&lt;li&gt;Author: Qinghao Ye, Fei Huang et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 30 Dec 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, Apr 6, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2212.14546.pdf&#34;&gt;https://arxiv.org/pdf/2212.14546.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230406100437893&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/qinghao_hitea-hierarchical-temporal-aware-video-language-pre-training-2022/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;most previous methods directly inherit or adapt typical image-language pre-training paradigms to video-language pretraining, thus not fully exploiting the unique characteristic of video, i.e., temporal.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;this paper, the two novel pretraining tasks for modeling cross-modal alignment between moments and texts as well as the temporal relations of video-text pairs.&lt;/li&gt;
+&lt;li&gt;specifically, we propose a cross-modal moment exploration task to explore moments in videos, which results in detailed video moment representations&lt;/li&gt;
+&lt;li&gt;besides, the inherent temporal relations are capture by alignment video-text pairs as a whole in different time resolutions with multimodal temporal relation exploration tasks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;limitation of previous work&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

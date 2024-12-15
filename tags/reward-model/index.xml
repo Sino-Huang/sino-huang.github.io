@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Reward Model on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/reward-model/</link>
+    <description>Recent content in Reward Model on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 20 Jun 2024 14:11:32 +1000</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/reward-model/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jiuzhou Reward Engineering for Generating Semi Structured Explan 2023</title>
+      <link>https://sino-huang.github.io/posts/jiuzhou-reward-engineering-for-generating-semi-structured-explan-2023/</link>
+      <pubDate>Thu, 20 Jun 2024 14:11:32 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/jiuzhou-reward-engineering-for-generating-semi-structured-explan-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Reward Engineering for Generating Semi-Structured Explanation&lt;/li&gt;
+&lt;li&gt;Author: Jiuzhou Han et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: EACL2024&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, Jun 20, 2024&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://github.com/Jiuzhouh/Reward-Engineering-for-Generating-SEG&#34;&gt;https://github.com/Jiuzhouh/Reward-Engineering-for-Generating-SEG&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;the objective is to equip moderately-sized LMs with the ability to not only provide answers but also generate structured explanations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Intro&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;the author talked about some background on Cui et al. incorporate a generative pre-training mechanism over synthetic graphs by aligning inputs pairs of text-graph to improve the model&amp;rsquo;s capability in generating semi-structured explanation.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

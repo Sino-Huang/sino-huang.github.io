@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Domain Modelling on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/domain-modelling/</link>
+    <description>Recent content in Domain Modelling on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 15 Mar 2022 16:34:45 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/domain-modelling/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stephen_cresswell Generalised Domain Model Acquisition From Action Traces 2013</title>
+      <link>https://sino-huang.github.io/posts/stephen_cresswell-generalised-domain-model-acquisition-from-action-traces-2013/</link>
+      <pubDate>Tue, 15 Mar 2022 16:34:45 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/stephen_cresswell-generalised-domain-model-acquisition-from-action-traces-2013/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Generalised Domain Model Acquisition from Action Traces (LOCM2)&lt;/li&gt;
+&lt;li&gt;Author: Stephen Cresswell et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2013&lt;/li&gt;
+&lt;li&gt;Review Date: Mar 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;One approach to the problem of formulating domain models for planning is to learn the models from example action sequences.&lt;/p&gt;
+&lt;p&gt;This work extended LOCM by allowing multiple parameterised state machine to represent a single object.&lt;/p&gt;
+&lt;p&gt;In other words, it is possible to automatically infer the underlying transition system from &lt;em&gt;sample action sequences of the domain&lt;/em&gt;. Using such an approach removes the necessity for the domain expert to also be an expert at modelling transition systems.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

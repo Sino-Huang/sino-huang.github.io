@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Langchain Use Cases 2023 | Sukai Huang</title>
+<meta content="" name="keywords"/>
+<meta content="[TOC]
+
+Title: Langchain Use Cases 2023
+Review Date: Sat, Aug 26, 2023
+url: https://python.langchain.com/docs/get_started/quickstart
+
+Langchain quickstart
+
+The core building block of LangChain applications is the LLMChain. This combines three things:
+
+LLM: The language model  is the core reasoning engine here. In order to work with LangChain, you  need to understand the different types of language models and how to  work with them.
+Prompt Templates: This provides instructions to  the language model. This controls what the language model outputs, so  understanding how to construct prompts and different prompting  strategies is crucial.
+Output Parsers: These translate the raw  response from the LLM to a more workable format, making it easy to use  the output downstream.
+
+
+
+PromptTemplate
+
+modify prompt format easily
+
+Chains: Combine LLMs and prompts in multi-step workflows
+
+
+1
+2
+
+
+from langchain.chains import LLMChain
+chain = LLMChain(llm=llm, prompt=prompt)
+
+
+Agents: dynamically call chains based on user input
+
+
+1
+2
+3
+
+
+from langchain.agents import load_tools
+from langchain.agents import initialize_agent
+from langchain.llms import OpenAI
+
+
+we can connect Google AI with ChatGPT" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/programming-notes/langchain-use-cases-2023/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/programming-notes/langchain-use-cases-2023/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/programming-notes/langchain-use-cases-2023/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/programming-notes/langchain-use-cases-2023/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Langchain Use Cases 2023" property="og:title"/>
+<meta content="[TOC]
+Title: Langchain Use Cases 2023 Review Date: Sat, Aug 26, 2023 url: https://python.langchain.com/docs/get_started/quickstart Langchain quickstart The core building block of LangChain applications is the LLMChain. This combines three things: LLM: The language model is the core reasoning engine here. In order to work with LangChain, you need to understand the different types of language models and how to work with them. Prompt Templates: This provides instructions to the language model. This controls what the language model outputs, so understanding how to construct prompts and different prompting strategies is crucial. Output Parsers: These translate the raw response from the LLM to a more workable format, making it easy to use the output downstream. PromptTemplate modify prompt format easily Chains: Combine LLMs and prompts in multi-step workflows 1 2 from langchain.chains import LLMChain chain = LLMChain(llm=llm, prompt=prompt) Agents: dynamically call chains based on user input 1 2 3 from langchain.agents import load_tools from langchain.agents import initialize_agent from langchain.llms import OpenAI we can connect Google AI with ChatGPT" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/posts/langchain-use-cases-2023/image-assets/cover.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/posts/langchain-use-cases-2023/image-assets/cover.png" name="twitter:image"/>
+<meta content="Langchain Use Cases 2023" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Programming-Notes",
+      "item": "https://sino-huang.github.io/programming-notes/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Langchain Use Cases 2023",
+      "item": "https://sino-huang.github.io/programming-notes/langchain-use-cases-2023/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/programming-notes/">Programming-Notes</a></div>
+<h1>
+    Langchain Use Cases 2023
+    <a aria-label="RSS" href="/programming-notes/langchain-use-cases-2023/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><p>[TOC]</p>
+<ol>
+<li>Title: Langchain Use Cases 2023</li>
+<li>Review Date: Sat, Aug 26, 2023</li>
+<li>url: <a href="https://python.langchain.com/docs/get_started/quickstart">https://python.langchain.com/docs/get_started/quickstart</a></li>
+</ol>
+<h2 id="langchain-quickstart">Langchain quickstart<a aria-hidden="true" class="anchor" hidden="" href="#langchain-quickstart">#</a></h2>
+<ul>
+<li>The core building block of LangChain applications is the LLMChain. This combines three things:
+<ul>
+<li>LLM: The language model  is the core reasoning engine here. In order to work with LangChain, you  need to understand the different types of language models and how to  work with them.</li>
+<li>Prompt Templates: This provides instructions to  the language model. This controls what the language model outputs, so  understanding how to construct prompts and different prompting  strategies is crucial.</li>
+<li>Output Parsers: These translate the raw  response from the LLM to a more workable format, making it easy to use  the output downstream.</li>
+</ul>
+</li>
+</ul>
+<h3 id="prompttemplate">PromptTemplate<a aria-hidden="true" class="anchor" hidden="" href="#prompttemplate">#</a></h3>
+<ul>
+<li>modify prompt format easily</li>
+</ul>
+<h3 id="chains-combine-llms-and-prompts-in-multi-step-workflows">Chains: Combine LLMs and prompts in multi-step workflows<a aria-hidden="true" class="anchor" hidden="" href="#chains-combine-llms-and-prompts-in-multi-step-workflows">#</a></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain.chains</span> <span class="kn">import</span> <span class="n">LLMChain</span>
+</span></span><span class="line"><span class="cl"><span class="n">chain</span> <span class="o">=</span> <span class="n">LLMChain</span><span class="p">(</span><span class="n">llm</span><span class="o">=</span><span class="n">llm</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="n">prompt</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="agents-dynamically-call-chains-based-on-user-input">Agents: dynamically call chains based on user input<a aria-hidden="true" class="anchor" hidden="" href="#agents-dynamically-call-chains-based-on-user-input">#</a></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain.agents</span> <span class="kn">import</span> <span class="n">load_tools</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain.agents</span> <span class="kn">import</span> <span class="n">initialize_agent</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain.llms</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>we can connect Google AI with ChatGPT</p>
+<ul>
+<li>we load language model, some tools to use and finally initialise an agent with
+<ul>
+<li>the tools</li>
+<li>the language model</li>
+<li>the type of agent we want to use</li>
+</ul>
+</li>
+</ul>
+<h3 id="memory-add-state-to-chains-and-agents">memory: add state to chains and agents<a aria-hidden="true" class="anchor" hidden="" href="#memory-add-state-to-chains-and-agents">#</a></h3>
+<ul>
+<li>conversation chain, it will save all the previous conversation.</li>
+</ul>
+<h2 id="langchain-schema">Langchain Schema<a aria-hidden="true" class="anchor" hidden="" href="#langchain-schema">#</a></h2>
+<h3 id="chat-messages">Chat Messages<a aria-hidden="true" class="anchor" hidden="" href="#chat-messages">#</a></h3>
+<ul>
+<li>like text, but specified with a message type (System, Human and AI)
+<ul>
+<li>System, helpful background context that tell the AI what to do</li>
+<li>Human, messages that are intended to represent the user</li>
+<li>AI - messages that show what the AI responded with</li>
+</ul>
+</li>
+</ul>
+<h3 id="document">Document<a aria-hidden="true" class="anchor" hidden="" href="#document">#</a></h3>
+<ul>
+<li>load documents to language model</li>
+</ul>
+<h2 id="langchain-model">Langchain model<a aria-hidden="true" class="anchor" hidden="" href="#langchain-model">#</a></h2>
+<h3 id="language-model">Language model<a aria-hidden="true" class="anchor" hidden="" href="#language-model">#</a></h3>
+<ul>
+<li>text in text out model</li>
+</ul>
+<h3 id="chat-model">Chat model<a aria-hidden="true" class="anchor" hidden="" href="#chat-model">#</a></h3>
+<ul>
+<li>a model takes a series of messages and returns a message output</li>
+<li>the memory is explicitly shown in chat schema</li>
+</ul>
+<h3 id="text-embedding-model">Text embedding model<a aria-hidden="true" class="anchor" hidden="" href="#text-embedding-model">#</a></h3>
+<ul>
+<li>change your text into a vector</li>
+<li>FAISS can be used as a <em>retriever</em> to get relevant documents</li>
+</ul>
+<h2 id="prompt">Prompt<a aria-hidden="true" class="anchor" hidden="" href="#prompt">#</a></h2>
+<ul>
+<li><u><em>prompt template</em></u>: generate prompts based on the combination of user input (i.e., put place holders)</li>
+</ul>
+<h3 id="example-selector">example selector<a aria-hidden="true" class="anchor" hidden="" href="#example-selector">#</a></h3>
+<ul>
+<li>an easy way to select from a series of examples that allows for dynamically placing in-context information into your prompt</li>
+</ul>
+<p><code>SemanticSimilarityExampleSelector</code></p>
+<ul>
+<li>we need a VectorStore class that is used to store the embeddings and do similarity check
+<ul>
+<li>FAISS is the default</li>
+</ul>
+</li>
+</ul>
+<p><img alt="image-20230826182346469" loading="lazy" src="/programming-notes/langchain-use-cases-2023/image-assets/image-20230826182346469.png"/></p>
+<h2 id="output-parsers">Output Parsers<a aria-hidden="true" class="anchor" hidden="" href="#output-parsers">#</a></h2>
+<ul>
+<li>a helpful way to format the output of a model. Usually used for structured output</li>
+<li>two big concepts
+<ul>
+<li>Format instructions - A <em>autogenerated</em> prompt that tells LLM how to format its response based off your desired result</li>
+<li>Parser - A method which will extract output into a desired structure (usually json)</li>
+</ul>
+</li>
+</ul>
+<h2 id="indexes----structuring-documents-to-llms">Indexes – Structuring documents to LLMs<a aria-hidden="true" class="anchor" hidden="" href="#indexes----structuring-documents-to-llms">#</a></h2>
+<h3 id="document-loaders">Document loaders<a aria-hidden="true" class="anchor" hidden="" href="#document-loaders">#</a></h3>
+<ul>
+<li>load documents from online source</li>
+</ul>
+<h3 id="text-splitter">Text splitter<a aria-hidden="true" class="anchor" hidden="" href="#text-splitter">#</a></h3>
+<ul>
+<li>often times your document is too long for your LLM, you need to split it into chunks</li>
+<li>Text splitters help with this</li>
+</ul>
+<h2 id="memory">Memory<a aria-hidden="true" class="anchor" hidden="" href="#memory">#</a></h2>
+<ul>
+<li>a common one is chathistory</li>
+<li><code>from langchain.memory import ChatMessageHistory</code></li>
+</ul>
+<p><img alt="image-20230827112610400" loading="lazy" src="/programming-notes/langchain-use-cases-2023/image-assets/image-20230827112610400.png"/></p>
+<h2 id="chains">Chains<a aria-hidden="true" class="anchor" hidden="" href="#chains">#</a></h2>
+<ul>
+<li>combine different LLMs calls and output</li>
+</ul>
+<h3 id="simple-sequential-chain">Simple sequential chain<a aria-hidden="true" class="anchor" hidden="" href="#simple-sequential-chain">#</a></h3>
+<ul>
+<li>decompose the task into each step</li>
+<li>feed the output of previous LLM to the following prompt</li>
+</ul>
+<h3 id="summarisation-chain">Summarisation chain<a aria-hidden="true" class="anchor" hidden="" href="#summarisation-chain">#</a></h3>
+<ul>
+<li>map reduce or different types of chain type</li>
+</ul>
+<h2 id="agents">Agents<a aria-hidden="true" class="anchor" hidden="" href="#agents">#</a></h2>
+<p><img alt="image-20230827113142482" loading="lazy" src="/programming-notes/langchain-use-cases-2023/image-assets/image-20230827113142482.png"/></p>
+<ul>
+<li>an agent is the language model that drives decision making</li>
+<li>agents are making automatic decisions</li>
+</ul>
+<h2 id="extraction">Extraction<a aria-hidden="true" class="anchor" hidden="" href="#extraction">#</a></h2>
+<ul>
+<li>extraction is the term for describing extract useful information from natural language information and parse it into structured format</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># To help construct chat message </span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain.schema</span> <span class="kn">import</span> <span class="n">HumanMessage</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain.prompts</span> <span class="kn">import</span> <span class="n">PromptTemplate</span><span class="p">,</span> <span class="n">ChatPromptTemplate</span><span class="p">,</span> <span class="n">HumanMessagePromptTemplate</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># to parse output and get structured data back</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">langchain.output_parsers</span> <span class="kn">import</span> <span class="n">StructuredOutputParser</span><span class="p">,</span> <span class="n">ResponseSchema</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">output_parser</span> <span class="o">=</span> <span class="n">StructuredOutputParser</span><span class="o">.</span><span class="n">from_response_schemas</span><span class="p">(</span><span class="n">response_schema</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># the format instructions are LangChain makes, </span>
+</span></span><span class="line"><span class="cl"><span class="n">format_instructions</span> <span class="o">=</span> <span class="n">output_parser</span><span class="o">.</span><span class="n">get_format_instructions</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># the format_instruction will be refered as partial_variables in PromptTemplate</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Instead of parsing it into JSON, we can use Kor library to edit useful structured format</li>
+<li><a href="https://eyurtsev.github.io/kor/index.html">https://eyurtsev.github.io/kor/index.html</a></li>
+</ul>
+<h2 id="question-answering">Question Answering<a aria-hidden="true" class="anchor" hidden="" href="#question-answering">#</a></h2>
+<ul>
+<li>sources
+<ul>
+<li>allows you to return the source document that is essential for the output.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">qa</span> <span class="o">=</span> <span class="n">VectorDBQA</span><span class="o">.</span><span class="n">from_chain_type</span><span class="p">(</span><span class="n">llm</span><span class="o">=</span><span class="n">OpenAI</span><span class="p">(),</span> <span class="n">chain_type</span><span class="o">=</span><span class="s1">'stuff'</span><span class="p">,</span> <span class="n">vectorstore</span><span class="o">=</span><span class="n">docsearch</span><span class="p">,</span> <span class="n">return_source_document</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="nl-info-to-pddl-configs">NL Info to PDDL configs<a aria-hidden="true" class="anchor" hidden="" href="#nl-info-to-pddl-configs">#</a></h1>
+<ul>
+<li>
+<p>a Question-Answering case (predefine each statement chunk in PDDL) -&gt; an Extraction case (from NL info to each specific statement) -&gt; a Structured Parser and Autofix case &lt;-loop-&gt; send to planning domain api</p>
+</li>
+<li>
+<p>possible LLM</p>
+<ul>
+<li><a href="https://huggingface.co/meta-llama/Llama-2-70b-chat-hf">https://huggingface.co/meta-llama/Llama-2-70b-chat-hf</a></li>
+<li>openai chat</li>
+<li>llama 2 variant <a href="https://huggingface.co/garage-bAInd/Platypus2-70B-instruct">https://huggingface.co/garage-bAInd/Platypus2-70B-instruct</a></li>
+</ul>
+</li>
+<li>
+<p>Question Answering: <a href="https://python.langchain.com/docs/use_cases/question_answering/">https://python.langchain.com/docs/use_cases/question_answering/</a></p>
+</li>
+<li>
+<p>Extraction: <a href="https://python.langchain.com/docs/use_cases/extraction">https://python.langchain.com/docs/use_cases/extraction</a></p>
+</li>
+</ul>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

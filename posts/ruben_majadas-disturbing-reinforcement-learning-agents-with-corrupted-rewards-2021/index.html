@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Ruben_majadas Disturbing Reinforcement Learning Agents With Corrupted Rewards 2021 | Sukai Huang</title>
+<meta content="perturbed rewards, reinforcement learning" name="keywords"/>
+<meta content="[TOC]
+
+Title: Disturbing Reinforcement Learning Agents With Corrupted Rewards
+Author: Ruben Majadas et. al.
+Publish Year: Feb 2021
+Review Date: Sat, Dec 17, 2022
+
+Summary of paper
+Motivation
+
+recent works have shown how the performance of RL algorithm decreases under the influence of soft changes in the reward function.
+However, little work has been done about how sensitive these disturbances are depending on the aggressiveness of the attack and the learning learning exploration strategy.
+it chooses a subclass of MDPs: episodic, stochastic goal-only rewards MDPs
+
+Contribution
+
+it demonstrated that smoothly crafting adversarial rewards are able to mislead the learner
+the policy that is learned using low exploration probability values is more robust to corrupt rewards.
+
+(though this conclusion seems valid only for the proposed experiment setting)
+
+
+the agent is completely lost with attack probabilities higher that than p=0.4
+
+Some key terms
+deterministic goal only reward MDP" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/posts/ruben_majadas-disturbing-reinforcement-learning-agents-with-corrupted-rewards-2021/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/posts/ruben_majadas-disturbing-reinforcement-learning-agents-with-corrupted-rewards-2021/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/posts/ruben_majadas-disturbing-reinforcement-learning-agents-with-corrupted-rewards-2021/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/posts/ruben_majadas-disturbing-reinforcement-learning-agents-with-corrupted-rewards-2021/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Ruben_majadas Disturbing Reinforcement Learning Agents With Corrupted Rewards 2021" property="og:title"/>
+<meta content="[TOC]
+Title: Disturbing Reinforcement Learning Agents With Corrupted Rewards Author: Ruben Majadas et. al. Publish Year: Feb 2021 Review Date: Sat, Dec 17, 2022 Summary of paper Motivation recent works have shown how the performance of RL algorithm decreases under the influence of soft changes in the reward function. However, little work has been done about how sensitive these disturbances are depending on the aggressiveness of the attack and the learning learning exploration strategy. it chooses a subclass of MDPs: episodic, stochastic goal-only rewards MDPs Contribution it demonstrated that smoothly crafting adversarial rewards are able to mislead the learner the policy that is learned using low exploration probability values is more robust to corrupt rewards. (though this conclusion seems valid only for the proposed experiment setting) the agent is completely lost with attack probabilities higher that than p=0.4 Some key terms deterministic goal only reward MDP" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/posts/ruben_majadas-disturbing-reinforcement-learning-agents-with-corrupted-rewards-2021/image-assets/cover.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/posts/ruben_majadas-disturbing-reinforcement-learning-agents-with-corrupted-rewards-2021/image-assets/cover.png" name="twitter:image"/>
+<meta content="Ruben_majadas Disturbing Reinforcement Learning Agents With Corrupted Rewards 2021" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://sino-huang.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Ruben_majadas Disturbing Reinforcement Learning Agents With Corrupted Rewards 2021",
+      "item": "https://sino-huang.github.io/posts/ruben_majadas-disturbing-reinforcement-learning-agents-with-corrupted-rewards-2021/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/posts/">Posts</a></div>
+<h1>
+    Ruben_majadas Disturbing Reinforcement Learning Agents With Corrupted Rewards 2021
+    <a aria-label="RSS" href="/posts/ruben_majadas-disturbing-reinforcement-learning-agents-with-corrupted-rewards-2021/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><p>[TOC]</p>
+<ol>
+<li>Title: Disturbing Reinforcement Learning Agents With Corrupted Rewards</li>
+<li>Author: Ruben Majadas et. al.</li>
+<li>Publish Year: Feb 2021</li>
+<li>Review Date: Sat, Dec 17, 2022</li>
+</ol>
+<h2 id="summary-of-paper">Summary of paper<a aria-hidden="true" class="anchor" hidden="" href="#summary-of-paper">#</a></h2>
+<h3 id="motivation">Motivation<a aria-hidden="true" class="anchor" hidden="" href="#motivation">#</a></h3>
+<ul>
+<li>recent works have shown how the performance of RL algorithm decreases under the influence of soft changes in the reward function.</li>
+<li>However, little work has been done about how sensitive these disturbances are depending on the aggressiveness of the attack and the learning learning exploration strategy.</li>
+<li>it chooses a subclass of MDPs: episodic, stochastic goal-only rewards MDPs</li>
+</ul>
+<h3 id="contribution">Contribution<a aria-hidden="true" class="anchor" hidden="" href="#contribution">#</a></h3>
+<ul>
+<li>it demonstrated that smoothly crafting adversarial rewards are able to mislead the learner</li>
+<li><strong>the policy that is learned using low exploration probability values is more robust to corrupt rewards.</strong>
+<ul>
+<li>(though this conclusion seems valid only for the proposed experiment setting)</li>
+</ul>
+</li>
+<li>the agent is completely lost with attack probabilities higher that than p=0.4</li>
+</ul>
+<h3 id="some-key-terms">Some key terms<a aria-hidden="true" class="anchor" hidden="" href="#some-key-terms">#</a></h3>
+<p><strong>deterministic goal only reward MDP</strong></p>
+<ul>
+<li>a reward is only given if a goal state is reached.</li>
+<li>many decision task are modelled with goal-only rewards from classical control problems such as Mountain Car or the Cart Pole</li>
+<li>the goal only reward setting is a special case for sparse reward setting.</li>
+</ul>
+<p><strong>goal of adversary</strong></p>
+<ul>
+<li>produce the maximum deterioration in the learner policy performing the minimum number of attacks.</li>
+</ul>
+<h2 id="major-comments">Major comments<a aria-hidden="true" class="anchor" hidden="" href="#major-comments">#</a></h2>
+<p><strong>citation</strong></p>
+<ol>
+<li>the attack on reward function has received very little attention
+<ol>
+<li>ref: Majadas, Rubén, Javier García, and Fernando Fernández. “Disturbing reinforcement learning agents with corrupted rewards.” arXiv preprint arXiv:2102.06587 (2021).</li>
+<li>ref: Jingkang Wang, Yang Liu, and Bo Li, ‘Reinforcement learning
+with perturbed rewards’, CoRR, abs/1810.01032, (2018)</li>
+</ol>
+</li>
+<li>there are no studies about how sensitive the learning process is depending on the aggressiveness of reward perturbations and the exploration strategy.
+<ol>
+<li>ref: Majadas, Rubén, Javier García, and Fernando Fernández. “Disturbing reinforcement learning agents with corrupted rewards.” arXiv preprint arXiv:2102.06587 (2021).</li>
+</ol>
+</li>
+</ol>
+<p><strong>limitation on the setting</strong></p>
+<ul>
+<li>this consider with small and low-dimensional state space</li>
+<li>lack the consideration of sparse reward setting with high dimensional large state space</li>
+<li>this perturbation is based on the probability and lack the focus on the false positive rewards.</li>
+<li>the perturbation is limited to only changing the sign of the true rewards.</li>
+<li>A fixed attack probability was used in the experiments to test how reward attacks affect agents with varying exploration rates.</li>
+<li>this experiment is like punish the good movements that lead to the  goal.</li>
+</ul>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

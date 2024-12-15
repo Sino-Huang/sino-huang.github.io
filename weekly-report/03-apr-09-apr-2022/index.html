@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>03 April -- 09 April, 2022 | Sukai Huang</title>
+<meta content="" name="keywords"/>
+<meta content="
+Last Week’s Work Review
+Continue to work on the baseline models for NetHack Challenge
+
+
+You need password to access to the content, go to Slack *#phdsukai to find more." name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/weekly-report/03-apr-09-apr-2022/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/weekly-report/03-apr-09-apr-2022/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/weekly-report/03-apr-09-apr-2022/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/weekly-report/03-apr-09-apr-2022/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="03 April -- 09 April, 2022" property="og:title"/>
+<meta content=" Last Week’s Work Review Continue to work on the baseline models for NetHack Challenge
+You need password to access to the content, go to Slack *#phdsukai to find more." property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="03 April -- 09 April, 2022" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Weekly-Reports",
+      "item": "https://sino-huang.github.io/weekly-report/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "03 April -- 09 April, 2022",
+      "item": "https://sino-huang.github.io/weekly-report/03-apr-09-apr-2022/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/weekly-report/">Weekly-Reports</a></div>
+<h1>
+    03 April -- 09 April, 2022
+    <a aria-label="RSS" href="/weekly-report/03-apr-09-apr-2022/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><hr/>
+<h2 id="last-weeks-work-review">Last Week’s Work Review<a aria-hidden="true" class="anchor" hidden="" href="#last-weeks-work-review">#</a></h2>
+<p>Continue to work on the baseline models for NetHack Challenge</p>
+<p><img alt="image-20220405204446251" loading="lazy" src="/weekly-report/03-apr-09-apr-2022/image-assets/image-20220405204446251.png"/></p>
+<hr/>
+<p>You need password to access to the content, go to Slack *#phdsukai to find more.</p>
+<div class="hugo-encryptor-container">
+<div class="hugo-encryptor-prompt">
+<p>Part of this article is encrypted with password:</p>
+</div>
+<div class="hugo-encryptor-form">
+<input class="hugo-encryptor-input" placeholder="Please input the password"/>
+<input class="hugo-encryptor-button" onclick="_click_handler(this)" type="button" value="Click to verify"/>
+</div>
+<div class="hugo-encryptor-cipher-text" style="display: none;">2KL193ngiqg12yJiDH4bw+D2Nlm45qLF/v/qafJrxuBWcpeaKoACuOYOWAlIK5SiIofGzwRhcZOhHR3LtmKaM/j9J0y2vO9Z69ZqP4Ko3UkGLexL1+U7O0+yKZZB9Dw0NBdkewbMFlw00vKHbhtiw37xANvtixAYOeEERG9wDEZPCufYK0nH6DvqP7pzJh28eiAW5I5gKKaMPGGAslvygAU14z7zdpsqrXwajbgmt8F+Z/ivDwgux9KSFtt1azUeGKNM//c1cknW3BU1itcFMZt00CuRCDDOI926oU3GBbLy6WxeHxSKQcTI73/zdTZioyPPsezSaudm9uNlgQ0ZzMRl+jJ5HEg3XVz59X988MKqrMUlXlM8LT4EbFqz5GkUeR4LNJg5TEkSS47Ko0COPZOO8/IqhvDuu7WfTic717t0Gt7LMwkcbabsusqTFcx0teYDsl+WcszWktRRwHxneEmoxqQiEBPf1sKaU3eiB6QlvrZO04FVM0hn1BYmx0VOBW/pWJ7Zy79ciYtD2ibuljaWan5+OaSglOQOanYfT301+o1oeINfGiUzLXSRAQfovdIdMj3pnQqbt5bNjZBUFhHm554hT1xYbZv2o0wFGW5DbFh2lR1W6P/Tyt8PYcG5VUPhe7bhnDs6CKUdCEY9jBAh50aNSnFdLHTph/faO5FWtZBD0TgCg8QZRfCzrF/Ve+5wzIR++4o1Y3aLV0wpJOcNtXFtiMDq9Mu9bdHDmYVBhnf3YviWP3Ve0xobisYs+55h0zn7M7Q5Kr79YtnNvQhEZsI4+6/nn8vB5JGxx1giKlGiIq9oWSSIdcV2icC/ATAOfZUQMDxQr1mU0tdV8nQnzJNXf7vivmuZdlJgwe6YWVxBzjs5IjJ4lVSQYltS+D+S35clgkFNbFhlL4iCDHyipeHCqkK8m1WdUoFbtO4hS3daQFWl+QG0fSQlZNtoLXY0Jog1iub3vJ304ZWZjrnbp8ACCN9y99W4U7R7k+7uU4nFM3TfKMx6KpB12QY34xdIAZSHhLrna7hXHXw/V5GokfBingZ5//Rv3PSUtC0eaQo8MXlfWeSizsB2XjBS1UO+/x6+BFowxC6sS7EtT6EXrj2yh/GVpMnju2fr2BWn2uD215mDEFbd3t5VgEK/X0m6T9UHM/aMU9SLfzf0sX4N50SnRn8kaj90AAazZGTGJqLsHksFYesEW0r/ZSTpKi1bz959hAIZ+1o9CL7cy4R/oSQ9YX6WrIxcfjphFoHFLsz4LF/ZD6nMmQJxk54g6GgLVvC0XXcbbM+3uQGu3OTuve0PVmeovd2lOyIyGGiy3O0uT/xf3ewNlXtFdV0DN0BE3AmRhMogWG1UIjASdxF+S5FaNNt+vRBie9bNV7uWtmubMMT68GFGZLrL3LqIJh8DvXf0wxHdBJSxaYSWgkZoUtJODAGdpPmGYrz9JE4s4tafANG4GiEplr0gItY0hJzcyLO8sk9e2IMgpeyAV5TGNjZfKMXTCpj/XkYhnhgTC+m0CSlE+fCSkhSgvkoncgyaqf0z0DWUkqIDoP6cgbvgn/w+X/e6eWAMCLjUn7e9h8brDtXibcujTfnhnLxWll6EqBzqpEV0Beepf72wotgABAiC/pbfyNyUJhqn/dmbf3fe0EN3pI5+JkKrNsvLXG6RCJb4GgfRtBDkMO7YEzF5felGk2W1OU606L9AcYThRBc49dvXAzDYmx/Z06ry33ZAZvt34W49EQ8Fi89fQsKyudYpcEowqu4C1Hi0riZO5CJOdOvRxGpQab7mOuswQmuW6F+N95jU5zGathaohc/nVSyaQ9VgNcfBjMALzqA554uPVf7vz7vBFIlUH5NW/72KWOuPTt4nkcI4d9COXyfovD7MYTkLUvkCtiZKWBw/VutGW+XZIiO3T52wRsl/+Spax0z1Hua2ztNjQP81gqAhlpbnZNYTFa+jkl5enGJBwofzzRQ4hk7SjWIDvorLOQFcSZKMd5ywNdkhfXrDXcwUBtM+vUMNw/ciz3O0Dz6GasupgT80V4a4URgvACtlF+6OqW4rUJPecoEGkkXBPXVctXPSBrBF8HCnnRFyArjaqK7olJ4ZJzlP7scihwV7OXuZq9kaR+5nDlZ8YidDrFBp1lFgk5l3boH6e2la4VKqPvdTk0g9FB8V+zfOEc3ABhN2OBpDSauwNYeB82yz+wnSI7oTrFAE/uUF2IQUa5uvF6rOP9cdWK4R+4xfIzB1l3z5P/E4S+tiW3pddSOHg4my01QKVZWMc3Q6cn/l7odpv+PzXgiz1cKIkr5o3fXWiItB5WtgoZ5/Adr4+/x8VdePsgc9v1MJsGiIOFSylAih2/lDfpv7LrL0h3MUO+6jCjT07xu2k9tJA7qyz7NSTKYgcX0En6AfU2hbIUly0ePEF++YLCsSTIPHX6XKthFRuWQkarQfZWz5fouE2JV0E7i2Wh5HIfY1Pfcdb9YElVAS41KHOjKCvXrsVglMwpeB1+tNpPN+eKCZ/H3mC2/c1AYRS++mNUXq0qpVOOZgBGTini4ldpEK/elyb7WfoQikKUYTkcAAgDBdXfHKUsQHNM4XjKZdqgienb4sXem70oInebQ1PArr4sZXnWPKwqgF3iu0IOb3zyIuGImNulK09Sb2mz6ubUTGCraJv0dBAqkwoOCKowsC+0d0JVQATgyhYRe7nM7Cyy8kv0TmOkHRlYBoiFDvkyOSIWhN8D2/E3+RsaV1JkSy5+uZaqt3yNf2SBnppsg39SF5r7CtQJ7VIaTU9TVuepiXSk+G2iF2IcKIeS1s9EPKzYb0u5J9YObUpOeqwl18EAsc1q3CLKIAFGRNmMEgSn+NTJ8AxQQml1QajKg/mociXzA2zQi6upSD4Em9ZHM3uPj4K5uS8rzfcpNmC9TB5FNM7vjsWAArwvemW+21rm5Qfh6ybfdyrS9sQnmbNTsSRAZ5lXfFkl/L6dDi3a91pgzFcCCXcfGoYcmx2ldK8BCZXmrz8EAaZEnmI7RrAZ2EcB35MF/gv5Df7R4jBkPObkPdGS/K0xUT+XeFW4sbV7LTxd6MY4aTcNKfrOzkwN2tICzr4GFagh2jjHcAy0trcyN9/W4wmvELq/ORaBFhjGeogv+c8IIY6NZk6JRgyU/4XbHmCuqS4kmKmIhZpdARxgB+btAV0fYgj3RH6FzxPF4AIMi/h3G8lh4vgwa/N/CZoiFQZZP6Q/TOD+GFl7jC11yRCbw8HzaNM7qLn/kTZ9oiafhKqOfUwZzUmAgZvK8X4zGiM3H8UJBGmss6jCiFd7D3Eggp+iVurMOFoaRdJZb4cdRIiCo7Vz21T8MXW9Hr524CBIcujmpDJjsWueKFJeiE1wxGYTq0S/tD0d23CQRS+2PBYNOhWPRpSacTpYBgPRmk840SH4AoJ6GzNX/nOjnICBqamhCHKXxmzkbU8VXykvF+xsO+aVpnIEJhamzkGyzxQRU4PiZzp0tj/X619lBA1pCWzQfAjmevbu48YdIBeoAwqII21fZQ+Ydz3VJDVgxhaKZ39xCPPDltH8pJuQ16IbydZVJfbCphqhu0/9T1AnBFENgsfNSEapIeGdCvOaDj9/2BqSIAqBwnXq6mfmux9OhBK3S5/VbYXQBLXP2RdfaHV1iDjUThf7Ersmz3UDtsmtRsLFy/eDuZRFXxeCwTuDf2rfvK64r0dfHg34jiNrXGec9pEMf5Z0MLmH6cgqp4EE0Dn+HNAkBMLEaedlMi8yAMVylY21ss76wn4Y6q2zGKUg6UjRRNTpFLbZd8CAeXOKep1T4TZ+MDF17fpEDZoOqwnX3UPSAeg7meu3AWpvJdo9zUltxHHkS9Wcl5TLEB3RnnO/zVKSWaNNcW8u/KU49UBwsVf4PWXzmQpfdM+W/VQf+OOnrqnBAz/DImCyZGYJpHLg9gecdalMrQSqrHzf+opXtQoCt19EWZ6ZY2VwjNdrV1ZZlZW7OFSTqL2MLLH7xX7Ixzbs8Is8ICmY/+NrsEwqmTS6y1BIhXBH3KkkpbgzB3GwKbWlZiY954u88K5/M/65hLNKg6TxyyngWdOoQRhFWq0AMB0coLBg6K77vWA0xhwER0dRNeom/QQ65oOUW+3+ve6087+U8e+29bcmdhMWu7B3BAGdPBgatIXQYv7NCTTOu/hNEOa57wHgFr9d+L91YYH619Ah88z1AcBoSbj9kht1ECevl0Q1GoGkdmcRwCeZYdyleL29yfs18z3D32VHi9cgwdGg/zgEdEiDbyKdV1NoHRwI5SW7sgyribQwkLcRdV08wE2aNU8JgozfsfUTW0zxiiqcVtjv0+hH+AMEEqrvbyVKuXkwz4ZjjsXanuVkc3E5TG/q+gk7BZS1jCjiluwFxql2R5/u0ByAqiw1T7JqJdE2q0CO47IBIevUifQjw/u9N5fuYYfm/Yc6g5+jFygqU7o3jvroEPzmnz7g8YW9aP+xNR8omKqLMH/QBz+mrc1NXE9iS0lXUoUE5PYwZU0vYj7WRENr3qvRFG1bRlCu7wyui2iBlCFV7DQT920y0OnQe7BIr59cYMDUfnfAoJ/tie9/yXA8QcDMaG4+5ApmFv62Pl/vvN1b1dta+GSx9S/eGd3r626wf2xwCrHozjRpX4P4zxQHqJ7unmwz6HGux3h4aT9pDFCjUcJioATTaHhiS9sotxy8vxU7zm4OVmcpoONX5l9KcZBQlZqDgK5k6OrjQSQS1GfgkFt7nnUO4VHH31PhiYCWwIPa1DA4CtWUBTRBI31VvPHS1EptSEGgVuTYCpJYwNyvRk92KuQSA4uWl4cnI4Lho9YwzdUwGZUPGMPoTaaFBdRmNh9F9n5jIajSAopOzdFbhcr2+2csTC4mzIKqYilN3yjG/FE1YOV3vj9CNEllE1BwGRMdCpB/6NxRxCIKVUBYhW3Nms6uxOVHqm1nSphji4sl1GMOH6YH2l1qdVzsJQ8K+eENnRh9kxl3nbGpvcf/UV39CqFzh2jqpUMd/azAXLX9LWf5Uh9y+ISyV85hqfAw8+MlSQjaHxqStENuBybvIquLWT3fokoMb5rAhn74Xp+SNsJ0+hR11y+pDAt6k0BhXYm2M7RwcMPxIwB4MuYazY65YUMT/CX1XpAvfC4G6qqYwbtKrUeuZxN13RBGyhKdEvYoxxjN+FDDKLwbHlFVQxqakzZ2D+CP8VWFIHbIHUgQuxSgM9yoCRMWnsucL8s2TK/78Bou4wPeGNLOFuh0lJOu0Uq9w3yR7+xzvaUTSLHfNkTBjuc/dzeukZdQdn9ndT3Bh2TIArelpT9J0POomfaReOu84QO1Z3DpuTU5/LQE0BrB7Q4bOEu4PNKllW4IrJp+e9oDwaetVFe2jHm34ehMYjIQu8XOJRuGgnA/iW9Siiv+iySq7D9ANYQapiv024OWoZTuvk4EX76+Gr9MUrFOdF9SuviEL9G438L0UBctVXTESOj+yDohmORzulP0Ov3fAC6Rvb0UywKKkV/c8QLTIZUTX+GiQBjv9Hx0obUi6RYSu1X6KcdJvOBx2FUudwoP/xUnClDqAuXhp3L5s1BREv1ZCv7INCJAkrG8BEjYGr9VGIEqTEA/CLwOZkd9PSvZeXp/UWI9R4MjJRU1deeZYnTU8DR51fgVw+mb7D9PDNuOeVofdISDgeov4l084ASrxhtg3e4Urn9z6+NgR7BkUb0vEvjokrOnQ8TdmhNWZJ4zVR5KqDZJ+2SOsPuWK7lK1Ui2WvR658ARk+HNBo2tHNezN5Z2CIPWrDoI34+RK8iaSDWX3FGC7yXmDXaMb/YU0CTUggwBa5lMaDSxtQCJCfOXYD6txS5Yfz6H8jO+VXr2Pi272CwHzPDb/amPZ3ddcw7gdZOUkh5TI5kT5FjzaAM1rQXcXglncVNOnTw/gW82bqst/yoRoI41krxASAEKifi52Bhq1Oi0QXGzVLKa30Osv5eklqX1OwyDqqukd/GH/Smu814nSX3SeetYyXDWItV++G1spj5+rD4b2MReE6dffxE6aAhyZfJgw0a/6xz3ApYqLG/pvdpfMpijoA+TMjR77SEt8g/3117C4kWq53W5oux/AaWSs3PQK9o/AFir6d5mF/v6/7tRMAJXHayGssBfFfmzFA7WzSjTt7T58cL4uQwd2T5MCE7IJmYWRbShOO8MP+nNT8AO4OKTSVaDM5jpfl7I93gv8b+92/ZAUP9KlgN674NF74HAEjrPPvSEFqIdV/99tu3esxEX+HZdRFVQXEoCHY8NFF9GW+nVaPYbULM+xQ6SS3YK6TAvzxsiCouFoRUj7GaA7ifO3yAViefqDVVtQOFjkuvEwWOkaWsP9CamUYJt1rBruwHJJfY7D199lRQmxrxpIqTvtMduD/x31jkV5vhNRZm6PE7uV/B4cxxXRsVov7IpIh4ug1GErEHDH2hWS6YC/wo1sID163GbLyGV/mupw6960yD3iR59lJGkaeu/MGxt0ThKOYbH6odlsL5F1ZJb5o2Nxm9vjEu5tMCRRE+JHCk3rm+1SZsdmgSnP9vbtW8tTxJMRRrxaa4x6e/WK11LVleUtZ+8kmY1paR4eZjXgHF+OddFEWvkjaJ+GBxnCOZpqaAlbEqSjP6PntYg8OM6VSyuiMISkre1bM4ScLIzHRlazfwmQPI4cE8IQzxPfX2e8nJDbKudO0VhP2C5RbQSBDBMdFgLpbI9A0dmU8M4SekqISQtc1YFUVozJqMUC1A7uCdzXbLG4pG9vR0pZnsJpx4kl8/uOIPNWiXMVrgjlYhJgCELGnjvrf6HYp9hw74tSwM/96ibw9b4YhgNjwgsfGyCn0qzZ/PBo=</div>
+</div>
+<script>
+  
+  document.querySelector(".hugo-encryptor-input").addEventListener("keyup", event => {
+      if(event.key !== "Enter") return; 
+      document.querySelector(".hugo-encryptor-button").click(); 
+      event.preventDefault(); 
+  });
+</script>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script><script src="https://sino-huang.github.io/js/decrypt.js"></script></body>
+</html>

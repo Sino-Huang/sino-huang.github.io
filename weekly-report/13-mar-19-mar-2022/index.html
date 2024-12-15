@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>13 March -- 19 March, 2022 | Sukai Huang</title>
+<meta content="" name="keywords"/>
+<meta content="
+Last Week’s Work Review
+
+do not restrict what people annotate, do not limit the vocabulary… we can use modern BERT model to interpret natural language utterances.
+before we dive into the conversion from natural language utterances into logical forms, we can try to use general NLP models to give a end to end trial first…
+
+
+You need password to access to the content, go to Slack *#phdsukai to find more." name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/weekly-report/13-mar-19-mar-2022/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/weekly-report/13-mar-19-mar-2022/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/weekly-report/13-mar-19-mar-2022/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/weekly-report/13-mar-19-mar-2022/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="13 March -- 19 March, 2022" property="og:title"/>
+<meta content=" Last Week’s Work Review do not restrict what people annotate, do not limit the vocabulary… we can use modern BERT model to interpret natural language utterances. before we dive into the conversion from natural language utterances into logical forms, we can try to use general NLP models to give a end to end trial first… You need password to access to the content, go to Slack *#phdsukai to find more." property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="13 March -- 19 March, 2022" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Weekly-Reports",
+      "item": "https://sino-huang.github.io/weekly-report/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "13 March -- 19 March, 2022",
+      "item": "https://sino-huang.github.io/weekly-report/13-mar-19-mar-2022/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/weekly-report/">Weekly-Reports</a></div>
+<h1>
+    13 March -- 19 March, 2022
+    <a aria-label="RSS" href="/weekly-report/13-mar-19-mar-2022/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><hr/>
+<h2 id="last-weeks-work-review">Last Week’s Work Review<a aria-hidden="true" class="anchor" hidden="" href="#last-weeks-work-review">#</a></h2>
+<ul>
+<li>do not restrict what people annotate, do not limit the vocabulary… we can use modern BERT model to interpret natural language utterances.</li>
+<li>before we dive into the conversion from natural language utterances into logical forms, we can try to use general NLP models to give a end to end trial first…</li>
+</ul>
+<hr/>
+<p>You need password to access to the content, go to Slack *#phdsukai to find more.</p>
+<div class="hugo-encryptor-container">
+<div class="hugo-encryptor-prompt">
+<p>Part of this article is encrypted with password:</p>
+</div>
+<div class="hugo-encryptor-form">
+<input class="hugo-encryptor-input" placeholder="Please input the password"/>
+<input class="hugo-encryptor-button" onclick="_click_handler(this)" type="button" value="Click to verify"/>
+</div>
+<div class="hugo-encryptor-cipher-text" style="display: none;">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</div>
+</div>
+<script>
+  
+  document.querySelector(".hugo-encryptor-input").addEventListener("keyup", event => {
+      if(event.key !== "Enter") return; 
+      document.querySelector(".hugo-encryptor-button").click(); 
+      event.preventDefault(); 
+  });
+</script>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script><script src="https://sino-huang.github.io/js/decrypt.js"></script></body>
+</html>

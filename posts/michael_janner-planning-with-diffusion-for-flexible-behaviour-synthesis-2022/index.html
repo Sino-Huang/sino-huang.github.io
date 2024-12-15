@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Michael_janner Planning With Diffusion for Flexible Behaviour Synthesis 2022 | Sukai Huang</title>
+<meta content="diffusion model, planning" name="keywords"/>
+<meta content="[TOC]
+
+Title: Planning With Diffusion for Flexible Behaviour Synthesis
+Author: Michael Janner et. al.
+Publish Year: 21 Dec 2022
+Review Date: Mon, Jan 30, 2023
+
+Summary of paper
+
+Motivation
+
+use the diffusion model to learn the dynamics
+tight coupling of the modelling and planning
+our goal is to break this abstraction barrier by designing a model and planning algorithm that are trained alongside one another, resulting in a non-autoregressive trajectory-level model for which sampling and planning are nearly identical.
+
+Some key terms
+ideal model-based RL" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Michael_janner Planning With Diffusion for Flexible Behaviour Synthesis 2022" property="og:title"/>
+<meta content="[TOC]
+Title: Planning With Diffusion for Flexible Behaviour Synthesis Author: Michael Janner et. al. Publish Year: 21 Dec 2022 Review Date: Mon, Jan 30, 2023 Summary of paper Motivation use the diffusion model to learn the dynamics tight coupling of the modelling and planning our goal is to break this abstraction barrier by designing a model and planning algorithm that are trained alongside one another, resulting in a non-autoregressive trajectory-level model for which sampling and planning are nearly identical. Some key terms ideal model-based RL" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/image-assets/cover.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/image-assets/cover.png" name="twitter:image"/>
+<meta content="Michael_janner Planning With Diffusion for Flexible Behaviour Synthesis 2022" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://sino-huang.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Michael_janner Planning With Diffusion for Flexible Behaviour Synthesis 2022",
+      "item": "https://sino-huang.github.io/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/posts/">Posts</a></div>
+<h1>
+    Michael_janner Planning With Diffusion for Flexible Behaviour Synthesis 2022
+    <a aria-label="RSS" href="/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><p>[TOC]</p>
+<ol>
+<li>Title: Planning With Diffusion for Flexible Behaviour Synthesis</li>
+<li>Author: Michael Janner et. al.</li>
+<li>Publish Year: 21 Dec 2022</li>
+<li>Review Date: Mon, Jan 30, 2023</li>
+</ol>
+<h2 id="summary-of-paper">Summary of paper<a aria-hidden="true" class="anchor" hidden="" href="#summary-of-paper">#</a></h2>
+<p><img alt="image-20230130134456046" loading="lazy" src="/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/image-assets/cover.png"/></p>
+<h3 id="motivation">Motivation<a aria-hidden="true" class="anchor" hidden="" href="#motivation">#</a></h3>
+<ul>
+<li>use the diffusion model to learn the dynamics</li>
+<li>tight coupling of the modelling and planning</li>
+<li>our goal is to break this abstraction barrier by designing a model and planning algorithm that are trained alongside one another, resulting in a non-autoregressive trajectory-level model for which sampling and planning are nearly identical.</li>
+</ul>
+<h3 id="some-key-terms">Some key terms<a aria-hidden="true" class="anchor" hidden="" href="#some-key-terms">#</a></h3>
+<p><strong>ideal model-based RL</strong></p>
+<p><img alt="image-20230130134558295" loading="lazy" src="/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/image-assets/image-20230130134558295.png"/></p>
+<p><img alt="image-20230130134626960" loading="lazy" src="/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/image-assets/image-20230130134626960.png"/></p>
+<ul>
+<li><img alt="image-20230130163538769" loading="lazy" src="/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/image-assets/image-20230130163538769.png"/></li>
+</ul>
+<p><strong>Why neural nets + trajectory optimisation is a headache</strong></p>
+<ul>
+<li>Long-horizon predictions are unreliable</li>
+<li>Optimizing for reward with neural net models produces adversarial examples in trajectory spaces</li>
+</ul>
+<p><strong>A generative model of trajectories</strong></p>
+<ul>
+<li><img alt="image-20230130164314409" loading="lazy" src="/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/image-assets/image-20230130164314409.png"/></li>
+</ul>
+<p><strong>What is autoregressive model</strong></p>
+<ul>
+<li>it predicts future values based on past values.</li>
+</ul>
+<p><strong>Non-autoregressive prediction</strong></p>
+<ul>
+<li>prediction is <strong>non-autoregressive</strong>: entire trajectory is predicted simultaneously</li>
+<li><img alt="image-20230130170133371" loading="lazy" src="/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/image-assets/image-20230130170133371.png"/></li>
+</ul>
+<p><strong>Sampling from diffuser</strong></p>
+<ul>
+<li>sampling occurs by iteratively refining randomly-initialised trajectories</li>
+</ul>
+<p><strong>Flexible behaviour synthesis through distribution composition</strong></p>
+<ul>
+<li><img alt="image-20230130170732252" loading="lazy" src="/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/image-assets/image-20230130170732252.png"/></li>
+<li>guidance functions transforms an unconditional trajectory model into a conditional policy for diverse tasks.</li>
+<li><img alt="image-20230130171354547" loading="lazy" src="/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/image-assets/image-20230130171354547.png"/></li>
+</ul>
+<p><strong>Goal planning through inpainting</strong></p>
+<ul>
+<li><img alt="image-20230130171524518" loading="lazy" src="/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/image-assets/image-20230130171524518.png"/></li>
+<li><img alt="image-20230130171547970" loading="lazy" src="/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/image-assets/image-20230130171547970.png"/></li>
+</ul>
+<p><strong>Tight coupling between modelling and planning</strong></p>
+<ul>
+<li><img alt="image-20230131135918292" loading="lazy" src="/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/image-assets/image-20230131135918292.png"/></li>
+<li>it requires finding trajectories that are both physically realistic under $p_\theta(\tau)$ and high-reward (or constraint-satisfying) under $h(\tau)$
+<ul>
+<li>because the dynamics information is separated from the perturbation distribution $h(\tau)$, a single diffusion model $p_\theta(\tau)$ may be reused for multiple tasks in the same environment.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Algorithm</strong></p>
+<ul>
+<li><img alt="image-20230131163923412" loading="lazy" src="/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/image-assets/image-20230131163923412.png"/></li>
+</ul>
+<p><strong>Goal-conditioned RL as Inpainting</strong></p>
+<ul>
+<li>some planning problems are more naturally posed as constraint satisfaction than reward maximization.</li>
+<li>In practice, this may be implemented by sampling from the unperturbed reverse process $\tau^{i-1} \sim p_\theta(\tau^{i-1} | \tau^i)$ and <strong>replacing</strong> the sampled values with conditioning values $c_t$ after all diffusion timesteps $i \in {0,1,…,N}$</li>
+</ul>
+<p><strong>Task compositionality</strong></p>
+<ul>
+<li>while diffuser contains information about both environment dynamics and behaviours, it is independent of reward function. Because the model acts as a prior over possible futures, planning can be guided by comparatively lightweight perturbation functions $h(\tau)$ (or even combinations of multiple perturbations)</li>
+<li><img alt="image-20230131181013011" loading="lazy" src="/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/image-assets/image-20230131181013011.png"/></li>
+</ul>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

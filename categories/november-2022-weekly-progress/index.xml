@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>November-2022-Weekly-Progress on Sukai Huang</title>
+    <link>https://sino-huang.github.io/categories/november-2022-weekly-progress/</link>
+    <description>Recent content in November-2022-Weekly-Progress on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 13 Nov 2022 15:59:12 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/categories/november-2022-weekly-progress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>01 Nov -- 30 Nov, 2022</title>
+      <link>https://sino-huang.github.io/weekly-report/01-nov-30-nov-2022/</link>
+      <pubDate>Wed, 02 Nov 2022 20:08:39 +1100</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/01-nov-30-nov-2022/</guid>
+      <description>&lt;h2 id=&#34;last-weeks-work-review&#34;&gt;Last Week&amp;rsquo;s Work Review&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;for the last month we found out that the agent had the following issues
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;it gives more weights to the &lt;strong&gt;object&lt;/strong&gt; detection than &lt;strong&gt;action&lt;/strong&gt; detection,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;thus it gave wrong rewards when the agent was close to the target object but did the wrong action&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;e.g., it gave high rewards for sentence &amp;ldquo;&lt;em&gt;climb down&lt;/em&gt; the ladder&amp;rdquo; when the agent was &lt;em&gt;staying&lt;/em&gt; on the ladder&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;it tried to analyse each single word instead of recognising the phrases and the qualifier&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;e.g.,  it gave rewards for sentence &amp;ldquo;go to &lt;em&gt;the ladder on the right&lt;/em&gt;&amp;rdquo; when the agent was at the ladder on the middle&lt;/li&gt;
+&lt;li&gt;e.g., it gave reward for sentence &amp;ldquo;climb down &lt;em&gt;the ladder on the right&lt;/em&gt;&amp;rdquo; when the agent was jumping to the &lt;em&gt;right&lt;/em&gt; platform&lt;/li&gt;
+&lt;li&gt;the module cannot correctly handle the phrase &amp;ldquo;the ladder on the right&amp;rdquo;, instead, it treated it as two things &amp;ndash; &amp;ldquo;ladder&amp;rdquo; and &amp;ldquo;right&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;our solution is to generate hard negative examples by replacing the noun phrase and the verb phrase in the original sentence with random phrases picked from the phrase set. and I call it &amp;ldquo;phrase polluted hard negative example generation&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Consider incremental publication of results Nov, 2022</title>
+      <link>https://sino-huang.github.io/posts/paper_proposal_nov_2022/</link>
+      <pubDate>Sun, 13 Nov 2022 15:59:12 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/paper_proposal_nov_2022/</guid>
+      <description>&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

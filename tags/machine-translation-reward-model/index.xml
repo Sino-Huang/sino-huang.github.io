@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Machine Translation Reward Model on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/machine-translation-reward-model/</link>
+    <description>Recent content in Machine Translation Reward Model on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 28 Jan 2024 22:53:41 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/machine-translation-reward-model/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zhiwei He Improving Machine Translation Use Quality Estimation as a Reward Model 2024</title>
+      <link>https://sino-huang.github.io/posts/zhiwei-he-improving-machine-translation-use-quality-estimation-as-a-reward-model-2024/</link>
+      <pubDate>Sun, 28 Jan 2024 22:53:41 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/zhiwei-he-improving-machine-translation-use-quality-estimation-as-a-reward-model-2024/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Improving Machine Translation Use Quality Estimation as a Reward Model 2024&lt;/li&gt;
+&lt;li&gt;Author: Zhiwei He et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 23 Jan 2024&lt;/li&gt;
+&lt;li&gt;Review Date: Sun, Jan 28, 2024&lt;/li&gt;
+&lt;li&gt;url: arXiv:2401.12873v1&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;p&gt;In this research, the authors explore using Quality Estimation (QE) models as a basis for reward systems in translation quality improvement through human feedback. They note that while QE has shown promise aligning with human evaluations, there&amp;rsquo;s a risk of overoptimization where translations receive high rewards despite declining quality. The study addresses this by introducing heuristic rules to identify and penalize incorrect translations, resulting in improved training outcomes. Experimental results demonstrate consistent enhancements across various setups, validated by human preference studies. Additionally, the approach proves highly data-efficient, outperforming systems relying on larger parallel corpora with only a small amount of monolingual data.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

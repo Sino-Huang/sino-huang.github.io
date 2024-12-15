@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Llm on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/llm/</link>
+    <description>Recent content in Llm on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 22 Jun 2024 11:13:50 +1000</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/llm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Damai Dai Deepseekmoe 2024</title>
+      <link>https://sino-huang.github.io/posts/damai-dai-deepseekmoe-2024/</link>
+      <pubDate>Sat, 22 Jun 2024 11:13:50 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/damai-dai-deepseekmoe-2024/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture of Experts Language Models&lt;/li&gt;
+&lt;li&gt;Author: Damai Dai et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 11 Jan 2024&lt;/li&gt;
+&lt;li&gt;Review Date: Sat, Jun 22, 2024&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2401.06066&#34;&gt;https://arxiv.org/pdf/2401.06066&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240622111425099&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/damai-dai-deepseekmoe-2024/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;conventional MoE architecture like GShard, which avtivate top-k out of N experts, face challenges in ensuring expert specialization, i.e., each expert acquires non-overlapping and focused knowledge,&lt;/li&gt;
+&lt;li&gt;in response, we propose DeepSeekMoE architecture towards ultimate expert specialization&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;segmenting expert into mN ones and activating mK from them&lt;/li&gt;
+&lt;li&gt;isolating K_s, experts as shared ones, aiming at capturing common knowledge and mitigating redundancy in routed experts&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;MoE architecture&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Jessy Lin Learning to Model the World With Language 2024</title>
+      <link>https://sino-huang.github.io/posts/jessy-lin-learning-to-model-the-world-with-language-2024/</link>
+      <pubDate>Fri, 21 Jun 2024 11:47:25 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/jessy-lin-learning-to-model-the-world-with-language-2024/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Learning to Model the World With Language 2024&lt;/li&gt;
+&lt;li&gt;Author: Jessy Lin et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: ICML 2024&lt;/li&gt;
+&lt;li&gt;Review Date: Fri, Jun 21, 2024&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/abs/2308.01399&#34;&gt;https://arxiv.org/abs/2308.01399&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240621173424831&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/jessy-lin-learning-to-model-the-world-with-language-2024/image-assets/image-20240621173424831.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;in this work, we propose that agents can ground diverse kinds of language by using it to predict the future&lt;/li&gt;
+&lt;li&gt;in contrast to directly predicting what to do with a language-conditioned policy, Dynalang decouples learning to model the world with language (supervised learning with prediction objectives) from learning to act given that model (RL with task rewards)&lt;/li&gt;
+&lt;li&gt;Future prediction provides a rich grounding signal for learning what language utterances mean, which in turn equip the agent with a richer understanding of the world to solve complex tasks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;investigate whether learning language-conditioned world models enable agents to scale to more diverse language use, compared to language-conditioned policies.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;related work&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Jiuzhou Reward Engineering for Generating Semi Structured Explan 2023</title>
+      <link>https://sino-huang.github.io/posts/jiuzhou-reward-engineering-for-generating-semi-structured-explan-2023/</link>
+      <pubDate>Thu, 20 Jun 2024 14:11:32 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/jiuzhou-reward-engineering-for-generating-semi-structured-explan-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Reward Engineering for Generating Semi-Structured Explanation&lt;/li&gt;
+&lt;li&gt;Author: Jiuzhou Han et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: EACL2024&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, Jun 20, 2024&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://github.com/Jiuzhouh/Reward-Engineering-for-Generating-SEG&#34;&gt;https://github.com/Jiuzhouh/Reward-Engineering-for-Generating-SEG&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;the objective is to equip moderately-sized LMs with the ability to not only provide answers but also generate structured explanations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Intro&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;the author talked about some background on Cui et al. incorporate a generative pre-training mechanism over synthetic graphs by aligning inputs pairs of text-graph to improve the model&amp;rsquo;s capability in generating semi-structured explanation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Jia Li Structured Cot Prompting for Code Generation 2023</title>
+      <link>https://sino-huang.github.io/posts/jia-li-structured-cot-prompting-for-code-generation-2023/</link>
+      <pubDate>Wed, 28 Feb 2024 19:59:38 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/jia-li-structured-cot-prompting-for-code-generation-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Structured Chaint of Thought Prompting for Code Generation 2023&lt;/li&gt;
+&lt;li&gt;Author: Jia Li et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 7 Sep 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Feb 28, 2024&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2305.06599.pdf&#34;&gt;https://arxiv.org/pdf/2305.06599.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240229114924548&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/jia-li-structured-cot-prompting-for-code-generation-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;p&gt;The paper introduces Structured CoTs (SCoTs) and a novel prompting  technique called SCoT prompting for improving code generation with Large Language Models (LLMs) like ChatGPT and Codex. Unlike the previous  Chain-of-Thought (CoT) prompting, which focuses on natural language  reasoning steps, SCoT prompting leverages the structural information  inherent in source code. By incorporating program structures (sequence,  branch, and loop structures) into intermediate reasoning steps (SCoTs),  LLMs are guided to generate more structured and accurate code.  Evaluation on three benchmarks demonstrates that SCoT prompting  outperforms CoT prompting by up to 13.79% in Pass@1, is preferred by  human developers in terms of program quality, and exhibits robustness to various examples, leading to substantial improvements in code  generation performance.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stephanie Teaching Models to Express Their Uncertainty in Words 2022</title>
+      <link>https://sino-huang.github.io/posts/stephanie-teaching-models-to-express-their-uncertainty-in-words-2022/</link>
+      <pubDate>Wed, 28 Feb 2024 16:12:53 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/stephanie-teaching-models-to-express-their-uncertainty-in-words-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Teaching Models to Express Their Uncertainty in Words&lt;/li&gt;
+&lt;li&gt;Author: Stephanie Lin et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 13 Jun 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Feb 28, 2024&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2205.14334.pdf&#34;&gt;https://arxiv.org/pdf/2205.14334.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240228162359685&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/stephanie-teaching-models-to-express-their-uncertainty-in-words-2022/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;The study demonstrates that a GPT-3 model can articulate uncertainty  about its answers in natural language without relying on model logits.  It generates both an answer and a confidence level (e.g., &amp;ldquo;90%  confidence&amp;rdquo; or &amp;ldquo;high confidence&amp;rdquo;), which map to well-calibrated  probabilities. The model maintains moderate calibration even under  distribution shift and shows sensitivity to uncertainty in its answers  rather than mimicking human examples.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ziwei Xu Hallucination Is Inevitable an Innate Limitation Llm 2024</title>
+      <link>https://sino-huang.github.io/posts/ziwei-xu-hallucination-is-inevitable-an-innate-limitation-llm-2024/</link>
+      <pubDate>Sun, 28 Jan 2024 23:11:28 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/ziwei-xu-hallucination-is-inevitable-an-innate-limitation-llm-2024/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title:  Hallucination Is Inevitable an Innate Limitation Llm 2024&lt;/li&gt;
+&lt;li&gt;Author: Ziwei Xu et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 22 Jan 2024&lt;/li&gt;
+&lt;li&gt;Review Date: Sun, Jan 28, 2024&lt;/li&gt;
+&lt;li&gt;url: arXiv:2401.11817v1&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;p&gt;The paper formalizes the issue of hallucination in large language models (LLMs) and argues that it is impossible to completely eliminate hallucination. It defines hallucination as inconsistencies between a computable LLM and a computable ground truth function. By drawing from learning theory, the paper demonstrates that LLMs cannot learn all computable functions, thus always prone to hallucination. The formal world is deemed a simplified representation of the real world, implying that hallucination is inevitable for real-world LLMs. Additionally, for real-world LLMs with provable time complexity constraints, the paper identifies tasks prone to hallucination and provides empirical validation. Finally, the paper evaluates existing hallucination mitigators using the formal world framework and discusses practical implications for the safe deployment of LLMs.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

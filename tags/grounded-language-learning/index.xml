@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Grounded Language Learning on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/grounded-language-learning/</link>
+    <description>Recent content in Grounded Language Learning on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 03 Jan 2022 22:38:40 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/grounded-language-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tianshi_cao Babyai Plus Plus Towards Grounded Language Learning Beyond Memorization 2020</title>
+      <link>https://sino-huang.github.io/posts/tianshi_cao-babyai-plus-plus-towards-grounded-language-learning-beyond-memorization-2020/</link>
+      <pubDate>Mon, 03 Jan 2022 22:38:40 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/tianshi_cao-babyai-plus-plus-towards-grounded-language-learning-beyond-memorization-2020/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: BABYAI++: Towards Grounded-Language Learning Beyond Memorization&lt;/li&gt;
+&lt;li&gt;Author: Tianshi Cao et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2020 ICLR&lt;/li&gt;
+&lt;li&gt;Review Date: Jan 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;The paper introduced a new RL environment BabyAI++ that can investigate whether RL agents can extract knowledge from descriptive text and eventually increase generalisation performance.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;BabyAI++ environment example&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20220104181838965&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/tianshi_cao-babyai-plus-plus-towards-grounded-language-learning-beyond-memorization-2020/image-assets/image-20220104181838965.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the descriptive text describe the feature of the object.
+&lt;ul&gt;
+&lt;li&gt;notice that the feature of object can easily change as we change the descriptive text.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Model&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Federico_bianchi Language in a Search Box Grounding Language Learning in Real World Human Machine Interaction 2021</title>
+      <link>https://sino-huang.github.io/posts/federico_bianchi-language-in-a-search-box-grounding-language-learning-in-real-world-human-machine-interaction-2021/</link>
+      <pubDate>Mon, 03 Jan 2022 16:51:39 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/federico_bianchi-language-in-a-search-box-grounding-language-learning-in-real-world-human-machine-interaction-2021/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Language in a (Search) Box: Grounding Language Learning in Real-World Human-Machine Interaction&lt;/li&gt;
+&lt;li&gt;Author: Federico Bianchi&lt;/li&gt;
+&lt;li&gt;Publish Year: 2021&lt;/li&gt;
+&lt;li&gt;Review Date: Jan 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;the author investigated grounded language learning through the natural interaction between users and the shopping website search engine.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How they do it&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;convert the shopping object dataset into a Latent Grounded Domain&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img alt=&#34;image-20220103212726450&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/federico_bianchi-language-in-a-search-box-grounding-language-learning-in-real-world-human-machine-interaction-2021/image-assets/image-20220103212726450.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;related products end up closer in the embedding space&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;train the mapping model (mapping from text query to a portion of product space) based on the user click behaviour (In the training dataset, the users queries about &amp;ldquo;Nike&amp;rdquo; and the they would click relevant Nike Product)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

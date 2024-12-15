@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Environment deployment Notes | Sukai Huang</title>
+<meta content="python" name="keywords"/>
+<meta content="[TOC]
+Setup dreamer builder for IGLU Minecraft task — setup notes
+Advantages of using pip install git
+check https://dev.to/fronkan/pip-install-a-git-repository-111b
+This will not create dependencies on the local machine
+python -c flag
+execute the python code in command
+e.g,
+
+
+1
+2
+3
+4
+
+
+python -c '
+import pprint
+pprint.pprint(1)
+'
+
+
+set TF_XLA variable
+TF_XLA_FLAGS=--tf_xla_auto_jit=2
+use python=3.7
+otherwise the environment will crash.
+some strange bugs of the environment
+if I directly follow the instructions from https://github.com/iglu-contest/iglu, I will install the iglu:0.1.0 version, which will crash" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/engineering-notes/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/engineering-notes/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/engineering-notes/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/engineering-notes/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Environment deployment Notes" property="og:title"/>
+<meta content="[TOC]
+Setup dreamer builder for IGLU Minecraft task — setup notes Advantages of using pip install git check https://dev.to/fronkan/pip-install-a-git-repository-111b
+This will not create dependencies on the local machine
+python -c flag execute the python code in command
+e.g,
+1 2 3 4 python -c ' import pprint pprint.pprint(1) ' set TF_XLA variable TF_XLA_FLAGS=--tf_xla_auto_jit=2
+use python=3.7 otherwise the environment will crash.
+some strange bugs of the environment if I directly follow the instructions from https://github.com/iglu-contest/iglu, I will install the iglu:0.1.0 version, which will crash" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="Environment deployment Notes" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Weekly-Reports",
+      "item": "https://sino-huang.github.io/weekly-report/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "05 December -- 11 December, 2021",
+      "item": "https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Environment deployment Notes",
+      "item": "https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/engineering-notes/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/weekly-report/">Weekly-Reports</a> » <a href="https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/">05 December -- 11 December, 2021</a></div>
+<h1>
+    Environment deployment Notes
+    <a aria-label="RSS" href="/weekly-report/05-dec-11-dec-2021/engineering-notes/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><p>[TOC]</p>
+<h2 id="setup-dreamer-builder-for-iglu-minecraft-task-----setup-notes">Setup dreamer builder for IGLU Minecraft task — setup notes<a aria-hidden="true" class="anchor" hidden="" href="#setup-dreamer-builder-for-iglu-minecraft-task-----setup-notes">#</a></h2>
+<h3 id="advantages-of-using-pip-install-git">Advantages of using <code>pip install git</code><a aria-hidden="true" class="anchor" hidden="" href="#advantages-of-using-pip-install-git">#</a></h3>
+<p>check <a href="https://dev.to/fronkan/pip-install-a-git-repository-111b">https://dev.to/fronkan/pip-install-a-git-repository-111b</a></p>
+<p>This will not create dependencies on the local machine</p>
+<h3 id="python--c-flag"><code>python -c</code> flag<a aria-hidden="true" class="anchor" hidden="" href="#python--c-flag">#</a></h3>
+<p>execute the python code in command</p>
+<p>e.g,</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python -c <span class="s1">'
+</span></span></span><span class="line"><span class="cl"><span class="s1">import pprint
+</span></span></span><span class="line"><span class="cl"><span class="s1">pprint.pprint(1)
+</span></span></span><span class="line"><span class="cl"><span class="s1">'</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="set-tf_xla-variable">set TF_XLA variable<a aria-hidden="true" class="anchor" hidden="" href="#set-tf_xla-variable">#</a></h3>
+<p><code>TF_XLA_FLAGS=--tf_xla_auto_jit=2</code></p>
+<h3 id="use-python37">use <code>python=3.7</code><a aria-hidden="true" class="anchor" hidden="" href="#use-python37">#</a></h3>
+<p>otherwise the environment will crash.</p>
+<h3 id="some-strange-bugs-of-the-environment">some strange bugs of the environment<a aria-hidden="true" class="anchor" hidden="" href="#some-strange-bugs-of-the-environment">#</a></h3>
+<p>if I directly follow the instructions from <a href="https://github.com/iglu-contest/iglu">https://github.com/iglu-contest/iglu</a>, I will install the iglu:0.1.0 version, which will crash</p>
+<p>if I use <code>pip install git+https://github.com/iglu-contest/iglu.git</code>, I will download 0.2.2 version</p>
+<p>but in the end the environment did not show up.</p>
+<p><strong>Update</strong></p>
+<p>the latest numpy require python=3.8, while the project requires python=3.7</p>
+<p>In the end we update the python from 3.7 to 3.8</p>
+<p><strong>Update 2</strong></p>
+<p>The <code>minerl-patched==0.1.0</code> has some issue on my device, following is the error message</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+</span></span><span class="line"><span class="cl">  File <span class="s2">"test_env.py"</span>, line 2, in &lt;module&gt;
+</span></span><span class="line"><span class="cl">    import minerl_patched
+</span></span><span class="line"><span class="cl">  File <span class="s2">"/home/sukai/anaconda3/envs/iglu_env337/lib/python3.7/site-packages/minerl_patched-0.1.0-py3.7-linux-x86_64.egg/minerl_patched/__init__.py"</span>, line 7, in &lt;module&gt;
+</span></span><span class="line"><span class="cl">    import minerl_patched.herobraine.envs
+</span></span><span class="line"><span class="cl">  File <span class="s2">"/home/sukai/anaconda3/envs/iglu_env337/lib/python3.7/site-packages/minerl_patched-0.1.0-py3.7-linux-x86_64.egg/minerl_patched/herobraine/envs.py"</span>, line 19, in &lt;module&gt;
+</span></span><span class="line"><span class="cl">    <span class="nv">MINERL_TREECHOP_V0</span> <span class="o">=</span> Treechop<span class="o">()</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">"/home/sukai/anaconda3/envs/iglu_env337/lib/python3.7/site-packages/minerl_patched-0.1.0-py3.7-linux-x86_64.egg/minerl_patched/herobraine/env_specs/treechop_specs.py"</span>, line 44, in __init__
+</span></span><span class="line"><span class="cl">    **kwargs<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">"/home/sukai/anaconda3/envs/iglu_env337/lib/python3.7/site-packages/minerl_patched-0.1.0-py3.7-linux-x86_64.egg/minerl_patched/herobraine/env_specs/simple_embodiment.py"</span>, line 34, in __init__
+</span></span><span class="line"><span class="cl">    super<span class="o">()</span>.__init__<span class="o">(</span>name, *args, **kwargs<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">"/home/sukai/anaconda3/envs/iglu_env337/lib/python3.7/site-packages/minerl_patched-0.1.0-py3.7-linux-x86_64.egg/minerl_patched/herobraine/env_spec.py"</span>, line 38, in __init__
+</span></span><span class="line"><span class="cl">    self.reset<span class="o">()</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">"/home/sukai/anaconda3/envs/iglu_env337/lib/python3.7/site-packages/minerl_patched-0.1.0-py3.7-linux-x86_64.egg/minerl_patched/herobraine/env_spec.py"</span>, line 44, in reset
+</span></span><span class="line"><span class="cl">    self.actionables <span class="o">=</span> self.create_actionables<span class="o">()</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">"/home/sukai/anaconda3/envs/iglu_env337/lib/python3.7/site-packages/minerl_patched-0.1.0-py3.7-linux-x86_64.egg/minerl_patched/herobraine/env_specs/simple_embodiment.py"</span>, line 47, in create_actionables
+</span></span><span class="line"><span class="cl">    handlers.KeybasedCommandAction<span class="o">(</span>k, v<span class="o">)</span> <span class="k">for</span> k, v in INVERSE_KEYMAP.items<span class="o">()</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">"/home/sukai/anaconda3/envs/iglu_env337/lib/python3.7/site-packages/minerl_patched-0.1.0-py3.7-linux-x86_64.egg/minerl_patched/herobraine/env_specs/simple_embodiment.py"</span>, line 48, in &lt;listcomp&gt;
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> k in SIMPLE_KEYBOARD_ACTION
+</span></span><span class="line"><span class="cl">  File <span class="s2">"/home/sukai/anaconda3/envs/iglu_env337/lib/python3.7/site-packages/minerl_patched-0.1.0-py3.7-linux-x86_64.egg/minerl_patched/herobraine/hero/handlers/agent/actions/keyboard.py"</span>, line 60, in __init__
+</span></span><span class="line"><span class="cl">    super<span class="o">()</span>.__init__<span class="o">(</span>command, spaces.Discrete<span class="o">(</span>len<span class="o">(</span>keys<span class="o">)</span> + 1<span class="o">))</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">"/home/sukai/anaconda3/envs/iglu_env337/lib/python3.7/site-packages/minerl_patched-0.1.0-py3.7-linux-x86_64.egg/minerl_patched/herobraine/hero/spaces.py"</span>, line 206, in __init__
+</span></span><span class="line"><span class="cl">    self.shape <span class="o">=</span> <span class="o">()</span>
+</span></span><span class="line"><span class="cl">AttributeError: can<span class="err">'</span>t <span class="nb">set</span> attribute
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>However, if I install <code>minerl==0.4.2.1</code> and run the sample codes on <a href="https://github.com/minerllabs/minerl">https://github.com/minerllabs/minerl</a> , it can work.</p>
+<p><code>minerl-patched==0.1.0</code> is the iglu version</p>
+<p>after I installed <code>minerl==0.4.2.1</code>, the error message changed</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">(</span>iglu_env437<span class="o">)</span> ➜  iglu git:<span class="o">(</span>master<span class="o">)</span> ✗ python test/test_env.py   
+</span></span><span class="line"><span class="cl">/home/sukai/anaconda3/envs/iglu_env437/lib/python3.7/site-packages/gym/logger.py:34: UserWarning: WARN: Box bound precision lowered by casting to float32
+</span></span><span class="line"><span class="cl">  warnings.warn<span class="o">(</span>colorize<span class="o">(</span><span class="s2">"%s: %s"</span> % <span class="o">(</span><span class="s2">"WARN"</span>, msg % args<span class="o">)</span>, <span class="s2">"yellow"</span><span class="o">))</span>
+</span></span><span class="line"><span class="cl">/home/sukai/anaconda3/envs/iglu_env437/lib/python3.7/site-packages/gym/logger.py:34: UserWarning: WARN: Box bound precision lowered by casting to float32
+</span></span><span class="line"><span class="cl">  warnings.warn<span class="o">(</span>colorize<span class="o">(</span><span class="s2">"%s: %s"</span> % <span class="o">(</span><span class="s2">"WARN"</span>, msg % args<span class="o">)</span>, <span class="s2">"yellow"</span><span class="o">))</span>
+</span></span><span class="line"><span class="cl">action space: Dict<span class="o">(</span>attack:Discrete<span class="o">(</span>2<span class="o">)</span>, back:Discrete<span class="o">(</span>2<span class="o">)</span>, camera:Box<span class="o">(</span><span class="nv">low</span><span class="o">=</span>-180.0, <span class="nv">high</span><span class="o">=</span>180.0, <span class="nv">shape</span><span class="o">=(</span>2,<span class="o">))</span>, forward:Discrete<span class="o">(</span>2<span class="o">)</span>, hotbar:Discrete<span class="o">(</span>7<span class="o">)</span>, jump:Discrete<span class="o">(</span>2<span class="o">)</span>, left:Discrete<span class="o">(</span>2<span class="o">)</span>, right:Discrete<span class="o">(</span>2<span class="o">)</span>, use:Discrete<span class="o">(</span>2<span class="o">))</span>
+</span></span><span class="line"><span class="cl">observation space: Dict<span class="o">(</span>agentPos:Box<span class="o">(</span><span class="nv">low</span><span class="o">=</span>-180.0, <span class="nv">high</span><span class="o">=</span>180.0, <span class="nv">shape</span><span class="o">=(</span>5,<span class="o">))</span>, chat:&lt;iglu.handlers.String object at 0x7fb573945890&gt;, compass:Dict<span class="o">(</span>angle:Box<span class="o">(</span><span class="nv">low</span><span class="o">=</span>-180.0, <span class="nv">high</span><span class="o">=</span>180.0, <span class="nv">shape</span><span class="o">=()))</span>, grid:Box<span class="o">(</span><span class="nv">low</span><span class="o">=</span>0.0, <span class="nv">high</span><span class="o">=</span>6.0, <span class="nv">shape</span><span class="o">=(</span>9, 11, 11<span class="o">))</span>, inventory:Box<span class="o">(</span><span class="nv">low</span><span class="o">=</span>0.0, <span class="nv">high</span><span class="o">=</span>20.0, <span class="nv">shape</span><span class="o">=(</span>6,<span class="o">))</span>, pov:Box<span class="o">(</span><span class="nv">low</span><span class="o">=</span>0, <span class="nv">high</span><span class="o">=</span>255, <span class="nv">shape</span><span class="o">=(</span>64, 64, 3<span class="o">))</span>, ray:&lt;iglu.handlers.String object at 0x7fb573c09f50&gt;<span class="o">)</span>
+</span></span><span class="line"><span class="cl">current task: None
+</span></span><span class="line"><span class="cl">/home/sukai/anaconda3/envs/iglu_env437/lib/python3.7/site-packages/gym/logger.py:34: UserWarning: WARN: Box bound precision lowered by casting to float32
+</span></span><span class="line"><span class="cl">  warnings.warn<span class="o">(</span>colorize<span class="o">(</span><span class="s2">"%s: %s"</span> % <span class="o">(</span><span class="s2">"WARN"</span>, msg % args<span class="o">)</span>, <span class="s2">"yellow"</span><span class="o">))</span>
+</span></span><span class="line"><span class="cl">/home/sukai/anaconda3/envs/iglu_env437/lib/python3.7/site-packages/gym/logger.py:34: UserWarning: WARN: Box bound precision lowered by casting to float32
+</span></span><span class="line"><span class="cl">  warnings.warn<span class="o">(</span>colorize<span class="o">(</span><span class="s2">"%s: %s"</span> % <span class="o">(</span><span class="s2">"WARN"</span>, msg % args<span class="o">)</span>, <span class="s2">"yellow"</span><span class="o">))</span>
+</span></span><span class="line"><span class="cl">/home/sukai/anaconda3/envs/iglu_env437/lib/python3.7/runpy.py:125: RuntimeWarning: <span class="s1">'minerl_patched.utils.process_watcher'</span> found in sys.modules after import of package <span class="s1">'minerl_patched.utils'</span>, but prior to execution of <span class="s1">'minerl_patched.utils.process_watcher'</span><span class="p">;</span> this may result in unpredictable behaviour
+</span></span><span class="line"><span class="cl">  warn<span class="o">(</span>RuntimeWarning<span class="o">(</span>msg<span class="o">))</span>
+</span></span><span class="line"><span class="cl">72it <span class="o">[</span>00:00, 125.10it/s<span class="o">]</span>No pitch observation! Yielding default value 0.0 <span class="k">for</span> pitch
+</span></span><span class="line"><span class="cl">No xpos observation! Yielding default value 0.0 <span class="k">for</span> xpos
+</span></span><span class="line"><span class="cl">No yaw observation! Yielding default value 0.0 <span class="k">for</span> yaw
+</span></span><span class="line"><span class="cl">No ypos observation! Yielding default value 0.0 <span class="k">for</span> ypos
+</span></span><span class="line"><span class="cl">No zpos observation! Yielding default value 0.0 <span class="k">for</span> zpos
+</span></span><span class="line"><span class="cl">Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+</span></span><span class="line"><span class="cl">  File <span class="s2">"test/test_env.py"</span>, line 24, in &lt;module&gt;
+</span></span><span class="line"><span class="cl">    obs, reward, <span class="k">done</span>, <span class="nv">info</span> <span class="o">=</span> env.step<span class="o">(</span>action<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">"/home/sukai/anaconda3/envs/iglu_env437/lib/python3.7/site-packages/gym/wrappers/time_limit.py"</span>, line 18, in step
+</span></span><span class="line"><span class="cl">    observation, reward, <span class="k">done</span>, <span class="nv">info</span> <span class="o">=</span> self.env.step<span class="o">(</span>action<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">"/home/sukai/anaconda3/envs/iglu_env437/lib/python3.7/site-packages/iglu-0.2.2-py3.7.egg/iglu/env.py"</span>, line 185, in step
+</span></span><span class="line"><span class="cl">    obs, reward, <span class="k">done</span>, <span class="nv">info</span> <span class="o">=</span> super<span class="o">()</span>.step<span class="o">(</span>action<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">"/home/sukai/anaconda3/envs/iglu_env437/lib/python3.7/site-packages/minerl_patched-0.1.0-py3.7-linux-x86_64.egg/minerl_patched/env/_singleagent.py"</span>, line 32, in step
+</span></span><span class="line"><span class="cl">    obs, rew, <span class="k">done</span>, <span class="nv">info</span> <span class="o">=</span> super<span class="o">()</span>.step<span class="o">(</span>multi_agent_action<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">"/home/sukai/anaconda3/envs/iglu_env437/lib/python3.7/site-packages/minerl_patched-0.1.0-py3.7-linux-x86_64.egg/minerl_patched/env/_multiagent.py"</span>, line 308, in step
+</span></span><span class="line"><span class="cl">    out_obs, <span class="nv">monitor</span> <span class="o">=</span> self._process_observation<span class="o">(</span>actor_name, obs, _malmo_json<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">"/home/sukai/anaconda3/envs/iglu_env437/lib/python3.7/site-packages/minerl_patched-0.1.0-py3.7-linux-x86_64.egg/minerl_patched/env/_multiagent.py"</span>, line 217, in _process_observation
+</span></span><span class="line"><span class="cl">    obs_dict<span class="o">[</span>h.to_string<span class="o">()]</span> <span class="o">=</span> h.from_hero<span class="o">(</span>info<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">"/home/sukai/anaconda3/envs/iglu_env437/lib/python3.7/site-packages/minerl_patched-0.1.0-py3.7-linux-x86_64.egg/minerl_patched/herobraine/hero/handlers/translation.py"</span>, line 126, in from_hero
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> h in self.handlers
+</span></span><span class="line"><span class="cl">  File <span class="s2">"/home/sukai/anaconda3/envs/iglu_env437/lib/python3.7/site-packages/minerl_patched-0.1.0-py3.7-linux-x86_64.egg/minerl_patched/herobraine/hero/handlers/translation.py"</span>, line 126, in &lt;dictcomp&gt;
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> h in self.handlers
+</span></span><span class="line"><span class="cl">  File <span class="s2">"/home/sukai/anaconda3/envs/iglu_env437/lib/python3.7/site-packages/minerl_patched-0.1.0-py3.7-linux-x86_64.egg/minerl_patched/herobraine/hero/handlers/translation.py"</span>, line 91, in from_hero
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> self.walk_dict<span class="o">(</span>hero_dict, self.hero_keys<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">"/home/sukai/anaconda3/envs/iglu_env437/lib/python3.7/site-packages/minerl_patched-0.1.0-py3.7-linux-x86_64.egg/minerl_patched/herobraine/hero/handlers/translation.py"</span>, line 80, in walk_dict
+</span></span><span class="line"><span class="cl">    raise KeyError<span class="o">()</span>
+</span></span><span class="line"><span class="cl">KeyError
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Update 3</strong></p>
+<p>Interestingly, I can run the program in Docker container.</p>
+<p>By looking at the Dockerfile</p>
+<p>the only difference seems that the docker container uses a older Ubuntu system with cudnn7 rather than the latest cudnn8</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="s"> nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>In order to find the bug, we change the line to</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="s"> nvidia/cuda:11.4.2-cudnn8-runtime-ubuntu20.04</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Nope…</p>
+<p><strong>Final update</strong></p>
+<p>I don’t need to figure out what’s wrong now. I just use the docker version</p>
+<h2 id="git----how-to-remove-uncommitted-files">git – how to remove uncommitted files<a aria-hidden="true" class="anchor" hidden="" href="#git----how-to-remove-uncommitted-files">#</a></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clean -df
+</span></span><span class="line"><span class="cl">git checkout -- .
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Gregor_geigle Retrieve Fast Rerank Smart Cooperative and Joint Approaches for Improved Cross Modal Retrieval 2022 | Sukai Huang</title>
+<meta content="transformer, natural language processing, future work" name="keywords"/>
+<meta content="[TOC]
+
+Title: Retrieve Fast, Rerank Smart: Cooperative and Joint Approaches for Improved Cross-Modal Retrieval
+Author: Gregor Geigle et. al.
+Publish Year: 19 Feb, 2022
+Review Date: Sat, Aug 27, 2022
+
+Summary of paper
+Motivation
+they want to combine the cross encoder and the bi encoder advantages and have a more efficient cross-modal search and retrieval
+
+efficiency and simplicity of BE approach based on twin network
+expressiveness and cutting-edge performance of CE methods.
+
+Contribution
+We propose a novel joint Cross Encoding and Binary Encoding model (Joint-Coop), which is trained to simultaneously cross-encode and embed multi-modal input; it achieves the highest scores overall while maintaining retrieval efficiency" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/posts/gregor_geigle-retrieve-fast-rerank-smart-coorperative-and-joint-approaches-for-improved-cross-modal-retrieval-2022/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/posts/gregor_geigle-retrieve-fast-rerank-smart-coorperative-and-joint-approaches-for-improved-cross-modal-retrieval-2022/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/posts/gregor_geigle-retrieve-fast-rerank-smart-coorperative-and-joint-approaches-for-improved-cross-modal-retrieval-2022/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/posts/gregor_geigle-retrieve-fast-rerank-smart-coorperative-and-joint-approaches-for-improved-cross-modal-retrieval-2022/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Gregor_geigle Retrieve Fast Rerank Smart Cooperative and Joint Approaches for Improved Cross Modal Retrieval 2022" property="og:title"/>
+<meta content="[TOC]
+Title: Retrieve Fast, Rerank Smart: Cooperative and Joint Approaches for Improved Cross-Modal Retrieval Author: Gregor Geigle et. al. Publish Year: 19 Feb, 2022 Review Date: Sat, Aug 27, 2022 Summary of paper Motivation they want to combine the cross encoder and the bi encoder advantages and have a more efficient cross-modal search and retrieval
+efficiency and simplicity of BE approach based on twin network expressiveness and cutting-edge performance of CE methods. Contribution We propose a novel joint Cross Encoding and Binary Encoding model (Joint-Coop), which is trained to simultaneously cross-encode and embed multi-modal input; it achieves the highest scores overall while maintaining retrieval efficiency" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/posts/gregor_geigle-retrieve-fast-rerank-smart-coorperative-and-joint-approaches-for-improved-cross-modal-retrieval-2022/image-assets/cover.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/posts/gregor_geigle-retrieve-fast-rerank-smart-coorperative-and-joint-approaches-for-improved-cross-modal-retrieval-2022/image-assets/cover.png" name="twitter:image"/>
+<meta content="Gregor_geigle Retrieve Fast Rerank Smart Cooperative and Joint Approaches for Improved Cross Modal Retrieval 2022" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://sino-huang.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Gregor_geigle Retrieve Fast Rerank Smart Cooperative and Joint Approaches for Improved Cross Modal Retrieval 2022",
+      "item": "https://sino-huang.github.io/posts/gregor_geigle-retrieve-fast-rerank-smart-coorperative-and-joint-approaches-for-improved-cross-modal-retrieval-2022/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/posts/">Posts</a></div>
+<h1>
+    Gregor_geigle Retrieve Fast Rerank Smart Cooperative and Joint Approaches for Improved Cross Modal Retrieval 2022
+    <a aria-label="RSS" href="/posts/gregor_geigle-retrieve-fast-rerank-smart-coorperative-and-joint-approaches-for-improved-cross-modal-retrieval-2022/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><p>[TOC]</p>
+<ol>
+<li>Title: Retrieve Fast, Rerank Smart: Cooperative and Joint Approaches for Improved Cross-Modal Retrieval</li>
+<li>Author: Gregor Geigle et. al.</li>
+<li>Publish Year: 19 Feb, 2022</li>
+<li>Review Date: Sat, Aug 27, 2022</li>
+</ol>
+<h2 id="summary-of-paper">Summary of paper<a aria-hidden="true" class="anchor" hidden="" href="#summary-of-paper">#</a></h2>
+<h3 id="motivation">Motivation<a aria-hidden="true" class="anchor" hidden="" href="#motivation">#</a></h3>
+<p>they want to combine the cross encoder and the bi encoder advantages and have a more efficient cross-modal search and retrieval</p>
+<ol>
+<li>efficiency and simplicity of BE approach based on twin network</li>
+<li>expressiveness and cutting-edge performance of CE methods.</li>
+</ol>
+<h3 id="contribution">Contribution<a aria-hidden="true" class="anchor" hidden="" href="#contribution">#</a></h3>
+<p>We propose a novel joint Cross Encoding and Binary Encoding model (Joint-Coop), which is trained to simultaneously cross-encode and embed multi-modal input; it achieves the highest scores overall while maintaining retrieval efficiency</p>
+<p><img alt="image-20220827144124480" loading="lazy" src="/posts/gregor_geigle-retrieve-fast-rerank-smart-coorperative-and-joint-approaches-for-improved-cross-modal-retrieval-2022/image-assets/image-20220827144124480.png"/></p>
+<h3 id="some-key-terms">Some key terms<a aria-hidden="true" class="anchor" hidden="" href="#some-key-terms">#</a></h3>
+<p><strong>Bi-encoder approach</strong></p>
+<p>encodes images and text separately and then induces a shared high-dimensional multi-modal feature space. very common</p>
+<p><strong>cross attention based approach</strong></p>
+<p>apply a cross attention mechanism between examples from the two modalities to compute their similarity scores</p>
+<p><img alt="image-20220827004208773" loading="lazy" src="/posts/gregor_geigle-retrieve-fast-rerank-smart-coorperative-and-joint-approaches-for-improved-cross-modal-retrieval-2022/image-assets/image-20220827004208773.png"/></p>
+<ul>
+<li>limitation of cross attention approach
+<ul>
+<li>they have extremely high search latency</li>
+<li>may results in inflated and misleading evaluation performance when using small benchmarks</li>
+</ul>
+</li>
+</ul>
+<h3 id="methodology">Methodology<a aria-hidden="true" class="anchor" hidden="" href="#methodology">#</a></h3>
+<p><strong>Pretraining part</strong></p>
+<ul>
+<li>Similar to masked language modelling (MLM) in the text domain, multi-modal Transformer models are trained with self-supervised objectives. For pretraining, image-caption datasets (i.e., MSCOCO, Flickr30k, Conceptual Captions and SBU) are utilised</li>
+<li>The pretrained multi-modal model is subsequently fine-tuned with multi-modal downstream task data.</li>
+</ul>
+<p><strong>cross-encoder training</strong></p>
+<ul>
+<li>training
+<ul>
+<li>A pretrained model receives as input positive and negative pairs of image and captions</li>
+<li>A binary classification head is placed on top of the Transformer model, where the contexualized embedding of the [CLS] token is passed into the classification head.</li>
+<li>The weight of classifier head together with the Transformer are fully fine-tuned using a binary cross-entropy (BCE) loss</li>
+</ul>
+</li>
+</ul>
+<p><strong>bi-encoding training</strong></p>
+<ul>
+<li>training
+<ul>
+<li>the objective of the twin network is to place positive training instances (image, caption) (i,c) closely in the shared multi-modal space, while unrelated instance should be placed farther apart. This is formulated through a standard triplet loss function. It leverages (i,c,c’) and (i,i’, c) triplets, where (i,c) are positive image-caption pairs from the training corpus, while c’ and i’ are negative examples sampled from the same corpus such at (i, c’) and (i’, c) do not occur in the corpus, the triplet loss is then</li>
+<li><img alt="image-20220827151521826" loading="lazy" src="/posts/gregor_geigle-retrieve-fast-rerank-smart-coorperative-and-joint-approaches-for-improved-cross-modal-retrieval-2022/image-assets/image-20220827151521826.png"/></li>
+</ul>
+</li>
+</ul>
+<p><strong>bi-encoding retrieval</strong></p>
+<ul>
+<li>the BE approach enables pre-encoding of all items for efficient retrieval loop-up and thus this approach can scale to even billions of images</li>
+</ul>
+<p><strong>Joint Coop process</strong></p>
+<ul>
+<li>Use Bi-Encoder to retrieve top K first and then use Cross Encoder to rank based on the Sigmoid classification score [0, 1]</li>
+</ul>
+<h3 id="training-setup-and-hyperparameters">Training setup and hyperparameters<a aria-hidden="true" class="anchor" hidden="" href="#training-setup-and-hyperparameters">#</a></h3>
+<p><img alt="image-20220827155212244" loading="lazy" src="/posts/gregor_geigle-retrieve-fast-rerank-smart-coorperative-and-joint-approaches-for-improved-cross-modal-retrieval-2022/image-assets/image-20220827155212244.png"/></p>
+<h2 id="good-things-about-the-paper-one-paragraph">Good things about the paper (one paragraph)<a aria-hidden="true" class="anchor" hidden="" href="#good-things-about-the-paper-one-paragraph">#</a></h2>
+<p>Github page: <a href="https://github.com/UKPLab/MMT-Retrieval">https://github.com/UKPLab/MMT-Retrieval</a></p>
+<h2 id="major-comments">Major comments<a aria-hidden="true" class="anchor" hidden="" href="#major-comments">#</a></h2>
+<h2 id="minor-comments">Minor comments<a aria-hidden="true" class="anchor" hidden="" href="#minor-comments">#</a></h2>
+<h2 id="incomprehension">Incomprehension<a aria-hidden="true" class="anchor" hidden="" href="#incomprehension">#</a></h2>
+<h2 id="potential-future-work">Potential future work<a aria-hidden="true" class="anchor" hidden="" href="#potential-future-work">#</a></h2>
+<p>Try this to get similarity score for multi-modality data</p>
+<p>Also try DeepNet to solve gradient vanishing problem</p>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

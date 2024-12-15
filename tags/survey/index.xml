@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Survey on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/survey/</link>
+    <description>Recent content in Survey on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 29 Jan 2024 23:02:47 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/survey/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vishal Pallagani Llm N Planning Survey 2024</title>
+      <link>https://sino-huang.github.io/posts/vishal-pallagani-llm-n-planning-survey-2024/</link>
+      <pubDate>Mon, 29 Jan 2024 23:02:47 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/vishal-pallagani-llm-n-planning-survey-2024/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title:  &amp;ldquo;On the Prospects of Incorporating Large  Language Models (LLMs) in Automated Planning and Scheduling (APS).&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Author: Pallagani, Vishal, et al.&lt;/li&gt;
+&lt;li&gt;Publish Year:  &lt;em&gt;arXiv preprint arXiv:2401.02500&lt;/em&gt; (2024).&lt;/li&gt;
+&lt;li&gt;Review Date: Mon, Jan 29, 2024&lt;/li&gt;
+&lt;li&gt;url:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;p&gt;The paper provides a comprehensive review of 126 papers focusing on the integration of Large Language Models (LLMs) within Automated Planning and Scheduling, a growing area in Artificial Intelligence (AI). It identifies eight categories where LLMs are applied in addressing various aspects of planning problems:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

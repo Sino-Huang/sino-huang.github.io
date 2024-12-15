@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>September-2022-Weekly-Progress on Sukai Huang</title>
+    <link>https://sino-huang.github.io/categories/september-2022-weekly-progress/</link>
+    <description>Recent content in September-2022-Weekly-Progress on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 03 Sep 2022 16:26:36 +1000</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/categories/september-2022-weekly-progress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>01 Sep -- 30 Sep, 2022</title>
+      <link>https://sino-huang.github.io/weekly-report/01-sep-11-sep-2022/</link>
+      <pubDate>Sat, 03 Sep 2022 16:26:36 +1000</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/01-sep-11-sep-2022/</guid>
+      <description>&lt;h2 id=&#34;last-weeks-work-review&#34;&gt;Last Week&amp;rsquo;s Work Review&lt;/h2&gt;
+&lt;p&gt;We have the Goyal&amp;rsquo;s code and we can directly test their model and our baseline&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

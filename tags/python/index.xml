@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Python on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/python/</link>
+    <description>Recent content in Python on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 06 Dec 2021 20:13:12 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Environment deployment Notes</title>
+      <link>https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/engineering-notes/</link>
+      <pubDate>Mon, 06 Dec 2021 20:13:12 +1100</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/engineering-notes/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&#34;setup-dreamer-builder-for-iglu-minecraft-task-----setup-notes&#34;&gt;Setup dreamer builder for IGLU Minecraft task &amp;mdash; setup notes&lt;/h2&gt;
+&lt;h3 id=&#34;advantages-of-using-pip-install-git&#34;&gt;Advantages of using &lt;code&gt;pip install git&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;check &lt;a href=&#34;https://dev.to/fronkan/pip-install-a-git-repository-111b&#34;&gt;https://dev.to/fronkan/pip-install-a-git-repository-111b&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This will not create dependencies on the local machine&lt;/p&gt;
+&lt;h3 id=&#34;python--c-flag&#34;&gt;&lt;code&gt;python -c&lt;/code&gt; flag&lt;/h3&gt;
+&lt;p&gt;execute the python code in command&lt;/p&gt;
+&lt;p&gt;e.g,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;python -c &lt;span class=&#34;s1&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;import pprint
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;pprint.pprint(1)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;set-tf_xla-variable&#34;&gt;set TF_XLA variable&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;TF_XLA_FLAGS=--tf_xla_auto_jit=2&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;use-python37&#34;&gt;use &lt;code&gt;python=3.7&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;otherwise the environment will crash.&lt;/p&gt;
+&lt;h3 id=&#34;some-strange-bugs-of-the-environment&#34;&gt;some strange bugs of the environment&lt;/h3&gt;
+&lt;p&gt;if I directly follow the instructions from &lt;a href=&#34;https://github.com/iglu-contest/iglu&#34;&gt;https://github.com/iglu-contest/iglu&lt;/a&gt;, I will install the iglu:0.1.0 version, which will crash&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Llm Planner on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/llm-planner/</link>
+    <description>Recent content in Llm Planner on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 23 Apr 2024 13:20:22 +1000</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/llm-planner/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thomas Carta Grounding Llms in Rl 2023</title>
+      <link>https://sino-huang.github.io/posts/thomas-carta-grounding-llms-in-rl-2023/</link>
+      <pubDate>Tue, 23 Apr 2024 13:20:22 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/thomas-carta-grounding-llms-in-rl-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Grounding Large Language Models in Interactive Environments with Online Reinforcement Learning&lt;/li&gt;
+&lt;li&gt;Author: Thomas Carta el. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 6 Sep 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Tue, Apr 23, 2024&lt;/li&gt;
+&lt;li&gt;url: arXiv:2302.02662v3&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240423132057110&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/thomas-carta-grounding-llms-in-rl-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;The author considered an agent using an LLM as a policy that is progressively updated as the agent interacts with the environment, leveraging online reinforcement learning to improve its performance to solve goals (under the RL paradigm environment (MDP))&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Vishal Pallagani Llm N Planning Survey 2024</title>
+      <link>https://sino-huang.github.io/posts/vishal-pallagani-llm-n-planning-survey-2024/</link>
+      <pubDate>Mon, 29 Jan 2024 23:02:47 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/vishal-pallagani-llm-n-planning-survey-2024/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title:  &amp;ldquo;On the Prospects of Incorporating Large  Language Models (LLMs) in Automated Planning and Scheduling (APS).&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Author: Pallagani, Vishal, et al.&lt;/li&gt;
+&lt;li&gt;Publish Year:  &lt;em&gt;arXiv preprint arXiv:2401.02500&lt;/em&gt; (2024).&lt;/li&gt;
+&lt;li&gt;Review Date: Mon, Jan 29, 2024&lt;/li&gt;
+&lt;li&gt;url:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;p&gt;The paper provides a comprehensive review of 126 papers focusing on the integration of Large Language Models (LLMs) within Automated Planning and Scheduling, a growing area in Artificial Intelligence (AI). It identifies eight categories where LLMs are applied in addressing various aspects of planning problems:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Avichai Levy Understanding Natural Language in Context 2023</title>
+      <link>https://sino-huang.github.io/posts/avichai-levy-understanding-natural-language-in-context-2023/</link>
+      <pubDate>Mon, 29 Jan 2024 20:25:43 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/avichai-levy-understanding-natural-language-in-context-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title:  Understanding Natural Language in Context&lt;/li&gt;
+&lt;li&gt;Author: Avichai Levy et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: ICAPS 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Mon, Jan 29, 2024&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://ojs.aaai.org/index.php/ICAPS/article/view/27248&#34;&gt;https://ojs.aaai.org/index.php/ICAPS/article/view/27248&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240129203153924&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/avichai-levy-understanding-natural-language-in-context-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;p&gt;The paper discusses the increasing prevalence of applications with natural language interfaces, such as chatbots and personal assistants like Alexa, Google Assistant, Siri, and Cortana. While current dialogue systems mainly involve static robots, the challenge intensifies with cognitive robots capable of movement and object manipulation in home environments. The focus is on cognitive robots equipped with knowledge-based models of the world, enabling reasoning and planning. The paper proposes an approach to translate natural language directives into the robot&amp;rsquo;s formalism, leveraging state-of-the-art large language models, planning tools, and the robot&amp;rsquo;s knowledge of the world and its own model. This approach enhances the interpretation of directives in natural language, facilitating the completion of complex household tasks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Marta Skreta Replan Robotic Replanning 2024</title>
+      <link>https://sino-huang.github.io/posts/marta-skreta-replan-robotic-replanning-2024/</link>
+      <pubDate>Thu, 25 Jan 2024 00:55:05 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/marta-skreta-replan-robotic-replanning-2024/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: RePlan: Robotic Replanning with Perception and Language Models&lt;/li&gt;
+&lt;li&gt;Author: Marta Skreta et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 8 Jan 2024&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, Jan 25, 2024&lt;/li&gt;
+&lt;li&gt;url: arXiv:2401.04157v1&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240126170742457&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/marta-skreta-replan-robotic-replanning-2024/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;However, the challenge remains that even with syntac- tically correct plans, robots can still fail to achieve their intended goals. This failure can be attributed to imperfect plans proposed by LLMs or to unforeseeable environmental circumstances that hinder the execution of planned subtasks due to erroneous assumptions about the state of objects.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Robotic Replanning with Perception and Language Models that enables &lt;strong&gt;real-time replanning&lt;/strong&gt; capabilities for long-horizon tasks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Address the challenge of multi-stage long-horizon tasks&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

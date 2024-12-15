@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>April-2023-Weekly-Progress on Sukai Huang</title>
+    <link>https://sino-huang.github.io/categories/april-2023-weekly-progress/</link>
+    <description>Recent content in April-2023-Weekly-Progress on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 12 Apr 2023 10:24:37 +0800</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/categories/april-2023-weekly-progress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>10 Apr -- 16 Apr, 2023</title>
+      <link>https://sino-huang.github.io/weekly-report/10-apr-16-apr-2023/</link>
+      <pubDate>Wed, 12 Apr 2023 10:24:37 +0800</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/10-apr-16-apr-2023/</guid>
+      <description>&lt;h2 id=&#34;previous-work-review&#34;&gt;Previous Work Review&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;we have decided to improve the exploration strategy of ServiceNow model&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

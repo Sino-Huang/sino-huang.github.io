@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Docker Notes | Sukai Huang</title>
+<meta content="docker" name="keywords"/>
+<meta content="[TOC]
+Setup dreamer builder for IGLU Minecraft task — Docker Session
+The author suggested to use Docker environment.
+HOWEVER, due to some unknown reason, my current ubuntu desktop cannot run nvidia-docker, and thus cannot connect to GPU device in the container, thus I decided that we do not deploy the model on docker!
+The following are useful tips regarding to docker commands.
+docker permission issue
+in order to connect to docker sock" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/docker-notes/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/docker-notes/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/docker-notes/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/docker-notes/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Docker Notes" property="og:title"/>
+<meta content="[TOC]
+Setup dreamer builder for IGLU Minecraft task — Docker Session The author suggested to use Docker environment.
+HOWEVER, due to some unknown reason, my current ubuntu desktop cannot run nvidia-docker, and thus cannot connect to GPU device in the container, thus I decided that we do not deploy the model on docker!
+The following are useful tips regarding to docker commands.
+docker permission issue in order to connect to docker sock" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="Docker Notes" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Weekly-Reports",
+      "item": "https://sino-huang.github.io/weekly-report/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "05 December -- 11 December, 2021",
+      "item": "https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Docker Notes",
+      "item": "https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/docker-notes/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/weekly-report/">Weekly-Reports</a> » <a href="https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/">05 December -- 11 December, 2021</a></div>
+<h1>
+    Docker Notes
+    <a aria-label="RSS" href="/weekly-report/05-dec-11-dec-2021/docker-notes/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><p>[TOC]</p>
+<h2 id="setup-dreamer-builder-for-iglu-minecraft-task-----docker-session">Setup dreamer builder for IGLU Minecraft task — Docker Session<a aria-hidden="true" class="anchor" hidden="" href="#setup-dreamer-builder-for-iglu-minecraft-task-----docker-session">#</a></h2>
+<p>The author suggested to use Docker environment.</p>
+<p><strong><u><em>HOWEVER</em></u></strong>, due to some unknown reason, my current ubuntu desktop cannot run nvidia-docker, and thus cannot connect to GPU device in the container, thus <strong>I decided that we do not deploy the model on docker!</strong></p>
+<p>The following are useful tips regarding to docker commands.</p>
+<h3 id="docker-permission-issue">docker permission issue<a aria-hidden="true" class="anchor" hidden="" href="#docker-permission-issue">#</a></h3>
+<p>in order to connect to docker sock</p>
+<p>one can <code>sudo chmod 666 /var/run/docker.sock</code></p>
+<p>BTW: The storage location of Docker images and containers <strong>Ubuntu: /var/lib/docker/</strong></p>
+<h3 id="nvidia-docker">NVIDIA docker<a aria-hidden="true" class="anchor" hidden="" href="#nvidia-docker">#</a></h3>
+<p><a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker">https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker</a></p>
+<h3 id="update-dockers-tensorflow-not-recommended">update docker’s tensorflow (not recommended)<a aria-hidden="true" class="anchor" hidden="" href="#update-dockers-tensorflow-not-recommended">#</a></h3>
+<p><a href="https://www.tensorflow.org/install/source">https://www.tensorflow.org/install/source</a></p>
+<p>when you find that your RTX 3000 series GPU cannot work on tensorflow 2.4.2, you can upgrade tensorflow to 2.7.0</p>
+<p><code>pip install tensorflow==2.7.0</code></p>
+<p>also <code>apt install cuda-toolkit-11-2</code></p>
+<p>The cuDNN should also be upgraded.</p>
+<p><code>apt install --no-install-recommends libcudnn8=8.1* libcudnn8-dev=8.1*</code></p>
+<hr/>
+<p>Others: you might find out that the error message</p>
+<p><code>Could not load dynamic library 'libcusolver.so.11'</code></p>
+<p>so just create a soft link</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ln -s /usr/local/cuda-11.1/lib64/libcusolver.so.11 /usr/local/cuda-11.1/lib64/libcusolver.so.10
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Note</strong>: not recommended because it cause the container unstable and there is just a lot of bugs there.</p>
+<h3 id="docker-setup">docker setup<a aria-hidden="true" class="anchor" hidden="" href="#docker-setup">#</a></h3>
+<p>docker build from Dockerfile</p>
+<p><a href="https://docs.docker.com/engine/reference/commandline/build/">https://docs.docker.com/engine/reference/commandline/build/</a></p>
+<p><code>-t</code> means you set a name for it with version tag</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker build - &lt; Dockerfile -t minerl:0.1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="docker-check-image">docker check image<a aria-hidden="true" class="anchor" hidden="" href="#docker-check-image">#</a></h3>
+<p>just use <code>docker image ls</code></p>
+<h3 id="docker-remove-image">docker remove image<a aria-hidden="true" class="anchor" hidden="" href="#docker-remove-image">#</a></h3>
+<p><code>docker image rm</code></p>
+<p>use <code>docker container ls -a</code> to check the container cache</p>
+<p>it will remove docker image (but other necessary dependencies will remain)</p>
+<h3 id="docker-run-image">docker run image<a aria-hidden="true" class="anchor" hidden="" href="#docker-run-image">#</a></h3>
+<p>The difference between “docker run” and “docker exec” is that <strong>“docker exec” executes a command on a running container</strong>. On the other hand, “docker run” creates a temporary container, executes the command in it and stops the container when it is done.</p>
+<p>so for this one, we use <code>docker run -t -i -d minerl:0.1   </code></p>
+<p>after you create a container, remember to check its id and re-enter this container rather than create a new one.</p>
+<p>use <code>docker exec -it 0b0afaedba4a bash</code></p>
+<h3 id="docker-check-running-process">docker check running process<a aria-hidden="true" class="anchor" hidden="" href="#docker-check-running-process">#</a></h3>
+<p><code>docker container ls</code></p>
+<h3 id="docker-mount-local-repo-to-container">docker mount local repo to container<a aria-hidden="true" class="anchor" hidden="" href="#docker-mount-local-repo-to-container">#</a></h3>
+<p>use <code>-v your/local/path:/root/container/path</code></p>
+<p>e.g.,</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run --network host --rm -it -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/root/iglu_dev docker-image-name <span class="nb">command</span> parameters
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="docker-network">docker network<a aria-hidden="true" class="anchor" hidden="" href="#docker-network">#</a></h3>
+<p><a href="https://www.youtube.com/watch?v=c6Ord0GAOp8">https://www.youtube.com/watch?v=c6Ord0GAOp8</a></p>
+<p>there are five different types of network that docker provides</p>
+<ul>
+<li>bridge
+<ul>
+<li>private default network created on the host</li>
+<li>containers linked to this network have an internal IP address</li>
+<li>the docker server create virtual ethernet bridge <code>docker0</code></li>
+</ul>
+</li>
+<li>host
+<ul>
+<li>public network</li>
+<li>Utilise the host’s IP address and TCP port space in order to display the services running inside container</li>
+</ul>
+</li>
+<li>none
+<ul>
+<li>just do not let the container connect to the network</li>
+</ul>
+</li>
+<li>overlay
+<ul>
+<li>utilised for creating internal private network to the Docker nodes in the docker swarm cluster</li>
+</ul>
+</li>
+<li>macvlan
+<ul>
+<li>this network assigns a MAC address to docker container. With this Mac address, the Docker server routes the network traffic to a router</li>
+</ul>
+</li>
+</ul>
+<p><code>docker network inspect bridge </code>to check the network</p>
+<h3 id="docker-attach-vs-docker-exec--it"><code>docker attach</code> vs <code>docker exec -it</code><a aria-hidden="true" class="anchor" hidden="" href="#docker-attach-vs-docker-exec--it">#</a></h3>
+<p>if you exit the shell from docker attach, the whole running container may just stop.</p>
+<p>So use <code>docker exec</code> rather than <code>docker attach</code></p>
+<h3 id="avoid-interaction-during-docker-build">avoid interaction during docker build<a aria-hidden="true" class="anchor" hidden="" href="#avoid-interaction-during-docker-build">#</a></h3>
+<p>example dockerfile</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="s"> UBUNTU</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ARG</span> <span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive
+</span></span><span class="line"><span class="cl"><span class="k">ENV</span> <span class="nv">TZ</span><span class="o">=</span>Australia/Sydney<span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>ENV is for future running containers</strong>. ARG for building your Docker image.</p>
+<h3 id="conda-env-check">conda env check<a aria-hidden="true" class="anchor" hidden="" href="#conda-env-check">#</a></h3>
+<p><code>conda env list</code></p>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

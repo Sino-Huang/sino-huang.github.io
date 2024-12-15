@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Action Detection on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/action-detection/</link>
+    <description>Recent content in Action Detection on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 20 Oct 2022 19:06:41 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/action-detection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Yuetian_weng an Efficient Spatio Temporal Pyramid Transformer for Action Detection 2022</title>
+      <link>https://sino-huang.github.io/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/</link>
+      <pubDate>Thu, 20 Oct 2022 19:06:41 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: An Efficient Spatio-Temporal Pyramid Transformer for Action Detection&lt;/li&gt;
+&lt;li&gt;Author: Yuetian Weng et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: Jul 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, Oct 20, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;the task of action detection aims at deducing both the action category and localisation of the start and end moment for each action instance in a long, untrimmed video.&lt;/li&gt;
+&lt;li&gt;it is non-trivial to design an efficient architecture for action detection due to the prohibitively &lt;strong&gt;expensive&lt;/strong&gt; self-attentions over a long sequence of video clips&lt;/li&gt;
+&lt;li&gt;To this end, they present an efficient hierarchical spatial temporal transformer for action detection&lt;/li&gt;
+&lt;li&gt;Building upon the fact that the early self-attention layer in Transformer still focus on local patterns.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;background&#34;&gt;Background&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;to date, the majority of action detection methods are driven by 3D convolutional neural networks (CNNs), e.g., C3D, I3D, to encode video segment features from video RGB frames and optical flows
+&lt;ul&gt;
+&lt;li&gt;however, the limited receptive field hinders the CNN-based models to capture long-term spatio-temporal dependencies. alternatively, vision transformers have shown the advantage of capturing global dependencies via the self-attention mechanism.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Hierarchical ViTs divide Transformer blocks into several stages and progressively reduce the spatial size of feature maps when the network goes deeper.
+&lt;ul&gt;
+&lt;li&gt;but having self-attention over a sequence of images is expensive&lt;/li&gt;
+&lt;li&gt;also they found out that the &lt;em&gt;global attention&lt;/em&gt; in the early layers actually only encodes local visual pattens (i.e., &lt;u&gt;it only attends to its nearby tokens in adjacent frames&lt;/u&gt; while rarely interacting with tokens in distance frames)&lt;/li&gt;
+&lt;li&gt;&lt;img alt=&#34;image-20221021185742980&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/image-assets/image-20221021185742980.png&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;efficient-spatio-temporal-pyramid-transformer&#34;&gt;Efficient Spatio-temporal Pyramid Transformer&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20221022182202983&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/image-assets/image-20221022182202983.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

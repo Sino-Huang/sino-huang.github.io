@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Offline Reinforcement Learning on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/offline-reinforcement-learning/</link>
+    <description>Recent content in Offline Reinforcement Learning on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 01 Mar 2023 22:14:11 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/offline-reinforcement-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alexander_nikulin Anti Exploration by Random Network Distillation 2023</title>
+      <link>https://sino-huang.github.io/posts/alexander_nikulin-anti-exploration-by-random-network-distillation-2023/</link>
+      <pubDate>Wed, 01 Mar 2023 22:14:11 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/alexander_nikulin-anti-exploration-by-random-network-distillation-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Anti Exploration by Random Network Distillation&lt;/li&gt;
+&lt;li&gt;Author: Alexander Nikulin et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 31 Jan 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Mar 1, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2301.13616.pdf&#34;&gt;https://arxiv.org/pdf/2301.13616.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230301221745373&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/alexander_nikulin-anti-exploration-by-random-network-distillation-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;despite the success of Random Network Distillation (RND) in various domains, it was shown as not discriminative enough to be used as an uncertainty estimator for penalizing out-of-distribution actions in offline reinforcement learning
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;?? wait, why we want to penalizing out-of-distribution actions?&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;With a naive choice of conditioning for the RND prior, it becomes infeasible for the actor to effectively minimize the anti-exploration bonus and discriminativity is not an issue.&lt;/li&gt;
+&lt;li&gt;We show that this limitation can be avoided with conditioning based on Feature-wise Linear Modulation (FiLM), resulting in a simple and efficient ensemble-free algorithm based on Soft Actor-Critic.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;why we want uncertainty-based penalization&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

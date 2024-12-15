@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>March-2023-Weekly-Progress on Sukai Huang</title>
+    <link>https://sino-huang.github.io/categories/march-2023-weekly-progress/</link>
+    <description>Recent content in March-2023-Weekly-Progress on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 10 Mar 2023 18:12:42 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/categories/march-2023-weekly-progress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>12 Mar -- 18 Mar, 2023</title>
+      <link>https://sino-huang.github.io/weekly-report/12-mar-18-mar-2023/</link>
+      <pubDate>Fri, 10 Mar 2023 18:12:42 +1100</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/12-mar-18-mar-2023/</guid>
+      <description>&lt;h2 id=&#34;previous-work-review&#34;&gt;Previous Work Review&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;we continue to understand the code of the ServiceNow model
+&lt;ul&gt;
+&lt;li&gt;last week we briefly understand the whole pipeline of the model&lt;/li&gt;
+&lt;li&gt;this week we need to know how the model generate the PDDL domain and problem file.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;emnlp-2023-call-for-papers&#34;&gt;emnlp 2023 call for papers&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230405114704464&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/12-mar-18-mar-2023/image-assets/image-20230405114704464.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;direct paper submission deadline June 23, 2023&lt;/li&gt;
+&lt;li&gt;maybe we can try to get this work done and come up with one paper for emnlp2023&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;revise-and-resubmit-language-reward-shaping-paper&#34;&gt;Revise and resubmit Language Reward Shaping paper&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Shall we submit it to NeurIPS 2023?&lt;/li&gt;
+&lt;li&gt;&lt;img alt=&#34;image-20230405115249866&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/12-mar-18-mar-2023/image-assets/image-20230405115249866.png&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>01 Mar -- 11 Mar, 2023</title>
+      <link>https://sino-huang.github.io/weekly-report/01-mar-11-mar-2023/</link>
+      <pubDate>Mon, 06 Mar 2023 14:43:14 +1100</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/01-mar-11-mar-2023/</guid>
+      <description>&lt;h2 id=&#34;previous-work-review&#34;&gt;Previous Work Review&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;We get the source code from Mr Xiaotian Liu @ ServiceNow Co. However, the code is not executable because he hasn&amp;rsquo;t shared with me some necessary datasets. I have sent an email to him to ask for the missing datasets.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

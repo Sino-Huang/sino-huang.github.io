@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Commonsense Learning on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/commonsense-learning/</link>
+    <description>Recent content in Commonsense Learning on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 02 Mar 2023 15:22:51 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/commonsense-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ernest_davis Benchmarks for Automated Commonsense Reasoning a Survey 2023</title>
+      <link>https://sino-huang.github.io/posts/ernest_davis-benchmarks-for-automated-commonsense-reasoning-a-survey-2023/</link>
+      <pubDate>Thu, 02 Mar 2023 15:22:51 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/ernest_davis-benchmarks-for-automated-commonsense-reasoning-a-survey-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title:  Benchmarks for Automated Commonsense Reasoning a Survey&lt;/li&gt;
+&lt;li&gt;Author: Ernest Davis&lt;/li&gt;
+&lt;li&gt;Publish Year: 9 Feb 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, Mar 2, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2302.04752.pdf&#34;&gt;https://arxiv.org/pdf/2302.04752.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;we mainly focus on the section where the author discusses about features of commonsense reasoning generally.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;terms&#34;&gt;Terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;clarify what we mean by common sense&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;what is exactly &amp;ldquo;commonsensical&amp;rdquo;?&lt;/li&gt;
+&lt;li&gt;Claims about common sense that seem true to the author
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Commonsense knowledge is common.&lt;/strong&gt; In talking to other person, we do not have to explain common sense reasoning or enumerate common sense facts. We can assume that they know that unsupported things fall down, that outside the tropics, days in temperate regions are generally warmer than winter, and so on.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Common sense is largely sensible&lt;/strong&gt;. Any individual person or even an entire society may have various foolish or mistaken beliefs, but for the most part common sense knowledge correponds to the realities of the world as people experience it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Common sense supports reasoning&lt;/strong&gt;. For example a person who knows that Central Park is in New York and the Golden Gate Bridge is in San Francisco and that New York and San Francisco are 3000 miles apart will realize that they cannot walk from one to the other in fifteen minutes.&lt;/li&gt;
+&lt;li&gt;commonsense reasoning is integrated with other cognitive abilities&lt;/li&gt;
+&lt;li&gt;Common sense extends across tasks and modalities&lt;/li&gt;
+&lt;li&gt;Common sense is a broad scope&lt;/li&gt;
+&lt;li&gt;Commonsense knowledge can be distinguished from common knowledge, encyclopaedic knowledge and expert knowledge&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Half-truths about commonsense knowledge
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Commonsense knowledge is language-independent&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;The English-language bias is as pervasive in commmonsense reasoning as in other areas of AI. Impressively, versions of ConceptNet with at least 10,000 concepts exist in 83 different languages, and a few commonsense benchmarks have been translated (table 4) but most
+resources and benchmarks only exist in English or in a symbolic form in which the symbols are in fact English words or short phrases.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Commonsense knowledge is the same for people of different cultures and of different historical periods&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Even if a belief has been commonsense knowledge for everyone at all times up to the present, that does not mean that that will continue in the future.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Commonsense reasoning is fast and intuitive; it falls within &amp;ldquo;System 1&amp;rdquo;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Processes in System 1 characteristically are executed quickly, do not require conscious thought, are not open to introspection, in at least in some cases are not controllable (one cannot decide not to interpret what one is seeing), and do not place a cognitive burden on working memory; vision is a paradigmatic example. Processes in System 2 are the reverse: slow, consciously carried out, consciously controllable, instrospectable, and taxing on working memory. System 2 processes can call on system 1 but not vice versa, since a fast process cannot use a slow subroutine.&lt;/li&gt;
+&lt;li&gt;encyclopaedic and expert knowledge can also be called on in System 1 activities&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Commonsense knowledge can be expressed using simple language&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;it seems plausible: basic vocabulary tends to refer to the well-known concepts and relations which are the subject of commonsense knowledge&lt;/li&gt;
+&lt;li&gt;however, there is a very large exception here, which is commonsense spatial knowledge. Natural language is notoriously ill-suited to the description of characteristics of shapes and positions that are easily apprehended (bad expressivity of natural language)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;An untrue claim about commonsense knowledge
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;u&gt;commonsense knowledge is not logically complex&lt;/u&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;However, in physical reasoning, understanding the physical characteristics could be quite complex (e.g., considering angry birds). But humans are good at playing angry birds.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

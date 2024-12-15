@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Action Trajectory Constraints on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/action-trajectory-constraints/</link>
+    <description>Recent content in Action Trajectory Constraints on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 28 Jan 2024 21:28:51 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/action-trajectory-constraints/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Luigi Bonassi Planning With Qualitative Constraints Pddl3 2022</title>
+      <link>https://sino-huang.github.io/posts/luigi-bonassi-planning-with-qualitative-constraints-pddl3-2022/</link>
+      <pubDate>Sun, 28 Jan 2024 21:28:51 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/luigi-bonassi-planning-with-qualitative-constraints-pddl3-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Planning With Qualitative Constraints Pddl3 2022&lt;/li&gt;
+&lt;li&gt;Author: Luigi Bonassi et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year:&lt;/li&gt;
+&lt;li&gt;Review Date: Sun, Jan 28, 2024&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://www.ijcai.org/proceedings/2022/0639.pdf&#34;&gt;https://www.ijcai.org/proceedings/2022/0639.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;The paper introduces a formalism to express trajectory constraints over actions in plans, complementing the state-trajectory constraints of PDDL3. This new formalism retains PDDL3&amp;rsquo;s temporal modal operators and adds two modalities. The authors then explore compilation-based methods for dealing with action-trajectory constraints in propositional planning, proposing a new, simple, and effective method. Experimental results demonstrate the utility of action-trajectory constraints for expressing control knowledge, showing significant performance improvements in classical planners when leveraging knowledge expressed through action constraints. Conversely, the same knowledge specified as state constraints and handled by two state-of-the-art systems yields less beneficial results.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

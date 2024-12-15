@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Lm for Uncertainty on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/lm-for-uncertainty/</link>
+    <description>Recent content in Lm for Uncertainty on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 25 Jan 2024 00:55:05 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/lm-for-uncertainty/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Marta Skreta Replan Robotic Replanning 2024</title>
+      <link>https://sino-huang.github.io/posts/marta-skreta-replan-robotic-replanning-2024/</link>
+      <pubDate>Thu, 25 Jan 2024 00:55:05 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/marta-skreta-replan-robotic-replanning-2024/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: RePlan: Robotic Replanning with Perception and Language Models&lt;/li&gt;
+&lt;li&gt;Author: Marta Skreta et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 8 Jan 2024&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, Jan 25, 2024&lt;/li&gt;
+&lt;li&gt;url: arXiv:2401.04157v1&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240126170742457&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/marta-skreta-replan-robotic-replanning-2024/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;However, the challenge remains that even with syntac- tically correct plans, robots can still fail to achieve their intended goals. This failure can be attributed to imperfect plans proposed by LLMs or to unforeseeable environmental circumstances that hinder the execution of planned subtasks due to erroneous assumptions about the state of objects.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Robotic Replanning with Perception and Language Models that enables &lt;strong&gt;real-time replanning&lt;/strong&gt; capabilities for long-horizon tasks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Address the challenge of multi-stage long-horizon tasks&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

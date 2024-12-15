@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Natural Language Reinforcement Learning on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/natural-language-reinforcement-learning/</link>
+    <description>Recent content in Natural Language Reinforcement Learning on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 26 May 2023 01:00:02 +1000</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/natural-language-reinforcement-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jiannan_xiang Language Models Meet World Models 2023</title>
+      <link>https://sino-huang.github.io/posts/jiannan_xiang-language-models-meet-world-models-2023/</link>
+      <pubDate>Fri, 26 May 2023 01:00:02 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/jiannan_xiang-language-models-meet-world-models-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Language Models Meet World Models: Embodied Experiences Enhance Language Models&lt;/li&gt;
+&lt;li&gt;Author: Jiannan Xiang et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 22 May 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Fri, May 26, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2305.10626v2.pdf&#34;&gt;https://arxiv.org/pdf/2305.10626v2.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;LLM often struggle with simple reasoning and planning in physical environment&lt;/li&gt;
+&lt;li&gt;the limitation arises from the fact that LMs are trained only on written text and miss essential embodied knowledge and skills.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;we propose a new paradigm of enhancing LMs by finetuning them with world models, to gain diverse embodied knowledge while retaining their general language capabilities.&lt;/li&gt;
+&lt;li&gt;the experiments in a virtual physical world simulation environment will be used to finetune LMs to teach diverse abilities of reasoning and acting in the physical world, e.g., planning and completing goals, object permanence and tracking etc.&lt;/li&gt;
+&lt;li&gt;to preserve the generalisation ability of LM models, we use elastic weight consolidation (EWC) for selective weight updates, combined with low-rank adapters (LoRA) for training efficiency.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230527163509701&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/jiannan_xiang-language-models-meet-world-models-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Siddharth_karamcheti Language Driven Representation Learning for Robotics 2023</title>
+      <link>https://sino-huang.github.io/posts/siddharth_karamcheti-language-driven-representation-learning-for-robotics-2023/</link>
+      <pubDate>Fri, 03 Mar 2023 16:16:19 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/siddharth_karamcheti-language-driven-representation-learning-for-robotics-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Language-Driven Representation Learning for Robotics&lt;/li&gt;
+&lt;li&gt;Author: Siddharth Karamcheti et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 24 Feb 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Fri, Mar 3, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2302.12766.pdf&#34;&gt;https://arxiv.org/pdf/2302.12766.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;recent work in visual representation learning for robotics demonstrates the viability of learning from large video datasets of humans performing everyday tasks.&lt;/li&gt;
+&lt;li&gt;leveraging methods such as masked autoencoding and contrastive learning, these representations exhibit strong transfer to policy learning for visuomotor control&lt;/li&gt;
+&lt;li&gt;but robot learning encompasses a diverse set of problems beyond control including grasp affordance prediction, language-conditioned imitation learning, and intent scoring for human-robot collaboration amongst others.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;first, we demonstrate that existing representations yield inconsistent results across these tasks: masked autoencoding approaches pick up on low-level spatial features at the cost of high-level semantics, while contrastive learning approaches capture the opposite (i.e., high-level semantics)&lt;/li&gt;
+&lt;li&gt;We then introduce Voltron, a framework for language driven representation learning from human videos and associated captions.
+&lt;ul&gt;
+&lt;li&gt;Voltron trades off language conditioned visual reconstruction to learn low-level visual patterns (mask auto-encoding) and visually grounded language generation to encode high-level semantics. (hindsight relabelling and contrastive learning)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;How can we learn visual representations that generalise across the diverse spectrum of problems in robot learning?&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Jing_cheng_pang Natural Language Conditioned Reinforcement Learning With Inside Out Task Language Development and Translation 2023</title>
+      <link>https://sino-huang.github.io/posts/jing_cheng_pang-natural-language-conditioned-reinforcement-learning-with-inside-out-task-language-development-and-translation-2023/</link>
+      <pubDate>Fri, 03 Mar 2023 15:19:43 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/jing_cheng_pang-natural-language-conditioned-reinforcement-learning-with-inside-out-task-language-development-and-translation-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Jing_cheng_pang Natural Language Conditioned Reinforcement Learning With Inside Out Task Language Development and Translation 2023&lt;/li&gt;
+&lt;li&gt;Author: Jing-Cheng Pang et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 18 Feb 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Fri, Mar 3, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2302.09368.pdf&#34;&gt;https://arxiv.org/pdf/2302.09368.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230303152538759&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/jing_cheng_pang-natural-language-conditioned-reinforcement-learning-with-inside-out-task-language-development-and-translation-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;previous approaches generally implemented language-conditioned RL by providing human instructions in natural language and training a following policy
+&lt;ul&gt;
+&lt;li&gt;this is outside-in approach&lt;/li&gt;
+&lt;li&gt;the policy needs to comprehend the NL and manage the task simultaneously.&lt;/li&gt;
+&lt;li&gt;However, the unbounded NL examples often bring much extra complexity for solving concrete RL tasks, which can distract policy learning from completing the task&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;we investigate an inside-out scheme for natural language-conditioned RL by developing a task language (TL) that is task-related and unique. The TL is used in RL to achieve high effective policy training.&lt;/li&gt;
+&lt;li&gt;besides, a translator is trained to translate NL into TL.&lt;/li&gt;
+&lt;li&gt;experiments indicate that the new model not only better comprehends NL instructions but also leads to better instruction following policy that improves 13.4% success rate and adapts to unseen expressions of NL instruction.&lt;/li&gt;
+&lt;li&gt;&lt;img alt=&#34;image-20230303161350807&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/jing_cheng_pang-natural-language-conditioned-reinforcement-learning-with-inside-out-task-language-development-and-translation-2023/image-assets/image-20230303161350807.png&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

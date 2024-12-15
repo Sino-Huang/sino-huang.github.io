@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Llm | Sukai Huang</title>
+<meta content="" name="keywords"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/tags/llm/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/tags/llm/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/tags/llm/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/tags/llm/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Llm" property="og:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="Llm" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/tags/">Tags</a></div>
+<h1>
+    Llm
+    <a aria-label="RSS" href="/tags/llm/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/damai-dai-deepseekmoe-2024/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Damai Dai Deepseekmoe 2024
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture of Experts Language Models Author: Damai Dai et. al. Publish Year: 11 Jan 2024 Review Date: Sat, Jun 22, 2024 url: https://arxiv.org/pdf/2401.06066 Summary of paper Motivation conventional MoE architecture like GShard, which avtivate top-k out of N experts, face challenges in ensuring expert specialization, i.e., each expert acquires non-overlapping and focused knowledge, in response, we propose DeepSeekMoE architecture towards ultimate expert specialization Contribution segmenting expert into mN ones and activating mK from them isolating K_s, experts as shared ones, aiming at capturing common knowledge and mitigating redundancy in routed experts Some key terms MoE architecture
+...</p>
+</div>
+<footer class="entry-footer"><span title="2024-06-22 11:13:50 +1000 AEST">June 22, 2024</span> · 3 min · 582 words · Sukai Huang</footer>
+<a aria-label="post link to Damai Dai Deepseekmoe 2024" class="entry-link" href="https://sino-huang.github.io/posts/damai-dai-deepseekmoe-2024/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/jessy-lin-learning-to-model-the-world-with-language-2024/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Jessy Lin Learning to Model the World With Language 2024
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Learning to Model the World With Language 2024 Author: Jessy Lin et. al. Publish Year: ICML 2024 Review Date: Fri, Jun 21, 2024 url: https://arxiv.org/abs/2308.01399 Summary of paper Motivation in this work, we propose that agents can ground diverse kinds of language by using it to predict the future in contrast to directly predicting what to do with a language-conditioned policy, Dynalang decouples learning to model the world with language (supervised learning with prediction objectives) from learning to act given that model (RL with task rewards) Future prediction provides a rich grounding signal for learning what language utterances mean, which in turn equip the agent with a richer understanding of the world to solve complex tasks. Contribution investigate whether learning language-conditioned world models enable agents to scale to more diverse language use, compared to language-conditioned policies. Some key terms related work
+...</p>
+</div>
+<footer class="entry-footer"><span title="2024-06-21 11:47:25 +1000 AEST">June 21, 2024</span> · 2 min · 381 words · Sukai Huang</footer>
+<a aria-label="post link to Jessy Lin Learning to Model the World With Language 2024" class="entry-link" href="https://sino-huang.github.io/posts/jessy-lin-learning-to-model-the-world-with-language-2024/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/jiuzhou-reward-engineering-for-generating-semi-structured-explan-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Jiuzhou Reward Engineering for Generating Semi Structured Explan 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Reward Engineering for Generating Semi-Structured Explanation Author: Jiuzhou Han et. al. Publish Year: EACL2024 Review Date: Thu, Jun 20, 2024 url: https://github.com/Jiuzhouh/Reward-Engineering-for-Generating-SEG Summary of paper Motivation Contribution the objective is to equip moderately-sized LMs with the ability to not only provide answers but also generate structured explanations Some key terms Intro
+the author talked about some background on Cui et al. incorporate a generative pre-training mechanism over synthetic graphs by aligning inputs pairs of text-graph to improve the model’s capability in generating semi-structured explanation.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2024-06-20 14:11:32 +1000 AEST">June 20, 2024</span> · 1 min · 162 words · Sukai Huang</footer>
+<a aria-label="post link to Jiuzhou Reward Engineering for Generating Semi Structured Explan 2023" class="entry-link" href="https://sino-huang.github.io/posts/jiuzhou-reward-engineering-for-generating-semi-structured-explan-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/jia-li-structured-cot-prompting-for-code-generation-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Jia Li Structured Cot Prompting for Code Generation 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Structured Chaint of Thought Prompting for Code Generation 2023 Author: Jia Li et. al. Publish Year: 7 Sep 2023 Review Date: Wed, Feb 28, 2024 url: https://arxiv.org/pdf/2305.06599.pdf Summary of paper Contribution The paper introduces Structured CoTs (SCoTs) and a novel prompting technique called SCoT prompting for improving code generation with Large Language Models (LLMs) like ChatGPT and Codex. Unlike the previous Chain-of-Thought (CoT) prompting, which focuses on natural language reasoning steps, SCoT prompting leverages the structural information inherent in source code. By incorporating program structures (sequence, branch, and loop structures) into intermediate reasoning steps (SCoTs), LLMs are guided to generate more structured and accurate code. Evaluation on three benchmarks demonstrates that SCoT prompting outperforms CoT prompting by up to 13.79% in Pass@1, is preferred by human developers in terms of program quality, and exhibits robustness to various examples, leading to substantial improvements in code generation performance.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2024-02-28 19:59:38 +1100 AEDT">February 28, 2024</span> · 2 min · 381 words · Sukai Huang</footer>
+<a aria-label="post link to Jia Li Structured Cot Prompting for Code Generation 2023" class="entry-link" href="https://sino-huang.github.io/posts/jia-li-structured-cot-prompting-for-code-generation-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/stephanie-teaching-models-to-express-their-uncertainty-in-words-2022/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Stephanie Teaching Models to Express Their Uncertainty in Words 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Teaching Models to Express Their Uncertainty in Words Author: Stephanie Lin et. al. Publish Year: 13 Jun 2022 Review Date: Wed, Feb 28, 2024 url: https://arxiv.org/pdf/2205.14334.pdf Summary of paper Motivation The study demonstrates that a GPT-3 model can articulate uncertainty about its answers in natural language without relying on model logits. It generates both an answer and a confidence level (e.g., “90% confidence” or “high confidence”), which map to well-calibrated probabilities. The model maintains moderate calibration even under distribution shift and shows sensitivity to uncertainty in its answers rather than mimicking human examples.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2024-02-28 16:12:53 +1100 AEDT">February 28, 2024</span> · 2 min · 327 words · Sukai Huang</footer>
+<a aria-label="post link to Stephanie Teaching Models to Express Their Uncertainty in Words 2022" class="entry-link" href="https://sino-huang.github.io/posts/stephanie-teaching-models-to-express-their-uncertainty-in-words-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/ziwei-xu-hallucination-is-inevitable-an-innate-limitation-llm-2024/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Ziwei Xu Hallucination Is Inevitable an Innate Limitation Llm 2024
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Hallucination Is Inevitable an Innate Limitation Llm 2024 Author: Ziwei Xu et. al. Publish Year: 22 Jan 2024 Review Date: Sun, Jan 28, 2024 url: arXiv:2401.11817v1 Summary of paper Contribution The paper formalizes the issue of hallucination in large language models (LLMs) and argues that it is impossible to completely eliminate hallucination. It defines hallucination as inconsistencies between a computable LLM and a computable ground truth function. By drawing from learning theory, the paper demonstrates that LLMs cannot learn all computable functions, thus always prone to hallucination. The formal world is deemed a simplified representation of the real world, implying that hallucination is inevitable for real-world LLMs. Additionally, for real-world LLMs with provable time complexity constraints, the paper identifies tasks prone to hallucination and provides empirical validation. Finally, the paper evaluates existing hallucination mitigators using the formal world framework and discusses practical implications for the safe deployment of LLMs.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2024-01-28 23:11:28 +1100 AEDT">January 28, 2024</span> · 3 min · 543 words · Sukai Huang</footer>
+<a aria-label="post link to Ziwei Xu Hallucination Is Inevitable an Innate Limitation Llm 2024" class="entry-link" href="https://sino-huang.github.io/posts/ziwei-xu-hallucination-is-inevitable-an-innate-limitation-llm-2024/"></a>
+</article>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

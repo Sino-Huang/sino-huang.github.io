@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Swin Transformer | Sukai Huang</title>
+<meta content="" name="keywords"/>
+<meta content="Swin Transformer architecture
+
+what is layer norm
+Layer normalization (LayerNorm) is a technique to normalize the distributions of intermediate layers. It enables smoother gradients, faster training, and better generalization accuracy
+what is patch merging
+it is something like down-sampling
+the image is further cut into patches, and then concatenate along the channel dimension.
+
+what is window multi-head self-attention (W-MSA)
+
+compared to vanilla multi-head self attention
+only perform local self attention within the patch group" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/weekly-report/09-jan-15-jan-2022/swin-transformer/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/weekly-report/09-jan-15-jan-2022/swin-transformer/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/weekly-report/09-jan-15-jan-2022/swin-transformer/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/weekly-report/09-jan-15-jan-2022/swin-transformer/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Swin Transformer" property="og:title"/>
+<meta content="Swin Transformer architecture what is layer norm Layer normalization (LayerNorm) is a technique to normalize the distributions of intermediate layers. It enables smoother gradients, faster training, and better generalization accuracy
+what is patch merging it is something like down-sampling
+the image is further cut into patches, and then concatenate along the channel dimension.
+what is window multi-head self-attention (W-MSA) compared to vanilla multi-head self attention
+only perform local self attention within the patch group" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="Swin Transformer" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Weekly-Reports",
+      "item": "https://sino-huang.github.io/weekly-report/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "09 January -- 15 January, 2022",
+      "item": "https://sino-huang.github.io/weekly-report/09-jan-15-jan-2022/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Swin Transformer",
+      "item": "https://sino-huang.github.io/weekly-report/09-jan-15-jan-2022/swin-transformer/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/weekly-report/">Weekly-Reports</a> » <a href="https://sino-huang.github.io/weekly-report/09-jan-15-jan-2022/">09 January -- 15 January, 2022</a></div>
+<h1>
+    Swin Transformer
+    <a aria-label="RSS" href="/weekly-report/09-jan-15-jan-2022/swin-transformer/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><h2 id="swin-transformer-architecture">Swin Transformer architecture<a aria-hidden="true" class="anchor" hidden="" href="#swin-transformer-architecture">#</a></h2>
+<p><img alt="image-20220108203936584" loading="lazy" src="/weekly-report/09-jan-15-jan-2022/swin-transformer/image-assets/image-20220108203936584.png"/></p>
+<h3 id="what-is-layer-norm">what is layer norm<a aria-hidden="true" class="anchor" hidden="" href="#what-is-layer-norm">#</a></h3>
+<p>Layer normalization (LayerNorm) is <strong>a technique to normalize the distributions of intermediate layers</strong>. It enables smoother gradients, faster training, and better generalization accuracy</p>
+<h3 id="what-is-patch-merging">what is patch merging<a aria-hidden="true" class="anchor" hidden="" href="#what-is-patch-merging">#</a></h3>
+<p>it is something like down-sampling</p>
+<p>the image is further cut into patches, and then concatenate along the channel dimension.</p>
+<p><img alt="image-20220108205043575" loading="lazy" src="/weekly-report/09-jan-15-jan-2022/swin-transformer/image-assets/image-20220108205043575.png"/></p>
+<h3 id="what-is-window-multi-head-self-attention-w-msa">what is window multi-head self-attention (W-MSA)<a aria-hidden="true" class="anchor" hidden="" href="#what-is-window-multi-head-self-attention-w-msa">#</a></h3>
+<p><img alt="image-20220108205325639" loading="lazy" src="/weekly-report/09-jan-15-jan-2022/swin-transformer/image-assets/image-20220108205325639.png"/></p>
+<p>compared to vanilla multi-head self attention</p>
+<p>only perform local self attention within the patch group</p>
+<p><strong>advantages:</strong></p>
+<p>computational efficient (similar to <a href="https://paperswithcode.com/method/resnext">ResNeXt</a>)</p>
+<p><strong>limitation:</strong></p>
+<p>there is no communication across the windows</p>
+<h3 id="what-is-shifted-window-msa">what is shifted window MSA<a aria-hidden="true" class="anchor" hidden="" href="#what-is-shifted-window-msa">#</a></h3>
+<p>this allows the communication across the neighbour window</p>
+<p><img alt="image-20220108232455904" loading="lazy" src="/weekly-report/09-jan-15-jan-2022/swin-transformer/image-assets/image-20220108232455904.png"/></p>
+<p>but now we have 9 windows instead of 4 windows</p>
+<p>if we want to perform parallel computation, we need to do something to make it back to 4 windows</p>
+<p><strong>Solution:</strong></p>
+<p><img alt="image-20220108232857925" loading="lazy" src="/weekly-report/09-jan-15-jan-2022/swin-transformer/image-assets/image-20220108232857925.png"/></p>
+<p>we need to add mask so that we only calculate the attention over neighbours</p>
+<p><img alt="image-20220108235131019" loading="lazy" src="/weekly-report/09-jan-15-jan-2022/swin-transformer/image-assets/image-20220108235131019.png"/></p>
+<h3 id="what-is-relative-position-bias">what is relative position bias<a aria-hidden="true" class="anchor" hidden="" href="#what-is-relative-position-bias">#</a></h3>
+<p>we need to add positional embedding to the patch because transformer is not CNN, we have to add additional positional information to the model.</p>
+<ul>
+<li>but absolute positional embedding is less effective than relative positional bias term</li>
+<li><img alt="image-20220109002106906" loading="lazy" src="/weekly-report/09-jan-15-jan-2022/swin-transformer/image-assets/image-20220109002106906.png"/></li>
+<li>we label the position based on the current query patch</li>
+<li><img alt="image-20220109003835920" loading="lazy" src="/weekly-report/09-jan-15-jan-2022/swin-transformer/image-assets/image-20220109003835920.png"/></li>
+<li><img alt="image-20220109003616787" loading="lazy" src="/weekly-report/09-jan-15-jan-2022/swin-transformer/image-assets/image-20220109003616787.png"/></li>
+</ul>
+<p>No need to know the detail of this relative position bias term</p>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

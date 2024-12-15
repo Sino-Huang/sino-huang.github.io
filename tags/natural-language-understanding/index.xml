@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Natural Language Understanding on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/natural-language-understanding/</link>
+    <description>Recent content in Natural Language Understanding on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 22 May 2023 09:54:04 +1000</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/natural-language-understanding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Harsh_jhamtani Natural Language Decomposition and Interpretation of Complex Utterances 2023</title>
+      <link>https://sino-huang.github.io/posts/harsh_jhamtani-natural-language-decomposition-and-interpretation-of-complex-utterances-2023/</link>
+      <pubDate>Mon, 22 May 2023 09:54:04 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/harsh_jhamtani-natural-language-decomposition-and-interpretation-of-complex-utterances-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Natural Language Decomposition and Interpretation of Complex Utterances&lt;/li&gt;
+&lt;li&gt;Author: Jacob Andreas&lt;/li&gt;
+&lt;li&gt;Publish Year: 15 May 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Mon, May 22, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2305.08677.pdf&#34;&gt;https://arxiv.org/pdf/2305.08677.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230522105001304&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/harsh_jhamtani-natural-language-decomposition-and-interpretation-of-complex-utterances-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;natural language interface often require supervised data to translate user request into structure intent representations&lt;/li&gt;
+&lt;li&gt;however, during data collection, it can be difficult to anticipate and formalise the full range of user needs&lt;/li&gt;
+&lt;li&gt;we introduce an approach for equipping a simple language to code model to handle complex utterances via a process of hierarchical natural language decomposition.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Experiments show that the proposed approach enables the interpretation of complex utterances with almost no complex training data, while outperforming standard few-shot prompting approaches.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Methodology&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Thang_m_pham Out of Order How Important Is the Sequential Order of Words in a Sentence in Natural Language Understanding Tasks 2021</title>
+      <link>https://sino-huang.github.io/posts/thang_m_pham-out-of-order-how-important-is-the-sequential-order-of-words-in-a-sentence-in-natural-language-understanding-tasks-2021/</link>
+      <pubDate>Mon, 28 Feb 2022 18:58:52 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/thang_m_pham-out-of-order-how-important-is-the-sequential-order-of-words-in-a-sentence-in-natural-language-understanding-tasks-2021/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Out of Order: How Important Is The Sequential Order of Words in a Sentence in Natural Language Understanding Tasks?&lt;/li&gt;
+&lt;li&gt;Author: Thang M. Pham&lt;/li&gt;
+&lt;li&gt;Publish Year: Jul 2021&lt;/li&gt;
+&lt;li&gt;Review Date: Feb 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;The author found out that BERT-based models trained on GLUE have low sensitivity to word orders.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20220228205000220&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/thang_m_pham-out-of-order-how-important-is-the-sequential-order-of-words-in-a-sentence-in-natural-language-understanding-tasks-2021/image-assets/image-20220228205000220.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The research questions are the following&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Do BERT-based models trained on GLUE care about the order of words in a sentence?
+&lt;ul&gt;
+&lt;li&gt;ANS: NO, except one task named CoLA, which is to detecting grammatically incorrect sentences. Surprisingly, for the rest of the 5 out of 6 binary-classification tasks (i.e.  except CoLA), between75% and 90% of the originally correct predictions remain constant after  1-grams are randomly re-ordered&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Are SOTA BERT-based models using word order information when solving NLU tasks? If not, what cues do they rely on?
+&lt;ul&gt;
+&lt;li&gt;ANS: they heavily rely on the word itself rather than the ordering. The results showed that if the top - 1 most important word measured by LIME has a positive meaning, then there is 100% probability that the sentence&amp;rsquo;s label is &amp;ldquo;positive&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;img alt=&#34;image-20220228212916959&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/thang_m_pham-out-of-order-how-important-is-the-sequential-order-of-words-in-a-sentence-in-natural-language-understanding-tasks-2021/image-assets/image-20220228212916959.png&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Results&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

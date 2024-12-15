@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>January-2022-Weekly-Progress on Sukai Huang</title>
+    <link>https://sino-huang.github.io/categories/january-2022-weekly-progress/</link>
+    <description>Recent content in January-2022-Weekly-Progress on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 25 Jan 2022 12:36:30 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/categories/january-2022-weekly-progress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>23 January -- 29 January, 2022</title>
+      <link>https://sino-huang.github.io/weekly-report/23-jan-29-jan-2022/</link>
+      <pubDate>Tue, 25 Jan 2022 12:36:30 +1100</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/23-jan-29-jan-2022/</guid>
+      <description>&lt;h2 id=&#34;last-weeks-work-review&#34;&gt;Last Week&amp;rsquo;s Work Review&lt;/h2&gt;
+&lt;p&gt;Recall our &lt;strong&gt;Phase 1&lt;/strong&gt; visual module training scheme&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;10371643079601_.pic&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/23-jan-29-jan-2022/image-assets/10371643079601_.pic.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Our &lt;strong&gt;Phase 2&lt;/strong&gt; language module training scheme&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;10381643079656_.pic_hd&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/23-jan-29-jan-2022/image-assets/10381643079656_.pic_hd.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;the testing accuracy could achieve $99.0%$ But I doubt about the true performance of this model.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the model can achieve high accuracy by just memorising the current 3D grid value as long as the incremental change is small.
+&lt;ul&gt;
+&lt;li&gt;which is true for this dataset because one instruction is often paired with a small change in the environment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;I should change the current training scheme to prevent model from taking shortcuts
+&lt;ul&gt;
+&lt;li&gt;local addition
+&lt;ul&gt;
+&lt;li&gt;&lt;img alt=&#34;10401643079685_.pic&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/23-jan-29-jan-2022/image-assets/10401643079685_.pic.jpg&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;one step (no intermediate states)
+&lt;ul&gt;
+&lt;li&gt;&lt;img alt=&#34;10391643079671_.pic&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/23-jan-29-jan-2022/image-assets/10391643079671_.pic.jpg&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After completing language module, our next step is to build PDDL model to bridge the gap between current state to the target state described by the instruction.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>16 January -- 22 January, 2022</title>
+      <link>https://sino-huang.github.io/weekly-report/16-jan-22-jan-2022/</link>
+      <pubDate>Wed, 19 Jan 2022 21:01:40 +1100</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/16-jan-22-jan-2022/</guid>
+      <description>&lt;h2 id=&#34;last-weeks-work-review&#34;&gt;Last Week&amp;rsquo;s Work Review&lt;/h2&gt;
+&lt;p&gt;key points from last week&amp;rsquo;s meeting:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;sequence of instructions matters and how can we capture this key feature
+&lt;ul&gt;
+&lt;li&gt;e.g., &lt;img alt=&#34;image-20220119212805385&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/16-jan-22-jan-2022/image-assets/image-20220119212805385.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;the agent must build pillars before it can build the bell&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;To generate training dataset. We can also use Monte Carlo methods to randomly extract movements from trajectories of human players
+&lt;ul&gt;
+&lt;li&gt;compared to create random agents from scratch, Monte Carlo imitation methods would generate a more human-like trajectories&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I finished the visual module training codes on Wednesday this week (a little bit late). But many codes are reusable next time.&lt;/p&gt;
+&lt;p&gt;so far the accuracy of visual module is desirable ($\approx 98.9%$)&lt;/p&gt;
+&lt;p&gt;This week we are going to focus on &amp;ldquo;text to grids&amp;rdquo; conversion&lt;/p&gt;
+&lt;p&gt;Originally the second stage is to label the intents of conversation sentences for the &amp;ldquo;Modular RL model&amp;rdquo;. However, Trevor and Nir suggested that I can start from simpler works first.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;One possible task is to rebuild human Builder&amp;rsquo;s (intermediate) structure based on (partial) instructions from Architect agent.
+&lt;ul&gt;
+&lt;li&gt;well, are we assuming that human Builder&amp;rsquo;s actions are perfect solution to the Architect instructions?
+&lt;ul&gt;
+&lt;li&gt;how can we break this assumption?&lt;/li&gt;
+&lt;li&gt;we can imitate human players first and after that we can still improve the agent by providing them with good reward signal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Besides Builder task, Architect task is also very interesting&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;e.g., how to convey instructions to the agent, what would be the best workload for each conversation step?
+&lt;ul&gt;
+&lt;li&gt;baseline, one block at a time &amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>09 January -- 15 January, 2022</title>
+      <link>https://sino-huang.github.io/weekly-report/09-jan-15-jan-2022/</link>
+      <pubDate>Fri, 07 Jan 2022 22:20:48 +1100</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/09-jan-15-jan-2022/</guid>
+      <description>&lt;h2 id=&#34;last-weeks-work-review&#34;&gt;Last Week&amp;rsquo;s Work Review&lt;/h2&gt;
+&lt;p&gt;Last week I checked the environment codes for IGLU competition. So, this week we should start to build our Modular RL model.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/docs/phd-weekly-progress/2-jan-8-jan-2022/image-assets/image-20220105193846090.png&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>02 January -- 08 January, 2022</title>
+      <link>https://sino-huang.github.io/weekly-report/02-jan-08-jan-2022/</link>
+      <pubDate>Sat, 01 Jan 2022 17:07:59 +1100</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/02-jan-08-jan-2022/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;last-weeks-work-review&#34;&gt;Last Week&amp;rsquo;s Work Review&lt;/h2&gt;
+&lt;p&gt;We continue reading the code of the winner model of IGLU competition.&lt;/p&gt;
+&lt;p&gt;Also, we need to check the IGLU slack channel, download the training dataset and understand how to utilise the dataloader tools.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Docker on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/docker/</link>
+    <description>Recent content in Docker on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 05 Dec 2021 20:40:59 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker Notes</title>
+      <link>https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/docker-notes/</link>
+      <pubDate>Sun, 05 Dec 2021 20:40:59 +1100</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/docker-notes/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&#34;setup-dreamer-builder-for-iglu-minecraft-task-----docker-session&#34;&gt;Setup dreamer builder for IGLU Minecraft task &amp;mdash; Docker Session&lt;/h2&gt;
+&lt;p&gt;The author suggested to use Docker environment.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;u&gt;&lt;em&gt;HOWEVER&lt;/em&gt;&lt;/u&gt;&lt;/strong&gt;, due to some unknown reason, my current ubuntu desktop cannot run nvidia-docker, and thus cannot connect to GPU device in the container, thus &lt;strong&gt;I decided that we do not deploy the model on docker!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The following are useful tips regarding to docker commands.&lt;/p&gt;
+&lt;h3 id=&#34;docker-permission-issue&#34;&gt;docker permission issue&lt;/h3&gt;
+&lt;p&gt;in order to connect to docker sock&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

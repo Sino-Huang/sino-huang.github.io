@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Language Model on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/language-model/</link>
+    <description>Recent content in Language Model on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 03 Apr 2023 15:25:01 +0800</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/language-model/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Luke_zettlemoyer Scaling Expert Language Models With Unsupervised Domain Discovery 2023</title>
+      <link>https://sino-huang.github.io/posts/luke_zettlemoyer-scaling-expert-language-models-with-unsupervised-domain-discovery-2023/</link>
+      <pubDate>Mon, 03 Apr 2023 15:25:01 +0800</pubDate>
+      <guid>https://sino-huang.github.io/posts/luke_zettlemoyer-scaling-expert-language-models-with-unsupervised-domain-discovery-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Scaling Expert Language Models With Unsupervised Domain Discovery&lt;/li&gt;
+&lt;li&gt;Author: Luke Zettlemoyer et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 24 Mar, 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Mon, Apr 3, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2303.14177.pdf&#34;&gt;https://arxiv.org/pdf/2303.14177.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230403152538135&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/luke_zettlemoyer-scaling-expert-language-models-with-unsupervised-domain-discovery-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;we introduce a simple but efficient method to asynchronously train large, sparse language models on arbitrary text corpora.&lt;/li&gt;
+&lt;li&gt;Our method clusters a corpus into sets of related documents, trains a separate expert language model on each cluster, and combines them in a sparse ensemble for inference.&lt;/li&gt;
+&lt;li&gt;This approach generalise embarrassingly parallel training by automatically discovering the domain for each expert, and eliminates nearly all the communication overhead of existing sparse language models.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Cluster-Branch-Train-Merge (C-BTM)&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Xuanting_chen How Robust Is GPT 3.5 to Predecessors a Comprehensive Study on Language Understanding Tasks</title>
+      <link>https://sino-huang.github.io/posts/xuanting_chen-how-robust-is-gpt35-to-predecessors-a-comprehensive-study-on-language-understanding-tasks/</link>
+      <pubDate>Mon, 03 Apr 2023 15:00:57 +0800</pubDate>
+      <guid>https://sino-huang.github.io/posts/xuanting_chen-how-robust-is-gpt35-to-predecessors-a-comprehensive-study-on-language-understanding-tasks/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: How Robust Is GPT 3.5 to Predecessors a Comprehensive Study on Language Understanding Tasks&lt;/li&gt;
+&lt;li&gt;Author: Xuanting Chen et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Mon, Apr 3, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/ftp/arxiv/papers/2303/2303.00293.pdf&#34;&gt;https://arxiv.org/ftp/arxiv/papers/2303/2303.00293.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;GPT3.5, their robustness, and abilities to handle various complexities of the open world have yet to be explored, which is especially crucial in assessing the stability of models and is a key aspect of trustworthy AI&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Our study yielded the following findings by comparing GPT 3.5 with finetuned models&lt;/li&gt;
+&lt;li&gt;competitive results on test sets: GPT3.5 achieves SOTA results in some NLU tasks compared to supervised models fine-tuned with task-specific data. In particular GPT-3.5 performs well in reading comprehension and sentiment analysis tasks, but face challenges in sequence tagging and relation extraction tasks.&lt;/li&gt;
+&lt;li&gt;Lack of robustness: GPT-3.5 still encounter significant robustness degradation, such as its average performance dropping by up to 35.74% and 43.59% in natural language inference and sentiment analysis tasks, respectively. However, it is worth noting that GPT3.5 achieves remarkable robustness on certain tasks, such as reading comprehension and WSC tasks&lt;/li&gt;
+&lt;li&gt;Robustness instability:  In few-shot scenarios, GPT-3.5’s robustness improvement varies greatly across different tasks. For example, GPT-3.5 shows significant improvement in aspect-based sentiment analysis tasks while the robustness actually decreases in natural language inference (Section 4.3.1) and semantic matching (Section 4.3.2) tasks.&lt;/li&gt;
+&lt;li&gt;Prompt sensitivity: changes in input prompts have a significant impact on the results, and GPT-3.5&amp;rsquo;s robustness to prompt variations. still requires improvement.&lt;/li&gt;
+&lt;li&gt;Number sensitivity: GPT3.5 is more sensitive to numerical inputs than pre-training fine-tuning models. For example, in the NumWord transformation, which involves replacing numerical words in sentences with different numerical values, GPT3.5 exhibits a significantly high level of sensitivity.&lt;/li&gt;
+&lt;li&gt;Task labels sensitivity: we speculate that the task construction during the instruction tuning stage may significantly impact the model&amp;rsquo;s performance. In the case of IMDB binary sentiment classification dataset, the model outputs a large number of &amp;ldquo;neutral&amp;rdquo; responses, which are not included in the application label space, resulting in a performance drop&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Significant improvement in zero/few-shot scenarios:&lt;/strong&gt; in zero-shot and few-shot scenario, GPT3.5 outperforms existing LLMs in most NLU tasks, especially in reading comprehension, natural language inference and semantic matching tasks&lt;/li&gt;
+&lt;li&gt;Ability for in-context learning: Compared to 0-shot, GPT 3.5 performs better on most tasks in the 1-shot setting. Additionally, performance does no vary significantly between the 1-shot, 3-shot, 6-shot, 9-shot settings for most tasks. However, providing additional examples in the prompts
+can be advantageous for sequence tagging tasks&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Tianjun_zhang the Wisdom of Hindsight Makes Language Models Better Instruction Followers 2023</title>
+      <link>https://sino-huang.github.io/posts/tianjun_zhang-the-wisdom-of-hindsight-makes-language-models-better-instruction-followers-2023/</link>
+      <pubDate>Thu, 02 Mar 2023 19:06:35 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/tianjun_zhang-the-wisdom-of-hindsight-makes-language-models-better-instruction-followers-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: The Wisdom of Hindsight Makes Language Models Better Instruction Followers&lt;/li&gt;
+&lt;li&gt;Author: Tianjun Zhang et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 10 Feb 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, Mar 2, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2302.05206.pdf&#34;&gt;https://arxiv.org/pdf/2302.05206.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230302190916037&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/tianjun_zhang-the-wisdom-of-hindsight-makes-language-models-better-instruction-followers-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Reinforcement learning with Human Feedback (RLHF) demonstrates impressive performance on the GPT series models. However, the pipeline for reward and value networks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;in this paper, we consider an alternative approach: converting feedback to instruction by relabeling the original one and training the model for better alignment in a supervised manner.&lt;/li&gt;
+&lt;li&gt;Such an algorithm doesn&amp;rsquo;t require any additional parameters except for the original language model and maximally reuses the pretraining pipeline.&lt;/li&gt;
+&lt;li&gt;To achieve this, we formulate instruction alignment problem in decision making. We propose Hindsight Instruction Relabeling (HIR), a novel algorithm for alignment language models with instructions.&lt;/li&gt;
+&lt;li&gt;The resulting two-stage algorithm shed light to a family of reward-free approaches that utilise the hindsightly relabeled instructions based on feedback.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;fine-tuning language model&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Timo_schick Toolformer Language Models Can Teach Themselves to Use Tools 2023</title>
+      <link>https://sino-huang.github.io/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/</link>
+      <pubDate>Wed, 01 Mar 2023 19:57:49 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Toolformer: Language Models Can Teach Themselves to Use Tools 2023&lt;/li&gt;
+&lt;li&gt;Author: Timo Schick et. al. META AI research&lt;/li&gt;
+&lt;li&gt;Publish Year: 9 Feb 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Mar 1, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2302.04761.pdf&#34;&gt;https://arxiv.org/pdf/2302.04761.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230301201424679&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;LMs exhibit remarkable abilities to solve new tasks from just a few examples or textual instructions, especially at scale.&lt;/li&gt;
+&lt;li&gt;They also struggle with basic functionality, such as arithmetic or factual lookup.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;In this paper, we show that LMs can teach themselves to use external tools via simple APIs and achieve the best of both worlds.&lt;/li&gt;
+&lt;li&gt;We introduce Toolformer, a model that incorporate a range of tools, including a calculator, a Q&amp;amp;A system, a search engine, a translation system and a calendar.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;limitation of language models&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Almog_gueta Knowledge Is a Region in Weight Space for Fine Tuned Language Model 2023</title>
+      <link>https://sino-huang.github.io/posts/almog_gueta-knowledge-is-a-region-in-weight-space-for-fine-tuned-language-model-2023/</link>
+      <pubDate>Wed, 01 Mar 2023 12:45:54 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/almog_gueta-knowledge-is-a-region-in-weight-space-for-fine-tuned-language-model-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Knowledge Is a Region in Weight Space for Fine Tuned Language Model&lt;/li&gt;
+&lt;li&gt;Author: Almog Gueta et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 12 Feb 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Mar 1, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2302.04863.pdf&#34;&gt;https://arxiv.org/pdf/2302.04863.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230301124703839&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/almog_gueta-knowledge-is-a-region-in-weight-space-for-fine-tuned-language-model-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;relatively little is known a bout the relationships between different models, especially those trained or tested on different datasets.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;we demonstrate that fine-tuned models that were optimized for high performance, reside in well-defined regions in weight space, and vice versa&lt;/li&gt;
+&lt;li&gt;language models that have been fine-tuned on the same dataset form a tight cluster in the same weight space and that models fine-tuned on different datasets from the same underlying task form a looser cluster.&lt;/li&gt;
+&lt;li&gt;traversing around the region between the models reaches new models that perform comparably or even better than models found via fine-tuning&lt;/li&gt;
+&lt;li&gt;Our findings demonstrate that a model positioned between two similar models can acquire the knowledge of both. We leverage this finding and design a method to pick a better model for efficient fine-tuning.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;more findings&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

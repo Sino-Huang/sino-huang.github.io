@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Thesis Review on Sukai Huang</title>
+    <link>https://sino-huang.github.io/categories/thesis-review/</link>
+    <description>Recent content in Thesis Review on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 16 Feb 2022 14:40:57 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/categories/thesis-review/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>S_teufel Argumentative Zoning 2000</title>
+      <link>https://sino-huang.github.io/posts/s_teufel-argumentative-zoning-2000/</link>
+      <pubDate>Wed, 16 Feb 2022 14:40:57 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/s_teufel-argumentative-zoning-2000/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Argumentative Zoning&lt;/li&gt;
+&lt;li&gt;Author: Simone Teufel&lt;/li&gt;
+&lt;li&gt;Publish Year: 2000&lt;/li&gt;
+&lt;li&gt;Review Date: Feb 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cl.cam.ac.uk/~sht25/az.html&#34;&gt;https://www.cl.cam.ac.uk/~sht25/az.html&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
+&lt;p&gt;We present a new type of analysis for scientific text which we call &lt;strong&gt;Argumentative Zoning&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;We demonstrate that this type of text analysis can be used for generating user-tailored and task-tailored summaries and for performing more informative citation analyses.&lt;/p&gt;
+&lt;p&gt;We also demonstrate that our type of analysis can be applied to unrestricted text, both automatically and by humans. The corpus we use for the analysis (80 conference papers in computational linguistics) is a difficult test bed; it shows great variation with respect to subdomain, writing style, register and linguistic expression. We present reliability studies which we performed on this corpus and for which we use two unrelated trained annotators.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

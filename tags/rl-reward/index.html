@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Rl Reward | Sukai Huang</title>
+<meta content="" name="keywords"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/tags/rl-reward/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/tags/rl-reward/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/tags/rl-reward/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/tags/rl-reward/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Rl Reward" property="og:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="Rl Reward" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/tags/">Tags</a></div>
+<h1>
+    Rl Reward
+    <a aria-label="RSS" href="/tags/rl-reward/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/silviu-pitis-failure-modes-of-learning-reward-models-for-sequence-model-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Silviu Pitis Failure Modes of Learning Reward Models for Sequence Model 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Failure Modes of Learning Reward Models for LLMs and other Sequence Models Author: Silviu Pitis Publish Year: ICML workshop 2023 Review Date: Fri, May 10, 2024 url: https://openreview.net/forum?id=NjOoxFRZA4¬eId=niZsZfTPPt Summary of paper C3. Preference cannot represented as numbers M1. rationality level of human preference 3.2, if the condition/context changes, the preference may change rapidly, and this cannot reflect on the reward machine A2. Preference should be expressed with respect to state-policy pairs, rather than just outcomes A state-policy pair includes both the current state of the system and the strategy (policy) being employed. This approach avoids the complication of unresolved stochasticity (randomness that hasn’t yet been resolved), focusing instead on scenarios where the outcomes of policies are already known. Example with Texas Hold’em: The author uses an example from poker to illustrate these concepts. In the example, a player holding a weaker hand (72o) wins against a stronger hand (AA) after both commit to large bets pre-flop. Traditional reward modeling would prefer the successful trajectory of the weaker hand due to the positive outcome. However, a rational analysis (ignoring stochastic outcomes) would prefer the decision-making associated with the stronger hand (AA), even though it lost, as it’s typically the better strategy.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2024-05-10 22:23:31 +1000 AEST">May 10, 2024</span> · 2 min · 312 words · Sukai Huang</footer>
+<a aria-label="post link to Silviu Pitis Failure Modes of Learning Reward Models for Sequence Model 2023" class="entry-link" href="https://sino-huang.github.io/posts/silviu-pitis-failure-modes-of-learning-reward-models-for-sequence-model-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/gaurav-ghosal-the-effect-of-modeling-human-rationality-level-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Gaurav Ghosal the Effect of Modeling Human Rationality Level 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: The Effect of Modeling Human Rationality Level on Learning Rewards from Multiple Feedback Types Author: Gaurav R. Ghosal et. al. Publish Year: 9 Mar 2023 AAAI 2023 Review Date: Fri, May 10, 2024 url: arXiv:2208.10687v2 Summary of paper Contribution We find that overestimating human rationality can have dire effects on reward learning accuracy and regret We also find that fitting the rationality coefficient to human data enables better reward learning, even when the human deviates significantly from the noisy-rational choice model due to systematic biases Some key terms What is Boltzmann Rationality coefficient $\beta$
+...</p>
+</div>
+<footer class="entry-footer"><span title="2024-05-10 19:35:03 +1000 AEST">May 10, 2024</span> · 2 min · 312 words · Sukai Huang</footer>
+<a aria-label="post link to Gaurav Ghosal the Effect of Modeling Human Rationality Level 2023" class="entry-link" href="https://sino-huang.github.io/posts/gaurav-ghosal-the-effect-of-modeling-human-rationality-level-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/nate-rahn-policy-optimization-in-noisy-neighbourhood-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Nate Rahn Policy Optimization in Noisy Neighbourhood 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Policy Optimization in Noisy Neighborhood Author: Nate Rahn et. al. Publish Year: NeruIPS 2023 Review Date: Fri, May 10, 2024 url: https://arxiv.org/abs/2309.14597 Summary of paper Contribution in this paper, we demonstrate that high-frequency discontinuities in the mapping from policy parameters $\theta$ to return $R(\theta)$​ are an important cause of return variation. As a consequence of these discontinuities, a single gradient step or perturbation to the policy parameters often causes important changes in the return, even in settings where both the policy and the dynamics are deterministic. unstable learning in some sense based on this observation, we demonstrate the usefulness of studying the landscape through the distribution of returns obtained from small perturbation of $\theta$ Some key terms Evidence that noisy reward signal leads to substantial variance in performance
+...</p>
+</div>
+<footer class="entry-footer"><span title="2024-05-10 14:16:56 +1000 AEST">May 10, 2024</span> · 3 min · 510 words · Sukai Huang</footer>
+<a aria-label="post link to Nate Rahn Policy Optimization in Noisy Neighbourhood 2023" class="entry-link" href="https://sino-huang.github.io/posts/nate-rahn-policy-optimization-in-noisy-neighbourhood-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/ademi-adeniji-language-reward-modulation-for-pretraining-rl-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Ademi Adeniji Language Reward Modulation for Pretraining Rl 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Language Reward Modulation for Pretraining Reinforcement Learning Author: Ademi Adeniji et. al. Publish Year: ICLR 2023 reject Review Date: Thu, May 9, 2024 url: https://openreview.net/forum?id=SWRFC2EupO Summary of paper Motivation Learned reward function (LRF) are notorious for noise and reward misspecification errors
+which can render them highly unreliable for learning robust policies with RL due to issues of reward exploitation and noisy models that these LRF’s are ill-suited for directly learning downstream tasks. Generalization ability issue of multi-modal vision and language model (VLM)
+...</p>
+</div>
+<footer class="entry-footer"><span title="2024-05-09 21:18:00 +1000 AEST">May 9, 2024</span> · 2 min · 338 words · Sukai Huang</footer>
+<a aria-label="post link to Ademi Adeniji Language Reward Modulation for Pretraining Rl 2023" class="entry-link" href="https://sino-huang.github.io/posts/ademi-adeniji-language-reward-modulation-for-pretraining-rl-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/thomas-coste-reward-model-ensembles-help-mitigate-overoptimization-2024/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Thomas Coste Reward Model Ensembles Help Mitigate Overoptimization 2024
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Reward Model Ensembles Help Mitigate Overoptimization Author: Thomas Coste et. al. Publish Year: 10 Mar 2024 Review Date: Thu, May 9, 2024 url: arXiv:2310.02743v2 Summary of paper Motivation however, as imperfect representation of the “true” reward, these learned reward models are susceptible to over-optimization. Contribution the author conducted a systematic study to evaluate the efficacy of using ensemble-based conservative optimization objectives, specially worst-case optimization (WCO) and uncertainty-weighted optimization (UWO), for mitigating reward model overoptimization the author additionally extend the setup to include 25% label noise to better mirror real-world conditions For PPO, ensemble-based conservative optimization always reduce overoptimization and outperforms single reward model optimization Some key terms Overoptimization
+...</p>
+</div>
+<footer class="entry-footer"><span title="2024-05-09 14:06:33 +1000 AEST">May 9, 2024</span> · 1 min · 205 words · Sukai Huang</footer>
+<a aria-label="post link to Thomas Coste Reward Model Ensembles Help Mitigate Overoptimization 2024" class="entry-link" href="https://sino-huang.github.io/posts/thomas-coste-reward-model-ensembles-help-mitigate-overoptimization-2024/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/mengdi-li-internally-rewarded-rl-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Mengdi Li Internally Rewarded Rl 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Internally Rewarded Reinforcement Learning Author: Mengdi Li et. al. Publish Year: 2023 PMLR Review Date: Wed, May 8, 2024 url: https://proceedings.mlr.press/v202/li23ax.html Summary of paper Motivation the author studied a class o RL problem where the reward signals for policy learning are generated by a discriminator that is dependent on and jointly optimized with the policy (parallel training on both the policy and the reward model) this leads to an unstable learning process because reward signals from an immature discriminator are noisy and impede policy learning , and conversely, an under-optimized policy impedes discriminator learning we call this learning setting Internally Rewarded RL (IRRL) as the reward is not provided directly by the environment but internally by the discriminator. Contribution proposed the clipped linear reward function. Results show that the proposed reward function can consistently stabilize the training process by reducing the impact of reward noise, which leads to faster convergence and higher performance. we formulate a class of RL problems as IRRL, and formulate the inherent issues of noisy rewards that leads to an unstable training loop in IRRL we empirically characterize the noise in the discriminator and derive the effect of the reward function in reducing the bias of the estimated reward and the variance of reward noise from an underdeveloped discriminator Comment: the author tried to express the bias and variance of reward noises in Taylor approximation propose clipped linear reward function Some key terms Simultaneous optimization causes suboptimal training
+...</p>
+</div>
+<footer class="entry-footer"><span title="2024-05-08 14:59:15 +1000 AEST">May 8, 2024</span> · 4 min · 682 words · Sukai Huang</footer>
+<a aria-label="post link to Mengdi Li Internally Rewarded Rl 2023" class="entry-link" href="https://sino-huang.github.io/posts/mengdi-li-internally-rewarded-rl-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/daniel-hierarchies-of-reward-machines-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Daniel Hierarchies of Reward Machines 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Hierarchies of Reward Machines Author: Daniel Furelos-Blanco et. al. Publish Year: 4 Jun 2023 Review Date: Fri, Apr 12, 2024 url: https://arxiv.org/abs/2205.15752 Summary of paper Motivation Finite state machine are a simple yet powerful formalism for abstractly representing temporal tasks in a structured manner. Contribution The work introduces Hierarchies of Reinforcement Models (HRMs) to enhance the abstraction power of existing models. Key contributions include:
+HRM Abstraction Power: HRMs allow for the creation of hierarchies of Reinforcement Models (RMs), enabling constituent RMs to call other RMs. It’s proven that any HRM can be converted into an equivalent flat HRM with identical behavior. However, the equivalent flat HRM can have significantly more states and edges, especially under specific conditions.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2024-04-12 15:12:54 +1000 AEST">April 12, 2024</span> · 5 min · 965 words · Sukai Huang</footer>
+<a aria-label="post link to Daniel Hierarchies of Reward Machines 2023" class="entry-link" href="https://sino-huang.github.io/posts/daniel-hierarchies-of-reward-machines-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/shanchuan-efficient-n-robust-exploration-through-discriminative-ir-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Shanchuan Efficient N Robust Exploration Through Discriminative Ir 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: DEIR: Efficient and Robust Exploration through Discriminative-Model-Based Episodic Intrinsic Rewards Author: Shanchuan Wan et. al. Publish Year: 18 May 2023 Review Date: Fri, Apr 12, 2024 url: https://arxiv.org/abs/2304.10770 Summary of paper Motivation Recent studies have shown the effectiveness of encouraging exploration with intrinsic rewards estimated from novelties in observations However, there is a gap between the novelty of an observation and an exploration, as both the stochasticity in the environment and agent’s behaviour may affect the observation. Contribution we propose DEIR, a novel method in which we theoretically derive an intrinsic reward with a conditional mutual information term that principally scales with the novelty contributed by agent explorations, and then implement the reward with a discriminative forward model. want to design a novel intrinsic reward design that considers not only the observed novelty but also the effective contribution brought by the agent. Some key terms internal rewards
+...</p>
+</div>
+<footer class="entry-footer"><span title="2024-04-12 15:07:58 +1000 AEST">April 12, 2024</span> · 9 min · 1795 words · Sukai Huang</footer>
+<a aria-label="post link to Shanchuan Efficient N Robust Exploration Through Discriminative Ir 2023" class="entry-link" href="https://sino-huang.github.io/posts/shanchuan-efficient-n-robust-exploration-through-discriminative-ir-2023/"></a>
+</article>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

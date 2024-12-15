@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Llm and Pddl on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/llm-and-pddl/</link>
+    <description>Recent content in Llm and Pddl on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 21 Jan 2024 01:42:23 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/llm-and-pddl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gautier Dagan Dynamic Planning With a Llm 2023</title>
+      <link>https://sino-huang.github.io/posts/gautier-dagan-dynamic-planning-with-a-llm-2023/</link>
+      <pubDate>Sun, 21 Jan 2024 01:42:23 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/gautier-dagan-dynamic-planning-with-a-llm-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title:  Dynamic Planning With a LLM&lt;/li&gt;
+&lt;li&gt;Author: Gautier Dagan et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 11 Aug 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Sun, Jan 21, 2024&lt;/li&gt;
+&lt;li&gt;url: arXiv:2308.06391v1&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240122133428294&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/gautier-dagan-dynamic-planning-with-a-llm-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Traditional symbolic planners can find optimal solutions quickly but  need complete and accurate problem representations. In contrast, LLMs  can handle noisy data and uncertainty but struggle with planning tasks.  The LLM-DP framework combines LLMs and traditional planners to solve  embodied tasks efficiently.&lt;/li&gt;
+&lt;li&gt;Traditional Planner need maximal information&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Hallucination&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Paper Review | Sukai Huang</title>
+<meta content="" name="keywords"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/categories/paper-review/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/categories/paper-review/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/categories/paper-review/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/categories/paper-review/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Paper Review" property="og:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="Paper Review" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/categories/">Categories</a></div>
+<h1>
+    Paper Review
+    <a aria-label="RSS" href="/categories/paper-review/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="illustration of Oscar model" loading="lazy" src="https://sino-huang.github.io/posts/xiujun_li-oscar-object-semantic-aligned-pro-training-for-vision-language-tasks-2020/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Xiujun_li Oscar Object Semantic Aligned Pro Training for Vision Language Tasks 2020
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Oscar: Object Semantic Aligned Pro Training for Vision Language Tasks Author: Xiujun Li et. al. Publish Year: 26 Jul 2020 Review Date: Sat, Sep 3, 2022 Summary of paper Motivation Existing method simply concatenates image region features (patch features) and text features as input to the model to be pre-trained and use self-attention to learn image-text semantic alignments in a brute force manner.
+the lack of explicit alignment information between the image regions and the text poses alignment modelling a weakly-supervised learning task.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-09-03 17:12:54 +1000 AEST">September 3, 2022</span> · 3 min · 462 words · Sukai Huang</footer>
+<a aria-label="post link to Xiujun_li Oscar Object Semantic Aligned Pro Training for Vision Language Tasks 2020" class="entry-link" href="https://sino-huang.github.io/posts/xiujun_li-oscar-object-semantic-aligned-pro-training-for-vision-language-tasks-2020/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="Illustration of DiffCSE" loading="lazy" src="https://sino-huang.github.io/posts/yung_sung_chuang-diffcse-difference-based-contrastive-learning-for-sentence-embeddings-2022/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Yung_sung_chuang Diffcse Difference Based Contrastive Learning for Sentence Embeddings 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: DiffCSE: Difference Based Contrastive Learning for Sentence Embeddings Author: Yung-Sung Chuang et. al. Publish Year: 21 Apr 2022 Review Date: Sat, Aug 27, 2022 Summary of paper Motivation DiffCSE learns sentences that are sensitive to the difference between the original sentence and and edited sentence. Contribution we propose DiffCSE, an unsupervised contrastive learning framework for learning sentence embeddings Some key terms DiffCSE
+this is an unsupervsied contrastive learning framework rather than model architecture Contrastive learning in single modality data
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-08-27 16:03:42 +1000 AEST">August 27, 2022</span> · 2 min · 351 words · Sukai Huang</footer>
+<a aria-label="post link to Yung_sung_chuang Diffcse Difference Based Contrastive Learning for Sentence Embeddings 2022" class="entry-link" href="https://sino-huang.github.io/posts/yung_sung_chuang-diffcse-difference-based-contrastive-learning-for-sentence-embeddings-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="Different architectures for image and text retrieval" loading="lazy" src="https://sino-huang.github.io/posts/gregor_geigle-retrieve-fast-rerank-smart-coorperative-and-joint-approaches-for-improved-cross-modal-retrieval-2022/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Gregor_geigle Retrieve Fast Rerank Smart Cooperative and Joint Approaches for Improved Cross Modal Retrieval 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Retrieve Fast, Rerank Smart: Cooperative and Joint Approaches for Improved Cross-Modal Retrieval Author: Gregor Geigle et. al. Publish Year: 19 Feb, 2022 Review Date: Sat, Aug 27, 2022 Summary of paper Motivation they want to combine the cross encoder and the bi encoder advantages and have a more efficient cross-modal search and retrieval
+efficiency and simplicity of BE approach based on twin network expressiveness and cutting-edge performance of CE methods. Contribution We propose a novel joint Cross Encoding and Binary Encoding model (Joint-Coop), which is trained to simultaneously cross-encode and embed multi-modal input; it achieves the highest scores overall while maintaining retrieval efficiency
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-08-27 00:31:38 +1000 AEST">August 27, 2022</span> · 3 min · 453 words · Sukai Huang</footer>
+<a aria-label="post link to Gregor_geigle Retrieve Fast Rerank Smart Cooperative and Joint Approaches for Improved Cross Modal Retrieval 2022" class="entry-link" href="https://sino-huang.github.io/posts/gregor_geigle-retrieve-fast-rerank-smart-coorperative-and-joint-approaches-for-improved-cross-modal-retrieval-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="MP-Net structure" loading="lazy" src="https://sino-huang.github.io/posts/kaitao_song-mpnet-masked-and-permuted-retrain-for-language-understanding-2020/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Kaitao_song Mpnet Masked and Permuted Retrain for Language Understanding 2020
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: MPNet: Masked and Permuted Pre-training for Language Understanding Author: Kaitao Song et. al. Publish Year: 2020 Review Date: Thu, Aug 25, 2022 Summary of paper Motivation BERT adopts masked language modelling (MLM) for pre-training and is one of the most successful pre-training models.
+Since BERT is all attention block and the positional embedding is the only info that care about the ordering, BERT neglects dependency among predicted tokens
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-08-25 12:24:55 +1000 AEST">August 25, 2022</span> · 2 min · 378 words · Sukai Huang</footer>
+<a aria-label="post link to Kaitao_song Mpnet Masked and Permuted Retrain for Language Understanding 2020" class="entry-link" href="https://sino-huang.github.io/posts/kaitao_song-mpnet-masked-and-permuted-retrain-for-language-understanding-2020/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="learnable codebook" loading="lazy" src="https://sino-huang.github.io/posts/jiali_duan-multimodal-alignment-using-representation-codebook-2022/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Jiali_duan Multimodal Alignment Using Representation Codebook 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Multi-modal Alignment Using Representation Codebook Author: Jiali Duan, Liqun Chen et. al. Publish Year: 2022 CVPR Review Date: Tue, Aug 9, 2022 Summary of paper Motivation aligning signals from different modalities is an important step as it affects the performance of later stage such as cross-modality fusion. since image and text often reside in different regions of the feature space, directly aligning them at instance level is challenging especially when features are still evolving during training. Contribution in this paper, we treat image and text as two “views” of the same entity, and encode them into a joint vision-language coding space spanned by a dictionary of cluster centres (codebook). to further smooth out the learning process, we adopt a teacher-student distillation paradigm, where the momentum teacher of one view guides the student learning of the other. Some key terms Types of Vision language pre-training tasks
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-08-09 07:26:46 +1000 AEST">August 9, 2022</span> · 3 min · 513 words · Sukai Huang</footer>
+<a aria-label="post link to Jiali_duan Multimodal Alignment Using Representation Codebook 2022" class="entry-link" href="https://sino-huang.github.io/posts/jiali_duan-multimodal-alignment-using-representation-codebook-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">Younggyo_seo Masked World Models for Visual Control 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Masked World Models for Visual Control 2022 Author: Younggyo Seo et. al. Publish Year: 2022 Review Date: Fri, Jul 1, 2022 https://arxiv.org/abs/2206.14244?context=cs.AI
+https://sites.google.com/view/mwm-rl
+Summary of paper Motivation TL:DR: Masked autoencoders (MAE) has emerged as a scalable and effective self-supervised learning technique. Can MAE be also effective for visual model-based RL? Yes! with the recipe of convolutional feature masking and reward prediction to capture fine-grained and task-relevant information.
+Some key terms Decouple visual representation learning and dynamics learning
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-07-01 12:03:57 +1000 AEST">July 1, 2022</span> · 2 min · 227 words · Sukai Huang</footer>
+<a aria-label="post link to Younggyo_seo Masked World Models for Visual Control 2022" class="entry-link" href="https://sino-huang.github.io/posts/younggyo_seo-masked-world-models-for-visual-control-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">A Brief Overview of Rank Based Prioritized Experience Replay 2016
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Prioritised Experience Replay Author: Neuralnet.ai Publish Year: 25 Feb, 2016 Review Date: Thu, Jun 2, 2022 https://www.neuralnet.ai/a-brief-overview-of-rank-based-prioritized-experience-replay/
+Replay memory is essential in RL Replay memory has been successfully deployed in both value based and policy gradient based reinforcement learning algorithms, to great success. The reasons for this success cut right to the heart of reinforcement learning. In particular, replay memory simultaneously solves two outstanding problems with the field.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-06-02 11:47:17 +1000 AEST">June 2, 2022</span> · 2 min · 365 words · Sukai Huang</footer>
+<a aria-label="post link to A Brief Overview of Rank Based Prioritized Experience Replay 2016" class="entry-link" href="https://sino-huang.github.io/posts/a-brief-overview-of-rank-based-prioritized-experience-replay-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">Deepmind Flamingo a Visual Language Model for Few Shot Learning 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Flamingo: a Visual Language Model for Few-Shot Learning Author: Jean-Baptiste Alayrac et. al. Publish Year: Apr 2022 Review Date: May 2022 Summary of paper Flamingo architecture Pretrained vision encoder: from pixels to features
+the model’s vision encoder is a pretrained Normalizer-Free ResNet (NFNet)
+they pretrain the vision encoder using a contrastive objective on their datasets of image and text pairs, using the two term contrastive loss from paper “Learning Transferable Visual Models From Natural Language Supervision”
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-05-11 16:35:03 +1000 AEST">May 11, 2022</span> · 3 min · Sukai Huang</footer>
+<a aria-label="post link to Deepmind Flamingo a Visual Language Model for Few Shot Learning 2022" class="entry-link" href="https://sino-huang.github.io/posts/deepmind-flamingo-a-visual-language-model-for-few-shot-learning-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">Angela_fan Augmenting Transformer With Knn Composite Memory for Dialog 2021
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Augmenting Transformers with KNN-based composite memory for dialog Author: Angela Fan et. al. Publish Year: 2021 Review Date: Apr 2022 Summary of paper Motivation The author proposed augmenting generative Transformer neural network with KNN based Information Fetching module
+Each KIF module learns a read operation to access fix external knowledge (e.g., WIKI)
+The author demonstrated the effectiveness of this approach by identifying relevant knowledge required for knowledgeable but engaging dialog from Wikipedia, images and human-written dialog utterances.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-04-21 11:01:14 +1000 AEST">April 21, 2022</span> · 3 min · Sukai Huang</footer>
+<a aria-label="post link to Angela_fan Augmenting Transformer With Knn Composite Memory for Dialog 2021" class="entry-link" href="https://sino-huang.github.io/posts/angela_fan-augmenting-transformer-with-knn-composite-memory-for-dialog-2021/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">Hao_hu Generalisable Episodic Memory for Drl 2021
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Generalisable episodic memory for Deep Reinforcement Learning Author: Hao Hu et. al. Publish Year: Jun 2021 Review Date: April 2022 Summary of paper Motivation The author proposed Generalisable Episodic Memory (GEM), which effectively organises the state-action values of episodic memory in a generalisable manner and supports implicit planning on memorised trajectories.
+so compared to traditional memory table, GEM learns a virtual memory table memorized by deep neural networks to aggregate similar state-action pairs that essentially have the same nature.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-04-07 12:12:20 +1000 AEST">April 7, 2022</span> · 2 min · Sukai Huang</footer>
+<a aria-label="post link to Hao_hu Generalisable Episodic Memory for Drl 2021" class="entry-link" href="https://sino-huang.github.io/posts/hao_hu-generalisable-episodic-memory-for-drl-2021/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">Ilya_kostrikov Offline Rl With Implicit Q Learning 2021
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Offline Reinforcement Learning with Implicit Q-learning Author:Ilya Kostrikov et. al. Publish Year: 2021 Review Date: Mar 2022 Summary of paper Motivation conflict in offline reinforcement learning
+offline reinforcement learning requires reconciling two conflicting aims:
+learning a policy that improves over the behaviour policy (old policy) that collected the dataset while at the same time minimizing the deviation from the behaviour policy so as to avoid errors due to distributional shift (e.g., obtain out of distribution actions) -&gt; the challenge is how to constrain those unseen actions to be in-distribution. (meaning there is no explicit Q-function for actions, and thus the issue of unseen action is gone) all the previous solutions like 1. limit how far the new policy deviates from the behaviour policy and 2. assign low value to out of distribution actions impose a trade-off between how much the policy improve and how vulnerable it is to misestimation due to distributional shift.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-03-22 19:01:49 +1100 AEDT">March 22, 2022</span> · 4 min · Sukai Huang</footer>
+<a aria-label="post link to Ilya_kostrikov Offline Rl With Implicit Q Learning 2021" class="entry-link" href="https://sino-huang.github.io/posts/ilya_kostrikov-offline-rl-with-implicit-q-learning-2021/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">Qinqing_zheng Online Decision Transformer 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Online Decision Transformer Author: Qinqing Zheng Publish Year: Feb 2022 Review Date: Mar 2022 Summary of paper Motivation the author proposed online Decision transformer (ODT), an RL algorithm based on sequence modelling that blends offline pretraining with online fine-tuning in a unified framework.
+ODT builds on the decision transformer architecture previously introduced for offline RL
+quantify exploration
+compared to DT, they shifted from deterministic to stochastic policies for defining exploration objectives during the online phase. They quantify exploration via the entropy of the policy similar to max-ent RL frameworks.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-03-21 21:56:45 +1100 AEDT">March 21, 2022</span> · 4 min · Sukai Huang</footer>
+<a aria-label="post link to Qinqing_zheng Online Decision Transformer 2022" class="entry-link" href="https://sino-huang.github.io/posts/qinqing_zheng-online-decision-transformer-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">Sebastian_borgeaud Improving Language Models by Retrieving From Trillions of Tokens 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Improving language models by retrieving from trillions of tokens Author: Sebastian Borgeaud et. al. Publish Year: Feb 2022 Review Date: Mar 2022 Summary of paper Motivation in order to decrease the size of language model, this work suggested retrieval from a large text database as a complementary path to scaling language models.
+they equip models with the ability to directly access a large dataset to perform prediction – a semi-parametric approach.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-03-21 19:07:36 +1100 AEDT">March 21, 2022</span> · 2 min · Sukai Huang</footer>
+<a aria-label="post link to Sebastian_borgeaud Improving Language Models by Retrieving From Trillions of Tokens 2022" class="entry-link" href="https://sino-huang.github.io/posts/sebastian_borgeaud-improving-language-models-by-retrieving-from-trillions-of-tokens-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">Machel_reid Can Wikipedia Help Offline Rl 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Can Wikipedia Help Offline Reinforcement Learning Author: Machel Reid et. al. Publish Year: Mar 2022 Review Date: Mar 2022 Summary of paper Motivation Fine-tuning reinforcement learning (RL) models has been challenging because of a lack of large scale off-the-shelf datasets as well as high variance in transferability among different environments.
+Moreover, when the model is trained from scratch, it suffers from slow convergence speeds
+In this paper, they look to take advantage of this formulation of reinforcement learning as sequence modelling and investigate the transferability of pre-trained sequence models on other domains (vision, language) when fine tuned on offline RL tasks (control, games).
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-03-16 21:18:24 +1100 AEDT">March 16, 2022</span> · 2 min · Sukai Huang</footer>
+<a aria-label="post link to Machel_reid Can Wikipedia Help Offline Rl 2022" class="entry-link" href="https://sino-huang.github.io/posts/machel_reid-can-wikipedia-help-offline-rl-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">Stephen_cresswell Generalised Domain Model Acquisition From Action Traces 2013
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Generalised Domain Model Acquisition from Action Traces (LOCM2) Author: Stephen Cresswell et. al. Publish Year: 2013 Review Date: Mar 2022 Summary of paper Motivation One approach to the problem of formulating domain models for planning is to learn the models from example action sequences.
+This work extended LOCM by allowing multiple parameterised state machine to represent a single object.
+In other words, it is possible to automatically infer the underlying transition system from sample action sequences of the domain. Using such an approach removes the necessity for the domain expert to also be an expert at modelling transition systems.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-03-15 16:34:45 +1100 AEDT">March 15, 2022</span> · 2 min · Sukai Huang</footer>
+<a aria-label="post link to Stephen_cresswell Generalised Domain Model Acquisition From Action Traces 2013" class="entry-link" href="https://sino-huang.github.io/posts/stephen_cresswell-generalised-domain-model-acquisition-from-action-traces-2013/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">Wenfeng_feng Extracting Action Sequences From Texts by Rl
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Extracting Action Sequences from Texts Based on Deep Reinforcement Learning Author: Wenfeng Feng et. al. Publish Year: Mar 2018 Review Date: Mar 2022 Summary of paper Motivation the author want to build a model that learns to directly extract action sequences without external tools like POS tagging and dependency parsing results…
+Annotation dataset structure
+example
+Model
+they exploit the framework to learn two models to predict action names and arguments respectively.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-03-15 14:40:38 +1100 AEDT">March 15, 2022</span> · 1 min · Sukai Huang</footer>
+<a aria-label="post link to Wenfeng_feng Extracting Action Sequences From Texts by Rl" class="entry-link" href="https://sino-huang.github.io/posts/wenfeng_feng-extracting-action-sequences-from-texts-by-rl/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">Shivam_miglani Nltopddl Learning From Nlp Manuals 2020
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: NLtoPDDL: One-Shot Learning of PDDL Models from Natural Language Process Manuals Author: Shivam Miglani et. al. Publish Year: 2020 Review Date: Mar 2022 Summary of paper Motivation pipeline
+Pipeline architecture
+Phase 1 we have a DQN that learns to extract words that represent action name, action arguments, and the sequence of actions present in annotated NL process manuals. (why only action name, do we need to extract other information???) Again, why this is called DQN RL? is it just normal supervised learning… (Check EASDRL paper to understand Phase 1)
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-03-14 15:08:45 +1100 AEDT">March 14, 2022</span> · 2 min · Sukai Huang</footer>
+<a aria-label="post link to Shivam_miglani Nltopddl Learning From Nlp Manuals 2020" class="entry-link" href="https://sino-huang.github.io/posts/shivam_miglani-nltopddl-learning-from-nlp-manuals-2020/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">Giuseppe_de_giacomo Foundations for Retraining Bolts Rl With Ltl 2019
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Foundations for Restraining Bolts: Reinforcement Learning with LTLf/LDLf Restraining Specification Author: Giuseppe De Giacomo et. al. Publish Year: 2019 Review Date: Mar 2022 Summary of paper The author investigated the concept of “restraining bolt” that can control the behaviour of learning agents.
+Essentially, the way to control a RL agent is that the bolt provides additional rewards to the agent
+Although this method is essentially the same as reward shaping (providing additional rewards to the agent), the contribution of this paper is
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-03-04 12:12:57 +1100 AEDT">March 4, 2022</span> · 2 min · Sukai Huang</footer>
+<a aria-label="post link to Giuseppe_de_giacomo Foundations for Retraining Bolts Rl With Ltl 2019" class="entry-link" href="https://sino-huang.github.io/posts/giuseppe_de_giacomo-foundations-for-retraining-bolts-rl-with-ltl-2019/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">Joseph_kim Collaborative Planning With Encoding of High Level Strategies 2017
+    </h2>
+</header>
+<div class="entry-content">
+<p>please modify the following
+[TOC]
+Title: Collaborative Planning with Encoding of Users’ High-level Strategies Author: Joseph Kim et. al. Publish Year: 2017 Review Date: Mar 2022 Summary of paper Motivation Automatic planning is computationally expensive. Greedy search heuristics often yield low-quality plans that can result in wasted resources; also, even in the event that an adequate plan is generated, users may have difficulty interpreting the reason why the plan performs well and trusting it.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-03-04 12:12:27 +1100 AEDT">March 4, 2022</span> · 2 min · Sukai Huang</footer>
+<a aria-label="post link to Joseph_kim Collaborative Planning With Encoding of High Level Strategies 2017" class="entry-link" href="https://sino-huang.github.io/posts/joseph_kim-collaborative-planning-with-encoding-of-high-level-strategies-2017/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">Mikayel_samvelyan Minihack the Planet a Sandbox for Open Ended Rl Research 2021
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: MiniHack the Planet: A Sandbox for Open-Ended Reinforcement Learning Research Author: Mikayel Samvelyan et. al. Publish Year: Nov 2021 Review Date: Mar 2022 Summary of paper They presented MiniHack, an easy-to-use framework for creating rich and varied RL environments, as well as a suite of tasks developed using this framework. Built upon NLE and the des-file format, MiniHack enables the use of rich entities and dynamics from the game of NetHack to create a large variety of RL environments for targeted experimentation, while also allowing painless scaling-up of the difficulty of existing environments. MiniHack’s environments are procedurally generated by default, ensuring the evaluation of systematic generalization of RL agents.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-03-04 12:11:55 +1100 AEDT">March 4, 2022</span> · 3 min · Sukai Huang</footer>
+<a aria-label="post link to Mikayel_samvelyan Minihack the Planet a Sandbox for Open Ended Rl Research 2021" class="entry-link" href="https://sino-huang.github.io/posts/mikayel_samvelyan-minihack-the-planet-a-sandbox-for-open-ended-rl-research-2021/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">Richard_shin Constrained Language Models Yield Few Shot Semantic Parsers 2021
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Constrained Language models yield few-shot semantic parsers Author: Richard Shin et. al. Publish Year: Nov 2021 Review Date: Mar 2022 Summary of paper Motivation The author wanted to explore the use of large pretrained language models as few-shot semantic parsers
+However, language models are trained to generate natural language. To bridge the gap, they used language models to paraphrase inputs into a controlled sublanguage resembling English that can be automatically mapped to a target meaning representation. (using synchronous context-free grammar SCFG)
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-03-02 00:19:18 +1100 AEDT">March 2, 2022</span> · 1 min · Sukai Huang</footer>
+<a aria-label="post link to Richard_shin Constrained Language Models Yield Few Shot Semantic Parsers 2021" class="entry-link" href="https://sino-huang.github.io/posts/richard_shin-constrained-language-models-yield-few-shot-semantic-parsers-2021/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">Heinrich_kuttler the Nethack Learning Environment 2020
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: The NetHack Learning Environment Author: Heinrich Kuttler et. al. Publish Year: Dec 2020 Review Date: Mar 2022 Summary of paper The NetHack Learning Environment (NLE), a scalable, procedurally generated, stochastic, rich, and challenging environment for RL research based on the popular single-player terminal-based roguelike game, NetHack.
+NetHack is sufficiently complex to drive long-term research on problems such as exploration, planning, skill acquisition, and language-conditioned RL, while dramatically reducing the computational resources required to gather a large amount of experience.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-03-02 00:18:35 +1100 AEDT">March 2, 2022</span> · 3 min · Sukai Huang</footer>
+<a aria-label="post link to Heinrich_kuttler the Nethack Learning Environment 2020" class="entry-link" href="https://sino-huang.github.io/posts/heinrich_kuttler-the-nethack-learning-environment-2020/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">Pashootan_vaezipoor Ltl2action Generalising Ltl Instructions for Multi Task Rl 2021
+    </h2>
+</header>
+<div class="entry-content">
+<p>please modify the following
+[TOC]
+Title: LTL2Action: Generalizing LTL Instructions for Multi-Task RL Author: Pashootan Vaezipoor et. al. Publish Year: 2021 Review Date: March 2022 Summary of paper Motivation they addressed the problem of teaching a deep reinforcement learning agent to follow instructions in multi-task environments. Instructions are expressed in a well-known formal language – linear temporal logic (LTL)
+Limitation of the vanilla MDP
+temporal constraints cannot be expressed as rewards in MDP setting and thus modular policy and other stuffs are not able to obtain maximum rewards.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-03-01 20:53:10 +1100 AEDT">March 1, 2022</span> · 3 min · Sukai Huang</footer>
+<a aria-label="post link to Pashootan_vaezipoor Ltl2action Generalising Ltl Instructions for Multi Task Rl 2021" class="entry-link" href="https://sino-huang.github.io/posts/pashootan_vaezipoor-ltl2action-generalising-ltl-instructions-for-multi-task-rl-2021/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">Roma_patel Learning to Ground Language Temporal Logical Form 2019
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Learning to Ground Language to Temporal Logical Form Author: Roma Patel et. al. Publish Year: 2019 Review Date: Feb 2022 Summary of paper Motivation natural language commands often exhibits sequential (temporal) constraints e.g., “go through the kitchen and then into the living room”.
+But this constraints cannot be expressed in the reward of Markov Decision Process setting. (see this paper)
+Therefore, they proposed to ground language to Linear Temporal logic (LTL) and after that continue to map from LTL expressions to action sequences.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-02-28 21:40:53 +1100 AEDT">February 28, 2022</span> · 2 min · Sukai Huang</footer>
+<a aria-label="post link to Roma_patel Learning to Ground Language Temporal Logical Form 2019" class="entry-link" href="https://sino-huang.github.io/posts/roma_patel-learning-to-ground-language-temporal-logical-form-2019/"></a>
+</article>
+<article class="post-entry tag-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">Thang_m_pham Out of Order How Important Is the Sequential Order of Words in a Sentence in Natural Language Understanding Tasks 2021
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Out of Order: How Important Is The Sequential Order of Words in a Sentence in Natural Language Understanding Tasks? Author: Thang M. Pham Publish Year: Jul 2021 Review Date: Feb 2022 Summary of paper The author found out that BERT-based models trained on GLUE have low sensitivity to word orders.
+The research questions are the following
+Do BERT-based models trained on GLUE care about the order of words in a sentence? ANS: NO, except one task named CoLA, which is to detecting grammatically incorrect sentences. Surprisingly, for the rest of the 5 out of 6 binary-classification tasks (i.e. except CoLA), between75% and 90% of the originally correct predictions remain constant after 1-grams are randomly re-ordered Are SOTA BERT-based models using word order information when solving NLU tasks? If not, what cues do they rely on? ANS: they heavily rely on the word itself rather than the ordering. The results showed that if the top - 1 most important word measured by LIME has a positive meaning, then there is 100% probability that the sentence’s label is “positive” Results
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-02-28 18:58:52 +1100 AEDT">February 28, 2022</span> · 2 min · Sukai Huang</footer>
+<a aria-label="post link to Thang_m_pham Out of Order How Important Is the Sequential Order of Words in a Sentence in Natural Language Understanding Tasks 2021" class="entry-link" href="https://sino-huang.github.io/posts/thang_m_pham-out-of-order-how-important-is-the-sequential-order-of-words-in-a-sentence-in-natural-language-understanding-tasks-2021/"></a>
+</article>
+<footer class="page-footer">
+<nav class="pagination">
+<a class="prev" href="https://sino-huang.github.io/categories/paper-review/page/6/">
+      « Prev 6/8
+    </a>
+<a class="next" href="https://sino-huang.github.io/categories/paper-review/page/8/">Next 8/8 »
+    </a>
+</nav>
+</footer>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

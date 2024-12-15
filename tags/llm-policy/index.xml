@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Llm Policy on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/llm-policy/</link>
+    <description>Recent content in Llm Policy on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 23 Apr 2024 13:20:22 +1000</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/llm-policy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thomas Carta Grounding Llms in Rl 2023</title>
+      <link>https://sino-huang.github.io/posts/thomas-carta-grounding-llms-in-rl-2023/</link>
+      <pubDate>Tue, 23 Apr 2024 13:20:22 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/thomas-carta-grounding-llms-in-rl-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Grounding Large Language Models in Interactive Environments with Online Reinforcement Learning&lt;/li&gt;
+&lt;li&gt;Author: Thomas Carta el. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 6 Sep 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Tue, Apr 23, 2024&lt;/li&gt;
+&lt;li&gt;url: arXiv:2302.02662v3&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240423132057110&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/thomas-carta-grounding-llms-in-rl-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;The author considered an agent using an LLM as a policy that is progressively updated as the agent interacts with the environment, leveraging online reinforcement learning to improve its performance to solve goals (under the RL paradigm environment (MDP))&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

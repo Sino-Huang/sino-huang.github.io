@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Offline RL on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/offline-rl/</link>
+    <description>Recent content in Offline RL on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 22 Mar 2022 19:01:49 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/offline-rl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ilya_kostrikov Offline Rl With Implicit Q Learning 2021</title>
+      <link>https://sino-huang.github.io/posts/ilya_kostrikov-offline-rl-with-implicit-q-learning-2021/</link>
+      <pubDate>Tue, 22 Mar 2022 19:01:49 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/ilya_kostrikov-offline-rl-with-implicit-q-learning-2021/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Offline Reinforcement Learning with Implicit Q-learning&lt;/li&gt;
+&lt;li&gt;Author:Ilya Kostrikov et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2021&lt;/li&gt;
+&lt;li&gt;Review Date: Mar 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;conflict in offline reinforcement learning&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;offline reinforcement learning requires reconciling two conflicting aims:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;learning a policy that improves over the behaviour policy (old policy) that collected the dataset&lt;/li&gt;
+&lt;li&gt;while at the same time minimizing the deviation from the behaviour policy so as to avoid errors due to distributional shift (e.g., obtain out of distribution actions) -&amp;gt; the challenge is how to constrain those unseen actions to be in-distribution. (meaning there is no explicit Q-function for actions, and thus the issue of unseen action is gone)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;all the previous solutions like 1. limit how far the new policy deviates from the behaviour policy and 2. assign low value to out of distribution actions impose a trade-off between how much the policy improve and how vulnerable it is to misestimation due to distributional shift.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

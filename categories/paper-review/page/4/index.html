@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Paper Review | Sukai Huang</title>
+<meta content="" name="keywords"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/categories/paper-review/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/categories/paper-review/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/categories/paper-review/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/categories/paper-review/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Paper Review" property="og:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="Paper Review" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/categories/">Categories</a></div>
+<h1>
+    Paper Review
+    <a aria-label="RSS" href="/categories/paper-review/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/luke_zettlemoyer-scaling-expert-language-models-with-unsupervised-domain-discovery-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Luke_zettlemoyer Scaling Expert Language Models With Unsupervised Domain Discovery 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Scaling Expert Language Models With Unsupervised Domain Discovery Author: Luke Zettlemoyer et. al. Publish Year: 24 Mar, 2023 Review Date: Mon, Apr 3, 2023 url: https://arxiv.org/pdf/2303.14177.pdf Summary of paper Contribution we introduce a simple but efficient method to asynchronously train large, sparse language models on arbitrary text corpora. Our method clusters a corpus into sets of related documents, trains a separate expert language model on each cluster, and combines them in a sparse ensemble for inference. This approach generalise embarrassingly parallel training by automatically discovering the domain for each expert, and eliminates nearly all the communication overhead of existing sparse language models. Some key terms Cluster-Branch-Train-Merge (C-BTM)
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-04-03 15:25:01 +0800 +0800">April 3, 2023</span> · 1 min · 161 words · Sukai Huang</footer>
+<a aria-label="post link to Luke_zettlemoyer Scaling Expert Language Models With Unsupervised Domain Discovery 2023" class="entry-link" href="https://sino-huang.github.io/posts/luke_zettlemoyer-scaling-expert-language-models-with-unsupervised-domain-discovery-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/xuanting_chen-how-robust-is-gpt35-to-predecessors-a-comprehensive-study-on-language-understanding-tasks/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Xuanting_chen How Robust Is GPT 3.5 to Predecessors a Comprehensive Study on Language Understanding Tasks
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: How Robust Is GPT 3.5 to Predecessors a Comprehensive Study on Language Understanding Tasks Author: Xuanting Chen et. al. Publish Year: 2023 Review Date: Mon, Apr 3, 2023 url: https://arxiv.org/ftp/arxiv/papers/2303/2303.00293.pdf Summary of paper Motivation GPT3.5, their robustness, and abilities to handle various complexities of the open world have yet to be explored, which is especially crucial in assessing the stability of models and is a key aspect of trustworthy AI Contribution Our study yielded the following findings by comparing GPT 3.5 with finetuned models competitive results on test sets: GPT3.5 achieves SOTA results in some NLU tasks compared to supervised models fine-tuned with task-specific data. In particular GPT-3.5 performs well in reading comprehension and sentiment analysis tasks, but face challenges in sequence tagging and relation extraction tasks. Lack of robustness: GPT-3.5 still encounter significant robustness degradation, such as its average performance dropping by up to 35.74% and 43.59% in natural language inference and sentiment analysis tasks, respectively. However, it is worth noting that GPT3.5 achieves remarkable robustness on certain tasks, such as reading comprehension and WSC tasks Robustness instability: In few-shot scenarios, GPT-3.5’s robustness improvement varies greatly across different tasks. For example, GPT-3.5 shows significant improvement in aspect-based sentiment analysis tasks while the robustness actually decreases in natural language inference (Section 4.3.1) and semantic matching (Section 4.3.2) tasks. Prompt sensitivity: changes in input prompts have a significant impact on the results, and GPT-3.5’s robustness to prompt variations. still requires improvement. Number sensitivity: GPT3.5 is more sensitive to numerical inputs than pre-training fine-tuning models. For example, in the NumWord transformation, which involves replacing numerical words in sentences with different numerical values, GPT3.5 exhibits a significantly high level of sensitivity. Task labels sensitivity: we speculate that the task construction during the instruction tuning stage may significantly impact the model’s performance. In the case of IMDB binary sentiment classification dataset, the model outputs a large number of “neutral” responses, which are not included in the application label space, resulting in a performance drop Significant improvement in zero/few-shot scenarios: in zero-shot and few-shot scenario, GPT3.5 outperforms existing LLMs in most NLU tasks, especially in reading comprehension, natural language inference and semantic matching tasks Ability for in-context learning: Compared to 0-shot, GPT 3.5 performs better on most tasks in the 1-shot setting. Additionally, performance does no vary significantly between the 1-shot, 3-shot, 6-shot, 9-shot settings for most tasks. However, providing additional examples in the prompts can be advantageous for sequence tagging tasks </p>
+</div>
+<footer class="entry-footer"><span title="2023-04-03 15:00:57 +0800 +0800">April 3, 2023</span> · 2 min · 409 words · Sukai Huang</footer>
+<a aria-label="post link to Xuanting_chen How Robust Is GPT 3.5 to Predecessors a Comprehensive Study on Language Understanding Tasks" class="entry-link" href="https://sino-huang.github.io/posts/xuanting_chen-how-robust-is-gpt35-to-predecessors-a-comprehensive-study-on-language-understanding-tasks/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/anthony_liu-a-picture-is-worth-a-thousand-words-language-models-plan-from-pixels-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Anthony_liu a Picture Is Worth a Thousand Words Language Models Plan From Pixels 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: A Picture Is Worth a Thousand Words Language Models Plan From Pixels Author: Anthony Liu et.al. Publish Year: 16 Mar 2023 Review Date: Mon, Apr 3, 2023 url: https://arxiv.org/pdf/2303.09031v1.pdf Summary of paper Motivation planning is a important capability of AI that perform long-horizon tasks in real-world environments. prior PLM based approaches for planning either assume observations are available in the form of text, reason about plans from the instruction alone, or incorporate information about the visual environment in limited ways. Contribution in contrast, we show that PLMs can accurately plan even when observations are directly encoded as input prompts for the PLM Some key terms why we need the ability to reason about plans
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-04-03 11:28:43 +0800 +0800">April 3, 2023</span> · 2 min · 359 words · Sukai Huang</footer>
+<a aria-label="post link to Anthony_liu a Picture Is Worth a Thousand Words Language Models Plan From Pixels 2023" class="entry-link" href="https://sino-huang.github.io/posts/anthony_liu-a-picture-is-worth-a-thousand-words-language-models-plan-from-pixels-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/wenlong_huang-grounded-decoding-guiding-text-generation-with-grounded-models-for-robot-control-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Wenlong_huang Grounded Decoding Guiding Text Generation With Grounded Models for Robot Control 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Grounded Decoding Guiding Text Generation With Grounded Models for Robot Control Author: WenLong Huang et. al. Publish Year: 1 Mar, 2023 Review Date: Thu, Mar 30, 2023 url: https://arxiv.org/abs/2303.00855 Summary of paper Motivation Unfortunately, applying LLMs to settings with embodied agents, such as robots, is challenging due to their lack of experience with the physical world, inability to parse non-language observations, and ignorance of rewards or safety constraints that robots may require. on the other hand, language-conditioned robotic policies that learn from interaction data can provide the necessary grounding that allows the agent to be correctly situated in the real world, but such policies are limited by the lack of high-level semantic understanding due to the limited breadth of the interaction data available for training them. Contribution thus if we want to make use of the semantic knowledge in a language model while still situating it in an embodied setting, we must construct an action sequence that is both likely according to the language model and also realisable according to grounded models of the environment. we frame this as a problem similar to probabilistic filtering: decode a sequence that both has high probability under the language model and high probability under a set of grounded model objectives. Potential future work the work is related to using LMs info as a prior bias the problem framing is straightforward </p>
+</div>
+<footer class="entry-footer"><span title="2023-03-30 23:45:18 +0800 +0800">March 30, 2023</span> · 2 min · 229 words · Sukai Huang</footer>
+<a aria-label="post link to Wenlong_huang Grounded Decoding Guiding Text Generation With Grounded Models for Robot Control 2023" class="entry-link" href="https://sino-huang.github.io/posts/wenlong_huang-grounded-decoding-guiding-text-generation-with-grounded-models-for-robot-control-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/mariana_learning-generative-models-with-goal-conditioned-reinforcement-learning-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Mariana_learning Generative Models With Goal Conditioned Reinforcement Learning 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Learning Generative Models With Goal Conditioned Reinforcement Learning Author: Mariana Vargas Vieyra et. al. Publish Year: 26 Mar 2023 Review Date: Thu, Mar 30, 2023 url: https://arxiv.org/abs/2303.14811 Summary of paper Contribution we present a novel framework for learning generative models with goal-conditioned reinforcement learning we define two agents, a goal conditioned agent (GC-agent) and a supervised agent (S-agent) Given a user-input initial state, the GC-agent learns to reconstruct the training set. In this context, elements in the training set are the goals. during training, the S-agent learns to imitate the GC-agent while remaining agnostic of the goals At inference we generate new samples with S-agent. Some key terms Goal-Conditioned Reinforcement Learning (GCRL) framework
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-03-30 21:20:31 +0800 +0800">March 30, 2023</span> · 2 min · 325 words · Sukai Huang</footer>
+<a aria-label="post link to Mariana_learning Generative Models With Goal Conditioned Reinforcement Learning 2023" class="entry-link" href="https://sino-huang.github.io/posts/mariana_learning-generative-models-with-goal-conditioned-reinforcement-learning-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/itsugun_cho-deep-rl-with-hierarchical-action-exploration-for-dialogue-generation-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Itsugun_cho Deep Rl With Hierarchical Action Exploration for Dialogue Generation 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Deep RL With Hierarchical Action Exploration for Dialogue Generation Author: Itsugun Cho et. al. Publish Year: 22 Mar 2023 Review Date: Thu, Mar 30, 2023 url: https://arxiv.org/pdf/2303.13465v1.pdf Summary of paper Motivation Approximate dynamic programming applied to dialogue generation involves policy improvement with action sampling. However, such a practice is inefficient for reinforcement learning because the eligible (high action value) responses are very sparse, and the greedy policy sustained by the random sampling is flabby. Contribution this paper shows that the performance of dialogue policy positively correlated with sampling size by theoretical and experimental. we introduce a novel dual-granularity Q-function to alleviate this limitation by exploring the most promising response category to intervene the sampling. Some key terms limitation of the maximum likelihood estimation (MLE) objective for the probability distribution of responses
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-03-30 15:01:16 +0800 +0800">March 30, 2023</span> · 2 min · 358 words · Sukai Huang</footer>
+<a aria-label="post link to Itsugun_cho Deep Rl With Hierarchical Action Exploration for Dialogue Generation 2023" class="entry-link" href="https://sino-huang.github.io/posts/itsugun_cho-deep-rl-with-hierarchical-action-exploration-for-dialogue-generation-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/theodore_r_sumers-how-to-talk-so-ai-will-learn-2022/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Theodore_r_sumers How to Talk So Ai Will Learn 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: How to talk so AI will learn: Instructions, descriptions, and autonomy Author: Theodore R. Sumers et. al. Publish Year: NeurIPS 2022 Review Date: Wed, Mar 15, 2023 url: https://arxiv.org/pdf/2206.07870.pdf Summary of paper Motivation yet today, we lack computational models explaining such language use Contribution To address this challenge, we formalise learning from language in a contextual bandit setting and ask how a human might communicate preferences over behaviours. (obtain intent (preference) from the presentation (behaviour)) we show that instructions are better in low-autonomy settings, but descriptions are better when the agent will need to act independently. We then define a pragmatic listener agent that robustly infers the speaker’s reward function by reasoning how the speaker expresses themselves. (language reward module?) we hope these insights facilitate a shift from developing agents that obey language to agents that learn from it. Some key terms two distinct types of language
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-03-15 21:09:32 +0800 +0800">March 15, 2023</span> · 3 min · 591 words · Sukai Huang</footer>
+<a aria-label="post link to Theodore_r_sumers How to Talk So Ai Will Learn 2022" class="entry-link" href="https://sino-huang.github.io/posts/theodore_r_sumers-how-to-talk-so-ai-will-learn-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/cheng_chi-diffusion-policy-visuomotor-policy-learning-via-action-diffusion-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Cheng_chi Diffusion Policy Visuomotor Policy Learning via Action Diffusion 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Diffusion Policy Visuomotor Policy Learning via Action Diffusion Author: Cheng Chi et. al. Publish Year: 2023 Review Date: Thu, Mar 9, 2023 url: https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf Summary of paper Contribution introducing a new form of robot visuomotor policy that generates behaviour via a “conditional denoising diffusion process” on robot action space Some key terms Explicit policy
+learning this is like imitation learning Implicit policy
+aiming to minimise the estimation of the energy function learning this is like a standard reinforcement learning diffusion policy
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-03-09 19:36:17 +1100 AEDT">March 9, 2023</span> · 1 min · 205 words · Sukai Huang</footer>
+<a aria-label="post link to Cheng_chi Diffusion Policy Visuomotor Policy Learning via Action Diffusion 2023" class="entry-link" href="https://sino-huang.github.io/posts/cheng_chi-diffusion-policy-visuomotor-policy-learning-via-action-diffusion-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/alan_lindsay-framer-planning-models-from-natural-language-action-descriptions-2017/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Alan_lindsay Framer Planning Models From Natural Language Action Descriptions 2017
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Framer: Planning Models From Natural Language Action Descriptions Author: Alan Lindsay et. al. Publish Year: 2017 Review Date: Thu, Mar 9, 2023 url: https://core.ac.uk/download/pdf/322329049.pdf Summary of paper Motivation for modelling assisting and model generation tools, there is a underlying assumption that the user can formulate the problem using some formal language. this motivates us to generate planning domain models directly from NL descriptions. Some key terms approach
+we start from NL descriptions of actions and use NL analysis to construct structured representation, from which we construct formal representations of action sequences ? only action sequence? what about the environment the generated action sequence provide the necessary structured input for inducing a PDDL domain, using domain model acquisition technology. we use an estimate of functional similarity, so sentences that describe similar behaviour are represented by the same planning operator. problem modelling
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-03-09 19:28:47 +1100 AEDT">March 9, 2023</span> · 3 min · 482 words · Sukai Huang</footer>
+<a aria-label="post link to Alan_lindsay Framer Planning Models From Natural Language Action Descriptions 2017" class="entry-link" href="https://sino-huang.github.io/posts/alan_lindsay-framer-planning-models-from-natural-language-action-descriptions-2017/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/siddharth_karamcheti-language-driven-representation-learning-for-robotics-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Siddharth_karamcheti Language Driven Representation Learning for Robotics 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Language-Driven Representation Learning for Robotics Author: Siddharth Karamcheti et. al. Publish Year: 24 Feb 2023 Review Date: Fri, Mar 3, 2023 url: https://arxiv.org/pdf/2302.12766.pdf Summary of paper Motivation recent work in visual representation learning for robotics demonstrates the viability of learning from large video datasets of humans performing everyday tasks. leveraging methods such as masked autoencoding and contrastive learning, these representations exhibit strong transfer to policy learning for visuomotor control but robot learning encompasses a diverse set of problems beyond control including grasp affordance prediction, language-conditioned imitation learning, and intent scoring for human-robot collaboration amongst others. Contribution first, we demonstrate that existing representations yield inconsistent results across these tasks: masked autoencoding approaches pick up on low-level spatial features at the cost of high-level semantics, while contrastive learning approaches capture the opposite (i.e., high-level semantics) We then introduce Voltron, a framework for language driven representation learning from human videos and associated captions. Voltron trades off language conditioned visual reconstruction to learn low-level visual patterns (mask auto-encoding) and visually grounded language generation to encode high-level semantics. (hindsight relabelling and contrastive learning) Some key terms How can we learn visual representations that generalise across the diverse spectrum of problems in robot learning?
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-03-03 16:16:19 +1100 AEDT">March 3, 2023</span> · 3 min · 463 words · Sukai Huang</footer>
+<a aria-label="post link to Siddharth_karamcheti Language Driven Representation Learning for Robotics 2023" class="entry-link" href="https://sino-huang.github.io/posts/siddharth_karamcheti-language-driven-representation-learning-for-robotics-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/tatsuki_kuribayashi-does-vision-accelerate-hierarchical-generalisation-of-neural-language-learners-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Tatsuki_kuribayashi Does Vision Accelerate Hierarchical Generalisation of Neural Language Learners 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Does Vision Accelerate Hierarchical Generalisation of Neural Language Learners Author: Tatsuki Kuribayashi Publish Year: 1 Feb 2023 Review Date: Fri, Mar 3, 2023 url: https://arxiv.org/pdf/2302.00667.pdf Summary of paper Motivation we want to know if the visual information improves hierarchical generalisaiton of the language model
+Contribution our results have exhibited that vision accelerated a proper linguistic generlisation in the simplified, artificial setting, but LMs struggled with the proper generalisation in the noisy, realistic setting. These mixed results have indicated several possibilities; for example, an image can potentially boost language acquisition, but learners’ additional visual/linguistic **prior knowledge should be needed t**o robustly make use of raw images for efficient language acquisition. </p>
+</div>
+<footer class="entry-footer"><span title="2023-03-03 15:26:55 +1100 AEDT">March 3, 2023</span> · 1 min · 111 words · Sukai Huang</footer>
+<a aria-label="post link to Tatsuki_kuribayashi Does Vision Accelerate Hierarchical Generalisation of Neural Language Learners 2023" class="entry-link" href="https://sino-huang.github.io/posts/tatsuki_kuribayashi-does-vision-accelerate-hierarchical-generalisation-of-neural-language-learners-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/jing_cheng_pang-natural-language-conditioned-reinforcement-learning-with-inside-out-task-language-development-and-translation-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Jing_cheng_pang Natural Language Conditioned Reinforcement Learning With Inside Out Task Language Development and Translation 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Jing_cheng_pang Natural Language Conditioned Reinforcement Learning With Inside Out Task Language Development and Translation 2023 Author: Jing-Cheng Pang et. al. Publish Year: 18 Feb 2023 Review Date: Fri, Mar 3, 2023 url: https://arxiv.org/pdf/2302.09368.pdf Summary of paper Motivation previous approaches generally implemented language-conditioned RL by providing human instructions in natural language and training a following policy this is outside-in approach the policy needs to comprehend the NL and manage the task simultaneously. However, the unbounded NL examples often bring much extra complexity for solving concrete RL tasks, which can distract policy learning from completing the task Contribution we investigate an inside-out scheme for natural language-conditioned RL by developing a task language (TL) that is task-related and unique. The TL is used in RL to achieve high effective policy training. besides, a translator is trained to translate NL into TL. experiments indicate that the new model not only better comprehends NL instructions but also leads to better instruction following policy that improves 13.4% success rate and adapts to unseen expressions of NL instruction. </p>
+</div>
+<footer class="entry-footer"><span title="2023-03-03 15:19:43 +1100 AEDT">March 3, 2023</span> · 1 min · 173 words · Sukai Huang</footer>
+<a aria-label="post link to Jing_cheng_pang Natural Language Conditioned Reinforcement Learning With Inside Out Task Language Development and Translation 2023" class="entry-link" href="https://sino-huang.github.io/posts/jing_cheng_pang-natural-language-conditioned-reinforcement-learning-with-inside-out-task-language-development-and-translation-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/suvaansh_bhambri-multi-level-compositional-reasoning-for-interactive-instruction-following-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Suvaansh_bhambri Multi Level Compositional Reasoning for Interactive Instruction Following 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Multi-Level Compositional Reasoning for Interactive Instruction Following Author: Suvaansh Bhambri et. al. Publish Year: 2023 Review Date: Fri, Mar 3, 2023 url: https://ppolon.github.io/paper/aaai2023-alfred-mocha.pdf Summary of paper Motivation The task given to the agents are often composite thus are challenging as completing them require to reason about multiple subtasks. Contribution we propose to divide and conquer it by breaking the task into multiple subgoals and attend to them individually for better navigation and interaction. at the highest level, we infer a sequence of human-interpreatable subgoals to be executed based on the language instructions by a high-level policy composition controller. at the middle level, we discriminatively control the agent’s navigation by a master policy by alternating between a navigation policy and various independent interaction policies. finally, at the lowest level, we infer manipulation actions with the corresponding object masks using appropriate interaction policy. Model ...</p>
+</div>
+<footer class="entry-footer"><span title="2023-03-03 11:17:01 +1100 AEDT">March 3, 2023</span> · 1 min · 144 words · Sukai Huang</footer>
+<a aria-label="post link to Suvaansh_bhambri Multi Level Compositional Reasoning for Interactive Instruction Following 2023" class="entry-link" href="https://sino-huang.github.io/posts/suvaansh_bhambri-multi-level-compositional-reasoning-for-interactive-instruction-following-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/tianjun_zhang-the-wisdom-of-hindsight-makes-language-models-better-instruction-followers-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Tianjun_zhang the Wisdom of Hindsight Makes Language Models Better Instruction Followers 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: The Wisdom of Hindsight Makes Language Models Better Instruction Followers Author: Tianjun Zhang et. al. Publish Year: 10 Feb 2023 Review Date: Thu, Mar 2, 2023 url: https://arxiv.org/pdf/2302.05206.pdf Summary of paper Motivation Reinforcement learning with Human Feedback (RLHF) demonstrates impressive performance on the GPT series models. However, the pipeline for reward and value networks Contribution in this paper, we consider an alternative approach: converting feedback to instruction by relabeling the original one and training the model for better alignment in a supervised manner. Such an algorithm doesn’t require any additional parameters except for the original language model and maximally reuses the pretraining pipeline. To achieve this, we formulate instruction alignment problem in decision making. We propose Hindsight Instruction Relabeling (HIR), a novel algorithm for alignment language models with instructions. The resulting two-stage algorithm shed light to a family of reward-free approaches that utilise the hindsightly relabeled instructions based on feedback. Some key terms fine-tuning language model
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-03-02 19:06:35 +1100 AEDT">March 2, 2023</span> · 3 min · 427 words · Sukai Huang</footer>
+<a aria-label="post link to Tianjun_zhang the Wisdom of Hindsight Makes Language Models Better Instruction Followers 2023" class="entry-link" href="https://sino-huang.github.io/posts/tianjun_zhang-the-wisdom-of-hindsight-makes-language-models-better-instruction-followers-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/ying_shen-learning-by-asking-for-embodied-visual-navigation-and-task-completion-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Ying_shen Learning by Asking for Embodied Visual Navigation and Task Completion 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Learning by Asking for Embodied Visual Navigation and Task Completion Author: Ying Shen et. al. Publish Year: 9 Feb 2023 Review Date: Thu, Mar 2, 2023 url: https://arxiv.org/pdf/2302.04865.pdf Summary of paper Motivation despite recent progress on related vision-language benchmarks, most prior work has focused on building agents that follow instructions rather than endowing agents the ability to ask questions to actively resolve ambiguities arising naturally in embodied environments. Contribution ...</p>
+</div>
+<footer class="entry-footer"><span title="2023-03-02 17:51:02 +1100 AEDT">March 2, 2023</span> · 2 min · 411 words · Sukai Huang</footer>
+<a aria-label="post link to Ying_shen Learning by Asking for Embodied Visual Navigation and Task Completion 2023" class="entry-link" href="https://sino-huang.github.io/posts/ying_shen-learning-by-asking-for-embodied-visual-navigation-and-task-completion-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/ernest_davis-benchmarks-for-automated-commonsense-reasoning-a-survey-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Ernest_davis Benchmarks for Automated Commonsense Reasoning a Survey 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Benchmarks for Automated Commonsense Reasoning a Survey Author: Ernest Davis Publish Year: 9 Feb 2023 Review Date: Thu, Mar 2, 2023 url: https://arxiv.org/pdf/2302.04752.pdf Summary of paper we mainly focus on the section where the author discusses about features of commonsense reasoning generally. Terms clarify what we mean by common sense
+what is exactly “commonsensical”? Claims about common sense that seem true to the author Commonsense knowledge is common. In talking to other person, we do not have to explain common sense reasoning or enumerate common sense facts. We can assume that they know that unsupported things fall down, that outside the tropics, days in temperate regions are generally warmer than winter, and so on. Common sense is largely sensible. Any individual person or even an entire society may have various foolish or mistaken beliefs, but for the most part common sense knowledge correponds to the realities of the world as people experience it. Common sense supports reasoning. For example a person who knows that Central Park is in New York and the Golden Gate Bridge is in San Francisco and that New York and San Francisco are 3000 miles apart will realize that they cannot walk from one to the other in fifteen minutes. commonsense reasoning is integrated with other cognitive abilities Common sense extends across tasks and modalities Common sense is a broad scope Commonsense knowledge can be distinguished from common knowledge, encyclopaedic knowledge and expert knowledge Half-truths about commonsense knowledge Commonsense knowledge is language-independent The English-language bias is as pervasive in commmonsense reasoning as in other areas of AI. Impressively, versions of ConceptNet with at least 10,000 concepts exist in 83 different languages, and a few commonsense benchmarks have been translated (table 4) but most resources and benchmarks only exist in English or in a symbolic form in which the symbols are in fact English words or short phrases. Commonsense knowledge is the same for people of different cultures and of different historical periods Even if a belief has been commonsense knowledge for everyone at all times up to the present, that does not mean that that will continue in the future. Commonsense reasoning is fast and intuitive; it falls within “System 1” Processes in System 1 characteristically are executed quickly, do not require conscious thought, are not open to introspection, in at least in some cases are not controllable (one cannot decide not to interpret what one is seeing), and do not place a cognitive burden on working memory; vision is a paradigmatic example. Processes in System 2 are the reverse: slow, consciously carried out, consciously controllable, instrospectable, and taxing on working memory. System 2 processes can call on system 1 but not vice versa, since a fast process cannot use a slow subroutine. encyclopaedic and expert knowledge can also be called on in System 1 activities Commonsense knowledge can be expressed using simple language it seems plausible: basic vocabulary tends to refer to the well-known concepts and relations which are the subject of commonsense knowledge however, there is a very large exception here, which is commonsense spatial knowledge. Natural language is notoriously ill-suited to the description of characteristics of shapes and positions that are easily apprehended (bad expressivity of natural language) An untrue claim about commonsense knowledge commonsense knowledge is not logically complex However, in physical reasoning, understanding the physical characteristics could be quite complex (e.g., considering angry birds). But humans are good at playing angry birds. </p>
+</div>
+<footer class="entry-footer"><span title="2023-03-02 15:22:51 +1100 AEDT">March 2, 2023</span> · 3 min · 573 words · Sukai Huang</footer>
+<a aria-label="post link to Ernest_davis Benchmarks for Automated Commonsense Reasoning a Survey 2023" class="entry-link" href="https://sino-huang.github.io/posts/ernest_davis-benchmarks-for-automated-commonsense-reasoning-a-survey-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/alexander_nikulin-anti-exploration-by-random-network-distillation-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Alexander_nikulin Anti Exploration by Random Network Distillation 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Anti Exploration by Random Network Distillation Author: Alexander Nikulin et. al. Publish Year: 31 Jan 2023 Review Date: Wed, Mar 1, 2023 url: https://arxiv.org/pdf/2301.13616.pdf Summary of paper Motivation despite the success of Random Network Distillation (RND) in various domains, it was shown as not discriminative enough to be used as an uncertainty estimator for penalizing out-of-distribution actions in offline reinforcement learning ?? wait, why we want to penalizing out-of-distribution actions? Contribution With a naive choice of conditioning for the RND prior, it becomes infeasible for the actor to effectively minimize the anti-exploration bonus and discriminativity is not an issue. We show that this limitation can be avoided with conditioning based on Feature-wise Linear Modulation (FiLM), resulting in a simple and efficient ensemble-free algorithm based on Soft Actor-Critic. Some key terms why we want uncertainty-based penalization
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-03-01 22:14:11 +1100 AEDT">March 1, 2023</span> · 2 min · 359 words · Sukai Huang</footer>
+<a aria-label="post link to Alexander_nikulin Anti Exploration by Random Network Distillation 2023" class="entry-link" href="https://sino-huang.github.io/posts/alexander_nikulin-anti-exploration-by-random-network-distillation-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/edoardo_cetin-learning-pessimism-for-reinforcement-learning-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Edoardo_cetin Learning Pessimism for Reinforcement Learning 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Learning Pessimism for Reinforcement Learning Author: Edoardo Cetin et. al. Publish Year: 2023 Review Date: Wed, Mar 1, 2023 url: https://kclpure.kcl.ac.uk/portal/files/196848783/10977.CetinE.pdf Summary of paper Motivation Off-policy deep RL algorithms commonly compensate for overestimation bias during temporal difference learning by utilizing pessimistic estimates of the expected target returns Contribution we propose Generalised Pessimism Learning (GPL), a strategy employing a novel learnable penalty to enact such pessimism. In particular we propose to learn this penalty alongside the critic with dual TD-learning, a new procedure to estimate and minimise the magnitude of the target returns bias with trivial computational cost. Some key terms We attribute recent improvements on RL algs to two main linked advances:
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-03-01 21:02:25 +1100 AEDT">March 1, 2023</span> · 2 min · 222 words · Sukai Huang</footer>
+<a aria-label="post link to Edoardo_cetin Learning Pessimism for Reinforcement Learning 2023" class="entry-link" href="https://sino-huang.github.io/posts/edoardo_cetin-learning-pessimism-for-reinforcement-learning-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Timo_schick Toolformer Language Models Can Teach Themselves to Use Tools 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Toolformer: Language Models Can Teach Themselves to Use Tools 2023 Author: Timo Schick et. al. META AI research Publish Year: 9 Feb 2023 Review Date: Wed, Mar 1, 2023 url: https://arxiv.org/pdf/2302.04761.pdf Summary of paper Motivation LMs exhibit remarkable abilities to solve new tasks from just a few examples or textual instructions, especially at scale. They also struggle with basic functionality, such as arithmetic or factual lookup. Contribution In this paper, we show that LMs can teach themselves to use external tools via simple APIs and achieve the best of both worlds. We introduce Toolformer, a model that incorporate a range of tools, including a calculator, a Q&amp;A system, a search engine, a translation system and a calendar. Some key terms limitation of language models
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-03-01 19:57:49 +1100 AEDT">March 1, 2023</span> · 3 min · 486 words · Sukai Huang</footer>
+<a aria-label="post link to Timo_schick Toolformer Language Models Can Teach Themselves to Use Tools 2023" class="entry-link" href="https://sino-huang.github.io/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/almog_gueta-knowledge-is-a-region-in-weight-space-for-fine-tuned-language-model-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Almog_gueta Knowledge Is a Region in Weight Space for Fine Tuned Language Model 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Knowledge Is a Region in Weight Space for Fine Tuned Language Model Author: Almog Gueta et. al. Publish Year: 12 Feb 2023 Review Date: Wed, Mar 1, 2023 url: https://arxiv.org/pdf/2302.04863.pdf Summary of paper Motivation relatively little is known a bout the relationships between different models, especially those trained or tested on different datasets. Contribution we demonstrate that fine-tuned models that were optimized for high performance, reside in well-defined regions in weight space, and vice versa language models that have been fine-tuned on the same dataset form a tight cluster in the same weight space and that models fine-tuned on different datasets from the same underlying task form a looser cluster. traversing around the region between the models reaches new models that perform comparably or even better than models found via fine-tuning Our findings demonstrate that a model positioned between two similar models can acquire the knowledge of both. We leverage this finding and design a method to pick a better model for efficient fine-tuning. more findings
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-03-01 12:45:54 +1100 AEDT">March 1, 2023</span> · 3 min · 548 words · Sukai Huang</footer>
+<a aria-label="post link to Almog_gueta Knowledge Is a Region in Weight Space for Fine Tuned Language Model 2023" class="entry-link" href="https://sino-huang.github.io/posts/almog_gueta-knowledge-is-a-region-in-weight-space-for-fine-tuned-language-model-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/xiwen_liang-contrastive-instruction-trajectory-learning-for-vision-language-navigation-2022/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Xiwen_liang Contrastive Instruction Trajectory Learning for Vision Language Navigation 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Contrastive Instruction Trajectory Learning for Vision Language Navigation Author: Xiwen Liang et. al. Publish Year: AAAI 2022 Review Date: Fri, Feb 10, 2023 url: https://arxiv.org/abs/2112.04138 Summary of paper Motivation previous works learn to navigate step-by-step following an instruction. However, these works may fail to discriminate the similarities and discrepancies across instruction-trajectory pairs and ignore the temporal continuity of sub-instructions. These problems hinder agents from learning distinctive vision-and-language representations, Contribution we propose a coarse-grained contrastive learning objective to enhance vision-and-language representations by contrasting semantics of full trajectory observations and instructions respectively; a fine-grained contrastive learning objective to perceive instructions by leveraging the temporal information of the sub-instructions. a pairwise sample-reweighting mechanism for contrastive learning to sampling bias in contrastive learning. Some key terms Limitation of current VLN model
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-02-10 02:51:23 +1100 AEDT">February 10, 2023</span> · 2 min · 360 words · Sukai Huang</footer>
+<a aria-label="post link to Xiwen_liang Contrastive Instruction Trajectory Learning for Vision Language Navigation 2022" class="entry-link" href="https://sino-huang.github.io/posts/xiwen_liang-contrastive-instruction-trajectory-learning-for-vision-language-navigation-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/jacob_andreas-lammp-language-models-as-probabilistic-priors-for-perception-and-action-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Jacob_andreas Lammp Language Models as Probabilistic Priors for Perception and Action 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: LAMMP Language Models as Probabilistic Priors for Perception and Action 2023 Author: Belinda Z. Li, Jacob Andreas et. al. Publish Year: 3 Feb 2023 Review Date: Fri, Feb 10, 2023 url: https://arxiv.org/pdf/2302.02801.pdf Summary of paper Motivation Language models trained on large text corpora encode rich distributional information about real-world environments and action sequences. this information plays a crucial role Contribution we describe how to leverage language models for non-linguistic perception and control tasks Our approach casts labelling and decision-making as inference in probabilistic graphical models in which language models parameterize prior distributions over labels, decisions and parameters, making it possible to integrate uncertain observations and incomplete background knowledge in a principled way. Some key terms common-sense priors
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-02-10 00:46:15 +1100 AEDT">February 10, 2023</span> · 2 min · 267 words · Sukai Huang</footer>
+<a aria-label="post link to Jacob_andreas Lammp Language Models as Probabilistic Priors for Perception and Action 2023" class="entry-link" href="https://sino-huang.github.io/posts/jacob_andreas-lammp-language-models-as-probabilistic-priors-for-perception-and-action-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/zhuosheng_zhang-multimodal-chain-of-thought-reasoning-in-language-models-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Zhuosheng_zhang Multimodal Chain of Thought Reasoning in Language Models 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Multimodal Chain of Thought Reasoning in Language Models Author: Zhuosheng Zhang et. al. Publish Year: 2023 Review Date: Wed, Feb 8, 2023 url: https://arxiv.org/pdf/2302.00923.pdf Summary of paper Motivation LLMs have shown impressive performance on complex reasoning by leveraging chain-of-thought (CoT) prompting to generate intermediate reasoning chains as the rationale to infer the answer. to elicit CoT reasoning in multimodality, a possible solution is to fine-tune small language models by fusing the vision and language features to perform CoT reasoning. The key challenge is that those language models tend to generate hallucinated reasoning chains that mislead the answer inference. Contribution We propose Mutimodal-CoT that incorporates vision features in a decoupled training framework. The framework separates the rationale generation and answer inference into two stages, the model is able to generate effective rationales that contribute to answer inference. Some key terms Multimodal-CoT
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-02-08 22:23:45 +1100 AEDT">February 8, 2023</span> · 3 min · 548 words · Sukai Huang</footer>
+<a aria-label="post link to Zhuosheng_zhang Multimodal Chain of Thought Reasoning in Language Models 2023" class="entry-link" href="https://sino-huang.github.io/posts/zhuosheng_zhang-multimodal-chain-of-thought-reasoning-in-language-models-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/siyuan_wang-unifying-structure-reasoning-and-language-model-pre-training-for-complex-reasoning-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Siyuan_wang Unifying Structure Reasoning and Language Model Pre Training for Complex Reasoning 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Unifying Structure Reasoning and Language Model Pre Training for Complex Reasoning Author: Siyuan Wang et. al. Publish Year: 21 Jan 2023 Review Date: Wed, Feb 8, 2023 url: https://arxiv.org/pdf/2301.08913.pdf Summary of paper Motivation language models still suffer from a heterogeneous information alignment problem and a noisy knowledge injection problem. for complex reasoning, the context contains rich knowledge that typically exists in complex and sparse form. Contribution we propose to unify structure reasoning and language model pre-training identifies four types of elementary knowledge structures from contexts to construct structured queries utilise box embedding method to conduct explicit structure reasoning along query during language modeling Some key terms What is the problem
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-02-08 22:17:31 +1100 AEDT">February 8, 2023</span> · 2 min · 281 words · Sukai Huang</footer>
+<a aria-label="post link to Siyuan_wang Unifying Structure Reasoning and Language Model Pre Training for Complex Reasoning 2023" class="entry-link" href="https://sino-huang.github.io/posts/siyuan_wang-unifying-structure-reasoning-and-language-model-pre-training-for-complex-reasoning-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/ekin_akyurek-towards-tracing-factual-knowledge-in-language-models-back-to-the-training-data-2022/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Ekin_akyurek Towards Tracing Factual Knowledge in Language Models Back to the Training Data 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Towards Tracing Factual Knowledge in Language Models Back to the Training Data Author: Ekin Akyurek et. al. Publish Year: EMNLP 2022 Review Date: Wed, Feb 8, 2023 url: https://aclanthology.org/2022.findings-emnlp.180.pdf Summary of paper Motivation LMs have been shown to memorize a great deal of factual knowledge contained in their training data. But when an LM generates an assertion, it is often difficult to determine where it learned this information and whether it is true. Contribution we propose the problem of fact tracing identifying which training examples taught an LM to generate a particular factual assertion. prior work on training data distribution (TDA) may offer effective tools for identifying such examples, known as “proponent”. We present the first quantitative benchmark to evaluate this we compare two popular families of TDA methods gradient based embedding based Some key terms Training data distribution method (TDA)
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-02-08 22:16:28 +1100 AEDT">February 8, 2023</span> · 2 min · 363 words · Sukai Huang</footer>
+<a aria-label="post link to Ekin_akyurek Towards Tracing Factual Knowledge in Language Models Back to the Training Data 2022" class="entry-link" href="https://sino-huang.github.io/posts/ekin_akyurek-towards-tracing-factual-knowledge-in-language-models-back-to-the-training-data-2022/"></a>
+</article>
+<footer class="page-footer">
+<nav class="pagination">
+<a class="prev" href="https://sino-huang.github.io/categories/paper-review/page/3/">
+      « Prev 3/8
+    </a>
+<a class="next" href="https://sino-huang.github.io/categories/paper-review/page/5/">Next 5/8 »
+    </a>
+</nav>
+</footer>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

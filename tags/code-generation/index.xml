@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Code Generation on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/code-generation/</link>
+    <description>Recent content in Code Generation on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 28 Feb 2024 19:59:38 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/code-generation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jia Li Structured Cot Prompting for Code Generation 2023</title>
+      <link>https://sino-huang.github.io/posts/jia-li-structured-cot-prompting-for-code-generation-2023/</link>
+      <pubDate>Wed, 28 Feb 2024 19:59:38 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/jia-li-structured-cot-prompting-for-code-generation-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Structured Chaint of Thought Prompting for Code Generation 2023&lt;/li&gt;
+&lt;li&gt;Author: Jia Li et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 7 Sep 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Feb 28, 2024&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2305.06599.pdf&#34;&gt;https://arxiv.org/pdf/2305.06599.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240229114924548&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/jia-li-structured-cot-prompting-for-code-generation-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;p&gt;The paper introduces Structured CoTs (SCoTs) and a novel prompting  technique called SCoT prompting for improving code generation with Large Language Models (LLMs) like ChatGPT and Codex. Unlike the previous  Chain-of-Thought (CoT) prompting, which focuses on natural language  reasoning steps, SCoT prompting leverages the structural information  inherent in source code. By incorporating program structures (sequence,  branch, and loop structures) into intermediate reasoning steps (SCoTs),  LLMs are guided to generate more structured and accurate code.  Evaluation on three benchmarks demonstrates that SCoT prompting  outperforms CoT prompting by up to 13.79% in Pass@1, is preferred by  human developers in terms of program quality, and exhibits robustness to various examples, leading to substantial improvements in code  generation performance.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mark Chen Evaluating Large Language Models Trained on Code 2021</title>
+      <link>https://sino-huang.github.io/posts/mark-chen-evaluating-large-language-models-trained-on-code-2021/</link>
+      <pubDate>Mon, 16 Oct 2023 07:24:26 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/mark-chen-evaluating-large-language-models-trained-on-code-2021/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Evaluating Large Language Models Trained on Code&lt;/li&gt;
+&lt;li&gt;Author: Mark Chen et. al. OPENAI&lt;/li&gt;
+&lt;li&gt;Publish Year: 14 Jul 2021&lt;/li&gt;
+&lt;li&gt;Review Date: Mon, Oct 16, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2107.03374.pdf&#34;&gt;https://arxiv.org/pdf/2107.03374.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;it is the research paper behind Github Copilot tech&lt;/li&gt;
+&lt;li&gt;more recently, language models have also fueled progress towards the longstanding challenge of program synthesis.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;we find that repeated sampling from the model is a surprisingly effective strategy for producing working solutions to difficult prompts.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;limitation&#34;&gt;limitation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;difficulty with docstrings describing long chain of operations and with binding operations to variables.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;HumanEval&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Baptiste Roziere Code Llama Open Foundation Model for Code 2023</title>
+      <link>https://sino-huang.github.io/posts/baptiste-roziere-code-llama-open-foundation-model-for-code-2023/</link>
+      <pubDate>Mon, 16 Oct 2023 02:58:20 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/baptiste-roziere-code-llama-open-foundation-model-for-code-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Code Llama Open Foundation Model for Code&lt;/li&gt;
+&lt;li&gt;Author: Baptiste Roziere et. al. META AI&lt;/li&gt;
+&lt;li&gt;Publish Year: 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Mon, Oct 16, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://scontent.fmel13-1.fna.fbcdn.net/v/t39.2365-6/369856151_1754812304950972_1159666448927483931_n.pdf?_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=3c67a6&amp;_nc_ohc=Hcg6QsYJx1wAX_okEZO&amp;_nc_ht=scontent.fmel13-1.fna&amp;oh=00_AfAYtfHJfYeomAQWiMUTRo96iP8d4sZrlIfD_KAeYlYaDQ&amp;oe=6531E8CF&#34;&gt;https://scontent.fmel13-1.fna.fbcdn.net/v/t39.2365-6/369856151_1754812304950972_1159666448927483931_n.pdf?_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=3c67a6&amp;_nc_ohc=Hcg6QsYJx1wAX_okEZO&amp;_nc_ht=scontent.fmel13-1.fna&amp;oh=00_AfAYtfHJfYeomAQWiMUTRo96iP8d4sZrlIfD_KAeYlYaDQ&amp;oe=6531E8CF&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20231016025929381&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/baptiste-roziere-code-llama-open-foundation-model-for-code-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;CODE Llama, support for large input contexts, and zero-shot instruction following ability for programming tasks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;CODE llama reaches SOTA performance among open models on several code benchmarks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20231016032328670&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/baptiste-roziere-code-llama-open-foundation-model-for-code-2023/image-assets/image-20231016032328670.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;By training on domain-specific datasets, LLM have proved effective more broadly on applications that require advanced natural language understanding.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dharma_kc Neural Machine Translation for Code Generation 2023</title>
+      <link>https://sino-huang.github.io/posts/dharma_kc-neural-machine-translation-for-code-generation-2023/</link>
+      <pubDate>Sun, 28 May 2023 09:52:32 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/dharma_kc-neural-machine-translation-for-code-generation-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title:  Neural Machine Translation for Code Generation&lt;/li&gt;
+&lt;li&gt;Author: Dharma KC et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 22 May 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Sun, May 28, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2305.13504.pdf&#34;&gt;https://arxiv.org/pdf/2305.13504.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Recently, NMT methods have been adapted to the generation of program code. In NMT for code generation, the task is to generate output source code that satisfies constraints expressed in the input.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;NMT-based architecture are getting quite popular for source generation from various input. The NMT-based code generation is useful in multiple domains such as code generation from input binary or assembly (decompilation), code-to-code translation, code repair, bug fixing, and many more.&lt;/li&gt;
+&lt;li&gt;some open problems
+&lt;ul&gt;
+&lt;li&gt;source code has long dependencies in multiple places
+&lt;ul&gt;
+&lt;li&gt;next-token prediction technique may lost the dependency information&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Methods that can break down a problem into small problems, generate code for such subprograms, and evaluate them are good potential research direction&lt;/li&gt;
+&lt;li&gt;sample efficiency&lt;/li&gt;
+&lt;li&gt;Current code generation does not combine code abstraction to higher-level abstractions as human do.&lt;/li&gt;
+&lt;li&gt;Execution-guided synthesis currently works with DSLs, but extending them to real-world source code generation is a research direction.&lt;/li&gt;
+&lt;li&gt;Retrieve-and-Edit framework&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

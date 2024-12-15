@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>29 May -- 04 Jun, 2022 | Sukai Huang</title>
+<meta content="" name="keywords"/>
+<meta content="Last Week’s Work Review
+Option recognition
+The choice of actions and policies based on natural language walkthrough is highly similar to “option recognition” in traditional AI study, where natural language walkthrough will help agents to make options for subpolicies selection.
+When to start /end
+When we want to let agent utilise walkthrough data, the agent needs to know when to execute the walkthrough.
+
+it needs to know what the current situation is and then know
+
+what we have already done
+where are we, what to execute next
+what to do next if the previous execution failed
+
+
+currently they are not explicitly handled
+
+Reuse object recognition module
+We can use go-explore’s object recognition module
+
+You need password to access to the content, go to Slack *#phdsukai to find more." name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/weekly-report/29-may-04-jun-2022/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/weekly-report/29-may-04-jun-2022/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/weekly-report/29-may-04-jun-2022/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/weekly-report/29-may-04-jun-2022/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="29 May -- 04 Jun, 2022" property="og:title"/>
+<meta content="Last Week’s Work Review Option recognition
+The choice of actions and policies based on natural language walkthrough is highly similar to “option recognition” in traditional AI study, where natural language walkthrough will help agents to make options for subpolicies selection.
+When to start /end
+When we want to let agent utilise walkthrough data, the agent needs to know when to execute the walkthrough.
+it needs to know what the current situation is and then know what we have already done where are we, what to execute next what to do next if the previous execution failed currently they are not explicitly handled Reuse object recognition module
+We can use go-explore’s object recognition module
+You need password to access to the content, go to Slack *#phdsukai to find more." property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="29 May -- 04 Jun, 2022" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Weekly-Reports",
+      "item": "https://sino-huang.github.io/weekly-report/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "29 May -- 04 Jun, 2022",
+      "item": "https://sino-huang.github.io/weekly-report/29-may-04-jun-2022/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/weekly-report/">Weekly-Reports</a></div>
+<h1>
+    29 May -- 04 Jun, 2022
+    <a aria-label="RSS" href="/weekly-report/29-may-04-jun-2022/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><h2 id="last-weeks-work-review">Last Week’s Work Review<a aria-hidden="true" class="anchor" hidden="" href="#last-weeks-work-review">#</a></h2>
+<p><strong>Option recognition</strong></p>
+<p>The choice of actions and policies based on natural language walkthrough is highly similar to “option recognition” in traditional AI study, where natural language walkthrough will help agents to make options for subpolicies selection.</p>
+<p><strong>When to start /end</strong></p>
+<p>When we want to let agent utilise walkthrough data, the agent needs to know when to execute the walkthrough.</p>
+<ul>
+<li>it needs to know what the current situation is and then know
+<ul>
+<li>what we have already done</li>
+<li>where are we, what to execute next</li>
+<li>what to do next if the previous execution failed</li>
+</ul>
+</li>
+<li>currently they are not explicitly handled</li>
+</ul>
+<p><strong>Reuse object recognition module</strong></p>
+<p>We can use <a href="https://github.com/uber-research/go-explore">go-explore</a>’s object recognition module</p>
+<hr/>
+<p>You need password to access to the content, go to Slack *#phdsukai to find more.</p>
+<div class="hugo-encryptor-container">
+<div class="hugo-encryptor-prompt">
+<p>Part of this article is encrypted with password:</p>
+</div>
+<div class="hugo-encryptor-form">
+<input class="hugo-encryptor-input" placeholder="Please input the password"/>
+<input class="hugo-encryptor-button" onclick="_click_handler(this)" type="button" value="Click to verify"/>
+</div>
+<div class="hugo-encryptor-cipher-text" style="display: none;">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</div>
+</div>
+<script>
+  
+  document.querySelector(".hugo-encryptor-input").addEventListener("keyup", event => {
+      if(event.key !== "Enter") return; 
+      document.querySelector(".hugo-encryptor-button").click(); 
+      event.preventDefault(); 
+  });
+</script>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script><script src="https://sino-huang.github.io/js/decrypt.js"></script></body>
+</html>

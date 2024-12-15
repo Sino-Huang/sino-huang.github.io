@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Using Kedro And Optuna for Your Project | Sukai Huang</title>
+<meta content="" name="keywords"/>
+<meta content='[TOC]
+
+Title: Using Kedro And Optuna for Your Project
+Review Date: Wed, Mar 27, 2024
+url: https://neptune.ai/blog/kedro-pipelines-with-optuna-hyperparameter-sweeps
+
+Use Kedro and Optuan for your ML project
+
+Kedro - manage the ML pipeline
+Optuna - hyperparameter tuning tool
+
+Example pyproject.toml
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+
+
+[build-system]
+requires = [ "setuptools",]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kedro_hyperparameter_sweep_test"
+authors = [
+    {name = "Sukai Huang", email = "hsk6808065@163.com"}
+]
+readme = "README.md"
+dynamic = [ "dependencies", "version",]
+
+[project.scripts]
+kedro-hyperparameter-sweep-test = "kedro_hyperparameter_sweep_test.__main__:main"
+
+[project.optional-dependencies]
+docs = [ "docutils&lt;0.18.0", "sphinx~=3.4.3", "sphinx_rtd_theme==0.5.1", "nbsphinx==0.8.1", "sphinx-autodoc-typehints==1.11.1", "sphinx_copybutton==0.3.1", "ipykernel&gt;=5.3, &lt;7.0", "Jinja2&lt;3.1.0", "myst-parser~=0.17.2",]
+
+[tool.kedro]
+package_name = "kedro_hyperparameter_sweep_test"
+project_name = "kedro_hyperparameter_sweep_test"
+kedro_init_version = "0.19.3"
+tools = [ "Linting", "Custom Logging", "Documentation", "Data Structure", "Kedro Viz",]
+example_pipeline = "False"
+source_dir = "src"
+
+[tool.ruff]
+line-length = 88
+show-fixes = true
+select = [ "F", "W", "E", "I", "UP", "PL", "T201",]
+ignore = [ "E501",]
+
+[project.entry-points."kedro.hooks"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+    
+[tool.setuptools.dynamic.dependencies]
+file = "requirements.txt"
+
+[tool.setuptools.dynamic.version]
+attr = "kedro_hyperparameter_sweep_test.__version__"
+
+[tool.setuptools.packages.find]
+where = [ "src",]
+namespaces = false
+
+[tool.setuptools.package-data]
+kedro_hyperparameter_sweep_test = ["*.csv", "*.md", "*.log"]
+
+
+The default Kedro project structure is as follows:
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+project-dir         # Parent directory of the template
+├── .gitignore      # Hidden file that prevents staging of unnecessary files to `git`
+├── conf            # Project configuration files
+├── data            # Local project data (not committed to version control)
+├── docs            # Project documentation
+├── notebooks       # Project-related Jupyter notebooks (can be used for experimental code before moving the code to src)
+├── pyproject.toml  # Identifies the project root and contains configuration information
+├── README.md       # Project README
+└── src             # Project source code
+
+
+Use Jupyter lab
+ref: https://docs.kedro.org/en/stable/notebooks_and_ipython/kedro_and_notebooks.html' name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/programming-notes/using-kedro-n-optuna-for-your-project/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/programming-notes/using-kedro-n-optuna-for-your-project/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/programming-notes/using-kedro-n-optuna-for-your-project/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/programming-notes/using-kedro-n-optuna-for-your-project/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Using Kedro And Optuna for Your Project" property="og:title"/>
+<meta content='[TOC]
+Title: Using Kedro And Optuna for Your Project Review Date: Wed, Mar 27, 2024 url: https://neptune.ai/blog/kedro-pipelines-with-optuna-hyperparameter-sweeps Use Kedro and Optuan for your ML project Kedro - manage the ML pipeline Optuna - hyperparameter tuning tool Example pyproject.toml 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 [build-system] requires = [ "setuptools",] build-backend = "setuptools.build_meta" [project] name = "kedro_hyperparameter_sweep_test" authors = [ {name = "Sukai Huang", email = "hsk6808065@163.com"} ] readme = "README.md" dynamic = [ "dependencies", "version",] [project.scripts] kedro-hyperparameter-sweep-test = "kedro_hyperparameter_sweep_test.__main__:main" [project.optional-dependencies] docs = [ "docutils&lt;0.18.0", "sphinx~=3.4.3", "sphinx_rtd_theme==0.5.1", "nbsphinx==0.8.1", "sphinx-autodoc-typehints==1.11.1", "sphinx_copybutton==0.3.1", "ipykernel&gt;=5.3, &lt;7.0", "Jinja2&lt;3.1.0", "myst-parser~=0.17.2",] [tool.kedro] package_name = "kedro_hyperparameter_sweep_test" project_name = "kedro_hyperparameter_sweep_test" kedro_init_version = "0.19.3" tools = [ "Linting", "Custom Logging", "Documentation", "Data Structure", "Kedro Viz",] example_pipeline = "False" source_dir = "src" [tool.ruff] line-length = 88 show-fixes = true select = [ "F", "W", "E", "I", "UP", "PL", "T201",] ignore = [ "E501",] [project.entry-points."kedro.hooks"] [tool.ruff.format] docstring-code-format = true [tool.setuptools.dynamic.dependencies] file = "requirements.txt" [tool.setuptools.dynamic.version] attr = "kedro_hyperparameter_sweep_test.__version__" [tool.setuptools.packages.find] where = [ "src",] namespaces = false [tool.setuptools.package-data] kedro_hyperparameter_sweep_test = ["*.csv", "*.md", "*.log"] The default Kedro project structure is as follows: 1 2 3 4 5 6 7 8 9 project-dir # Parent directory of the template ├── .gitignore # Hidden file that prevents staging of unnecessary files to `git` ├── conf # Project configuration files ├── data # Local project data (not committed to version control) ├── docs # Project documentation ├── notebooks # Project-related Jupyter notebooks (can be used for experimental code before moving the code to src) ├── pyproject.toml # Identifies the project root and contains configuration information ├── README.md # Project README └── src # Project source code Use Jupyter lab ref: https://docs.kedro.org/en/stable/notebooks_and_ipython/kedro_and_notebooks.html' property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/posts/using-kedro-n-optuna-for-your-project/image-assets/cover.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/posts/using-kedro-n-optuna-for-your-project/image-assets/cover.png" name="twitter:image"/>
+<meta content="Using Kedro And Optuna for Your Project" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Programming-Notes",
+      "item": "https://sino-huang.github.io/programming-notes/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Using Kedro And Optuna for Your Project",
+      "item": "https://sino-huang.github.io/programming-notes/using-kedro-n-optuna-for-your-project/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/programming-notes/">Programming-Notes</a></div>
+<h1>
+    Using Kedro And Optuna for Your Project
+    <a aria-label="RSS" href="/programming-notes/using-kedro-n-optuna-for-your-project/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><p>[TOC]</p>
+<ol>
+<li>Title: Using Kedro And Optuna for Your Project</li>
+<li>Review Date: Wed, Mar 27, 2024</li>
+<li>url: <a href="https://neptune.ai/blog/kedro-pipelines-with-optuna-hyperparameter-sweeps">https://neptune.ai/blog/kedro-pipelines-with-optuna-hyperparameter-sweeps</a></li>
+</ol>
+<h2 id="use-kedro-and-optuan-for-your-ml-project">Use Kedro and Optuan for your ML project<a aria-hidden="true" class="anchor" hidden="" href="#use-kedro-and-optuan-for-your-ml-project">#</a></h2>
+<ul>
+<li><a href="https://docs.kedro.org/en/stable/tutorial/create_a_pipeline.html">Kedro</a> - manage the ML pipeline</li>
+<li><a href="https://github.com/optuna/optuna">Optuna</a> - hyperparameter tuning tool</li>
+</ul>
+<h2 id="example-pyprojecttoml">Example pyproject.toml<a aria-hidden="true" class="anchor" hidden="" href="#example-pyprojecttoml">#</a></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">build-system</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">requires</span> <span class="p">=</span> <span class="p">[</span> <span class="s2">"setuptools"</span><span class="p">,]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">build-backend</span> <span class="p">=</span> <span class="s2">"setuptools.build_meta"</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">project</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">name</span> <span class="p">=</span> <span class="s2">"kedro_hyperparameter_sweep_test"</span>
+</span></span><span class="line"><span class="cl"><span class="nx">authors</span> <span class="p">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="nx">name</span> <span class="p">=</span> <span class="s2">"Sukai Huang"</span><span class="p">,</span> <span class="nx">email</span> <span class="p">=</span> <span class="s2">"hsk6808065@163.com"</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">readme</span> <span class="p">=</span> <span class="s2">"README.md"</span>
+</span></span><span class="line"><span class="cl"><span class="nx">dynamic</span> <span class="p">=</span> <span class="p">[</span> <span class="s2">"dependencies"</span><span class="p">,</span> <span class="s2">"version"</span><span class="p">,]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">project</span><span class="p">.</span><span class="nx">scripts</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">kedro-hyperparameter-sweep-test</span> <span class="p">=</span> <span class="s2">"kedro_hyperparameter_sweep_test.__main__:main"</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">project</span><span class="p">.</span><span class="nx">optional-dependencies</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">docs</span> <span class="p">=</span> <span class="p">[</span> <span class="s2">"docutils&lt;0.18.0"</span><span class="p">,</span> <span class="s2">"sphinx~=3.4.3"</span><span class="p">,</span> <span class="s2">"sphinx_rtd_theme==0.5.1"</span><span class="p">,</span> <span class="s2">"nbsphinx==0.8.1"</span><span class="p">,</span> <span class="s2">"sphinx-autodoc-typehints==1.11.1"</span><span class="p">,</span> <span class="s2">"sphinx_copybutton==0.3.1"</span><span class="p">,</span> <span class="s2">"ipykernel&gt;=5.3, &lt;7.0"</span><span class="p">,</span> <span class="s2">"Jinja2&lt;3.1.0"</span><span class="p">,</span> <span class="s2">"myst-parser~=0.17.2"</span><span class="p">,]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">tool</span><span class="p">.</span><span class="nx">kedro</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">package_name</span> <span class="p">=</span> <span class="s2">"kedro_hyperparameter_sweep_test"</span>
+</span></span><span class="line"><span class="cl"><span class="nx">project_name</span> <span class="p">=</span> <span class="s2">"kedro_hyperparameter_sweep_test"</span>
+</span></span><span class="line"><span class="cl"><span class="nx">kedro_init_version</span> <span class="p">=</span> <span class="s2">"0.19.3"</span>
+</span></span><span class="line"><span class="cl"><span class="nx">tools</span> <span class="p">=</span> <span class="p">[</span> <span class="s2">"Linting"</span><span class="p">,</span> <span class="s2">"Custom Logging"</span><span class="p">,</span> <span class="s2">"Documentation"</span><span class="p">,</span> <span class="s2">"Data Structure"</span><span class="p">,</span> <span class="s2">"Kedro Viz"</span><span class="p">,]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">example_pipeline</span> <span class="p">=</span> <span class="s2">"False"</span>
+</span></span><span class="line"><span class="cl"><span class="nx">source_dir</span> <span class="p">=</span> <span class="s2">"src"</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">tool</span><span class="p">.</span><span class="nx">ruff</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">line-length</span> <span class="p">=</span> <span class="mi">88</span>
+</span></span><span class="line"><span class="cl"><span class="nx">show-fixes</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="nx">select</span> <span class="p">=</span> <span class="p">[</span> <span class="s2">"F"</span><span class="p">,</span> <span class="s2">"W"</span><span class="p">,</span> <span class="s2">"E"</span><span class="p">,</span> <span class="s2">"I"</span><span class="p">,</span> <span class="s2">"UP"</span><span class="p">,</span> <span class="s2">"PL"</span><span class="p">,</span> <span class="s2">"T201"</span><span class="p">,]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">ignore</span> <span class="p">=</span> <span class="p">[</span> <span class="s2">"E501"</span><span class="p">,]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">project</span><span class="p">.</span><span class="nx">entry-points</span><span class="p">.</span><span class="s2">"kedro.hooks"</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">tool</span><span class="p">.</span><span class="nx">ruff</span><span class="p">.</span><span class="nx">format</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">docstring-code-format</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">tool</span><span class="p">.</span><span class="nx">setuptools</span><span class="p">.</span><span class="nx">dynamic</span><span class="p">.</span><span class="nx">dependencies</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">file</span> <span class="p">=</span> <span class="s2">"requirements.txt"</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">tool</span><span class="p">.</span><span class="nx">setuptools</span><span class="p">.</span><span class="nx">dynamic</span><span class="p">.</span><span class="nx">version</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">attr</span> <span class="p">=</span> <span class="s2">"kedro_hyperparameter_sweep_test.__version__"</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">tool</span><span class="p">.</span><span class="nx">setuptools</span><span class="p">.</span><span class="nx">packages</span><span class="p">.</span><span class="nx">find</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">where</span> <span class="p">=</span> <span class="p">[</span> <span class="s2">"src"</span><span class="p">,]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">namespaces</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">tool</span><span class="p">.</span><span class="nx">setuptools</span><span class="p">.</span><span class="nx">package-data</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">kedro_hyperparameter_sweep_test</span> <span class="p">=</span> <span class="p">[</span><span class="s2">"*.csv"</span><span class="p">,</span> <span class="s2">"*.md"</span><span class="p">,</span> <span class="s2">"*.log"</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="the-default-kedro-project-structure-is-as-follows">The default Kedro project structure is as follows:<a aria-hidden="true" class="anchor" hidden="" href="#the-default-kedro-project-structure-is-as-follows">#</a></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="n">project</span><span class="o">-</span><span class="n">dir</span><span class="w">         </span><span class="c1"># Parent directory of the template
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="err">├──</span><span class="w"> </span><span class="p">.</span><span class="n">gitignore</span><span class="w">      </span><span class="c1"># Hidden file that prevents staging of unnecessary files to `git`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="err">├──</span><span class="w"> </span><span class="n">conf</span><span class="w">            </span><span class="c1"># Project configuration files
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="err">├──</span><span class="w"> </span><span class="n">data</span><span class="w">            </span><span class="c1"># Local project data (not committed to version control)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="err">├──</span><span class="w"> </span><span class="n">docs</span><span class="w">            </span><span class="c1"># Project documentation
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="err">├──</span><span class="w"> </span><span class="n">notebooks</span><span class="w">       </span><span class="c1"># Project-related Jupyter notebooks (can be used for experimental code before moving the code to src)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="err">├──</span><span class="w"> </span><span class="n">pyproject</span><span class="p">.</span><span class="n">toml</span><span class="w">  </span><span class="c1"># Identifies the project root and contains configuration information
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="err">├──</span><span class="w"> </span><span class="n">README</span><span class="p">.</span><span class="n">md</span><span class="w">       </span><span class="c1"># Project README
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="err">└──</span><span class="w"> </span><span class="n">src</span><span class="w">             </span><span class="c1"># Project source code
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="use-jupyter-lab">Use Jupyter lab<a aria-hidden="true" class="anchor" hidden="" href="#use-jupyter-lab">#</a></h2>
+<p>ref: <a href="https://docs.kedro.org/en/stable/notebooks_and_ipython/kedro_and_notebooks.html">https://docs.kedro.org/en/stable/notebooks_and_ipython/kedro_and_notebooks.html</a></p>
+<p>it is very useful for having data preprocessing</p>
+<h2 id="global-configs-and-catalog-factory-issue">Global configs and catalog factory issue<a aria-hidden="true" class="anchor" hidden="" href="#global-configs-and-catalog-factory-issue">#</a></h2>
+<p>to have global configs that can be used in both <code>parameters.yml</code> and <code>catalog.yml</code> you can create a <code>globals.yml</code> file, and do the following</p>
+<p><code>globals.yml</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">env_name</span><span class="p">:</span><span class="w"> </span><span class="s2">"crafter"</span><span class="w"> </span><span class="c"># crafter | minigrid </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">env_purpose</span><span class="p">:</span><span class="w"> </span><span class="s2">"lang"</span><span class="w"> </span><span class="c"># lang | policy, lang is for language model training, policy is for policy training</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>parameters.yml</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">env_name</span><span class="p">:</span><span class="w"> </span><span class="s2">"${globals:env_name}"</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">env_purpose</span><span class="p">:</span><span class="w"> </span><span class="s2">"${globals:env_purpose}"</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>catalog.yml</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">debug_data</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">pandas.CSVDataset</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="s2">"data/03_traj_instr_pairs/${globals:env_name}/test_debug_data.csv"</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>However</strong>, the following is not allowed</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s2">"${globals:env_name}_debug_data#csv"</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">pandas.CSVDataset</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="s2">"data/03_traj_instr_pairs/${globals:env_name}-nested/test_debug_data.csv"</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>It is because the following node can not be parsed</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">node</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">func</span><span class="o">=</span><span class="n">generate_traj_instr_pairs</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">inputs</span><span class="o">=</span><span class="p">[</span>
+</span></span><span class="line"><span class="cl">                    <span class="s2">"expert_model"</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="s2">"expert_model_eval_env"</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="s2">"eval_env_init_obs"</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="s2">"parameters"</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="s2">"params:traj_instr_pairs_params"</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="p">],</span>
+</span></span><span class="line"><span class="cl">                <span class="n">outputs</span><span class="o">=</span><span class="s2">"${globals:env_name}_debug_data#csv"</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">name</span><span class="o">=</span><span class="s2">"generate_traj_instr_pairs_node"</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Some hints for the usage of Kedro namespace and Configs structure</strong></p>
+<ul>
+<li>
+<p>if you have so called “alternative” module that will swap any current module very likely, then give them a separate <em>namespace</em></p>
+</li>
+<li>
+<p>if you have two modules that need to be compared with each other, use namespace with different pipeline</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">kedro.pipeline.modular_pipeline</span> <span class="kn">import</span> <span class="n">pipeline</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">create_pipeline</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Pipeline</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pipeline_instance</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="n">node</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">func</span><span class="o">=</span><span class="n">split_data</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="s2">"model_input_table"</span><span class="p">,</span> <span class="s2">"params:model_options"</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">                <span class="n">outputs</span><span class="o">=</span><span class="p">[</span><span class="s2">"X_train"</span><span class="p">,</span> <span class="s2">"y_train"</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">                <span class="n">name</span><span class="o">=</span><span class="s2">"split_data_node"</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">node</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">func</span><span class="o">=</span><span class="n">train_model</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="s2">"X_train"</span><span class="p">,</span> <span class="s2">"y_train"</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">                <span class="n">outputs</span><span class="o">=</span><span class="s2">"regressor"</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">name</span><span class="o">=</span><span class="s2">"train_model_node"</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ds_pipeline_1</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pipe</span><span class="o">=</span><span class="n">pipeline_instance</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">inputs</span><span class="o">=</span><span class="s2">"model_input_table"</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">namespace</span><span class="o">=</span><span class="s2">"active_modelling_pipeline"</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ds_pipeline_2</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pipe</span><span class="o">=</span><span class="n">pipeline_instance</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">inputs</span><span class="o">=</span><span class="s2">"model_input_table"</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">namespace</span><span class="o">=</span><span class="s2">"candidate_modelling_pipeline"</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ds_pipeline_1</span> <span class="o">+</span> <span class="n">ds_pipeline_2</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>catalog.yml</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="s2">"{namespace}.regressor"</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">pickle.PickleDataset</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">filepath</span><span class="p">:</span><span class="w"> </span><span class="l">data/06_models/regressor_{namespace}.pkl</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">versioned</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>if you have parallel environment that will not impact each other, control it using <code>global configs</code></p>
+</li>
+</ul>
+<h2 id="troubleshoot">Troubleshoot<a aria-hidden="true" class="anchor" hidden="" href="#troubleshoot">#</a></h2>
+<ol>
+<li>how to save the intermediate data output</li>
+</ol>
+<p>ref: <a href="https://www.youtube.com/watch?v=sll_LhZE-p8">https://www.youtube.com/watch?v=sll_LhZE-p8</a></p>
+<p>well the official team suggested that the intermediate dataset can use <a href="https://docs.kedro.org/projects/kedro-datasets/en/kedro-datasets-2.0.0/api/kedro_datasets.pandas.ParquetDataset.html#kedro_datasets.pandas.ParquetDataset"><code>parquette</code></a>, which is faster for access , and for saving the intermediate data output, just register that in the catelog file.</p>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

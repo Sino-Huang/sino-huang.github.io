@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Future Work on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/future-work/</link>
+    <description>Recent content in Future Work on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 26 Jan 2024 17:29:29 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/future-work/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Allen Z Ren Robots That Ask for Help Uncertainty Alignment 2023</title>
+      <link>https://sino-huang.github.io/posts/allen-z-ren-robots-that-ask-for-help-uncertainty-alignment-2023/</link>
+      <pubDate>Fri, 26 Jan 2024 17:29:29 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/allen-z-ren-robots-that-ask-for-help-uncertainty-alignment-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title:  Robots That Ask for Help:  Uncertainty Alignment for Large Language Model Planners&lt;/li&gt;
+&lt;li&gt;Author: Allen Z. Ren et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 4 Sep 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Fri, Jan 26, 2024&lt;/li&gt;
+&lt;li&gt;url: arXiv:2307.01928v2&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240127222901220&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/allen-z-ren-robots-that-ask-for-help-uncertainty-alignment-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;LLMs have various capabilities but often make overly confident yet  incorrect predictions. KNOWNO aims to measure and align this  uncertainty, enabling LLM-based planners to recognize their limitations  and request assistance when necessary.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;built on theory of conformal prediction&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Ambiguity in NL&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Harsh_jhamtani Natural Language Decomposition and Interpretation of Complex Utterances 2023</title>
+      <link>https://sino-huang.github.io/posts/harsh_jhamtani-natural-language-decomposition-and-interpretation-of-complex-utterances-2023/</link>
+      <pubDate>Mon, 22 May 2023 09:54:04 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/harsh_jhamtani-natural-language-decomposition-and-interpretation-of-complex-utterances-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Natural Language Decomposition and Interpretation of Complex Utterances&lt;/li&gt;
+&lt;li&gt;Author: Jacob Andreas&lt;/li&gt;
+&lt;li&gt;Publish Year: 15 May 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Mon, May 22, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2305.08677.pdf&#34;&gt;https://arxiv.org/pdf/2305.08677.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230522105001304&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/harsh_jhamtani-natural-language-decomposition-and-interpretation-of-complex-utterances-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;natural language interface often require supervised data to translate user request into structure intent representations&lt;/li&gt;
+&lt;li&gt;however, during data collection, it can be difficult to anticipate and formalise the full range of user needs&lt;/li&gt;
+&lt;li&gt;we introduce an approach for equipping a simple language to code model to handle complex utterances via a process of hierarchical natural language decomposition.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Experiments show that the proposed approach enables the interpretation of complex utterances with almost no complex training data, while outperforming standard few-shot prompting approaches.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Methodology&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Siddharth_karamcheti Language Driven Representation Learning for Robotics 2023</title>
+      <link>https://sino-huang.github.io/posts/siddharth_karamcheti-language-driven-representation-learning-for-robotics-2023/</link>
+      <pubDate>Fri, 03 Mar 2023 16:16:19 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/siddharth_karamcheti-language-driven-representation-learning-for-robotics-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Language-Driven Representation Learning for Robotics&lt;/li&gt;
+&lt;li&gt;Author: Siddharth Karamcheti et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 24 Feb 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Fri, Mar 3, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2302.12766.pdf&#34;&gt;https://arxiv.org/pdf/2302.12766.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;recent work in visual representation learning for robotics demonstrates the viability of learning from large video datasets of humans performing everyday tasks.&lt;/li&gt;
+&lt;li&gt;leveraging methods such as masked autoencoding and contrastive learning, these representations exhibit strong transfer to policy learning for visuomotor control&lt;/li&gt;
+&lt;li&gt;but robot learning encompasses a diverse set of problems beyond control including grasp affordance prediction, language-conditioned imitation learning, and intent scoring for human-robot collaboration amongst others.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;first, we demonstrate that existing representations yield inconsistent results across these tasks: masked autoencoding approaches pick up on low-level spatial features at the cost of high-level semantics, while contrastive learning approaches capture the opposite (i.e., high-level semantics)&lt;/li&gt;
+&lt;li&gt;We then introduce Voltron, a framework for language driven representation learning from human videos and associated captions.
+&lt;ul&gt;
+&lt;li&gt;Voltron trades off language conditioned visual reconstruction to learn low-level visual patterns (mask auto-encoding) and visually grounded language generation to encode high-level semantics. (hindsight relabelling and contrastive learning)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;How can we learn visual representations that generalise across the diverse spectrum of problems in robot learning?&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Jie_huang Can Language Models Be Specific How 2022</title>
+      <link>https://sino-huang.github.io/posts/jie_huang-can-language-models-be-specific-how-2022/</link>
+      <pubDate>Tue, 08 Nov 2022 20:41:04 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/jie_huang-can-language-models-be-specific-how-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Can Language Models Be Specific? How?&lt;/li&gt;
+&lt;li&gt;Author: Jie Huang et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 11 Oct 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Tue, Nov 8, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;they propose to measure how specific the language of pre-trained language models (PLM) is, To achieve this, they introduced a novel approach to build a benchmark for specificity testing by forming masked token prediction tasks with prompts.&lt;/li&gt;
+&lt;li&gt;for instance given &amp;ldquo;J.K. Rowling was born in [MASK]&amp;rdquo;, we want to test whether a more specific answer will be better filled by PLMs. e.g., Yate instead of England&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;image-20221108211541780image-assetsimage-20221108211541780png&#34;&gt;&lt;img alt=&#34;image-20221108211541780&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/jie_huang-can-language-models-be-specific-how-2022/image-assets/image-20221108211541780.png&#34;&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;it is known that if the prediction is more specific, we can retrieve more fine-grained information from language models, and further acquire more information.
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;viewer&amp;rsquo;s opinion&lt;/em&gt;: we are not saying that summarisation is easy or having less useful information, there are cases that abstract info is more useful&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;although there are works on measuring how much knowledge is stored in PLMs or improving the correctness of the predictions, non attempted to measure or improve the specificity of prediction made by PLMs.&lt;/li&gt;
+&lt;li&gt;Understanding how specific the language of PLMs is can help us better understand the behaviour of language models and facilitate downstream applications such as question answering etc.&lt;/li&gt;
+&lt;li&gt;setup a dataset benchmark for specificity,  The quality of the benchmark is high, where the judgment on which answer is more specific is ∼ 97% consistent with humans.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;discovery&#34;&gt;Discovery&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;in general, PLMs prefer less specific answers without subjects given, and they only have a weak ability to differentiate coarse-grained/fine-grained objects by measuring their (cosine) similarities to subjects.&lt;/li&gt;
+&lt;li&gt;the results indicate that specificity was neglected by existing research on language models&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;improving-specificity-of-the-prediction&#34;&gt;Improving specificity of the prediction&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;few-shot prompting&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Yuetian_weng an Efficient Spatio Temporal Pyramid Transformer for Action Detection 2022</title>
+      <link>https://sino-huang.github.io/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/</link>
+      <pubDate>Thu, 20 Oct 2022 19:06:41 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: An Efficient Spatio-Temporal Pyramid Transformer for Action Detection&lt;/li&gt;
+&lt;li&gt;Author: Yuetian Weng et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: Jul 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, Oct 20, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;the task of action detection aims at deducing both the action category and localisation of the start and end moment for each action instance in a long, untrimmed video.&lt;/li&gt;
+&lt;li&gt;it is non-trivial to design an efficient architecture for action detection due to the prohibitively &lt;strong&gt;expensive&lt;/strong&gt; self-attentions over a long sequence of video clips&lt;/li&gt;
+&lt;li&gt;To this end, they present an efficient hierarchical spatial temporal transformer for action detection&lt;/li&gt;
+&lt;li&gt;Building upon the fact that the early self-attention layer in Transformer still focus on local patterns.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;background&#34;&gt;Background&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;to date, the majority of action detection methods are driven by 3D convolutional neural networks (CNNs), e.g., C3D, I3D, to encode video segment features from video RGB frames and optical flows
+&lt;ul&gt;
+&lt;li&gt;however, the limited receptive field hinders the CNN-based models to capture long-term spatio-temporal dependencies. alternatively, vision transformers have shown the advantage of capturing global dependencies via the self-attention mechanism.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Hierarchical ViTs divide Transformer blocks into several stages and progressively reduce the spatial size of feature maps when the network goes deeper.
+&lt;ul&gt;
+&lt;li&gt;but having self-attention over a sequence of images is expensive&lt;/li&gt;
+&lt;li&gt;also they found out that the &lt;em&gt;global attention&lt;/em&gt; in the early layers actually only encodes local visual pattens (i.e., &lt;u&gt;it only attends to its nearby tokens in adjacent frames&lt;/u&gt; while rarely interacting with tokens in distance frames)&lt;/li&gt;
+&lt;li&gt;&lt;img alt=&#34;image-20221021185742980&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/image-assets/image-20221021185742980.png&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;efficient-spatio-temporal-pyramid-transformer&#34;&gt;Efficient Spatio-temporal Pyramid Transformer&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20221022182202983&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/image-assets/image-20221022182202983.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Pengchuan_zhang Vinvl Revisiting Visual Representations in Vision Language Models 2021</title>
+      <link>https://sino-huang.github.io/posts/pengchuan_zhang-vinvl-revisiting-visual-representations-in-vision-language-models-2021/</link>
+      <pubDate>Sat, 03 Sep 2022 17:17:47 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/pengchuan_zhang-vinvl-revisiting-visual-representations-in-vision-language-models-2021/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: VinVL: Revisiting Visual Representations in Vision Language Models&lt;/li&gt;
+&lt;li&gt;Author: Pengchuan Zhang et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 10 Mar 2021&lt;/li&gt;
+&lt;li&gt;Review Date: Sat, Sep 3, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;In our experiments we feed the visual features generated by &lt;strong&gt;the new object detection model&lt;/strong&gt; into a Transformer-based VL fusion model Oscar.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;And utilise an improved approach OSCAR + to pretrain the VL model&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;has a bigger Object Detection model with larger amount of training data, called &amp;ldquo;ResNeXt-152 C4&amp;rdquo;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Vision Language Pretraining&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Yung_sung_chuang Diffcse Difference Based Contrastive Learning for Sentence Embeddings 2022</title>
+      <link>https://sino-huang.github.io/posts/yung_sung_chuang-diffcse-difference-based-contrastive-learning-for-sentence-embeddings-2022/</link>
+      <pubDate>Sat, 27 Aug 2022 16:03:42 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/yung_sung_chuang-diffcse-difference-based-contrastive-learning-for-sentence-embeddings-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: DiffCSE: Difference Based Contrastive Learning for Sentence Embeddings&lt;/li&gt;
+&lt;li&gt;Author: Yung-Sung Chuang et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 21 Apr 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Sat, Aug 27, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;DiffCSE learns sentences that are sensitive to the difference between the original sentence and and &lt;strong&gt;edited sentence&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;we propose DiffCSE, an unsupervised contrastive learning framework for learning &lt;strong&gt;sentence embeddings&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;DiffCSE&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;this is an unsupervsied contrastive learning framework rather than model architecture&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Contrastive learning in single modality data&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Gregor_geigle Retrieve Fast Rerank Smart Cooperative and Joint Approaches for Improved Cross Modal Retrieval 2022</title>
+      <link>https://sino-huang.github.io/posts/gregor_geigle-retrieve-fast-rerank-smart-coorperative-and-joint-approaches-for-improved-cross-modal-retrieval-2022/</link>
+      <pubDate>Sat, 27 Aug 2022 00:31:38 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/gregor_geigle-retrieve-fast-rerank-smart-coorperative-and-joint-approaches-for-improved-cross-modal-retrieval-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Retrieve Fast, Rerank Smart: Cooperative and Joint Approaches for Improved Cross-Modal Retrieval&lt;/li&gt;
+&lt;li&gt;Author: Gregor Geigle et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 19 Feb, 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Sat, Aug 27, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;they want to combine the cross encoder and the bi encoder advantages and have a more efficient cross-modal search and retrieval&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;efficiency and simplicity of BE approach based on twin network&lt;/li&gt;
+&lt;li&gt;expressiveness and cutting-edge performance of CE methods.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;p&gt;We propose a novel joint Cross Encoding and Binary Encoding model (Joint-Coop), which is trained to simultaneously cross-encode and embed multi-modal input; it achieves the highest scores overall while maintaining retrieval efficiency&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kaitao_song Mpnet Masked and Permuted Retrain for Language Understanding 2020</title>
+      <link>https://sino-huang.github.io/posts/kaitao_song-mpnet-masked-and-permuted-retrain-for-language-understanding-2020/</link>
+      <pubDate>Thu, 25 Aug 2022 12:24:55 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/kaitao_song-mpnet-masked-and-permuted-retrain-for-language-understanding-2020/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: MPNet: Masked and Permuted Pre-training for Language Understanding&lt;/li&gt;
+&lt;li&gt;Author: Kaitao Song et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2020&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, Aug 25, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;BERT adopts masked language modelling (MLM) for pre-training and is one of the most successful pre-training models.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Since BERT is all attention block and the positional embedding is the only info that care about the ordering, BERT neglects dependency among predicted tokens&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Jiali_duan Multimodal Alignment Using Representation Codebook 2022</title>
+      <link>https://sino-huang.github.io/posts/jiali_duan-multimodal-alignment-using-representation-codebook-2022/</link>
+      <pubDate>Tue, 09 Aug 2022 07:26:46 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/jiali_duan-multimodal-alignment-using-representation-codebook-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Multi-modal Alignment Using Representation Codebook&lt;/li&gt;
+&lt;li&gt;Author: Jiali Duan, Liqun Chen et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2022 CVPR&lt;/li&gt;
+&lt;li&gt;Review Date: Tue, Aug 9, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;aligning signals from different modalities is an important step as it affects the performance of later stage such as cross-modality fusion.&lt;/li&gt;
+&lt;li&gt;since image and text often reside in different regions of the feature space, directly aligning them at instance level is challenging especially when features are still evolving during training.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;in this paper, we treat image and text as two &amp;ldquo;views&amp;rdquo; of the same entity, and encode them into a joint vision-language coding space spanned by a dictionary of cluster centres (codebook).&lt;/li&gt;
+&lt;li&gt;to further smooth out the learning process, we adopt a teacher-student distillation paradigm, where the momentum teacher of one view guides the student learning of the other.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Types of Vision language pre-training tasks&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Younggyo_seo Masked World Models for Visual Control 2022</title>
+      <link>https://sino-huang.github.io/posts/younggyo_seo-masked-world-models-for-visual-control-2022/</link>
+      <pubDate>Fri, 01 Jul 2022 12:03:57 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/younggyo_seo-masked-world-models-for-visual-control-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title:  Masked World Models for Visual Control 2022&lt;/li&gt;
+&lt;li&gt;Author: Younggyo Seo et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Fri, Jul 1, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/2206.14244?context=cs.AI&#34;&gt;https://arxiv.org/abs/2206.14244?context=cs.AI&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://sites.google.com/view/mwm-rl&#34;&gt;https://sites.google.com/view/mwm-rl&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://lh3.googleusercontent.com/owoi-mhzvc1Jb8T_jENqF3jzsCYlizdoTPCJQYp0cNmv6AM5nZWqPUi2juwMuDYJrZ4Z6Pnsi5TF7J56GvL6CEyJTZF5AQBqSw-1njMf4Jy9El-Uck_iscK1PU1Y5gC_1w=w1280&#34;&gt;&lt;/p&gt;
+&lt;p&gt;TL:DR: &lt;a href=&#34;https://www.google.com/url?q=https%3A%2F%2Farxiv.org%2Fabs%2F2111.06377&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw1IDxCsGFfXTiNsfRJw8iat&#34;&gt;Masked autoencoders (MAE)&lt;/a&gt; has emerged as a scalable and effective self-supervised learning technique. Can MAE be also effective for visual model-based RL? Yes! with the recipe of convolutional feature masking and reward prediction to capture fine-grained and task-relevant information.&lt;/p&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Decouple visual representation learning and dynamics learning&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Deepmind Flamingo a Visual Language Model for Few Shot Learning 2022</title>
+      <link>https://sino-huang.github.io/posts/deepmind-flamingo-a-visual-language-model-for-few-shot-learning-2022/</link>
+      <pubDate>Wed, 11 May 2022 16:35:03 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/deepmind-flamingo-a-visual-language-model-for-few-shot-learning-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Flamingo: a Visual Language Model for Few-Shot Learning&lt;/li&gt;
+&lt;li&gt;Author: Jean-Baptiste Alayrac et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: Apr 2022&lt;/li&gt;
+&lt;li&gt;Review Date: May 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;flamingo-architecture&#34;&gt;Flamingo architecture&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Pretrained&lt;/strong&gt; &lt;strong&gt;vision encoder: from pixels to features&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;the model&amp;rsquo;s vision encoder is a pretrained Normalizer-Free ResNet (NFNet)&lt;/p&gt;
+&lt;p&gt;they pretrain the vision encoder using a contrastive objective on their datasets of image and text pairs, using the two term contrastive loss from paper &amp;ldquo;Learning Transferable Visual Models From Natural Language Supervision&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Shivam_miglani Nltopddl Learning From Nlp Manuals 2020</title>
+      <link>https://sino-huang.github.io/posts/shivam_miglani-nltopddl-learning-from-nlp-manuals-2020/</link>
+      <pubDate>Mon, 14 Mar 2022 15:08:45 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/shivam_miglani-nltopddl-learning-from-nlp-manuals-2020/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: NLtoPDDL: One-Shot Learning of PDDL Models from Natural Language Process Manuals&lt;/li&gt;
+&lt;li&gt;Author: Shivam Miglani et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2020&lt;/li&gt;
+&lt;li&gt;Review Date: Mar 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;pipeline&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20220314153211927&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/shivam_miglani-nltopddl-learning-from-nlp-manuals-2020/image-assets/image-20220314153211927.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pipeline architecture&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20220314165337096&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/shivam_miglani-nltopddl-learning-from-nlp-manuals-2020/image-assets/image-20220314165337096.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Phase 1&lt;/strong&gt; we have a DQN that learns to extract words that represent action name, action arguments, and the sequence of actions present in annotated NL process manuals. (why only action name, do we need to extract other information???) Again, why this is called DQN RL? is it just normal supervised learning&amp;hellip;  (Check EASDRL paper to understand Phase 1)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

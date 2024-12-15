@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>A preliminary idea about using instruction following as a intermediate training step towards a general learning-based agent | Sukai Huang</title>
+<meta content="phd thesis plan" name="keywords"/>
+<meta content="This page is not completed yet
+You need password to access to the content, go to Slack *#phdsukai to find more." name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/posts/instruction-following-as-a-path-to-general-problem-solving-agent-aug-2022/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/posts/instruction-following-as-a-path-to-general-problem-solving-agent-aug-2022/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/posts/instruction-following-as-a-path-to-general-problem-solving-agent-aug-2022/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/posts/instruction-following-as-a-path-to-general-problem-solving-agent-aug-2022/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="A preliminary idea about using instruction following as a intermediate training step towards a general learning-based agent" property="og:title"/>
+<meta content="This page is not completed yet
+You need password to access to the content, go to Slack *#phdsukai to find more." property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="A preliminary idea about using instruction following as a intermediate training step towards a general learning-based agent" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://sino-huang.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "A preliminary idea about using instruction following as a intermediate training step towards a general learning-based agent",
+      "item": "https://sino-huang.github.io/posts/instruction-following-as-a-path-to-general-problem-solving-agent-aug-2022/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/posts/">Posts</a></div>
+<h1>
+    A preliminary idea about using instruction following as a intermediate training step towards a general learning-based agent
+    <a aria-label="RSS" href="/posts/instruction-following-as-a-path-to-general-problem-solving-agent-aug-2022/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><p><strong><u>This page is not completed yet</u></strong></p>
+<p>You need password to access to the content, go to Slack *#phdsukai to find more.</p>
+<div class="hugo-encryptor-container">
+<div class="hugo-encryptor-prompt">
+<p>Part of this article is encrypted with password:</p>
+</div>
+<div class="hugo-encryptor-form">
+<input class="hugo-encryptor-input" placeholder="Please input the password"/>
+<input class="hugo-encryptor-button" onclick="_click_handler(this)" type="button" value="Click to verify"/>
+</div>
+<div class="hugo-encryptor-cipher-text" style="display: none;">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</div>
+</div>
+<script>
+  
+  document.querySelector(".hugo-encryptor-input").addEventListener("keyup", event => {
+      if(event.key !== "Enter") return; 
+      document.querySelector(".hugo-encryptor-button").click(); 
+      event.preventDefault(); 
+  });
+</script>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script><script src="https://sino-huang.github.io/js/decrypt.js"></script></body>
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>How to Autostart Apps on Your Server | Sukai Huang</title>
+<meta content="" name="keywords"/>
+<meta content="[TOC]
+
+Title: How to Autostart Apps on Your Server
+Review Date: Fri, Apr 12, 2024
+url: -
+
+How to Autostart Apps on Your Server
+we can try systemd --user  modules
+First of all, write the service in the ~/.config/systemd/user/ folder
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+
+
+[Unit]
+Description=My TorchSErve Server
+Wants=network-online.target
+After=network-online.target
+
+
+[Service]
+Type=forking
+ExecStart=/datadrive/run_torchserve.sh
+
+[Install]
+WantedBy=multi-user.target
+
+
+Note that Type=forking is important if you want to maintain the session, especially when you want to maintain a tmux" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/programming-notes/how-to-autostart-apps-on-your-server/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/programming-notes/how-to-autostart-apps-on-your-server/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/programming-notes/how-to-autostart-apps-on-your-server/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/programming-notes/how-to-autostart-apps-on-your-server/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="How to Autostart Apps on Your Server" property="og:title"/>
+<meta content="[TOC]
+Title: How to Autostart Apps on Your Server Review Date: Fri, Apr 12, 2024 url: - How to Autostart Apps on Your Server we can try systemd --user modules
+First of all, write the service in the ~/.config/systemd/user/ folder
+1 2 3 4 5 6 7 8 9 10 11 12 [Unit] Description=My TorchSErve Server Wants=network-online.target After=network-online.target [Service] Type=forking ExecStart=/datadrive/run_torchserve.sh [Install] WantedBy=multi-user.target Note that Type=forking is important if you want to maintain the session, especially when you want to maintain a tmux" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/posts/how-to-autostart-apps-on-your-server/image-assets/cover.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/posts/how-to-autostart-apps-on-your-server/image-assets/cover.png" name="twitter:image"/>
+<meta content="How to Autostart Apps on Your Server" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Programming-Notes",
+      "item": "https://sino-huang.github.io/programming-notes/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "How to Autostart Apps on Your Server",
+      "item": "https://sino-huang.github.io/programming-notes/how-to-autostart-apps-on-your-server/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/programming-notes/">Programming-Notes</a></div>
+<h1>
+    How to Autostart Apps on Your Server
+    <a aria-label="RSS" href="/programming-notes/how-to-autostart-apps-on-your-server/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><p>[TOC]</p>
+<ol>
+<li>Title: How to Autostart Apps on Your Server</li>
+<li>Review Date: Fri, Apr 12, 2024</li>
+<li>url: -</li>
+</ol>
+<h2 id="how-to-autostart-apps-on-your-server">How to Autostart Apps on Your Server<a aria-hidden="true" class="anchor" hidden="" href="#how-to-autostart-apps-on-your-server">#</a></h2>
+<p>we can try <code>systemd --user </code> modules</p>
+<p>First of all, write the service in the <code>~/.config/systemd/user/</code> folder</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Description</span><span class="o">=</span>My TorchSErve Server
+</span></span><span class="line"><span class="cl"><span class="nv">Wants</span><span class="o">=</span>network-online.target
+</span></span><span class="line"><span class="cl"><span class="nv">After</span><span class="o">=</span>network-online.target
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Service<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Type</span><span class="o">=</span>forking
+</span></span><span class="line"><span class="cl"><span class="nv">ExecStart</span><span class="o">=</span>/datadrive/run_torchserve.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Install<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Note that <code>Type=forking</code> is important if you want to maintain the session, especially when you want to maintain a tmux</p>
+<h3 id="understanding-typeforking-in-systemd">Understanding <code>Type=forking</code> in systemd<a aria-hidden="true" class="anchor" hidden="" href="#understanding-typeforking-in-systemd">#</a></h3>
+<p>In systemd, the <code>Type=</code> option in the service unit file specifies the service’s process start-up behavior, influencing how systemd manages and tracks the service’s main process. For services that start by forking off a child process (which continues running after the parent exits), <code>Type=forking</code> is the appropriate choice. This is a common pattern for traditional daemons that double-fork to detach themselves from the controlling terminal and run in the background.</p>
+<p>When <code>Type=forking</code> is set, systemd expects the service to:</p>
+<ul>
+<li>Start a parent process.</li>
+<li>Fork a child process from the parent.</li>
+<li>Have the parent process exit.</li>
+<li>Continue running in the background with the child process.</li>
+</ul>
+<p>Systemd then tracks the child process as the main service process. This is useful for services that need to perform some initial setup in the parent process before running the service logic in the background.</p>
+<h3 id="why-typeforking-works-with-tmux">Why <code>Type=forking</code> Works with <code>tmux</code><a aria-hidden="true" class="anchor" hidden="" href="#why-typeforking-works-with-tmux">#</a></h3>
+<p><code>tmux</code> commands like <code>tmux new-session -d</code> start a new session in detached mode and then immediately exit. This behavior is somewhat similar to forking, in that the command that starts the session exits quickly, but the session itself (and any processes running within it) continues in the background, independent of the shell it was started from.</p>
+<p>Here’s why setting <code>Type=forking</code> helps in your systemd unit file for <code>tmux</code>:</p>
+<ul>
+<li><strong>Initial Process Exit</strong>: The <code>tmux</code> command used in <code>ExecStart</code> exits after creating the detached session. With <code>Type=simple</code> (the default if <code>Type=</code> is not specified), systemd expects the service’s main process to stay active. When the <code>tmux</code> command exits, systemd thinks the service has stopped.</li>
+<li><strong>Background Continuation</strong>: By using <code>Type=forking</code>, you signal to systemd that the exiting of the initial process (the <code>tmux</code> command) is expected behavior and that it should consider the background continuation of the session as the service running successfully. Systemd then treats the service as active even after the <code>tmux</code> command itself has exited, as long as there’s a background process associated with it.</li>
+</ul>
+<h3 id="important-considerations">Important Considerations<a aria-hidden="true" class="anchor" hidden="" href="#important-considerations">#</a></h3>
+<p>While <code>Type=forking</code> helps keep the <code>tmux</code> session active under systemd control, it’s important to note a few considerations:</p>
+<ul>
+<li><strong>Process Tracking</strong>: Systemd might have difficulty tracking the exact process of the <code>tmux</code> session as the service’s main process since <code>tmux</code> doesn’t behave like a traditional daemon (it doesn’t provide a PID file for the child process). Systemd relies on the PID of the last background process, but in the case of <code>tmux</code>, this is managed internally by <code>tmux</code>.</li>
+<li><strong>Service Management</strong>: Actions like stopping or restarting the service rely on correctly identifying the process to manage. Ensure your <code>ExecStop</code> command correctly terminates the <code>tmux</code> session.</li>
+</ul>
+<p>Using <code>Type=forking</code> in this way is a bit unconventional but can be effective for specific use cases like yours. It’s a clever solution to integrate <code>tmux</code> session management within the systemd framework, especially when you need to ensure a <code>tmux</code> session starts automatically and persists in the background.</p>
+<h3 id="reload-systemd-daemon">Reload systemd daemon<a aria-hidden="true" class="anchor" hidden="" href="#reload-systemd-daemon">#</a></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># reload daemon</span>
+</span></span><span class="line"><span class="cl">systemctl --user daemon-reload
+</span></span><span class="line"><span class="cl"><span class="c1"># enable service</span>
+</span></span><span class="line"><span class="cl">systemctl --user <span class="nb">enable</span> mytorchserve.service
+</span></span><span class="line"><span class="cl"><span class="c1"># enable no logging start</span>
+</span></span><span class="line"><span class="cl">sudo loginctl enable-linger <span class="nv">$USER</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="check-the-log">Check the log<a aria-hidden="true" class="anchor" hidden="" href="#check-the-log">#</a></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">journalctl --user-unit<span class="o">=</span>mytorchserve.service -f -e
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="manually-start-the-service">Manually start the service<a aria-hidden="true" class="anchor" hidden="" href="#manually-start-the-service">#</a></h2>
+<p><code>systemctl --user restart mytorchserve.service</code></p>
+<h3 id="user-systemctl-and-user-runtime-directory">User systemctl and User runtime directory<a aria-hidden="true" class="anchor" hidden="" href="#user-systemctl-and-user-runtime-directory">#</a></h3>
+<p>ref: <a href="https://superuser.com/questions/1561076/systemctl-user-failed-to-connect-to-bus-no-such-file-or-directory-debian-9">https://superuser.com/questions/1561076/systemctl-user-failed-to-connect-to-bus-no-such-file-or-directory-debian-9</a></p>
+<p><strong>Solution</strong>: Using <code>sudo loginctl enable-linger $USER</code> makes <code>systemd</code> keep the user’s <code>systemd --user</code> process running even after the user logs out. This is crucial for  running background services under that user without requiring them to be continuously logged in.</p>
+<p>monitor by <code>loginctl list-users</code></p>
+<p><strong>Issue</strong>: If <code>XDG_RUNTIME_DIR</code> isn’t set in <code>crontab</code> or other auto task-scheduling scripts, then tools like <code>systemctl --user</code> might fail because they cannot find the correct runtime directory to communicate with <code>systemd --user</code>.</p>
+<p><strong>Solution</strong>: <code>export XDG_RUNTIME_DIR=/run/user/$(id -u);</code></p>
+<h2 id="add-on-cron-service">Add-on: Cron service<a aria-hidden="true" class="anchor" hidden="" href="#add-on-cron-service">#</a></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># For more information see the manual pages of crontab(5) and cron(8)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># m h  dom mon dow   command</span>
+</span></span><span class="line"><span class="cl">*/5 * * * * <span class="nb">export</span> <span class="nv">XDG_RUNTIME_DIR</span><span class="o">=</span>/run/user/<span class="k">$(</span>id -u<span class="k">)</span><span class="p">;</span> /datadrive/check_service.sh &gt;&gt; /datadrive/check_service_cron.log 2&gt;<span class="p">&amp;</span><span class="m">1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Perform the curl request and capture the response</span>
+</span></span><span class="line"><span class="cl"><span class="nv">response</span><span class="o">=</span><span class="k">$(</span>curl http://10.102.5.4:8080/ping 2&gt;<span class="p">&amp;</span>1<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># echo "Response ${response}"</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Check if the response contains "Healthy"</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$response</span><span class="s2">"</span> <span class="o">==</span> *<span class="s1">'"status": "Healthy"'</span>* <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">"All good at </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">"</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># Check for 'Connection refused' in the response</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$response</span><span class="s2">"</span> <span class="o">==</span> *<span class="s2">"Connection refused"</span>* <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">"Restart Service at </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">"</span>
+</span></span><span class="line"><span class="cl">    systemctl --user restart mytorchserve.service
+</span></span><span class="line"><span class="cl">  <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="tmux-activate-server-example">Tmux activate server example<a aria-hidden="true" class="anchor" hidden="" href="#tmux-activate-server-example">#</a></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nv">sessname</span><span class="o">=</span><span class="s2">"server"</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$USER</span> is running the script
+</span></span><span class="line"><span class="cl">/usr/bin/tmux new-session -d -s <span class="s2">"</span><span class="nv">$sessname</span><span class="s2">"</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> <span class="nv">$?</span> -eq <span class="m">1</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    /usr/bin/tmux kill-session -t <span class="s2">"</span><span class="nv">$sessname</span><span class="s2">"</span>
+</span></span><span class="line"><span class="cl">    /usr/bin/tmux new-session -d -s <span class="s2">"</span><span class="nv">$sessname</span><span class="s2">"</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sleep <span class="m">5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="sb">`</span>/usr/bin/tmux ls<span class="sb">`</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tmux send-keys -t <span class="s2">"</span><span class="nv">$sessname</span><span class="s2">"</span> <span class="s2">"cd /datadrive ; sudo systemctl stop docker.service ; cp docker.service.config.bak /lib/systemd/system/docker.service"</span> Enter
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tmux send-keys -t <span class="s2">"</span><span class="nv">$sessname</span><span class="s2">"</span> <span class="s2">"sudo systemctl daemon-reload ; sudo systemctl start docker.service"</span> Enter
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tmux send-keys -t <span class="s2">"</span><span class="nv">$sessname</span><span class="s2">"</span> <span class="s2">"cd /datadrive/avmmodel_project/torchserve-deployment ; sudo docker stop torchserve-dev-apr-12-2 ; sudo docker container rm torchserve-dev-apr-12-2"</span> Enter
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sleep <span class="m">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tmux send-keys -t <span class="s2">"</span><span class="nv">$sessname</span><span class="s2">"</span> <span class="s1">'sudo docker rmi -f  $(sudo docker images -f "dangling=true" -q)'</span> Enter
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sleep <span class="m">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tmux send-keys -t <span class="s2">"</span><span class="nv">$sessname</span><span class="s2">"</span> <span class="s1">'sudo docker build -t avmmodel_image . -f torchserve.dockerfile'</span> Enter
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sleep <span class="m">2</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tmux send-keys -t <span class="s2">"</span><span class="nv">$sessname</span><span class="s2">"</span> <span class="s1">'sudo docker run -p 8080:8089 --name torchserve-dev-apr-12-2 -v ./torchserve:/torchserve avmmodel_image'</span> Enter
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tmux split-window -v -t <span class="s2">"</span><span class="nv">$sessname</span><span class="s2">"</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tmux send-keys -t <span class="s2">"</span><span class="nv">$sessname</span><span class="s2">:0.1"</span> <span class="s1">'htop'</span> Enter
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tmux split-window -h -t <span class="s2">"</span><span class="nv">$sessname</span><span class="s2">"</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tmux send-keys -t <span class="s2">"</span><span class="nv">$sessname</span><span class="s2">:0.2"</span> <span class="s1">'sudo watch -n 1 df -h'</span> Enter
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tmux split-window -h -t <span class="s2">"</span><span class="nv">$sessname</span><span class="s2">"</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tmux send-keys -t <span class="s2">"</span><span class="nv">$sessname</span><span class="s2">:0.3"</span> <span class="s1">'cd /datadrive'</span> Enter
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="relocate-the-docker-lib">Relocate the docker lib<a aria-hidden="true" class="anchor" hidden="" href="#relocate-the-docker-lib">#</a></h2>
+<ol>
+<li>Edit docker service configuration with:
+sudo vi /lib/systemd/system/docker.service</li>
+<li>Locate the Exec line:
+ExecStart=/usr/bin/dockerd -H fd:// –containerd=/run/containerd/containerd.sock</li>
+<li>Add a parameter that points docker to the new directory:
+ExecStart=/usr/bin/dockerd <strong>–data-root /second_drive/docker</strong> -H fd:// –containerd=/run/containerd/containerd.sock</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl stop docker.service
+</span></span><span class="line"><span class="cl"><span class="c1"># edit your docker.service.config.bak</span>
+</span></span><span class="line"><span class="cl">sudo chown root:root docker.service.config.bak <span class="c1"># make sure the owner for docker config file is root</span>
+</span></span><span class="line"><span class="cl">cp docker.service.config.bak /lib/systemd/system/docker.service
+</span></span><span class="line"><span class="cl">sudo systemctl daemon-reload
+</span></span><span class="line"><span class="cl">sudo systemctl start docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

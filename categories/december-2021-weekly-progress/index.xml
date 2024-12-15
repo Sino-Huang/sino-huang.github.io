@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>December-2021-Weekly-Progress on Sukai Huang</title>
+    <link>https://sino-huang.github.io/categories/december-2021-weekly-progress/</link>
+    <description>Recent content in December-2021-Weekly-Progress on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 16 Dec 2021 18:07:25 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/categories/december-2021-weekly-progress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>12 DECEMBER -- 18 DECEMBER, 2021 Supplementary Notes</title>
+      <link>https://sino-huang.github.io/weekly-report/12-dec-18-dec-2021/supplementary-notes/</link>
+      <pubDate>Thu, 16 Dec 2021 18:07:25 +1100</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/12-dec-18-dec-2021/supplementary-notes/</guid>
+      <description>&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>12 December -- 18 December, 2021</title>
+      <link>https://sino-huang.github.io/weekly-report/12-dec-18-dec-2021/</link>
+      <pubDate>Fri, 10 Dec 2021 13:59:41 +1100</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/12-dec-18-dec-2021/</guid>
+      <description>&lt;h2 id=&#34;last-weeks-work-review&#34;&gt;Last Week&amp;rsquo;s Work Review&lt;/h2&gt;
+&lt;p&gt;In the research field of Grounded Language Learning, what will be my research questions?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;formalise the question&lt;/li&gt;
+&lt;li&gt;think about the assumptions&lt;/li&gt;
+&lt;li&gt;pick out one problem (not big but specific) from the existing experiments&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>05 December -- 11 December, 2021</title>
+      <link>https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/</link>
+      <pubDate>Sun, 05 Dec 2021 10:48:45 +1100</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/</guid>
+      <description>&lt;h2 id=&#34;last-weeks-work-review&#34;&gt;Last Week&amp;rsquo;s Work Review&lt;/h2&gt;
+&lt;p&gt;We finally decided that we should work on Interactive &lt;a href=&#34;https://www.iglu-contest.net/&#34;&gt;Grounded Language Understanding in Minecraft environment&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;First of all, we should test on the baseline model provided and check the performance of existing models.&lt;/p&gt;
+&lt;p&gt;Notice that the NeurIPS Minecraft competition workshop will start at &lt;code&gt;Fri Dec 10 06:45 AM -- 07:05 AM (AEDT)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;We should follow up on the competition model when they are available.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

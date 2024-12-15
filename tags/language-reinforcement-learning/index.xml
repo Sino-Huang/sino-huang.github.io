@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Language Reinforcement Learning on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/language-reinforcement-learning/</link>
+    <description>Recent content in Language Reinforcement Learning on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Apr 2023 10:02:24 +0800</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/language-reinforcement-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jacob_andreas Guiding Pretraining in Reinforcement Learning With Llms 2023</title>
+      <link>https://sino-huang.github.io/posts/jacob_andreas-guiding-pretraining-in-reinforcement-learning-with-llms-2023/</link>
+      <pubDate>Wed, 05 Apr 2023 10:02:24 +0800</pubDate>
+      <guid>https://sino-huang.github.io/posts/jacob_andreas-guiding-pretraining-in-reinforcement-learning-with-llms-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Guiding Pretraining in Reinforcement Learning With Large Language Models&lt;/li&gt;
+&lt;li&gt;Author: Yuqing De, Jacob Andreas et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 13 Feb 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Apr 5, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2302.06692.pdf&#34;&gt;https://arxiv.org/pdf/2302.06692.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230405100408131&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/jacob_andreas-guiding-pretraining-in-reinforcement-learning-with-llms-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;intrinstically motivated exploration methods address sparse reward problem by rewarding agents for visiting novel states or transitions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;we describe a method that uses background knowledge from text corpora to shape exploration.&lt;/li&gt;
+&lt;li&gt;This method, call Exploring with LLMs, reward an agent for achieving goals suggested by a language model prompted with a description of agent&amp;rsquo;s current state.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;How does ELLM work&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Wenlong_huang Grounded Decoding Guiding Text Generation With Grounded Models for Robot Control 2023</title>
+      <link>https://sino-huang.github.io/posts/wenlong_huang-grounded-decoding-guiding-text-generation-with-grounded-models-for-robot-control-2023/</link>
+      <pubDate>Thu, 30 Mar 2023 23:45:18 +0800</pubDate>
+      <guid>https://sino-huang.github.io/posts/wenlong_huang-grounded-decoding-guiding-text-generation-with-grounded-models-for-robot-control-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Grounded Decoding Guiding Text Generation With Grounded Models for Robot Control&lt;/li&gt;
+&lt;li&gt;Author: WenLong Huang et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 1 Mar, 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, Mar 30, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/abs/2303.00855&#34;&gt;https://arxiv.org/abs/2303.00855&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230331172240565&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/wenlong_huang-grounded-decoding-guiding-text-generation-with-grounded-models-for-robot-control-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Unfortunately, applying LLMs to settings with embodied agents, such as robots, is challenging due to their lack of experience with the physical world, inability to parse non-language observations, and ignorance of rewards or safety constraints that robots may require.&lt;/li&gt;
+&lt;li&gt;on the other hand, language-conditioned robotic policies that learn from interaction data can provide the necessary grounding that allows the agent to be correctly situated in the real world, but such policies are limited by the lack of high-level semantic understanding due to the limited breadth of the interaction data available for training them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;thus if we want to make use of the semantic knowledge in a language model while still situating it in an embodied setting, we must construct an action sequence that is both likely according to the language model and also realisable according to grounded models of the environment.&lt;/li&gt;
+&lt;li&gt;we frame this as a problem similar to probabilistic filtering: decode a sequence that both has high probability under the language model and high probability under a set of grounded model objectives.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;potential-future-work&#34;&gt;Potential future work&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;the work is related to using LMs info as a prior bias&lt;/li&gt;
+&lt;li&gt;the problem framing is straightforward&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

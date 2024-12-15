@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Paper Review | Sukai Huang</title>
+<meta content="" name="keywords"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/categories/paper-review/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/categories/paper-review/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/categories/paper-review/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/categories/paper-review/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Paper Review" property="og:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="Paper Review" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/categories/">Categories</a></div>
+<h1>
+    Paper Review
+    <a aria-label="RSS" href="/categories/paper-review/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/tathagata-chakraborti-plan-explanations-as-model-reconciliation-2017/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Tathagata Chakraborti Plan Explanations as Model Reconciliation 2017
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Plan Explanations as Model Reconciliation: Moving beyond explanation as soliloquy Author: Tathagata Chakraborti Publish Year: 30 May 2017 Review Date: Tue, Sep 19, 2023 url: https://arxiv.org/pdf/1701.08317.pdf Summary of paper Motivation Past work on plan explanations primarily involved AI system explaining the correctness of its plan and t he rationale for its decision in terms of its own model. Such soliloquy is inadequate (think about the case where GPT4 cannot find errors in PDDL domain file due to over confidence) in this work, the author said that due to the domain and task model difference between human and AI system, the soliloquy is inadequate. Contribution They show how explanation can be seen as a “model reconciliation problem” (MRP), where AI system in effect suggests changes to the human’s model, so as to make its plan be optimal with respected to that changed human model. In other words, they need to update human’s mindset about the domain and task model such that the plan generated from the AI system fits human’s expectation. Some key terms Definition of a classical planning problem
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-09-19 22:04:06 +1000 AEST">September 19, 2023</span> · 3 min · 630 words · Sukai Huang</footer>
+<a aria-label="post link to Tathagata Chakraborti Plan Explanations as Model Reconciliation 2017" class="entry-link" href="https://sino-huang.github.io/posts/tathagata-chakraborti-plan-explanations-as-model-reconciliation-2017/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/vishal-pallagani-plansformer-tool-demonstrating-generation-of-symbolic-plans-using-transformers-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Vishal Pallagani Plansformer Tool Demonstrating Generation of Symbolic Plans Using Transformers 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Plansformer – Tool Demonstrating Generation of Symbolic Plans Using Transformers Author: Vishal Pallagani et. al. Publish Year: IJCAI-23 Review Date: Sat, Sep 16, 2023 url: https://www.ijcai.org/proceedings/2023/0839.pdf Summary of paper Motivation making a bridge between planning in LLM and planning in traditional automatic planner Design of Plansformer in the evaluation phase, planner testing helps to validate the plan (both the syntax validation and plan optimality validation), model testing helps to force a linguistic consistency (in this case it supervise the semantics). Function of this Plansformer The Plansformer operates as an AI planner designed for plan generation, not for creating PDDLs from natural language descriptions. ...</p>
+</div>
+<footer class="entry-footer"><span title="2023-09-16 00:46:56 +1000 AEST">September 16, 2023</span> · 1 min · 105 words · Sukai Huang</footer>
+<a aria-label="post link to Vishal Pallagani Plansformer Tool Demonstrating Generation of Symbolic Plans Using Transformers 2023" class="entry-link" href="https://sino-huang.github.io/posts/vishal-pallagani-plansformer-tool-demonstrating-generation-of-symbolic-plans-using-transformers-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/junnan_li-blip2-boostrapping-language-image-pretraining-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Junnan_li Blip2 Boostrapping Language Image Pretraining 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: BLIP2 - Boostrapping Language Image Pretraining 2023 Author: Junnan Li et. al. Publish Year: 15 Jun 2023 Review Date: Mon, Aug 28, 2023 url: https://arxiv.org/pdf/2301.12597.pdf Summary of paper The paper titled “BLIP-2” proposes a new and efficient pre-training strategy for vision-and-language models. The cost of training such models has been increasingly prohibitive due to the large scale of the models. BLIP-2 aims to address this issue by leveraging off-the-shelf, pre-trained image encoders and large language models (LLMs) that are kept frozen during the pre-training process.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-08-28 18:48:08 +1000 AEST">August 28, 2023</span> · 2 min · 327 words · Sukai Huang</footer>
+<a aria-label="post link to Junnan_li Blip2 Boostrapping Language Image Pretraining 2023" class="entry-link" href="https://sino-huang.github.io/posts/junnan_li-blip2-boostrapping-language-image-pretraining-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/peng_gao-llama-adapter-v2-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Peng_gao Llama Adapter V2 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Llama Adapter V2 Author: Peng Gao et. al. Publish Year: 28 Apr 2023 Review Date: Mon, Aug 28, 2023 url: https://arxiv.org/pdf/2304.15010.pdf Summary of paper The paper presents LLaMA-Adapter V2, an enhanced version of the original LLaMA-Adapter designed for multi-modal reasoning and instruction following. The paper aims to address the limitations of the original LLaMA-Adapter, which could not generalize well to open-ended visual instructions and lagged behind GPT-4 in performance.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-08-28 18:47:05 +1000 AEST">August 28, 2023</span> · 2 min · 246 words · Sukai Huang</footer>
+<a aria-label="post link to Peng_gao Llama Adapter V2 2023" class="entry-link" href="https://sino-huang.github.io/posts/peng_gao-llama-adapter-v2-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/rodrigo-reward-machines-exploiting-reward-function-structure-in-rl-2022/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Rodrigo Reward Machines Exploiting Reward Function Structure in Rl 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Reward Machines: Exploiting Reward Function Structure in Reinforcement Learning 2022 Author: Rodrigo Toro Icarte et. al. Publish Year: 2022 AI Access Foundation Review Date: Thu, Aug 17, 2023 url: https://arxiv.org/abs/2010.03950 Summary of paper Motivation in most RL applications, however, users have to program the reward function and hence, there is the opportunity to make the reward function visible and RL agent can exploit the function’s internal structure to learn optimal policies in a more sample efficient manner. Contribution different methodology of RL for Reward Machines compared to their previous studies, this work tested a collection of RL methods that can exploit a reward machine’s internal structure to improve sample efficiency Some key terms counterfactual experiences for reward machines (CRM)
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-08-17 16:32:09 +1000 AEST">August 17, 2023</span> · 2 min · 321 words · Sukai Huang</footer>
+<a aria-label="post link to Rodrigo Reward Machines Exploiting Reward Function Structure in Rl 2022" class="entry-link" href="https://sino-huang.github.io/posts/rodrigo-reward-machines-exploiting-reward-function-structure-in-rl-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/rodrigo-using-reward-machines-for-high-level-task-specification-and-decomposition-in-rl-2018/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Rodrigo Using Reward Machines for High Level Task Specification and Decomposition in Rl 2018
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Reward Machines for High Level Task Specification and Decomposition in Reinforcement Learning Author: Rodrigo Toro Icarte et. al. Publish Year: PMLR 2018 Review Date: Thu, Aug 17, 2023 url: http://proceedings.mlr.press/v80/icarte18a/icarte18a.pdf Summary of paper Motivation proposing a reward machine while exposing reward function structure to the learner and supporting decomposition. Contribution in contrast to hierarchical RL methods which might converge to suboptimal policies. We prove that QRM is guaranteed to converge to an optimal policy in the tabular case. Some key terms intro
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-08-17 11:13:24 +1000 AEST">August 17, 2023</span> · 2 min · 360 words · Sukai Huang</footer>
+<a aria-label="post link to Rodrigo Using Reward Machines for High Level Task Specification and Decomposition in Rl 2018" class="entry-link" href="https://sino-huang.github.io/posts/rodrigo-using-reward-machines-for-high-level-task-specification-and-decomposition-in-rl-2018/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/william_berrios-towards-language-models-that-can-see-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">William_berrios Towards Language Models That Can See 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Towards Language Models That Can See: Computer Vision Through the LENS of Natural Language Author: William Berrios et. al. Publish Year: 28 Jun 2023 Review Date: Mon, Jul 3, 2023 url: https://arxiv.org/pdf/2306.16410.pdf Summary of paper Contribution proposing LENS, a modular approach that addresses computer vision tasks by harnessing the few-shot, in-context learning abilities of language models through natural language descriptions of visual inputs LENS enables any off-the-shelf LLM to have visual capabilities without auxiliary training or data LENS framework ...</p>
+</div>
+<footer class="entry-footer"><span title="2023-07-03 19:33:22 +1000 AEST">July 3, 2023</span> · 1 min · 152 words · Sukai Huang</footer>
+<a aria-label="post link to William_berrios Towards Language Models That Can See 2023" class="entry-link" href="https://sino-huang.github.io/posts/william_berrios-towards-language-models-that-can-see-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/lionel_wong-from-word-models-to-world-models-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Lionel_wong From Word Models to World Models 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: From Word Models to World Models: Translating from Natural Language to the Probabilistic Language of Thought Author: Lionel Wong et. al. Publish Year: 23 Jun 2023 Review Date: Sun, Jul 2, 2023 url: https://arxiv.org/pdf/2306.12672.pdf Summary of paper Motivation leverage a theory of linguistic meaning to build machines that think in more human-like ways.
+we frame linguistic meaning as a context-sensitive mapping from NL into a probabilistic language of thought (PLoT) – a general-purpose symbolic substrate for probabilistic, generative world modelling
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-07-02 21:24:50 +1000 AEST">July 2, 2023</span> · 3 min · 460 words · Sukai Huang</footer>
+<a aria-label="post link to Lionel_wong From Word Models to World Models 2023" class="entry-link" href="https://sino-huang.github.io/posts/lionel_wong-from-word-models-to-world-models-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/jianning_wang-boosting-language-models-reasoning-with-chain-of-knowledge-prompting-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Jianning_wang Boosting Language Models Reasoning With Chain of Knowledge Prompting 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Boosting Language Models Reasoning With Chain of Knowledge Prompting Author: Jianing Wang et. al. Publish Year: 10 Jun 2023 Review Date: Sun, Jul 2, 2023 url: https://arxiv.org/pdf/2306.06427.pdf Summary of paper Motivation “Chain of Thought (CoT)” aims at designing a simple prompt like “Let’s think step by step” however, the generated rationales often come with mistakes, making unfactual and unfaithful reasoning chain To mitigate this brittleness, we propose a novel Chain-of-Knowlege knowledge evidence in the form of structure triple Contribution Benefiting from CoK, we additional introduce a F^2 -Verification method to estimate the reliable response, the wrong evidence can be indicated to prompt the LLM to rethink. Some key terms ...</p>
+</div>
+<footer class="entry-footer"><span title="2023-07-02 16:09:58 +1000 AEST">July 2, 2023</span> · 2 min · 264 words · Sukai Huang</footer>
+<a aria-label="post link to Jianning_wang Boosting Language Models Reasoning With Chain of Knowledge Prompting 2023" class="entry-link" href="https://sino-huang.github.io/posts/jianning_wang-boosting-language-models-reasoning-with-chain-of-knowledge-prompting-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/lin_guan-leveraging-pretrained-llm-to-construct-and-utilise-world-models-for-model-based-task-planning-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Lin_guan Leveraging Pretrained Llm to Construct and Utilise World Models for Model Based Task Planning 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Leveraging Pretrained Large Language Models to Construct and Utilise World Models for Model Based Task Planning Author: Lin Guan et. al. Publish Year: 24 May 2023 Review Date: Sun, Jun 4, 2023 url: https://arxiv.org/pdf/2305.14909.pdf Summary of paper Motivation However, methods that use LLMs directly as planners are currently impractical due to several factors, including limited correctness of plans, strong reliance on feedback from interactions with simulators or even the actual environment, and the inefficiency in utilizing human feedback. Contribution introduce a alternative paradigm that construct an explicit world (domain) model in planning domain definition language (PDDL) and then use it to plan with sound domain-independent planners. users can correct the PDDL before the real planning. Findings GPT-4 can readily correct all the errors according to natural language feedback from PDDL validators and humans. Some key terms approach
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-06-04 12:01:46 +1000 AEST">June 4, 2023</span> · 3 min · 499 words · Sukai Huang</footer>
+<a aria-label="post link to Lin_guan Leveraging Pretrained Llm to Construct and Utilise World Models for Model Based Task Planning 2023" class="entry-link" href="https://sino-huang.github.io/posts/lin_guan-leveraging-pretrained-llm-to-construct-and-utilise-world-models-for-model-based-task-planning-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/dharma_kc-neural-machine-translation-for-code-generation-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Dharma_kc Neural Machine Translation for Code Generation 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Neural Machine Translation for Code Generation Author: Dharma KC et. al. Publish Year: 22 May 2023 Review Date: Sun, May 28, 2023 url: https://arxiv.org/pdf/2305.13504.pdf Summary of paper Motivation Recently, NMT methods have been adapted to the generation of program code. In NMT for code generation, the task is to generate output source code that satisfies constraints expressed in the input. Conclusion NMT-based architecture are getting quite popular for source generation from various input. The NMT-based code generation is useful in multiple domains such as code generation from input binary or assembly (decompilation), code-to-code translation, code repair, bug fixing, and many more. some open problems source code has long dependencies in multiple places next-token prediction technique may lost the dependency information Methods that can break down a problem into small problems, generate code for such subprograms, and evaluate them are good potential research direction sample efficiency Current code generation does not combine code abstraction to higher-level abstractions as human do. Execution-guided synthesis currently works with DSLs, but extending them to real-world source code generation is a research direction. Retrieve-and-Edit framework </p>
+</div>
+<footer class="entry-footer"><span title="2023-05-28 09:52:32 +1000 AEST">May 28, 2023</span> · 1 min · 181 words · Sukai Huang</footer>
+<a aria-label="post link to Dharma_kc Neural Machine Translation for Code Generation 2023" class="entry-link" href="https://sino-huang.github.io/posts/dharma_kc-neural-machine-translation-for-code-generation-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/jiannan_xiang-language-models-meet-world-models-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Jiannan_xiang Language Models Meet World Models 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Language Models Meet World Models: Embodied Experiences Enhance Language Models Author: Jiannan Xiang et. al. Publish Year: 22 May 2023 Review Date: Fri, May 26, 2023 url: https://arxiv.org/pdf/2305.10626v2.pdf Summary of paper Motivation LLM often struggle with simple reasoning and planning in physical environment the limitation arises from the fact that LMs are trained only on written text and miss essential embodied knowledge and skills. Contribution we propose a new paradigm of enhancing LMs by finetuning them with world models, to gain diverse embodied knowledge while retaining their general language capabilities. the experiments in a virtual physical world simulation environment will be used to finetune LMs to teach diverse abilities of reasoning and acting in the physical world, e.g., planning and completing goals, object permanence and tracking etc. to preserve the generalisation ability of LM models, we use elastic weight consolidation (EWC) for selective weight updates, combined with low-rank adapters (LoRA) for training efficiency. Some key terms ...</p>
+</div>
+<footer class="entry-footer"><span title="2023-05-26 01:00:02 +1000 AEST">May 26, 2023</span> · 2 min · 357 words · Sukai Huang</footer>
+<a aria-label="post link to Jiannan_xiang Language Models Meet World Models 2023" class="entry-link" href="https://sino-huang.github.io/posts/jiannan_xiang-language-models-meet-world-models-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/ryan_yang-pg3-policy-guided-planning-for-generalised-policy-generation-2022/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Ryan_yang PG3 Policy Guided Planning for Generalised Policy Generation 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: PG3 Policy Guided Planning for Generalised Policy Generation Author: Ryan Yang et. al. Publish Year: 21 Apr 2022 Review Date: Wed, May 24, 2023 url: https://arxiv.org/pdf/2204.10420.pdf Summary of paper Motivation a longstanding objective in classical planning is to synthesise policies that generalise across multiple problems from the same domain this work, we study generalised policy search-based methods with a focus on the score function used to guide the search over policies Contribution we study a specific instantiation of policy search where planning problems are PDDL-based and policies are lifted decision lists. Some key terms what is generalised planning and generalised policy search (GPS)
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-05-24 19:57:16 +1000 AEST">May 24, 2023</span> · 2 min · 304 words · Sukai Huang</footer>
+<a aria-label="post link to Ryan_yang PG3 Policy Guided Planning for Generalised Policy Generation 2022" class="entry-link" href="https://sino-huang.github.io/posts/ryan_yang-pg3-policy-guided-planning-for-generalised-policy-generation-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/shunyu_yao-tree-of-thoughts-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Shunyu_yao Tree of Thoughts 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Tree of Thoughts: Deliberate Problem Solving with LLM Author: Shunyu Yao et. al. Publish Year: 17 May 2023 Review Date: Wed, May 24, 2023 url: https://arxiv.org/pdf/2305.10601.pdf Summary of paper Motivation might benefit from augmentation by a more deliberate “System 2” planning process that (1) maintains and explores diverse alternatives for current choices instead of just picking one, and (2) evaluates its current status and actively looks ahead or backtracks to make more global decisions. search through a combinatorial problem space, represented as a tree. We thus propose the Tree of Thoughts (ToT) framework for general problem solving with language models. Contribution limitation
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-05-24 16:35:10 +1000 AEST">May 24, 2023</span> · 1 min · 104 words · Sukai Huang</footer>
+<a aria-label="post link to Shunyu_yao Tree of Thoughts 2023" class="entry-link" href="https://sino-huang.github.io/posts/shunyu_yao-tree-of-thoughts-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/tom_silver-generalised-planning-in-pddl-domains-with-pretrained-large-language-models-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Tom_silver Generalised Planning in PDDL Domains With Pretrained Large Language Models 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Generalised Planning in Pddl Domains With Pretrained Large Language Models Author: Tom Silver et. al. Publish Year: 18 May 2023 Review Date: Tue, May 23, 2023 url: https://arxiv.org/pdf/2305.11014.pdf Summary of paper Motivation in particular, we consider PDDL domains and use GPT-4 to synthesize Python programs, we also consider Chain of Thought (CoT) summarisation, where the LLM is prompted to summarize the domain and propose a strategy in words before synthesizing the program we consider automated debugging, where the program is validated with respect to the training tasks, and in case of errors, the LLM is re-prompted with four types of feedback. Contribution we find that GPT4 is a surprisingly powerful generalised planner. we also conclude that automated debugging is very important, that CoT summarisation has non-uniform impact, that GPT4 is far superior to GPT3.5, and that just two training tasks are often sufficient for strong generalisation. Some key terms the problem
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-05-23 21:27:15 +1000 AEST">May 23, 2023</span> · 3 min · 551 words · Sukai Huang</footer>
+<a aria-label="post link to Tom_silver Generalised Planning in PDDL Domains With Pretrained Large Language Models 2023" class="entry-link" href="https://sino-huang.github.io/posts/tom_silver-generalised-planning-in-pddl-domains-with-pretrained-large-language-models-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/yongliang-hugginggpt-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Yongliang Hugginggpt 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: HuggingGPT: Solving AI tasks with ChatGPT and its Friends in Hugging Face Author: Yongliang Shen et. al. Publish Year: 2 Apr 2023 Review Date: Tue, May 23, 2023 url: https://arxiv.org/pdf/2303.17580.pdf Summary of paper Motivation while there are abundant AI models available for different domains and modalities, they cannot handle complicated AI tasks. we advocate that LLMs could act as a controller to manage existing AI models to solve complicated AI tasks and language could be a generic interface to empower this Contribution specifically, we use ChatGPT to conduct task planning when receiving a user request, select models according to their function descriptions available in Hugging face, execute each subtask with the selected AI model, and summarize the response according to the execution results. Some key terms Model
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-05-23 11:57:02 +1000 AEST">May 23, 2023</span> · 2 min · 288 words · Sukai Huang</footer>
+<a aria-label="post link to Yongliang Hugginggpt 2023" class="entry-link" href="https://sino-huang.github.io/posts/yongliang-hugginggpt-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/yaqi_xie-translating-natural-language-to-planning-goals-with-llm-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Yaqi_xie Translating Natural Language to Planning Goals With Llm 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Translating Natural Language to Planning Goals With LLM Author: Yaqi Xie et. al. Publish Year: 10 Feb 2023 Review Date: Mon, May 22, 2023 url: https://arxiv.org/pdf/2302.05128.pdf Summary of paper Motivation Unfortunately, recent work has also shown that LLMs are unable to perform accurate reasoning nor solve planning problem LLM can act as a natural interface between the planner and human users Our empirical results on GPT 3.5 variants show that LLMs are much better suited towards translation rather than planning. Contribution We find that LLMs are able to leverage commonsense knowledge and reasoning to furnish missing details from under-specified goals (as is often the case in natural language) Some key terms Architecture
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-05-22 12:30:25 +1000 AEST">May 22, 2023</span> · 1 min · 142 words · Sukai Huang</footer>
+<a aria-label="post link to Yaqi_xie Translating Natural Language to Planning Goals With Llm 2023" class="entry-link" href="https://sino-huang.github.io/posts/yaqi_xie-translating-natural-language-to-planning-goals-with-llm-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/bo_liu-llmp-empowering-large-language-models-with-optimal-planning-proficiency-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Bo_liu Llmp Empowering Large Language Models With Optimal Planning Proficiency 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: LLM+P Empowering Large Language Models With Optimal Planning Proficiency Author: Bo Liu Publish Year: 5 May 2023 Review Date: Mon, May 22, 2023 url: https://arxiv.org/pdf/2304.11477.pdf Summary of paper Motivation However, so far, LLMs cannot reliably solve long-horizon planning problems. By contrast, classical planners, once a problem is given in a formatted way, can use efficient search algorithms to quickly identify correct, or even optimal plans. Contribution introduce LLM+P, it takes in a natural language description of a planning problem, then return a correct plan for solving that problem in natural language. LLM+P does so by first converting the language description into a file written in the planning domain definition language (PDDL) limitation of the paper: In this paper, we do not ask the LLM to recognize that it has been posed a prompt that is suitable for processing using the proposed LLM+P pipeline. Some key terms limitation of LLMs
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-05-22 11:56:15 +1000 AEST">May 22, 2023</span> · 2 min · 251 words · Sukai Huang</footer>
+<a aria-label="post link to Bo_liu Llmp Empowering Large Language Models With Optimal Planning Proficiency 2023" class="entry-link" href="https://sino-huang.github.io/posts/bo_liu-llmp-empowering-large-language-models-with-optimal-planning-proficiency-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/siyu_yuan-distilling-script-knowledge-from-large-language-models-for-constrainted-language-planning-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Siyu_yuan Distilling Script Knowledge From Large Language Models for Constrainted Language Planning 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Distilling Script Knowledge From Large Language Models for Constrainted Language Planning Author: Siyu Yuan et. al. Publish Year: 18 May 2023 Review Date: Mon, May 22, 2023 url: https://arxiv.org/pdf/2305.05252.pdf Summary of paper Motivation to accomplish everyday goals, human usually plan their actions in accordance with step-by-step instructions, such instruction are discovered as goal-oriented scripts. In this paper, we define the task of constrained language planning for the first time. We propose an over-generate-then-filter approach to improve large language models (LLMs) on this task, and use it to distill a novel constrained language planning dataset, CoScript, which consists of 55,000 scripts. Contribution the dataset Experiments show that, when trained on CoScript, smaller models such as T5 (Raffel et al., 2020) can achieve good performance, even surpassing that of LLMs Some key terms limitation of previous work
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-05-22 11:31:39 +1000 AEST">May 22, 2023</span> · 2 min · 304 words · Sukai Huang</footer>
+<a aria-label="post link to Siyu_yuan Distilling Script Knowledge From Large Language Models for Constrainted Language Planning 2023" class="entry-link" href="https://sino-huang.github.io/posts/siyu_yuan-distilling-script-knowledge-from-large-language-models-for-constrainted-language-planning-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/junnan_li-blip-bootstrapping-language-image-pre-training-for-unified-vision-language-understanding-and-generation-2022/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Junnan_li BLIP Bootstrapping Language Image Pre Training for Unified Vision Language Understanding and Generation 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: BLIP Bootstrapping Language Image Pre Training for Unified Vision Language Understanding and Generation 2022 Author: Junnan Li et. al. Publish Year: 15 Feb 2022 Review Date: Mon, May 22, 2023 url: https://arxiv.org/pdf/2201.12086.pdf Summary of paper Motivation performance improvement has been largely achieved by scaling up the dataset with noisy image-text pairs collected from the web, which is a suboptimal source of supervision Contribution BLIP effectively utilises the noisy web data by bootstrapping the captions, where a captioner generates synthetic captions and a filter removes the noisy ones. Some key terms Architecture
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-05-22 11:17:28 +1000 AEST">May 22, 2023</span> · 2 min · 240 words · Sukai Huang</footer>
+<a aria-label="post link to Junnan_li BLIP Bootstrapping Language Image Pre Training for Unified Vision Language Understanding and Generation 2022" class="entry-link" href="https://sino-huang.github.io/posts/junnan_li-blip-bootstrapping-language-image-pre-training-for-unified-vision-language-understanding-and-generation-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/harsh_jhamtani-natural-language-decomposition-and-interpretation-of-complex-utterances-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Harsh_jhamtani Natural Language Decomposition and Interpretation of Complex Utterances 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Natural Language Decomposition and Interpretation of Complex Utterances Author: Jacob Andreas Publish Year: 15 May 2023 Review Date: Mon, May 22, 2023 url: https://arxiv.org/pdf/2305.08677.pdf Summary of paper Motivation natural language interface often require supervised data to translate user request into structure intent representations however, during data collection, it can be difficult to anticipate and formalise the full range of user needs we introduce an approach for equipping a simple language to code model to handle complex utterances via a process of hierarchical natural language decomposition. Contribution Experiments show that the proposed approach enables the interpretation of complex utterances with almost no complex training data, while outperforming standard few-shot prompting approaches. Some key terms Methodology
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-05-22 09:54:04 +1000 AEST">May 22, 2023</span> · 10 min · 2088 words · Sukai Huang</footer>
+<a aria-label="post link to Harsh_jhamtani Natural Language Decomposition and Interpretation of Complex Utterances 2023" class="entry-link" href="https://sino-huang.github.io/posts/harsh_jhamtani-natural-language-decomposition-and-interpretation-of-complex-utterances-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/alexander_kirillov-segment-anything-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Alexander_kirillov Segment Anything 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Segment Anything Author: Alexander Kirillov et. al. Publish Year: 5 Apr 2023 Review Date: Sun, May 21, 2023 url: https://arxiv.org/pdf/2304.02643.pdf Summary of paper Motivation we introduce the segment anything project: a new task, model and dataset for image segmentation.
+Using the model in a data collection loop, we built the largest segmentation dataset to date.
+Contribution the model is designed and trained to be promptable, so it can transfer zero-shot to new images distributions and tasks. background CLIP and ALIGN use contrastive learning to train text and image encoders that align the two modalities. goal of the authors
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-05-21 11:56:54 +1000 AEST">May 21, 2023</span> · 2 min · 356 words · Sukai Huang</footer>
+<a aria-label="post link to Alexander_kirillov Segment Anything 2023" class="entry-link" href="https://sino-huang.github.io/posts/alexander_kirillov-segment-anything-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/rohit_gridhar-imagebind-one-embedding-space-to-bind-them-all-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Rohit_gridhar Imagebind One Embedding Space to Bind Them All 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: ImageBind One Embedding Space to Bind Them All Author: Rohit Girdhar et. al. Publish Year: 9 May 2023 Review Date: Mon, May 15, 2023 url: https://arxiv.org/pdf/2305.05665.pdf Summary of paper Motivation we present ImageBind, an approach to learn a joint embedding across six different modalities ImageBind can leverage recent large scale vision-language models, and extend their zero shot capabilities to new modalities just using their natural pairing with images. Contribution we show that all combinations of paired data are not necessary to train such a joint embedding, and only image-paired data is sufficient to bind the modalities together. Some key terms multimodality binding
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-05-15 15:06:48 +1000 AEST">May 15, 2023</span> · 2 min · 235 words · Sukai Huang</footer>
+<a aria-label="post link to Rohit_gridhar Imagebind One Embedding Space to Bind Them All 2023" class="entry-link" href="https://sino-huang.github.io/posts/rohit_gridhar-imagebind-one-embedding-space-to-bind-them-all-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/qinghao_hitea-hierarchical-temporal-aware-video-language-pre-training-2022/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Qinghao_hitea Hierarchical Temporal Aware Video Language Pre Training 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Hierarchical Temporal Aware Video Language Pre Training Author: Qinghao Ye, Fei Huang et. al. Publish Year: 30 Dec 2022 Review Date: Thu, Apr 6, 2023 url: https://arxiv.org/pdf/2212.14546.pdf Summary of paper Motivation most previous methods directly inherit or adapt typical image-language pre-training paradigms to video-language pretraining, thus not fully exploiting the unique characteristic of video, i.e., temporal. Contribution this paper, the two novel pretraining tasks for modeling cross-modal alignment between moments and texts as well as the temporal relations of video-text pairs. specifically, we propose a cross-modal moment exploration task to explore moments in videos, which results in detailed video moment representations besides, the inherent temporal relations are capture by alignment video-text pairs as a whole in different time resolutions with multimodal temporal relation exploration tasks Some key terms limitation of previous work
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-04-06 10:02:22 +0800 +0800">April 6, 2023</span> · 2 min · 411 words · Sukai Huang</footer>
+<a aria-label="post link to Qinghao_hitea Hierarchical Temporal Aware Video Language Pre Training 2022" class="entry-link" href="https://sino-huang.github.io/posts/qinghao_hitea-hierarchical-temporal-aware-video-language-pre-training-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/jacob_andreas-guiding-pretraining-in-reinforcement-learning-with-llms-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Jacob_andreas Guiding Pretraining in Reinforcement Learning With Llms 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Guiding Pretraining in Reinforcement Learning With Large Language Models Author: Yuqing De, Jacob Andreas et. al. Publish Year: 13 Feb 2023 Review Date: Wed, Apr 5, 2023 url: https://arxiv.org/pdf/2302.06692.pdf Summary of paper Motivation intrinstically motivated exploration methods address sparse reward problem by rewarding agents for visiting novel states or transitions. Contribution we describe a method that uses background knowledge from text corpora to shape exploration. This method, call Exploring with LLMs, reward an agent for achieving goals suggested by a language model prompted with a description of agent’s current state. Some key terms How does ELLM work
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-04-05 10:02:24 +0800 +0800">April 5, 2023</span> · 2 min · 298 words · Sukai Huang</footer>
+<a aria-label="post link to Jacob_andreas Guiding Pretraining in Reinforcement Learning With Llms 2023" class="entry-link" href="https://sino-huang.github.io/posts/jacob_andreas-guiding-pretraining-in-reinforcement-learning-with-llms-2023/"></a>
+</article>
+<footer class="page-footer">
+<nav class="pagination">
+<a class="prev" href="https://sino-huang.github.io/categories/paper-review/page/2/">
+      « Prev 2/8
+    </a>
+<a class="next" href="https://sino-huang.github.io/categories/paper-review/page/4/">Next 4/8 »
+    </a>
+</nav>
+</footer>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

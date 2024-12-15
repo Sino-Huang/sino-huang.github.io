@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Rl Reward on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/rl-reward/</link>
+    <description>Recent content in Rl Reward on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 10 May 2024 22:23:31 +1000</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/rl-reward/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Silviu Pitis Failure Modes of Learning Reward Models for Sequence Model 2023</title>
+      <link>https://sino-huang.github.io/posts/silviu-pitis-failure-modes-of-learning-reward-models-for-sequence-model-2023/</link>
+      <pubDate>Fri, 10 May 2024 22:23:31 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/silviu-pitis-failure-modes-of-learning-reward-models-for-sequence-model-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Failure Modes of Learning Reward Models for LLMs and other Sequence Models&lt;/li&gt;
+&lt;li&gt;Author: Silviu Pitis&lt;/li&gt;
+&lt;li&gt;Publish Year: ICML workshop 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Fri, May 10, 2024&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://openreview.net/forum?id=NjOoxFRZA4&amp;noteId=niZsZfTPPt&#34;&gt;https://openreview.net/forum?id=NjOoxFRZA4&amp;noteId=niZsZfTPPt&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240510222642292&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/silviu-pitis-failure-modes-of-learning-reward-models-for-sequence-model-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;c3-preference-cannot-represented-as-numbers&#34;&gt;C3. Preference cannot represented as numbers&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240510222758050&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/silviu-pitis-failure-modes-of-learning-reward-models-for-sequence-model-2023/image-assets/image-20240510222758050.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;m1-rationality-level-of-human-preference&#34;&gt;M1. rationality level of human preference&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240510223017797&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/silviu-pitis-failure-modes-of-learning-reward-models-for-sequence-model-2023/image-assets/image-20240510223017797.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;32-if-the-conditioncontext-changes-the-preference-may-change-rapidly-and-this-cannot-reflect-on-the-reward-machine&#34;&gt;3.2, if the condition/context changes, the preference may change rapidly, and this cannot reflect on the reward machine&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240510224002585&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/silviu-pitis-failure-modes-of-learning-reward-models-for-sequence-model-2023/image-assets/image-20240510224002585.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;a2-preference-should-be-expressed-with-respect-to-state-policy-pairs-rather-than-just-outcomes&#34;&gt;A2. Preference should be expressed with respect to state-policy pairs, rather than just outcomes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A state-policy pair includes both the current state of the system and the strategy (policy) being employed. This approach avoids the complication of unresolved stochasticity (randomness that hasn&amp;rsquo;t yet been resolved), focusing instead on scenarios where the outcomes of policies are already known.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Example with Texas Hold’em&lt;/strong&gt;: The author uses an example  from poker to illustrate these concepts. In the example, a player  holding a weaker hand (72o) wins against a stronger hand (AA) after both commit to large bets pre-flop. Traditional reward modeling would prefer the successful trajectory of the weaker hand due to the positive  outcome. However, a rational analysis (ignoring stochastic outcomes)  would prefer the decision-making associated with the stronger hand (AA), even though it lost, as it&amp;rsquo;s typically the better strategy.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Gaurav Ghosal the Effect of Modeling Human Rationality Level 2023</title>
+      <link>https://sino-huang.github.io/posts/gaurav-ghosal-the-effect-of-modeling-human-rationality-level-2023/</link>
+      <pubDate>Fri, 10 May 2024 19:35:03 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/gaurav-ghosal-the-effect-of-modeling-human-rationality-level-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title:  The Effect of Modeling Human Rationality Level on Learning Rewards from Multiple Feedback Types&lt;/li&gt;
+&lt;li&gt;Author: Gaurav R. Ghosal et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 9 Mar 2023 AAAI 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Fri, May 10, 2024&lt;/li&gt;
+&lt;li&gt;url: arXiv:2208.10687v2&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240510211346583&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/gaurav-ghosal-the-effect-of-modeling-human-rationality-level-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;We find that overestimating human rationality can have dire effects on reward learning accuracy and regret&lt;/li&gt;
+&lt;li&gt;We also find that fitting the rationality coefficient to human data enables better reward learning, even when the human deviates significantly from the noisy-rational choice model due to systematic biases&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What is Boltzmann Rationality coefficient $\beta$&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nate Rahn Policy Optimization in Noisy Neighbourhood 2023</title>
+      <link>https://sino-huang.github.io/posts/nate-rahn-policy-optimization-in-noisy-neighbourhood-2023/</link>
+      <pubDate>Fri, 10 May 2024 14:16:56 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/nate-rahn-policy-optimization-in-noisy-neighbourhood-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Policy Optimization in Noisy Neighborhood&lt;/li&gt;
+&lt;li&gt;Author: Nate Rahn et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: NeruIPS 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Fri, May 10, 2024&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/abs/2309.14597&#34;&gt;https://arxiv.org/abs/2309.14597&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240510141939305&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/nate-rahn-policy-optimization-in-noisy-neighbourhood-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;in this paper, we demonstrate that high-frequency discontinuities in the mapping from policy parameters $\theta$ to return $R(\theta)$​ are an important cause of return variation.&lt;/li&gt;
+&lt;li&gt;As a consequence of these discontinuities, a single gradient step or perturbation to the policy parameters often causes important changes in the return, even in settings where both the policy and the dynamics are deterministic.
+&lt;ul&gt;
+&lt;li&gt;unstable learning in some sense&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;based on this observation, we demonstrate the usefulness of studying the landscape through the distribution of returns obtained from small perturbation of $\theta$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Evidence that noisy reward signal leads to substantial variance in performance&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ademi Adeniji Language Reward Modulation for Pretraining Rl 2023</title>
+      <link>https://sino-huang.github.io/posts/ademi-adeniji-language-reward-modulation-for-pretraining-rl-2023/</link>
+      <pubDate>Thu, 09 May 2024 21:18:00 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/ademi-adeniji-language-reward-modulation-for-pretraining-rl-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Language Reward Modulation for Pretraining Reinforcement Learning&lt;/li&gt;
+&lt;li&gt;Author: Ademi Adeniji et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: ICLR 2023 reject&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, May 9, 2024&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://openreview.net/forum?id=SWRFC2EupO&#34;&gt;https://openreview.net/forum?id=SWRFC2EupO&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240509213653815&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/ademi-adeniji-language-reward-modulation-for-pretraining-rl-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Learned reward function (LRF) are notorious for noise and reward misspecification errors&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;which can render them highly unreliable for learning robust policies with RL&lt;/li&gt;
+&lt;li&gt;due to issues of reward exploitation and noisy models that these LRF’s are ill-suited for directly learning downstream tasks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Generalization ability issue of multi-modal vision and language model (VLM)&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Thomas Coste Reward Model Ensembles Help Mitigate Overoptimization 2024</title>
+      <link>https://sino-huang.github.io/posts/thomas-coste-reward-model-ensembles-help-mitigate-overoptimization-2024/</link>
+      <pubDate>Thu, 09 May 2024 14:06:33 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/thomas-coste-reward-model-ensembles-help-mitigate-overoptimization-2024/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Reward Model Ensembles Help Mitigate Overoptimization&lt;/li&gt;
+&lt;li&gt;Author: Thomas Coste et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 10 Mar 2024&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, May 9, 2024&lt;/li&gt;
+&lt;li&gt;url: arXiv:2310.02743v2&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240509140808445&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/thomas-coste-reward-model-ensembles-help-mitigate-overoptimization-2024/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;however, as imperfect representation of the &amp;ldquo;true&amp;rdquo; reward, these learned reward models are susceptible to over-optimization.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;the author conducted a systematic study to evaluate the efficacy of using ensemble-based conservative optimization objectives, specially worst-case optimization (WCO) and uncertainty-weighted optimization (UWO), for mitigating reward model overoptimization&lt;/li&gt;
+&lt;li&gt;the author additionally extend the setup to include 25% label noise to better mirror real-world conditions&lt;/li&gt;
+&lt;li&gt;For PPO, ensemble-based conservative optimization always reduce overoptimization and outperforms single reward model optimization&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Overoptimization&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mengdi Li Internally Rewarded Rl 2023</title>
+      <link>https://sino-huang.github.io/posts/mengdi-li-internally-rewarded-rl-2023/</link>
+      <pubDate>Wed, 08 May 2024 14:59:15 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/mengdi-li-internally-rewarded-rl-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Internally Rewarded Reinforcement Learning&lt;/li&gt;
+&lt;li&gt;Author: Mengdi Li et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2023 PMLR&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, May 8, 2024&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://proceedings.mlr.press/v202/li23ax.html&#34;&gt;https://proceedings.mlr.press/v202/li23ax.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;img src=&#34;image-assets/cover.png&#34; alt=&#34;image-20240508150740997&#34; style=&#34;zoom: 50%;&#34; /&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;the author studied a class o RL problem where the reward signals for policy learning are generated by a discriminator that is dependent on and jointly optimized with the policy (parallel training on both the policy and the reward model)&lt;/li&gt;
+&lt;li&gt;this leads to an unstable learning process because reward signals from an immature discriminator are noisy and impede policy learning , and conversely, an under-optimized policy impedes discriminator learning&lt;/li&gt;
+&lt;li&gt;we call this learning setting Internally Rewarded RL (IRRL) as the reward is not provided directly by the environment but internally by the discriminator.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;proposed the clipped linear reward function. Results show that the proposed reward function can consistently stabilize the training process by reducing the impact of reward noise, which leads to faster convergence and higher performance.&lt;/li&gt;
+&lt;li&gt;we formulate a class of RL problems as IRRL, and formulate the inherent issues of noisy rewards that leads to an unstable training loop in IRRL&lt;/li&gt;
+&lt;li&gt;we empirically characterize the noise in the discriminator and derive &lt;em&gt;the&lt;/em&gt; &lt;em&gt;effect of the reward function in reducing the bias of the estimated reward and the variance of reward noise from an underdeveloped discriminator&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Comment&lt;/strong&gt;: the author tried to express the bias and variance of reward noises in Taylor approximation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;propose clipped linear reward function&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Simultaneous optimization causes suboptimal training&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Daniel Hierarchies of Reward Machines 2023</title>
+      <link>https://sino-huang.github.io/posts/daniel-hierarchies-of-reward-machines-2023/</link>
+      <pubDate>Fri, 12 Apr 2024 15:12:54 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/daniel-hierarchies-of-reward-machines-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Hierarchies of Reward Machines&lt;/li&gt;
+&lt;li&gt;Author: Daniel Furelos-Blanco et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 4 Jun 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Fri, Apr 12, 2024&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/abs/2205.15752&#34;&gt;https://arxiv.org/abs/2205.15752&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240412151420609&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/daniel-hierarchies-of-reward-machines-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Finite state machine are a simple yet powerful formalism for abstractly representing temporal tasks in a structured manner.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;p&gt;The work introduces Hierarchies of Reinforcement Models (HRMs) to enhance the abstraction power of existing models. Key contributions include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;HRM Abstraction Power&lt;/strong&gt;: HRMs allow for the creation of hierarchies of Reinforcement Models (RMs), enabling constituent RMs to call other RMs. It&amp;rsquo;s proven that any HRM can be converted into an equivalent flat HRM with identical behavior. However, the equivalent flat HRM can have significantly more states and edges, especially under specific conditions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Shanchuan Efficient N Robust Exploration Through Discriminative Ir 2023</title>
+      <link>https://sino-huang.github.io/posts/shanchuan-efficient-n-robust-exploration-through-discriminative-ir-2023/</link>
+      <pubDate>Fri, 12 Apr 2024 15:07:58 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/shanchuan-efficient-n-robust-exploration-through-discriminative-ir-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: DEIR: Efficient and Robust Exploration through Discriminative-Model-Based Episodic Intrinsic Rewards&lt;/li&gt;
+&lt;li&gt;Author: Shanchuan Wan et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 18 May 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Fri, Apr 12, 2024&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/abs/2304.10770&#34;&gt;https://arxiv.org/abs/2304.10770&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240412151513920&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/shanchuan-efficient-n-robust-exploration-through-discriminative-ir-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Recent studies have shown the effectiveness of encouraging exploration with intrinsic rewards estimated from novelties in observations&lt;/li&gt;
+&lt;li&gt;However, there is a gap between the novelty of an observation and an exploration, as both the stochasticity in the environment and agent&amp;rsquo;s behaviour may affect the observation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;we propose DEIR, a novel method in which we theoretically derive an intrinsic reward with a conditional mutual information term that principally scales with the novelty contributed by agent explorations, and then implement the reward
+with a discriminative forward model.&lt;/li&gt;
+&lt;li&gt;want to design a novel intrinsic reward design that considers not only the observed novelty but also the effective contribution brought by the agent.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;internal rewards&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

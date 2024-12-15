@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>19 Jun -- 25 Jun, 2022 | Sukai Huang</title>
+<meta content="" name="keywords"/>
+<meta content="Last Week’s Work Review
+
+for vision modules, start with the simple ones
+
+ConvNext
+Go-Explore object recognition (Montezuma’s Revenge-specific)
+https://github.com/mcmachado/b-pro B-PRO
+
+
+implement the code based on the notes in https://sino-huang.github.io/weekly-report/12-jun-18-jun-2022/
+
+
+You need password to access to the content, go to Slack *#phdsukai to find more." name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/weekly-report/19-jun-25-jun-2022/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/weekly-report/19-jun-25-jun-2022/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/weekly-report/19-jun-25-jun-2022/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/weekly-report/19-jun-25-jun-2022/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="19 Jun -- 25 Jun, 2022" property="og:title"/>
+<meta content="Last Week’s Work Review for vision modules, start with the simple ones ConvNext Go-Explore object recognition (Montezuma’s Revenge-specific) https://github.com/mcmachado/b-pro B-PRO implement the code based on the notes in https://sino-huang.github.io/weekly-report/12-jun-18-jun-2022/ You need password to access to the content, go to Slack *#phdsukai to find more." property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="19 Jun -- 25 Jun, 2022" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Weekly-Reports",
+      "item": "https://sino-huang.github.io/weekly-report/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "19 Jun -- 25 Jun, 2022",
+      "item": "https://sino-huang.github.io/weekly-report/19-jun-25-jun-2022/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/weekly-report/">Weekly-Reports</a></div>
+<h1>
+    19 Jun -- 25 Jun, 2022
+    <a aria-label="RSS" href="/weekly-report/19-jun-25-jun-2022/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><h2 id="last-weeks-work-review">Last Week’s Work Review<a aria-hidden="true" class="anchor" hidden="" href="#last-weeks-work-review">#</a></h2>
+<ul>
+<li>for vision modules, start with the simple ones
+<ul>
+<li>ConvNext</li>
+<li>Go-Explore object recognition (Montezuma’s Revenge-specific)</li>
+<li><a href="https://github.com/mcmachado/b-pro">https://github.com/mcmachado/b-pro</a> B-PRO</li>
+</ul>
+</li>
+<li>implement the code based on the notes in <a href="https://sino-huang.github.io/weekly-report/12-jun-18-jun-2022/">https://sino-huang.github.io/weekly-report/12-jun-18-jun-2022/</a></li>
+</ul>
+<hr/>
+<p>You need password to access to the content, go to Slack *#phdsukai to find more.</p>
+<div class="hugo-encryptor-container">
+<div class="hugo-encryptor-prompt">
+<p>Part of this article is encrypted with password:</p>
+</div>
+<div class="hugo-encryptor-form">
+<input class="hugo-encryptor-input" placeholder="Please input the password"/>
+<input class="hugo-encryptor-button" onclick="_click_handler(this)" type="button" value="Click to verify"/>
+</div>
+<div class="hugo-encryptor-cipher-text" style="display: none;">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</div>
+</div>
+<script>
+  
+  document.querySelector(".hugo-encryptor-input").addEventListener("keyup", event => {
+      if(event.key !== "Enter") return; 
+      document.querySelector(".hugo-encryptor-button").click(); 
+      event.preventDefault(); 
+  });
+</script>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script><script src="https://sino-huang.github.io/js/decrypt.js"></script></body>
+</html>

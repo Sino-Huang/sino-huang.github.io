@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Shanchuan Efficient N Robust Exploration Through Discriminative Ir 2023 | Sukai Huang</title>
+<meta content="rl reward, intrinsic reward" name="keywords"/>
+<meta content="[TOC]
+
+Title: DEIR: Efficient and Robust Exploration through Discriminative-Model-Based Episodic Intrinsic Rewards
+Author: Shanchuan Wan et. al.
+Publish Year: 18 May 2023
+Review Date: Fri, Apr 12, 2024
+url: https://arxiv.org/abs/2304.10770
+
+Summary of paper
+
+Motivation
+
+Recent studies have shown the effectiveness of encouraging exploration with intrinsic rewards estimated from novelties in observations
+However, there is a gap between the novelty of an observation and an exploration, as both the stochasticity in the environment and agent’s behaviour may affect the observation.
+
+Contribution
+
+we propose DEIR, a novel method in which we theoretically derive an intrinsic reward with a conditional mutual information term that principally scales with the novelty contributed by agent explorations, and then implement the reward
+with a discriminative forward model.
+want to design a novel intrinsic reward design that considers not only the observed novelty but also the effective contribution brought by the agent.
+
+Some key terms
+internal rewards" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/posts/shanchuan-efficient-n-robust-exploration-through-discriminative-ir-2023/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/posts/shanchuan-efficient-n-robust-exploration-through-discriminative-ir-2023/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/posts/shanchuan-efficient-n-robust-exploration-through-discriminative-ir-2023/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/posts/shanchuan-efficient-n-robust-exploration-through-discriminative-ir-2023/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Shanchuan Efficient N Robust Exploration Through Discriminative Ir 2023" property="og:title"/>
+<meta content="[TOC]
+Title: DEIR: Efficient and Robust Exploration through Discriminative-Model-Based Episodic Intrinsic Rewards Author: Shanchuan Wan et. al. Publish Year: 18 May 2023 Review Date: Fri, Apr 12, 2024 url: https://arxiv.org/abs/2304.10770 Summary of paper Motivation Recent studies have shown the effectiveness of encouraging exploration with intrinsic rewards estimated from novelties in observations However, there is a gap between the novelty of an observation and an exploration, as both the stochasticity in the environment and agent’s behaviour may affect the observation. Contribution we propose DEIR, a novel method in which we theoretically derive an intrinsic reward with a conditional mutual information term that principally scales with the novelty contributed by agent explorations, and then implement the reward with a discriminative forward model. want to design a novel intrinsic reward design that considers not only the observed novelty but also the effective contribution brought by the agent. Some key terms internal rewards" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/posts/shanchuan-efficient-n-robust-exploration-through-discriminative-ir-2023/image-assets/cover.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/posts/shanchuan-efficient-n-robust-exploration-through-discriminative-ir-2023/image-assets/cover.png" name="twitter:image"/>
+<meta content="Shanchuan Efficient N Robust Exploration Through Discriminative Ir 2023" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://sino-huang.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Shanchuan Efficient N Robust Exploration Through Discriminative Ir 2023",
+      "item": "https://sino-huang.github.io/posts/shanchuan-efficient-n-robust-exploration-through-discriminative-ir-2023/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/posts/">Posts</a></div>
+<h1>
+    Shanchuan Efficient N Robust Exploration Through Discriminative Ir 2023
+    <a aria-label="RSS" href="/posts/shanchuan-efficient-n-robust-exploration-through-discriminative-ir-2023/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><p>[TOC]</p>
+<ol>
+<li>Title: DEIR: Efficient and Robust Exploration through Discriminative-Model-Based Episodic Intrinsic Rewards</li>
+<li>Author: Shanchuan Wan et. al.</li>
+<li>Publish Year: 18 May 2023</li>
+<li>Review Date: Fri, Apr 12, 2024</li>
+<li>url: <a href="https://arxiv.org/abs/2304.10770">https://arxiv.org/abs/2304.10770</a></li>
+</ol>
+<h2 id="summary-of-paper">Summary of paper<a aria-hidden="true" class="anchor" hidden="" href="#summary-of-paper">#</a></h2>
+<p><img alt="image-20240412151513920" loading="lazy" src="/posts/shanchuan-efficient-n-robust-exploration-through-discriminative-ir-2023/image-assets/cover.png"/></p>
+<h3 id="motivation">Motivation<a aria-hidden="true" class="anchor" hidden="" href="#motivation">#</a></h3>
+<ul>
+<li>Recent studies have shown the effectiveness of encouraging exploration with intrinsic rewards estimated from novelties in observations</li>
+<li>However, there is a gap between the novelty of an observation and an exploration, as both the stochasticity in the environment and agent’s behaviour may affect the observation.</li>
+</ul>
+<h3 id="contribution">Contribution<a aria-hidden="true" class="anchor" hidden="" href="#contribution">#</a></h3>
+<ul>
+<li>we propose DEIR, a novel method in which we theoretically derive an intrinsic reward with a conditional mutual information term that principally scales with the novelty contributed by agent explorations, and then implement the reward
+with a discriminative forward model.</li>
+<li>want to design a novel intrinsic reward design that considers not only the observed novelty but also the effective contribution brought by the agent.</li>
+</ul>
+<h3 id="some-key-terms">Some key terms<a aria-hidden="true" class="anchor" hidden="" href="#some-key-terms">#</a></h3>
+<p><strong>internal rewards</strong></p>
+<ul>
+<li>intrinsic rewards is devised to encourage visiting states that are likely to be more novel, where novelty is defined as either the distance between the current and the past observations or the difference between model predictions and realities.</li>
+<li>however, the relationship between the observed novelty and the agent’s actions has not yet been explicitly decoupled. In other words, effectively handling trivial novelties remains unaddressed, as they are rooted in the stochasticity in the environment’s dynamics and have little to do with the agent’s exploration capabilities (e.g., the “noisy TV” problem [Pathak et al., 2017])
+<ul>
+<li>I think the author wants to consider the action sequence to determine the novelty to prevent the noisy TV problem.</li>
+</ul>
+</li>
+</ul>
+<p><strong>exploration, what is it?</strong></p>
+<ul>
+<li>the method effectively decouples the stochasticity in the environment and the novelty gained by the agent’s exploration.</li>
+<li>the author wants to say that the exploration shall be come from the agent’s policy contribution rather than coming from the stochastic state transitions</li>
+</ul>
+<p><strong>mutual information term</strong></p>
+<ul>
+<li>purpose: designed to distinguish between the contributions to novelty caused by the state transitions and by the agent’s policy.</li>
+<li>the method incorporates the advantages of the two categories: while we explicitly encourage our agent to seek novel observations, we also rely on a discriminative model to construct a conditional mutual inforamation term that scales novelty in the observation space, incorporating the model-based prediction task from prediction error-driven methods</li>
+</ul>
+<p><strong>discriminative forward model</strong></p>
+<img alt="image-20240413113530654" src="image-assets/image-20240413113530654.png" style="zoom:50%;"/>
+<ul>
+<li>generative model focus on modeling the distribution</li>
+<li>discriminative model focus on the decision boundary</li>
+<li>The term “discriminative” refers to the fact that this model directly  predicts the output (next state or observation) without explicitly  modeling the underlying probability distribution of the data.</li>
+</ul>
+<p><strong>RND</strong></p>
+<ul>
+<li>RND defines the distance as the difference between the outputs of a parameter-fixed target neural network and a randomly initialized neural network. In this approach, the parameter-fixed network is used to be distilled into the learning network, effectively “evolving” a distance metric that adjusts dynamically the the agent’s experience.</li>
+</ul>
+<p>In probability notation, the symbols “;” and “,” are used to distinguish between different types of conditioning in a probabilistic model, specifically in the context of conditional probability distributions. Here’s what each symbol typically represents:</p>
+<ol>
+<li>
+<p><strong>"," (comma)</strong>: The comma is used to denote joint probabilities or to list multiple conditions in a conditional probability. It essentially represents a logical AND. For example, ( P(A, B) ) refers to the probability of both ( A ) and ( B ) occurring. In a conditional setting, ( P(X | Y, Z) ) indicates the probability of ( X ) given that both ( Y ) and ( Z ) are true.</p>
+</li>
+<li>
+<p><strong>";" (semicolon)</strong>: The semicolon is used less frequently and serves to separate variables that are part of the conditioning environment from those that we condition upon. It’s particularly useful in more complex scenarios where clarity is needed about the nature of the conditioning. For example, ( P(X ; Y | Z) ) can be interpreted as the probability of ( X ), considering ( Y ) as a parameter or a fixed condition, given ( Z ). This notation isn’t standard in all statistical texts but can be seen in fields like information theory or in specific research papers where distinctions between types of conditions are crucial.</p>
+</li>
+</ol>
+<p><strong>P(X;Y|Z) vs P(X,Y|Z)</strong></p>
+<ul>
+<li>
+<p><strong>Comma Usage</strong>:
+( P(X | Y, Z) ) is read as “the probability of ( X ) given ( Y ) and ( Z )”. Here, ( Y ) and ( Z ) are conditions that both need to be true for the probability of ( X ) to be considered.</p>
+</li>
+<li>
+<p><strong>Semicolon Usage</strong>:
+( P(X ; Y | Z) ) might be used (in certain contexts) to suggest a different nuance, such as “the probability of ( X ) under a model parameterized by ( Y ), given ( Z )”. This notation can help separate model parameters or fixed properties from the stochastic variables being conditioned on. This kind of notation might be found in contexts where parameters or regimes are considered alongside random variables, though, as noted, it is less standard and can vary in interpretation based on the field and context.</p>
+</li>
+</ul>
+<p>In general, the use of “;” in probability notation is much rarer and less standardized than “,”, and its meaning can depend heavily on the specific context or the author’s definitions. If you encounter this in a text or a paper, it’s advisable to look for an explanation or definition provided in that document to understand exactly how the author intends it to be interpreted.</p>
+<p><strong>Conditional Mutual Information</strong></p>
+<p><a href="https://arxiv.org/abs/1906.01824">https://arxiv.org/abs/1906.01824</a></p>
+<p><img alt="image-20240413161950606" loading="lazy" src="/posts/shanchuan-efficient-n-robust-exploration-through-discriminative-ir-2023/image-assets/image-20240413161950606.png"/></p>
+<h2 id="episodic-intrinsic-rewards">Episodic Intrinsic rewards<a aria-hidden="true" class="anchor" hidden="" href="#episodic-intrinsic-rewards">#</a></h2>
+<p><strong>scaling the novelty</strong></p>
+<ul>
+<li>KL divergence – the higher means the two distribution are more dissimilar</li>
+</ul>
+<p><strong>Mutual Information Formula</strong>:</p>
+<p><img alt="image-20240526232546902" loading="lazy" src="/posts/shanchuan-efficient-n-robust-exploration-through-discriminative-ir-2023/image-assets/image-20240526232546902.png"/></p>
+<p>This tells us how much the action (a_t) impacts the change in observation, beyond what could be expected just from knowing the current and previous states alone.</p>
+<ol>
+<li>
+<p><strong>Bretagnolle–Huber Inequality</strong>:
+$$
+\mathrm{D_{KL}}(P | Q) \geq - \mathrm{log} (1 - \mathrm{d^2_{TV}}(P, Q) ),
+$$</p>
+<p>A mathematical tool used here to simplify and lower-bound the KL divergence, which is a measure of how one probability distribution diverges from a second, expected probability distribution.</p>
+</li>
+<li>
+<p><strong>Simplified Surrogate Function</strong>:
+$$
+\mathrm{D_{KL}}(P | Q) \geq \mathrm{log}{\left( \mathrm{dist}(s_t, s_i) \right)} + \frac{\mathrm{dist}(o_{t+1}, o_i)}{\mathrm{dist}(s_t, s_i)} + \mathrm{const}.
+$$</p>
+<p>This simplifies the KL divergence using the total variation distance and distances between states and observations, providing a way to estimate the mutual information in terms of observable quantities.</p>
+</li>
+<li>
+<p><strong>Final Formulation</strong>:
+$$
+J \ge \min_{i}{\frac{\mathrm{dist}^2(o_{t+1}, o_i)}{\mathrm{dist}(s_t, s_i)}},
+$$</p>
+<p>This provides a lower bound for the original objective, focusing on the squared ratio of differences between new and old observations to the differences in the corresponding states. This formulation simplifies the calculation while maintaining effectiveness.</p>
+</li>
+</ol>
+<p><strong>Assumption</strong></p>
+<p>Distribution $P (x) = p(x|s_t, s_i, a_t)$, and assume given $s_t$, $s_i$, $a_t$ in deterministic environments (including POMDPs), $s_{t+1}$, $o_{t+1}$ and $D_{t+1, i}$, are uniquely determined. P is thus a unit impulse function which has the only non-zero value at $D_{t+1,i}$:</p>
+<p><img alt="image-20240413163143082" loading="lazy" src="/posts/shanchuan-efficient-n-robust-exploration-through-discriminative-ir-2023/image-assets/image-20240413163143082.png"/></p>
+<p><strong>convert $-\log(Q(D_{t+1,i}))$</strong>, where $Q(D_{t+1,i})$ = $p(dist(o_{t+1}, o_i) | s_t, s_i, a_t)$</p>
+<ul>
+<li>the use of the exponential distribution</li>
+<li><strong>Modeling Assumption</strong>: The exponential distribution is often used in scenarios where we are modeling the time or distance until an event occurs, especially when events happen independently with a constant average rate. In this context, the ’event’ is the observation at a certain distance from a previous observation, under the assumption that smaller distances are more likely than larger ones due to the continuity in state and observation spaces.</li>
+<li>
+<img alt="image-20240413170306171" src="image-assets/image-20240413170306171.png" style="zoom: 33%;"/>
+</li>
+<li>so we assume $p(dist(o_{t+1}, o_i) | s_t, s_i, a_t)$  = $\lambda\exp(-\lambda dist(o_{t+1}, o_i))$ where $\lambda = \frac{1}{dist(s_t, s_i)}$ is the rate parameter, usually it means that the expected value of dist(o) is dist(s), Thus, the average expected observation distance aligns with the underlying state distance, providing a direct and meaningful link between the state space and observation space.</li>
+</ul>
+<p>The logarithmic transformation of the probability density function (PDF) of the exponential distribution is used for simplification and to derive further insights. Here’s how it works:</p>
+<ul>
+<li>
+<p><strong>Original PDF</strong>: The PDF of the exponential distribution for $D_{t+1,i}$ is given by:
+$$
+Q(D_{t+1,i}) = \lambda e^{-\lambda D_{t+1,i}}
+$$
+Substituting $\lambda = \frac{1}{\mathrm{dist}(s_t, s_i)}$​, the PDF becomes:</p>
+<p>$$
+Q(D_{t+1,i}) = \frac{1}{\mathrm{dist}(s_t, s_i)} \exp\left(-\frac{\mathrm{dist}(o_{t+1}, o_i)}{\mathrm{dist}(s_t, s_i)}\right)
+$$</p>
+</li>
+<li>
+<p><strong>Logarithm of the PDF</strong>: Applying the logarithm to the PDF, we get:</p>
+</li>
+</ul>
+<p><img alt="image-20240526232503857" loading="lazy" src="/posts/shanchuan-efficient-n-robust-exploration-through-discriminative-ir-2023/image-assets/image-20240526232503857.png"/></p>
+<p>This simplifies using the properties of logarithms ($-\log(ab) = -\log a - \log b$​) to:</p>
+<p><img alt="image-20240526232522218" loading="lazy" src="/posts/shanchuan-efficient-n-robust-exploration-through-discriminative-ir-2023/image-assets/image-20240526232522218.png"/></p>
+<p>The term $\log(\mathrm{dist}(s_t, s_i))$ reflects the natural logarithm of the distance between states, while the other term linearly scales the observation distance by the inverse of the state distance, effectively normalizing it.</p>
+<h2 id="now-the-issue-is-how-to-represent-state">Now the issue is how to represent state<a aria-hidden="true" class="anchor" hidden="" href="#now-the-issue-is-how-to-represent-state">#</a></h2>
+<ol>
+<li>
+<p><strong>Episodic Reward</strong>: The intrinsic reward $ r_t^{{\tiny I}} $ is calculated and applied within the confines of a single episode. This means the reward is based solely on the agent’s experiences and actions from the start of the episode to the current timestep $ t $.</p>
+</li>
+<li>
+<p><strong>Observations and Trajectories</strong>:</p>
+<ul>
+<li><strong>Embeddings of Observations ($e_{obs_t}$)</strong>: These are feature representations derived from the observations $ o_t $. Embeddings reduce complex observations into a form (like vectors) that captures essential information in a more manageable size.</li>
+<li><strong>Embeddings of Trajectories ($e_{traj_t}$)</strong>: These are similar feature representations but for trajectories. A trajectory at time $ t $, $ \tau_t $, is likely a sequence or aggregation of states or observations leading up to $ t $. The embedding $ t_{traj_t} $ serves as a practical approximation of the state $ s_t $, especially useful in scenarios where $ s_t $ cannot be directly observed (common in Partially Observable Markov Decision Processes or POMDPs).</li>
+</ul>
+</li>
+<li>
+<p><strong>Euclidean Distance</strong>: The reward formula uses the Euclidean distance between these embeddings to quantify differences between past and current observations and trajectories.</p>
+</li>
+</ol>
+<h3 id="intrinsic-reward-formula">Intrinsic Reward Formula<a aria-hidden="true" class="anchor" hidden="" href="#intrinsic-reward-formula">#</a></h3>
+<p>The intrinsic reward at time $ t $, denoted as $ r_t^{{\tiny I}} $, is defined by:</p>
+<p>$$
+r_t^{\tiny I} = \min_{\forall i \in \left[0, t\right)}
+\left\lbrace
+\frac{ \mathrm{dist}^2 (e_{obs_i}, e_{obs_{t+1}}) }{ \mathrm{dist}(e_{traj_i}, e_{traj_t}) + \epsilon}
+\right\rbrace
+$$</p>
+<h4 id="components-of-the-formula">Components of the Formula<a aria-hidden="true" class="anchor" hidden="" href="#components-of-the-formula">#</a></h4>
+<ul>
+<li>
+<p><strong>Numerator ($ \mathrm{dist}^2 (e_{obs_i}, e_{obs_{t+1}}) $)</strong>: This represents the squared Euclidean distance between the current observation’s embedding and the embeddings of all previous observations. Squaring the distance emphasizes larger differences, making the reward more sensitive to novel observations.</p>
+</li>
+<li>
+<p><strong>Denominator ($ \mathrm{dist}(t_{traj_i}, t_{traj_t}) + \epsilon $)</strong>: This includes the Euclidean distance between the current trajectory embedding and all previous ones, adjusted by a small constant $ \epsilon $ for numerical stability (to avoid division by zero). This denominator essentially normalizes the reward by how much the trajectory has changed, preventing the reward from becoming disproportionately large simply due to minor observation changes in similar state contexts.</p>
+</li>
+<li>
+<p><strong>Minimization</strong>: The intrinsic reward takes the minimum value across all previous time steps $ i $​. This ensures that the reward is focused on the most novel (or least similar) observation relative to the past, which strongly encourages exploration of new states or actions that lead to new observations.</p>
+</li>
+</ul>
+<h2 id="learning-a-discriminative-model">Learning a discriminative model<a aria-hidden="true" class="anchor" hidden="" href="#learning-a-discriminative-model">#</a></h2>
+<p><img alt="image-20240413171251633" loading="lazy" src="/posts/shanchuan-efficient-n-robust-exploration-through-discriminative-ir-2023/image-assets/image-20240413171251633.png"/></p>
+<h2 id="results">Results<a aria-hidden="true" class="anchor" hidden="" href="#results">#</a></h2>
+<p>The result is pretty good</p>
+<p><a href="https://github.com/swan-utokyo/deir">https://github.com/swan-utokyo/deir</a></p>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

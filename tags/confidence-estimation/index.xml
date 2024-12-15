@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Confidence Estimation on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/confidence-estimation/</link>
+    <description>Recent content in Confidence Estimation on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 28 Feb 2024 16:12:53 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/confidence-estimation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stephanie Teaching Models to Express Their Uncertainty in Words 2022</title>
+      <link>https://sino-huang.github.io/posts/stephanie-teaching-models-to-express-their-uncertainty-in-words-2022/</link>
+      <pubDate>Wed, 28 Feb 2024 16:12:53 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/stephanie-teaching-models-to-express-their-uncertainty-in-words-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Teaching Models to Express Their Uncertainty in Words&lt;/li&gt;
+&lt;li&gt;Author: Stephanie Lin et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 13 Jun 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Feb 28, 2024&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2205.14334.pdf&#34;&gt;https://arxiv.org/pdf/2205.14334.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240228162359685&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/stephanie-teaching-models-to-express-their-uncertainty-in-words-2022/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;The study demonstrates that a GPT-3 model can articulate uncertainty  about its answers in natural language without relying on model logits.  It generates both an answer and a confidence level (e.g., &amp;ldquo;90%  confidence&amp;rdquo; or &amp;ldquo;high confidence&amp;rdquo;), which map to well-calibrated  probabilities. The model maintains moderate calibration even under  distribution shift and shows sensitivity to uncertainty in its answers  rather than mimicking human examples.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

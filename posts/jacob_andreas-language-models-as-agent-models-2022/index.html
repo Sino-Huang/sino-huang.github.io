@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Jacob_andreas Language Models as Agent Models 2022 | Sukai Huang</title>
+<meta content="reinforcement learning, natural language processing" name="keywords"/>
+<meta content="[TOC]
+
+Title: Language Models as Agent Models
+Author: Jacob Andreas
+Publish Year: 3 Dec 2022
+Review Date: Sat, Dec 10, 2022
+
+https://arxiv.org/pdf/2212.01681.pdf
+Summary of paper
+Motivation
+
+during training, LMs have access only to the text of the documents, with no direct evidence of the internal states of the human agent that produce them. (kind of hidden MDP thing)
+this is a fact often used to argue that LMs are incapable of modelling goal-directed aspects of human language production and comprehension.
+The author stated that even in today’s non-robust and error-prone models – LM infer and use representations of fine-grained communicative intensions and more abstract beliefs and goals. Despite that limited nature of their training data, they can thus serve as building blocks for systems that communicate and act intentionally.
+In other words, the author said that language model can be used to communicate intention of human agent, and hence it can be treated as a agent model.
+
+Contribution
+
+the author claimed that
+
+in the course of performing next-word prediction in context, current LMs sometimes infer inappropriate, partial representations of beliefs ,desires and intentions possessed by the agent that produced the context, and other agents mentioned within it.
+Once these representations are inferred, they are causally linked to LM prediction, and thus bear the same relation to generated text that an intentional agent’s state bears to its communicative actions.
+
+
+The high-level goals of this paper are twofold:
+
+first, to outline a specific sense in which idealised language models can function as models of agent belief, desires and intentions;
+second, to highlight a few cases in which existing models appear to approach this idealization (and describe the ways in which they still fall short)
+
+
+Training on text alone produces ready-made models of the map from agent states to text; these models offer a starting point for language processing systems that communicate intentionally.
+
+Some key terms
+Current language model is bad" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/posts/jacob_andreas-language-models-as-agent-models-2022/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/posts/jacob_andreas-language-models-as-agent-models-2022/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/posts/jacob_andreas-language-models-as-agent-models-2022/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/posts/jacob_andreas-language-models-as-agent-models-2022/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Jacob_andreas Language Models as Agent Models 2022" property="og:title"/>
+<meta content="[TOC]
+Title: Language Models as Agent Models Author: Jacob Andreas Publish Year: 3 Dec 2022 Review Date: Sat, Dec 10, 2022 https://arxiv.org/pdf/2212.01681.pdf
+Summary of paper Motivation during training, LMs have access only to the text of the documents, with no direct evidence of the internal states of the human agent that produce them. (kind of hidden MDP thing) this is a fact often used to argue that LMs are incapable of modelling goal-directed aspects of human language production and comprehension. The author stated that even in today’s non-robust and error-prone models – LM infer and use representations of fine-grained communicative intensions and more abstract beliefs and goals. Despite that limited nature of their training data, they can thus serve as building blocks for systems that communicate and act intentionally. In other words, the author said that language model can be used to communicate intention of human agent, and hence it can be treated as a agent model. Contribution the author claimed that in the course of performing next-word prediction in context, current LMs sometimes infer inappropriate, partial representations of beliefs ,desires and intentions possessed by the agent that produced the context, and other agents mentioned within it. Once these representations are inferred, they are causally linked to LM prediction, and thus bear the same relation to generated text that an intentional agent’s state bears to its communicative actions. The high-level goals of this paper are twofold: first, to outline a specific sense in which idealised language models can function as models of agent belief, desires and intentions; second, to highlight a few cases in which existing models appear to approach this idealization (and describe the ways in which they still fall short) Training on text alone produces ready-made models of the map from agent states to text; these models offer a starting point for language processing systems that communicate intentionally. Some key terms Current language model is bad" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/posts/jacob_andreas-language-models-as-agent-models-2022/image-assets/cover.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/posts/jacob_andreas-language-models-as-agent-models-2022/image-assets/cover.png" name="twitter:image"/>
+<meta content="Jacob_andreas Language Models as Agent Models 2022" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://sino-huang.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Jacob_andreas Language Models as Agent Models 2022",
+      "item": "https://sino-huang.github.io/posts/jacob_andreas-language-models-as-agent-models-2022/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/posts/">Posts</a></div>
+<h1>
+    Jacob_andreas Language Models as Agent Models 2022
+    <a aria-label="RSS" href="/posts/jacob_andreas-language-models-as-agent-models-2022/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><p>[TOC]</p>
+<ol>
+<li>Title: Language Models as Agent Models</li>
+<li>Author: Jacob Andreas</li>
+<li>Publish Year: 3 Dec 2022</li>
+<li>Review Date: Sat, Dec 10, 2022</li>
+</ol>
+<p><a href="https://arxiv.org/pdf/2212.01681.pdf">https://arxiv.org/pdf/2212.01681.pdf</a></p>
+<h2 id="summary-of-paper">Summary of paper<a aria-hidden="true" class="anchor" hidden="" href="#summary-of-paper">#</a></h2>
+<h3 id="motivation">Motivation<a aria-hidden="true" class="anchor" hidden="" href="#motivation">#</a></h3>
+<ul>
+<li>during training, LMs have access only to the text of the documents, with no direct evidence of the internal states of the human agent that produce them. (kind of hidden MDP thing)</li>
+<li>this is a fact often used to argue that LMs are incapable of modelling goal-directed aspects of human language production and comprehension.</li>
+<li>The author stated that even in today’s non-robust and error-prone models – LM infer and use representations of fine-grained communicative intensions and more abstract beliefs and goals. Despite that limited nature of their training data, they can thus serve as building blocks for systems that communicate and act intentionally.</li>
+<li><strong>In other words</strong>, the author said that language model can be used to communicate intention of human agent, and hence it can be treated as a agent model.</li>
+</ul>
+<h3 id="contribution">Contribution<a aria-hidden="true" class="anchor" hidden="" href="#contribution">#</a></h3>
+<ul>
+<li>the author claimed that
+<ul>
+<li>in the course of performing next-word prediction in context, current LMs sometimes infer inappropriate, partial representations of beliefs ,desires and intentions possessed by the agent that produced the context, and other agents mentioned within it.</li>
+<li><strong>Once</strong> these representations are <strong>inferred</strong>, they are <strong>causally</strong> <strong>linked</strong> to LM prediction, and thus bear the same relation to generated text that an intentional agent’s state bears to its communicative actions.</li>
+</ul>
+</li>
+<li>The high-level goals of this paper are twofold:
+<ul>
+<li>first, to outline a specific sense in which idealised language models can function as models of agent belief, desires and intentions;</li>
+<li>second, to highlight a few cases in which existing models appear to approach this idealization (and describe the ways in which they still fall short)</li>
+</ul>
+</li>
+<li>Training on text alone produces ready-made models of the map from agent states to text; these models offer a starting point for language processing systems that communicate intentionally.</li>
+</ul>
+<h3 id="some-key-terms">Some key terms<a aria-hidden="true" class="anchor" hidden="" href="#some-key-terms">#</a></h3>
+<p><strong>Current language model is bad</strong></p>
+<ul>
+<li>outputs from current LMs sometimes describe impossible situations, contradictory propositions, or invalid inferences.</li>
+<li>what these errors have in common is a failure to model communicative intent: they may be grammatically or even semantically acceptable, but not the sort of text that could be produced by an author with a coherent set of beliefs or goals.</li>
+</ul>
+<p><strong>definition of language model</strong></p>
+<ul>
+<li>an LM is simply a conditional distribution $p(x_i | x_1 …x_{i-1})$ over next tokens xi given context x1…xi-1.</li>
+<li>LMs thus learn language in a very different way from humans – they lack access to the social and perceptual context that human language learners – they lack access to the social and perceptual context that human language learners use to infer the relationship between utterances and speaker’s mental states</li>
+<li>also human learner is trained to act in different environments and accomplish goals beyond next-word prediction.</li>
+</ul>
+<p><strong>the goodness in language model</strong></p>
+<img alt="image-20221210204938004" src="image-assets/image-20221210204938004.png" style="width:80%;"/>
+<p><strong>the belief desire intention model</strong></p>
+<img alt="image-20221210212445444" src="image-assets/image-20221210212445444.png" style="width:70%;"/>
+<p><strong>context and LM and constraints</strong></p>
+<ul>
+<li>in a collection of individually coherent documents, a context constrains the beliefs, desires, and intentions of a hypothetical author. An effective LM must learn to maintain these constraints.</li>
+</ul>
+<p><strong>Event today’s largest language models make major errors involving factuality and coherence</strong></p>
+<ol>
+<li>limitation of training datasets
+<ol>
+<li>solution: a small annotation about author’s beliefs and goals – or at the very least, richer information about the social and perceptual context in which language is generated – might improve language modelling</li>
+</ol>
+</li>
+<li>limitation of context windows
+<ol>
+<li>a few thousand tokens cannot infer an agent state, understood as a complete set of beliefs, desires and intentions, as this is not a small object.</li>
+<li>solution: develop new LMs that do not condition on fixed-size context windows or state vectors, but instead explicitly factorise short-term and long-term context components relevant for prediction.</li>
+</ol>
+</li>
+<li>Limitation of LM architecture</li>
+</ol>
+<h2 id="good-things-about-the-paper-one-paragraph">Good things about the paper (one paragraph)<a aria-hidden="true" class="anchor" hidden="" href="#good-things-about-the-paper-one-paragraph">#</a></h2>
+<ul>
+<li>very good overview and discussion about the language model and how it can be treated as agent model</li>
+</ul>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

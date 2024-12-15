@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Discover Hierarchical Achieve in Rl via Cl 2023 | Sukai Huang</title>
+<meta content="hierarchical rl" name="keywords"/>
+<meta content="[TOC]
+
+Title: Discovering Hierarchical Achievements in Reinforcement Learning via Contrastive Learning
+Author: Seungyong Moon et. al.
+Publish Year:  2 Nov 2023
+Review Date: Tue, Apr 2, 2024
+url: https://arxiv.org/abs/2307.03486
+
+Summary of paper
+
+Contribution
+
+PPO agents demonstrate some ability to predict future achievements. Leveraging this observation, a novel contrastive learning method called achievement distillation is introduced, enhancing the agent’s predictive abilities. This approach excels at discovering hierarchical achievements,
+
+Some key terms
+Model based and explicit module in previous studies are not that good" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/posts/seungyong-discover-hierarchical-achieve-in-rl-via-cl-2023/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/posts/seungyong-discover-hierarchical-achieve-in-rl-via-cl-2023/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/posts/seungyong-discover-hierarchical-achieve-in-rl-via-cl-2023/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/posts/seungyong-discover-hierarchical-achieve-in-rl-via-cl-2023/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Discover Hierarchical Achieve in Rl via Cl 2023" property="og:title"/>
+<meta content="[TOC]
+Title: Discovering Hierarchical Achievements in Reinforcement Learning via Contrastive Learning Author: Seungyong Moon et. al. Publish Year: 2 Nov 2023 Review Date: Tue, Apr 2, 2024 url: https://arxiv.org/abs/2307.03486 Summary of paper Contribution PPO agents demonstrate some ability to predict future achievements. Leveraging this observation, a novel contrastive learning method called achievement distillation is introduced, enhancing the agent’s predictive abilities. This approach excels at discovering hierarchical achievements, Some key terms Model based and explicit module in previous studies are not that good" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/posts/seungyong-discover-hierarchical-achieve-in-rl-via-cl-2023/image-assets/cover.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/posts/seungyong-discover-hierarchical-achieve-in-rl-via-cl-2023/image-assets/cover.png" name="twitter:image"/>
+<meta content="Discover Hierarchical Achieve in Rl via Cl 2023" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://sino-huang.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Discover Hierarchical Achieve in Rl via Cl 2023",
+      "item": "https://sino-huang.github.io/posts/seungyong-discover-hierarchical-achieve-in-rl-via-cl-2023/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/posts/">Posts</a></div>
+<h1>
+    Discover Hierarchical Achieve in Rl via Cl 2023
+    <a aria-label="RSS" href="/posts/seungyong-discover-hierarchical-achieve-in-rl-via-cl-2023/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><p>[TOC]</p>
+<ol>
+<li>Title: Discovering Hierarchical Achievements in Reinforcement Learning via Contrastive Learning</li>
+<li>Author: Seungyong Moon et. al.</li>
+<li>Publish Year:  2 Nov 2023</li>
+<li>Review Date: Tue, Apr 2, 2024</li>
+<li>url: <a href="https://arxiv.org/abs/2307.03486">https://arxiv.org/abs/2307.03486</a></li>
+</ol>
+<h2 id="summary-of-paper">Summary of paper<a aria-hidden="true" class="anchor" hidden="" href="#summary-of-paper">#</a></h2>
+<p><img alt="image-20240402210833949" loading="lazy" src="/posts/seungyong-discover-hierarchical-achieve-in-rl-via-cl-2023/image-assets/cover.png"/></p>
+<h3 id="contribution">Contribution<a aria-hidden="true" class="anchor" hidden="" href="#contribution">#</a></h3>
+<ul>
+<li>PPO agents demonstrate some ability to predict future achievements. Leveraging this observation, a novel contrastive learning method called achievement distillation is introduced, enhancing the agent’s predictive abilities. This approach excels at discovering hierarchical achievements,</li>
+</ul>
+<h3 id="some-key-terms">Some key terms<a aria-hidden="true" class="anchor" hidden="" href="#some-key-terms">#</a></h3>
+<p><strong>Model based and explicit module in previous studies are not that good</strong></p>
+<ul>
+<li>Many prior methods have been built upon model-based or hierarchical approaches, with
+the belief that an explicit module for long-term planning would be advantageous for learning hierarchical dependencies. However, these methods demand an excessive number of environment interactions or large model sizes, limiting their practicality.</li>
+</ul>
+<p><strong>requirements for modern agent</strong></p>
+<ul>
+<li>To successfully deploy RL agents in real-world scenarios, which are constantly changing and open-ended, they should generalize well to new unseen situations and acquire reusable skills for solving increasingly complex tasks via long-term reasoning.</li>
+</ul>
+<p><strong>model-based methods</strong></p>
+<ul>
+<li>they predicts future states and rewards for learning long-term dependencies by employing a <u>latent-world model</u> (e.g., . <a href="https://arxiv.org/pdf/2301.04104v1.pdf">DreamerV3</a>)</li>
+<li>these methods have shown effectiveness in discovering <strong>hierarchical</strong> achievements, particularly in procedurally generated environments</li>
+<li>however, they are constructed with large model size, and often require substantial exploratory data, which limits their practicality</li>
+</ul>
+<p><strong>hierarchical methods</strong></p>
+<ul>
+<li>rely on prior knowledge, hard-code engineering</li>
+<li>they necessitate a significant number of offline expert data to reconstruct the graph</li>
+</ul>
+<p>**Big picture of the methodology **</p>
+<ol>
+<li>the method periodically distills relevant information on achievements from episodes to the encoder via contrastive learning.</li>
+<li>maximize the similarity using <em>optimal transport</em> in the latent space between achievements from two different episodes, matching them using optimal transport, so that they will have the same semantic,</li>
+</ol>
+<p><strong>Problem Setting and Assumptions</strong></p>
+<ul>
+<li>assumptions
+<ul>
+<li>they assume that the agent has no prior knowledge of the achievement graph, including the number of achievements and their dependencies</li>
+<li>the agent has no direct access to information about which achievements have been unlocked.</li>
+<li>instead, the agent must infer this information indirectly from the reward signal it receives</li>
+</ul>
+</li>
+</ul>
+<p><img alt="image-20240404122402966" loading="lazy" src="/posts/seungyong-discover-hierarchical-achieve-in-rl-via-cl-2023/image-assets/image-20240404122402966.png"/></p>
+<p><strong>bootstrapped value function</strong></p>
+<ul>
+<li>the bootstrapped value function is a technique used to estimate the value function target $\hat{V}_t$​.</li>
+<li>“bootstrapping” means self-guiding</li>
+<li>In statistics and RL, bootstrapping is <strong>a sampling method that uses individual observations to estimate the statistics of the population</strong>.</li>
+<li>Bootstrapping: <em>When you estimate something based on another estimation</em>.</li>
+</ul>
+<h2 id="key-observation">Key observation<a aria-hidden="true" class="anchor" hidden="" href="#key-observation">#</a></h2>
+<ul>
+<li>relying solely on policy and value optimization to train the encoder can lead to suboptimal state representations, particularly in procedurally generated environments (i.e., cartoon images)</li>
+<li>PPO is good enough if we add size, add layer normalization and value normalization</li>
+<li><img alt="image-20240404175623014" loading="lazy" src="/posts/seungyong-discover-hierarchical-achieve-in-rl-via-cl-2023/image-assets/image-20240404175623014.png"/></li>
+</ul>
+<p><strong>analyzing learned latent representations of the encoder</strong></p>
+<ul>
+<li>what they did
+<ul>
+<li>train a linear classifier using the latent representation as input to predict the very next achievement unlocked in the episode containing the current state, i.e., predict the intention using the latent vector</li>
+</ul>
+</li>
+<li>
+<img alt="image-20240404180337938" src="image-assets/image-20240404180337938.png" style="zoom: 33%;"/>
+</li>
+<li>this shows that PPO may struggle to generate optimal action sequence towards the current specific subgoal.</li>
+</ul>
+<p><strong>issue</strong></p>
+<ul>
+<li>we cannot really label the achievement because we assume that the agent has no access to this kind of information, thus, an alternative way is to clearly distinguish different achievements</li>
+</ul>
+<p><strong>FiLM layer</strong></p>
+<ul>
+<li>this is used to get the latent vector for the transition</li>
+</ul>
+<p>$$
+\mathrm{FiLM}<em>\theta(\phi</em>\theta(s_t), a_t) = (1 + \eta_\theta(a_t)) \phi_\theta(s_t) + \delta_\theta(a_t),
+$$</p>
+<p>where $\eta_\theta$ and $\delta_\theta$ are two-layer MLPs, each with a hidden size of 1024</p>
+<h2 id="contrastive-learning-for-achievement-distillation">Contrastive learning for achievement distillation<a aria-hidden="true" class="anchor" hidden="" href="#contrastive-learning-for-achievement-distillation">#</a></h2>
+<ul>
+<li>Intra-trajectory achievement prediction:
+<ul>
+<li>Within an episode, this maximizes the similarity in the latent space between a state-action pair and its corresponding next achievement.</li>
+<li><strong><u>rationale: this will group the sequence of achieving the next subgoal together</u></strong></li>
+</ul>
+</li>
+<li>Cross-trajectory achievement matching:</li>
+<li>Between episodes, this maximizes the similarity in the latent space for matched achievements.</li>
+<li><strong>rationale: Since Crafter environments are procedurally generated, the achievement representations learned solely from intra-trajectory information may include environment-specific features that limit generalization</strong></li>
+<li><img alt="image-20240404204153518" loading="lazy" src="/posts/seungyong-discover-hierarchical-achieve-in-rl-via-cl-2023/image-assets/image-20240404204153518.png"/></li>
+</ul>
+<p><img alt="image-20240404224526000" loading="lazy" src="/posts/seungyong-discover-hierarchical-achieve-in-rl-via-cl-2023/image-assets/image-20240404224526000.png"/></p>
+<ol>
+<li>
+<p><strong>Entropic Regularization ($\alpha$ term)</strong>:</p>
+<ul>
+<li>The term $\alpha \sum_{i=1}^m \sum_{j=1}^n T_{ij} \log T_{ij}$ introduces entropic regularization, which encourages the transport plan to be smoother and more spread out. This discourages the solution from being too “spiky” (i.e., putting all probability mass into a single match), which can happen in cases of high dissimilarity or ambiguity. Entropic regularization makes the optimization problem easier to solve computationally and encourages solutions that are more robust to small variations in the data.</li>
+</ul>
+</li>
+<li>
+<p><strong>Constraints</strong>:</p>
+<ul>
+<li>The constraints ensure that the transport plan is valid. $T \mathbf{1} \leq \mathbf{1}$ and $T^\top \mathbf{1} \leq \mathbf{1}$ ensure that no more mass is transported from an achievement than is available, and no more mass is received by an achievement than is possible. The equality constraint $\mathbf{1}^\top T^\top \mathbf{1} = \min { m, n }$ ensures that the total transported mass equals the minimum sequence length, acknowledging that not all achievements can or should be matched.</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Match source and target goals</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">states_s</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">states_t</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">M</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">th</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">"ik,jk-&gt;ij"</span><span class="p">,</span> <span class="n">states_s</span><span class="p">,</span> <span class="n">states_t</span><span class="p">)</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span> <span class="c1"># this calculates the cosine distance </span>
+</span></span><span class="line"><span class="cl"><span class="n">T</span> <span class="o">=</span> <span class="n">entropic_partial_wasserstein</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">reg</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">numItermax</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">T</span> <span class="o">=</span> <span class="n">th</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">row_inds</span><span class="p">,</span> <span class="n">col_inds</span> <span class="o">=</span> <span class="n">th</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">T</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>It seems that the <code>entropic_partial_wasserstein</code> fully represents the soft matching equation, thus we need to check what is <code>entropic_partial_wasserstein</code></p>
+<p><strong>using memory</strong></p>
+<ul>
+<li>we concatenate the latent state representation with the previous achievement representation and the resulting vector is then fed into the policy to predict next action</li>
+<li>this allows the agent to know what is the previous achievement</li>
+</ul>
+<p><strong>next achievement prediction through vector alignment</strong></p>
+<img alt="image-20240404231634407" src="image-assets/image-20240404231634407.png" style="zoom:33%;"/>
+<p><img alt="image-20240404231710197" loading="lazy" src="/posts/seungyong-discover-hierarchical-achieve-in-rl-via-cl-2023/image-assets/image-20240404231710197.png"/></p>
+<h2 id="algorithm">Algorithm<a aria-hidden="true" class="anchor" hidden="" href="#algorithm">#</a></h2>
+<p><img alt="image-20240404232546455" loading="lazy" src="/posts/seungyong-discover-hierarchical-achieve-in-rl-via-cl-2023/image-assets/image-20240404232546455.png"/></p>
+<p><img alt="image-20240404232614308" loading="lazy" src="/posts/seungyong-discover-hierarchical-achieve-in-rl-via-cl-2023/image-assets/image-20240404232614308.png"/></p>
+<h2 id="results">Results<a aria-hidden="true" class="anchor" hidden="" href="#results">#</a></h2>
+<p>For instance, our method collects iron with a probability over 3%, which is 20 times higher than DreamerV3. This achievement is extremely challenging due to its scarcity on the map and the need for wood and stone tools.</p>
+<p><strong>other results</strong></p>
+<ul>
+<li>value based RL (DQN) model just cannot play well due to complex environment.</li>
+</ul>
+<h2 id="limitation">limitation<a aria-hidden="true" class="anchor" hidden="" href="#limitation">#</a></h2>
+<p><strong>Limitation - Lack of Evaluation on Transferability</strong>: The text identifies a critical limitation in the work, highlighting that  the transferability of the method to an unsupervised setting has not  been evaluated. Specifically, it’s unclear how the approach would  perform in scenarios where an agent operates without any predefined  rewards. In traditional RL, rewards guide learning by providing feedback on the desirability of actions taken in different states. The concern  here is whether the method would still be effective if an agent had to  learn without such guidance.</p>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

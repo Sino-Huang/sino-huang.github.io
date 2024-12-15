@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Dialogue System on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/dialogue-system/</link>
+    <description>Recent content in Dialogue System on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 21 Apr 2022 11:01:14 +1000</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/dialogue-system/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Angela_fan Augmenting Transformer With Knn Composite Memory for Dialog 2021</title>
+      <link>https://sino-huang.github.io/posts/angela_fan-augmenting-transformer-with-knn-composite-memory-for-dialog-2021/</link>
+      <pubDate>Thu, 21 Apr 2022 11:01:14 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/angela_fan-augmenting-transformer-with-knn-composite-memory-for-dialog-2021/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Augmenting Transformers with KNN-based composite memory for dialog&lt;/li&gt;
+&lt;li&gt;Author: Angela Fan et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2021&lt;/li&gt;
+&lt;li&gt;Review Date: Apr 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;The author proposed augmenting generative Transformer neural network with KNN based Information Fetching module&lt;/p&gt;
+&lt;p&gt;Each KIF module learns a read operation to access fix external knowledge (e.g., WIKI)&lt;/p&gt;
+&lt;p&gt;The author demonstrated the effectiveness of this approach by identifying relevant knowledge required for knowledgeable but engaging dialog from Wikipedia, images and human-written dialog utterances.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cristian Paul Bara Mindcraft Theory of Mind Modelling 2021 Paper Review</title>
+      <link>https://sino-huang.github.io/posts/cristian-paul-bara-mindcraft-theory-of-mind-modelling-2021-paper-review/</link>
+      <pubDate>Fri, 12 Nov 2021 12:56:24 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/cristian-paul-bara-mindcraft-theory-of-mind-modelling-2021-paper-review/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: MINDCRAFT: Theory of Mind Modeling for Situated Dialogue in Collaborative Tasks&lt;/li&gt;
+&lt;li&gt;Author: Cristian-Paul Bara et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2021 EMNLP&lt;/li&gt;
+&lt;li&gt;Review Date: 12 Nov 2021&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This needs to be only 1-3 sentences, but it demonstrates that you understand the paper and, moreover, can summarize it more concisely than the author in his abstract.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The contribution of this paper is &lt;strong&gt;the mind modelling dataset&lt;/strong&gt; (Using Minecraft environment).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

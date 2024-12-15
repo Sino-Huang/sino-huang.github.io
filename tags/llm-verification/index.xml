@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Llm Verification on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/llm-verification/</link>
+    <description>Recent content in Llm Verification on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 20 Jun 2024 20:19:12 +1000</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/llm-verification/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Verification in Llm Topic 2024</title>
+      <link>https://sino-huang.github.io/posts/verification-in-llm-topic-2024/</link>
+      <pubDate>Thu, 20 Jun 2024 20:19:12 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/verification-in-llm-topic-2024/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Review Date: Thu, Jun 20, 2024&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;verification-in-llm-topic-2024&#34;&gt;Verification in LLM Topic 2024&lt;/h2&gt;
+&lt;h2 id=&#34;paper-1&#34;&gt;Paper 1:&lt;/h2&gt;
+&lt;p&gt;Weng, Yixuan, et al. &amp;ldquo;Large language models are better reasoners with self-verification.&amp;rdquo; &lt;em&gt;arXiv preprint arXiv:2212.09561&lt;/em&gt; (2022).&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240620202053164&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/verification-in-llm-topic-2024/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the better reasoning with CoT is carried out in the following two steps, Forward Reasoning ad Backward Verification.&lt;/li&gt;
+&lt;li&gt;Specifically, in Forward Reasoning, LLM reasoners generate candidate answers using CoT, and the question and candidate answers form different conclusions to be verified. And in Backward Verification, We mask the original condition and predict its result using another CoT. We rank candidate conclusions based on a verification score, which is calculated by assessing the consistency between
+the predicted and original condition values&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240620202519073&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/verification-in-llm-topic-2024/image-assets/image-20240620202519073.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Natural Language Processing on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/natural-language-processing/</link>
+    <description>Recent content in Natural Language Processing on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 10 Dec 2022 00:47:33 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/natural-language-processing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jacob_andreas Language Models as Agent Models 2022</title>
+      <link>https://sino-huang.github.io/posts/jacob_andreas-language-models-as-agent-models-2022/</link>
+      <pubDate>Sat, 10 Dec 2022 00:47:33 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/jacob_andreas-language-models-as-agent-models-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Language Models as Agent Models&lt;/li&gt;
+&lt;li&gt;Author: Jacob Andreas&lt;/li&gt;
+&lt;li&gt;Publish Year: 3 Dec 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Sat, Dec 10, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2212.01681.pdf&#34;&gt;https://arxiv.org/pdf/2212.01681.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;during training, LMs have access only to the text of the documents, with no direct evidence of the internal states of the human agent that produce them. (kind of hidden MDP thing)&lt;/li&gt;
+&lt;li&gt;this is a fact often used to argue that LMs are incapable of modelling goal-directed aspects of human language production and comprehension.&lt;/li&gt;
+&lt;li&gt;The author stated that even in today&amp;rsquo;s non-robust and error-prone models &amp;ndash; LM infer and use representations of fine-grained communicative intensions and more abstract beliefs and goals. Despite that limited nature of their training data, they can thus serve as building blocks for systems that communicate and act intentionally.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;In other words&lt;/strong&gt;, the author said that language model can be used to communicate intention of human agent, and hence it can be treated as a agent model.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;the author claimed that
+&lt;ul&gt;
+&lt;li&gt;in the course of performing next-word prediction in context, current LMs sometimes infer inappropriate, partial representations of beliefs ,desires and intentions possessed by the agent that produced the context, and other agents mentioned within it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Once&lt;/strong&gt; these representations are &lt;strong&gt;inferred&lt;/strong&gt;, they are &lt;strong&gt;causally&lt;/strong&gt; &lt;strong&gt;linked&lt;/strong&gt; to LM prediction, and thus bear the same relation to generated text that an intentional agent&amp;rsquo;s state bears to its communicative actions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The high-level goals of this paper are twofold:
+&lt;ul&gt;
+&lt;li&gt;first, to outline a specific sense in which idealised language models can function as models of agent belief, desires and intentions;&lt;/li&gt;
+&lt;li&gt;second, to highlight a few cases in which existing models appear to approach this idealization (and describe the ways in which they still fall short)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Training on text alone produces ready-made models of the map from agent states to text; these models offer a starting point for language processing systems that communicate intentionally.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Current language model is bad&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Jie_huang Can Language Models Be Specific How 2022</title>
+      <link>https://sino-huang.github.io/posts/jie_huang-can-language-models-be-specific-how-2022/</link>
+      <pubDate>Tue, 08 Nov 2022 20:41:04 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/jie_huang-can-language-models-be-specific-how-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Can Language Models Be Specific? How?&lt;/li&gt;
+&lt;li&gt;Author: Jie Huang et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 11 Oct 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Tue, Nov 8, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;they propose to measure how specific the language of pre-trained language models (PLM) is, To achieve this, they introduced a novel approach to build a benchmark for specificity testing by forming masked token prediction tasks with prompts.&lt;/li&gt;
+&lt;li&gt;for instance given &amp;ldquo;J.K. Rowling was born in [MASK]&amp;rdquo;, we want to test whether a more specific answer will be better filled by PLMs. e.g., Yate instead of England&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;image-20221108211541780image-assetsimage-20221108211541780png&#34;&gt;&lt;img alt=&#34;image-20221108211541780&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/jie_huang-can-language-models-be-specific-how-2022/image-assets/image-20221108211541780.png&#34;&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;it is known that if the prediction is more specific, we can retrieve more fine-grained information from language models, and further acquire more information.
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;viewer&amp;rsquo;s opinion&lt;/em&gt;: we are not saying that summarisation is easy or having less useful information, there are cases that abstract info is more useful&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;although there are works on measuring how much knowledge is stored in PLMs or improving the correctness of the predictions, non attempted to measure or improve the specificity of prediction made by PLMs.&lt;/li&gt;
+&lt;li&gt;Understanding how specific the language of PLMs is can help us better understand the behaviour of language models and facilitate downstream applications such as question answering etc.&lt;/li&gt;
+&lt;li&gt;setup a dataset benchmark for specificity,  The quality of the benchmark is high, where the judgment on which answer is more specific is ∼ 97% consistent with humans.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;discovery&#34;&gt;Discovery&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;in general, PLMs prefer less specific answers without subjects given, and they only have a weak ability to differentiate coarse-grained/fine-grained objects by measuring their (cosine) similarities to subjects.&lt;/li&gt;
+&lt;li&gt;the results indicate that specificity was neglected by existing research on language models&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;improving-specificity-of-the-prediction&#34;&gt;Improving specificity of the prediction&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;few-shot prompting&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Wenlong_huang Language Models as Zero Shot Planners Extracting Actionable Knowledge for Embodied Agents 2022</title>
+      <link>https://sino-huang.github.io/posts/wenlong_huang-language-models-as-zero-shot-planners-extracting-actionable-knowledge-for-embodied-agents-2022/</link>
+      <pubDate>Mon, 19 Sep 2022 21:55:13 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/wenlong_huang-language-models-as-zero-shot-planners-extracting-actionable-knowledge-for-embodied-agents-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Language Models as Zero Shot Planners: Extracting Actionable Knowledge for Embodied Agents&lt;/li&gt;
+&lt;li&gt;Author: Wenlong Huang et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: Mar 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Mon, Sep 19, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Large language models are learning general commonsense world knowledge.&lt;/li&gt;
+&lt;li&gt;so this paper, the author investigate the possibility of grounding high-level tasks, expressed as natural language (e.g., &amp;ldquo;make breakfast&amp;rdquo;) to a chosen set of action steps (&amp;ldquo;open fridge&amp;rdquo;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;they found out that if pre-trained LMs are large enough and prompted appropriately, they can effectively decompose high-level tasks into mid-level plans without any further training.&lt;/li&gt;
+&lt;li&gt;they proposed several tools to improve executability of the model generation without invasive probing or modifications to the model.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What is prompt learning&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Gregor_geigle Retrieve Fast Rerank Smart Cooperative and Joint Approaches for Improved Cross Modal Retrieval 2022</title>
+      <link>https://sino-huang.github.io/posts/gregor_geigle-retrieve-fast-rerank-smart-coorperative-and-joint-approaches-for-improved-cross-modal-retrieval-2022/</link>
+      <pubDate>Sat, 27 Aug 2022 00:31:38 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/gregor_geigle-retrieve-fast-rerank-smart-coorperative-and-joint-approaches-for-improved-cross-modal-retrieval-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Retrieve Fast, Rerank Smart: Cooperative and Joint Approaches for Improved Cross-Modal Retrieval&lt;/li&gt;
+&lt;li&gt;Author: Gregor Geigle et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 19 Feb, 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Sat, Aug 27, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;they want to combine the cross encoder and the bi encoder advantages and have a more efficient cross-modal search and retrieval&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;efficiency and simplicity of BE approach based on twin network&lt;/li&gt;
+&lt;li&gt;expressiveness and cutting-edge performance of CE methods.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;p&gt;We propose a novel joint Cross Encoding and Binary Encoding model (Joint-Coop), which is trained to simultaneously cross-encode and embed multi-modal input; it achieves the highest scores overall while maintaining retrieval efficiency&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kaitao_song Mpnet Masked and Permuted Retrain for Language Understanding 2020</title>
+      <link>https://sino-huang.github.io/posts/kaitao_song-mpnet-masked-and-permuted-retrain-for-language-understanding-2020/</link>
+      <pubDate>Thu, 25 Aug 2022 12:24:55 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/kaitao_song-mpnet-masked-and-permuted-retrain-for-language-understanding-2020/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: MPNet: Masked and Permuted Pre-training for Language Understanding&lt;/li&gt;
+&lt;li&gt;Author: Kaitao Song et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2020&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, Aug 25, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;BERT adopts masked language modelling (MLM) for pre-training and is one of the most successful pre-training models.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Since BERT is all attention block and the positional embedding is the only info that care about the ordering, BERT neglects dependency among predicted tokens&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Deepmind Flamingo a Visual Language Model for Few Shot Learning 2022</title>
+      <link>https://sino-huang.github.io/posts/deepmind-flamingo-a-visual-language-model-for-few-shot-learning-2022/</link>
+      <pubDate>Wed, 11 May 2022 16:35:03 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/deepmind-flamingo-a-visual-language-model-for-few-shot-learning-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Flamingo: a Visual Language Model for Few-Shot Learning&lt;/li&gt;
+&lt;li&gt;Author: Jean-Baptiste Alayrac et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: Apr 2022&lt;/li&gt;
+&lt;li&gt;Review Date: May 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;flamingo-architecture&#34;&gt;Flamingo architecture&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Pretrained&lt;/strong&gt; &lt;strong&gt;vision encoder: from pixels to features&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;the model&amp;rsquo;s vision encoder is a pretrained Normalizer-Free ResNet (NFNet)&lt;/p&gt;
+&lt;p&gt;they pretrain the vision encoder using a contrastive objective on their datasets of image and text pairs, using the two term contrastive loss from paper &amp;ldquo;Learning Transferable Visual Models From Natural Language Supervision&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Angela_fan Augmenting Transformer With Knn Composite Memory for Dialog 2021</title>
+      <link>https://sino-huang.github.io/posts/angela_fan-augmenting-transformer-with-knn-composite-memory-for-dialog-2021/</link>
+      <pubDate>Thu, 21 Apr 2022 11:01:14 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/angela_fan-augmenting-transformer-with-knn-composite-memory-for-dialog-2021/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Augmenting Transformers with KNN-based composite memory for dialog&lt;/li&gt;
+&lt;li&gt;Author: Angela Fan et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2021&lt;/li&gt;
+&lt;li&gt;Review Date: Apr 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;The author proposed augmenting generative Transformer neural network with KNN based Information Fetching module&lt;/p&gt;
+&lt;p&gt;Each KIF module learns a read operation to access fix external knowledge (e.g., WIKI)&lt;/p&gt;
+&lt;p&gt;The author demonstrated the effectiveness of this approach by identifying relevant knowledge required for knowledgeable but engaging dialog from Wikipedia, images and human-written dialog utterances.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sebastian_borgeaud Improving Language Models by Retrieving From Trillions of Tokens 2022</title>
+      <link>https://sino-huang.github.io/posts/sebastian_borgeaud-improving-language-models-by-retrieving-from-trillions-of-tokens-2022/</link>
+      <pubDate>Mon, 21 Mar 2022 19:07:36 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/sebastian_borgeaud-improving-language-models-by-retrieving-from-trillions-of-tokens-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Improving language models by retrieving from trillions of tokens&lt;/li&gt;
+&lt;li&gt;Author: Sebastian Borgeaud et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: Feb 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Mar 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;in order to decrease the size of language model, this work suggested retrieval from a large text database as a complementary path to scaling language models.&lt;/p&gt;
+&lt;p&gt;they equip models with the ability to directly access a large dataset to perform prediction &amp;ndash; a &lt;strong&gt;semi-parametric&lt;/strong&gt; approach.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Machel_reid Can Wikipedia Help Offline Rl 2022</title>
+      <link>https://sino-huang.github.io/posts/machel_reid-can-wikipedia-help-offline-rl-2022/</link>
+      <pubDate>Wed, 16 Mar 2022 21:18:24 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/machel_reid-can-wikipedia-help-offline-rl-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Can Wikipedia Help Offline Reinforcement Learning&lt;/li&gt;
+&lt;li&gt;Author: Machel Reid et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: Mar 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Mar 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;Fine-tuning reinforcement learning (RL) models has been challenging because of a lack of large scale off-the-shelf datasets as well as high variance in transferability among different environments.&lt;/p&gt;
+&lt;p&gt;Moreover, when the model is trained from scratch, it suffers from slow convergence speeds&lt;/p&gt;
+&lt;p&gt;In this paper, they look to take advantage of this formulation of reinforcement learning as &lt;strong&gt;sequence modelling&lt;/strong&gt; and investigate the transferability of pre-trained sequence models on other domains (vision, language) when fine tuned on offline RL tasks (control,  games).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Wenfeng_feng Extracting Action Sequences From Texts by Rl</title>
+      <link>https://sino-huang.github.io/posts/wenfeng_feng-extracting-action-sequences-from-texts-by-rl/</link>
+      <pubDate>Tue, 15 Mar 2022 14:40:38 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/wenfeng_feng-extracting-action-sequences-from-texts-by-rl/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Extracting Action Sequences from Texts Based on Deep Reinforcement Learning&lt;/li&gt;
+&lt;li&gt;Author: Wenfeng Feng et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: Mar 2018&lt;/li&gt;
+&lt;li&gt;Review Date: Mar 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;the author want to build a model that learns to directly extract action sequences without external tools like POS tagging and dependency parsing results&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Annotation dataset structure&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20220315161910319&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/wenfeng_feng-extracting-action-sequences-from-texts-by-rl/image-assets/image-20220315161910319.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;example&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20220315162057150&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/wenfeng_feng-extracting-action-sequences-from-texts-by-rl/image-assets/image-20220315162057150.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Model&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;they exploit the framework to learn two models to predict action names and arguments respectively.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Shivam_miglani Nltopddl Learning From Nlp Manuals 2020</title>
+      <link>https://sino-huang.github.io/posts/shivam_miglani-nltopddl-learning-from-nlp-manuals-2020/</link>
+      <pubDate>Mon, 14 Mar 2022 15:08:45 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/shivam_miglani-nltopddl-learning-from-nlp-manuals-2020/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: NLtoPDDL: One-Shot Learning of PDDL Models from Natural Language Process Manuals&lt;/li&gt;
+&lt;li&gt;Author: Shivam Miglani et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2020&lt;/li&gt;
+&lt;li&gt;Review Date: Mar 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;pipeline&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20220314153211927&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/shivam_miglani-nltopddl-learning-from-nlp-manuals-2020/image-assets/image-20220314153211927.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pipeline architecture&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20220314165337096&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/shivam_miglani-nltopddl-learning-from-nlp-manuals-2020/image-assets/image-20220314165337096.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Phase 1&lt;/strong&gt; we have a DQN that learns to extract words that represent action name, action arguments, and the sequence of actions present in annotated NL process manuals. (why only action name, do we need to extract other information???) Again, why this is called DQN RL? is it just normal supervised learning&amp;hellip;  (Check EASDRL paper to understand Phase 1)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Roma_patel Learning to Ground Language Temporal Logical Form 2019</title>
+      <link>https://sino-huang.github.io/posts/roma_patel-learning-to-ground-language-temporal-logical-form-2019/</link>
+      <pubDate>Mon, 28 Feb 2022 21:40:53 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/roma_patel-learning-to-ground-language-temporal-logical-form-2019/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Learning to Ground Language to Temporal Logical Form&lt;/li&gt;
+&lt;li&gt;Author: Roma Patel et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2019&lt;/li&gt;
+&lt;li&gt;Review Date: Feb 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;natural language commands often exhibits sequential (temporal) constraints e.g., &amp;ldquo;go through the kitchen and then into the living room&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;But this constraints cannot be expressed in the reward of Markov Decision Process setting. (see &lt;a href=&#34;https://sino-huang.github.io/posts/david_abel-on-the-expressivity-of-markov-reward-2021/&#34;&gt;this paper&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Therefore, they proposed to ground language to Linear Temporal logic (LTL) and after that continue to map from LTL expressions to action sequences.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Anton_belyy Guided K Best Selection for Semantic Parsing Annotation 2021</title>
+      <link>https://sino-huang.github.io/posts/anton_belyy-guided-k-best-selection-for-semantic-parsing-annotation-2021/</link>
+      <pubDate>Wed, 23 Feb 2022 19:42:39 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/anton_belyy-guided-k-best-selection-for-semantic-parsing-annotation-2021/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Guided K-best Selection for Semantic Parsing Annotation&lt;/li&gt;
+&lt;li&gt;Author: Anton Belyy et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2021&lt;/li&gt;
+&lt;li&gt;Review Date: Feb 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;They wanted to tackle the challenge of efficient data collection (data annotation) for the conversational semantic parsing task.&lt;/p&gt;
+&lt;p&gt;In the presence of little available training data, they proposed human-in-the-loop interfaces for guided K-best selection, using a prototype model trained on limited data.&lt;/p&gt;
+&lt;h3 id=&#34;result&#34;&gt;Result&lt;/h3&gt;
+&lt;p&gt;Their user studies showed that the keyword searching function combined with a keyword suggestion method strikes the balance between annotation accuracy and speed&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Jacob_andreas Compositionality as Lexical Symmetry 2022</title>
+      <link>https://sino-huang.github.io/posts/jacob_andreas-compositionality-as-lexical-symmetry-2022/</link>
+      <pubDate>Tue, 08 Feb 2022 14:20:19 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/jacob_andreas-compositionality-as-lexical-symmetry-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Compositionality as Lexical Symmetry&lt;/li&gt;
+&lt;li&gt;Author: Ekin Akyurek; Jacob Andreas&lt;/li&gt;
+&lt;li&gt;Publish Year: Jan 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Feb 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;Standard deep network models lack the inductive bias needed to generalize compositionally in tasks like semantic parsing, translation, and question answering.&lt;/p&gt;
+&lt;p&gt;So, a large body of work in NLP seeks to overcome this limitation with new model architectures that enforce a compositional process of sentence interpretation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Goal&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Alex_nichol Glide Towards Photorealistic Image Generation and Editing With Text Guided Diffusion Models 2021</title>
+      <link>https://sino-huang.github.io/posts/alex_nichol-glide-towards-photorealistic-image-generation-and-editing-with-text-guided-diffusion-models-2021/</link>
+      <pubDate>Wed, 12 Jan 2022 16:54:01 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/alex_nichol-glide-towards-photorealistic-image-generation-and-editing-with-text-guided-diffusion-models-2021/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models&lt;/li&gt;
+&lt;li&gt;Author: Alex Nichol et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: Dec 2021&lt;/li&gt;
+&lt;li&gt;Review Date: Jan 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;In author&amp;rsquo;s &lt;a href=&#34;https://arxiv.org/pdf/2105.05233.pdf&#34;&gt;previous work&lt;/a&gt;, the diffusion model can achieve photorealism in the class-conditional setting by augmenting with &lt;em&gt;classifier guidance&lt;/em&gt;, a technique which allows diffusion models to condition on a classifier&amp;rsquo;s labels.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The classifier is first trained on noised images, and during the diffusion sampling process, gradients from the classifier are used to guide the output sample towards the label.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;classifier details&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Yiding_jiang Language as Abstraction for Hierarchical Deep Reinforcement Learning</title>
+      <link>https://sino-huang.github.io/posts/yiding_jiang-language-as-abstraction-for-hierarchical-deep-reinforcement-learning/</link>
+      <pubDate>Wed, 15 Dec 2021 19:49:28 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/yiding_jiang-language-as-abstraction-for-hierarchical-deep-reinforcement-learning/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Language as an Abstraction for Hierarchical Deep Reinforcement Learning&lt;/li&gt;
+&lt;li&gt;Author: Yiding Jiang et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2019 NeurIPS&lt;/li&gt;
+&lt;li&gt;Review Date: Dec 2021&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;Solving complex, temporally-extended tasks is a long-standing problem in RL.&lt;/p&gt;
+&lt;p&gt;Acquiring effective yet general abstractions for hierarchical RL is remarkably challenging.&lt;/p&gt;
+&lt;p&gt;Therefore, they propose to use language as the abstraction, as it provides unique compositional structure, enabling fast learning and combinatorial generalisation&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211218205222284&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/yiding_jiang-language-as-abstraction-for-hierarchical-deep-reinforcement-learning/image-assets/image-20211218205222284.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hengyuan_hu Hierarchical Decision Making by Generating and Following Natural Language Instructions 2019</title>
+      <link>https://sino-huang.github.io/posts/hengyuan_hu-hierarchical-decision-making-by-generating-and-following-natural-language-instructions-2019/</link>
+      <pubDate>Wed, 15 Dec 2021 13:11:05 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/hengyuan_hu-hierarchical-decision-making-by-generating-and-following-natural-language-instructions-2019/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Hierarchical Decision Making by Generating and Following Natural Language Instructions&lt;/li&gt;
+&lt;li&gt;Author: Hengyuan Hu et. al. FAIR&lt;/li&gt;
+&lt;li&gt;Publish Year: 2019&lt;/li&gt;
+&lt;li&gt;Review Date: Dec 2021&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;One line summary: they build a Architect Builder model to clone human behaviour for playing RTS game&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211215191322769&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/hengyuan_hu-hierarchical-decision-making-by-generating-and-following-natural-language-instructions-2019/image-assets/image-20211215191322769.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211215191341893&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/hengyuan_hu-hierarchical-decision-making-by-generating-and-following-natural-language-instructions-2019/image-assets/image-20211215191341893.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211215191350360&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/hengyuan_hu-hierarchical-decision-making-by-generating-and-following-natural-language-instructions-2019/image-assets/image-20211215191350360.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Their task environment is very similar to IGLU competition setting, but their model is too task-specific&lt;/p&gt;
+&lt;p&gt;The author mentioned some properties about natural language instructions&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>David_ding Attention Over Learned Object Embeddings Enables Complex Visual Reasoning 2021</title>
+      <link>https://sino-huang.github.io/posts/david_ding-attention-over-learned-object-embeddings-enables-complex-visual-reasoning-2021/</link>
+      <pubDate>Wed, 15 Dec 2021 12:59:07 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/david_ding-attention-over-learned-object-embeddings-enables-complex-visual-reasoning-2021/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;Title: Attention Over Learned Object Embeddings Enables Complex Visual Reasoning&lt;/li&gt;
+&lt;li&gt;Author: David Ding et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2021 NeurIPS&lt;/li&gt;
+&lt;li&gt;Review Date: Dec 2021&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Background info for this paper:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Their paper propose a all-in-one transformer model that is able to answer CLEVRER counterfactual questions with higher accuracy (75.6% vs 46.5%) and less training data (- 40%)&lt;/p&gt;
+&lt;p&gt;They believe that their model relies on three key aspects:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;self-attention&lt;/li&gt;
+&lt;li&gt;soft-discretization&lt;/li&gt;
+&lt;li&gt;self-supervised learning&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211214201703442&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/david_ding-attention-over-learned-object-embeddings-enables-complex-visual-reasoning-2021/image-assets/image-20211214201703442.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Jacob_andreas Modular Multitask Reinforcement Learning With Policy Sketches 2017</title>
+      <link>https://sino-huang.github.io/posts/jacob_andreas-modular-multitask-reinforcement-learning-with-policy-sketches-2017/</link>
+      <pubDate>Mon, 13 Dec 2021 17:23:12 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/jacob_andreas-modular-multitask-reinforcement-learning-with-policy-sketches-2017/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;Title: Modular Multitask Reinforcement Learning with Policy Sketches&lt;/li&gt;
+&lt;li&gt;Author: Jacob Andreas et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2017&lt;/li&gt;
+&lt;li&gt;Review Date: Dec 2021&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Background info for this paper:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Their paper describe a framework that is inspired by on &lt;a href=&#34;https://people.cs.umass.edu/~barto/courses/cs687/Sutton-Precup-Singh-AIJ99.pdf&#34;&gt;&lt;em&gt;options MDP&lt;/em&gt;&lt;/a&gt;, for which a reinforcement learning task is handled by several sub-MDP modules. (that is why they call it Modular RL)&lt;/p&gt;
+&lt;p&gt;They consider a multitask RL problem in a shared environment. (See the figure below). The IGLU Minecraft challenge as well as Angry Birds also belongs to this category.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cristian Paul Bara Mindcraft Theory of Mind Modelling 2021 Paper Review</title>
+      <link>https://sino-huang.github.io/posts/cristian-paul-bara-mindcraft-theory-of-mind-modelling-2021-paper-review/</link>
+      <pubDate>Fri, 12 Nov 2021 12:56:24 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/cristian-paul-bara-mindcraft-theory-of-mind-modelling-2021-paper-review/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: MINDCRAFT: Theory of Mind Modeling for Situated Dialogue in Collaborative Tasks&lt;/li&gt;
+&lt;li&gt;Author: Cristian-Paul Bara et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2021 EMNLP&lt;/li&gt;
+&lt;li&gt;Review Date: 12 Nov 2021&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This needs to be only 1-3 sentences, but it demonstrates that you understand the paper and, moreover, can summarize it more concisely than the author in his abstract.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The contribution of this paper is &lt;strong&gt;the mind modelling dataset&lt;/strong&gt; (Using Minecraft environment).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

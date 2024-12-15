@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Atari-2600 on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/atari-2600/</link>
+    <description>Recent content in Atari-2600 on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 04 Mar 2022 12:12:27 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/atari-2600/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Joseph_kim Collaborative Planning With Encoding of High Level Strategies 2017</title>
+      <link>https://sino-huang.github.io/posts/joseph_kim-collaborative-planning-with-encoding-of-high-level-strategies-2017/</link>
+      <pubDate>Fri, 04 Mar 2022 12:12:27 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/joseph_kim-collaborative-planning-with-encoding-of-high-level-strategies-2017/</guid>
+      <description>&lt;p&gt;please modify the following&lt;/p&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Collaborative Planning with Encoding of Users&amp;rsquo; High-level Strategies&lt;/li&gt;
+&lt;li&gt;Author: Joseph Kim et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2017&lt;/li&gt;
+&lt;li&gt;Review Date: Mar 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;Automatic planning is computationally expensive. Greedy search heuristics often yield low-quality plans that can result in wasted resources; also, even in the event that an adequate plan is generated, users may have difficulty interpreting the reason why the plan performs well and trusting it.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Richard_shin Constrained Language Models Yield Few Shot Semantic Parsers 2021</title>
+      <link>https://sino-huang.github.io/posts/richard_shin-constrained-language-models-yield-few-shot-semantic-parsers-2021/</link>
+      <pubDate>Wed, 02 Mar 2022 00:19:18 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/richard_shin-constrained-language-models-yield-few-shot-semantic-parsers-2021/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Constrained Language models yield few-shot semantic parsers&lt;/li&gt;
+&lt;li&gt;Author: Richard Shin et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: Nov 2021&lt;/li&gt;
+&lt;li&gt;Review Date: Mar 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;The author wanted to explore the use of large pretrained language models as few-shot semantic parsers&lt;/p&gt;
+&lt;p&gt;However, language models are trained to generate natural language. To bridge the gap, they used language models to paraphrase inputs into a &lt;em&gt;&lt;strong&gt;controlled&lt;/strong&gt;&lt;/em&gt; sublanguage resembling English that can be automatically mapped to a target meaning representation. (using synchronous context-free grammar SCFG)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Borja_ibarz Reward Learning From Human Preferences and Demonstrations in Atari 2018</title>
+      <link>https://sino-huang.github.io/posts/borja_ibarz-reward-learning-from-human-preferences-and-demonstrations-in-atari-2018/</link>
+      <pubDate>Sat, 27 Nov 2021 19:14:04 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/borja_ibarz-reward-learning-from-human-preferences-and-demonstrations-in-atari-2018/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Reward learning from human preferences and demonstractions in Atari&lt;/li&gt;
+&lt;li&gt;Author: Borja Ibarz et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2018&lt;/li&gt;
+&lt;li&gt;Review Date: Nov 2021&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This needs to be only 1-3 sentences, but it demonstrates that you understand the paper and, moreover, can summarize it more concisely than the author in his abstract.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The author proposed a method that uses &lt;strong&gt;&lt;u&gt;human expert&amp;rsquo;s annotation&lt;/u&gt;&lt;/strong&gt; rather than extrinsic reward from the environment to guide the reinforcement learning.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Adrien_ecoffet Go Explore a New Approach for Hard Exploration Problems 2021 Paper Review</title>
+      <link>https://sino-huang.github.io/posts/adrien_ecoffet-go-explore-a-new-approach-for-hard-exploration-problems-2021-paper-review/</link>
+      <pubDate>Sat, 27 Nov 2021 18:58:32 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/adrien_ecoffet-go-explore-a-new-approach-for-hard-exploration-problems-2021-paper-review/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Go-Explore: a New Approach for Hard-Exploration Problems&lt;/li&gt;
+&lt;li&gt;Author: Adrien Ecoffet et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2021&lt;/li&gt;
+&lt;li&gt;Review Date: Nov 2021&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This needs to be only 1-3 sentences, but it demonstrates that you understand the paper and, moreover, can summarize it more concisely than the author in his abstract.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The author hypothesised that there are two main issues that prevent DRL agents from achieving high score in exploration-hard game (e.g., Montezuma&amp;rsquo;s Revenge)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Adria Badia Agent57 Outperforming the Atari Human Benchmark 2020 Paper Review</title>
+      <link>https://sino-huang.github.io/posts/adria-badia-agent57-outperforming-the-atari-human-benchmark-2020-paper-review/</link>
+      <pubDate>Thu, 18 Nov 2021 12:05:47 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/adria-badia-agent57-outperforming-the-atari-human-benchmark-2020-paper-review/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Agent57: Outperforming the Atari Human Benchmark 2020&lt;/li&gt;
+&lt;li&gt;Author: Adria Badia et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2020&lt;/li&gt;
+&lt;li&gt;Review Date: Nov 2021&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This needs to be only 1-3 sentences, but it demonstrates that you understand the paper and, moreover, can summarize it more concisely than the author in his abstract.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Agent57 is the SOTA Atari RL agent in 2020 that can play difficult Atari games like &amp;ldquo;Montezuma&amp;rsquo;s Revenge, &amp;ldquo;Pitfall&amp;rdquo;, &amp;ldquo;Solaris&amp;rdquo; and &amp;ldquo;Skiing&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stefan O Toole Width Based Lookaheads With Learnt Base Policies and Heuristics Over the Atari 2600 Benchmark 2021 Paper Reivew</title>
+      <link>https://sino-huang.github.io/posts/stefan-o-toole-width-based-lookaheads-with-learnt-base-policies-and-heuristics-over-the-atari-2600-benchmark-2021-paper-reivew/</link>
+      <pubDate>Tue, 16 Nov 2021 17:40:10 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/stefan-o-toole-width-based-lookaheads-with-learnt-base-policies-and-heuristics-over-the-atari-2600-benchmark-2021-paper-reivew/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Width-based Lookaheads with Learnt Base Policies and Heuristics Over the Atari-2600 Benchmark&lt;/li&gt;
+&lt;li&gt;Author: Stefan O&amp;rsquo;Toole et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2021&lt;/li&gt;
+&lt;li&gt;Review Date: Tue 16 Nov 2021&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This needs to be only 1-3 sentences, but it demonstrates that you understand the paper and, moreover, can summarize it more concisely than the author in his abstract.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This paper proposed a new width-based planning and learning agent that can play Atari-2600 games (though it cannot play Montezuma&amp;rsquo;s Revenge). The author claimed that width-based planning &lt;em&gt;exploration&lt;/em&gt; plus (greedy) optimal MDP policy exploitation is able to achieve better performance than Monte-Carlo Tree Search.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

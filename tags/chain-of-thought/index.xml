@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Chain of Thought on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/chain-of-thought/</link>
+    <description>Recent content in Chain of Thought on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 28 Feb 2024 19:59:38 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/chain-of-thought/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jia Li Structured Cot Prompting for Code Generation 2023</title>
+      <link>https://sino-huang.github.io/posts/jia-li-structured-cot-prompting-for-code-generation-2023/</link>
+      <pubDate>Wed, 28 Feb 2024 19:59:38 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/jia-li-structured-cot-prompting-for-code-generation-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Structured Chaint of Thought Prompting for Code Generation 2023&lt;/li&gt;
+&lt;li&gt;Author: Jia Li et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 7 Sep 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Feb 28, 2024&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2305.06599.pdf&#34;&gt;https://arxiv.org/pdf/2305.06599.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240229114924548&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/jia-li-structured-cot-prompting-for-code-generation-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;p&gt;The paper introduces Structured CoTs (SCoTs) and a novel prompting  technique called SCoT prompting for improving code generation with Large Language Models (LLMs) like ChatGPT and Codex. Unlike the previous  Chain-of-Thought (CoT) prompting, which focuses on natural language  reasoning steps, SCoT prompting leverages the structural information  inherent in source code. By incorporating program structures (sequence,  branch, and loop structures) into intermediate reasoning steps (SCoTs),  LLMs are guided to generate more structured and accurate code.  Evaluation on three benchmarks demonstrates that SCoT prompting  outperforms CoT prompting by up to 13.79% in Pass@1, is preferred by  human developers in terms of program quality, and exhibits robustness to various examples, leading to substantial improvements in code  generation performance.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

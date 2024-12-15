@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>RNN on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/rnn/</link>
+    <description>Recent content in RNN on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 14 Jan 2022 00:26:37 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/rnn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tao_lei When Attention Meets Fast Recurrence Training Language Models With Reduced Compute 2021</title>
+      <link>https://sino-huang.github.io/posts/tao_lei-when-attention-meets-fast-recurrence-training-language-models-with-reduced-compute-2021/</link>
+      <pubDate>Fri, 14 Jan 2022 00:26:37 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/tao_lei-when-attention-meets-fast-recurrence-training-language-models-with-reduced-compute-2021/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: When Attention Meets Fast Recurrence: Training Language Models with Reduce Compute&lt;/li&gt;
+&lt;li&gt;Author: Tao Lei&lt;/li&gt;
+&lt;li&gt;Publish Year: Sep 2021&lt;/li&gt;
+&lt;li&gt;Review Date: Jan 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20220114003204904&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/tao_lei-when-attention-meets-fast-recurrence-training-language-models-with-reduced-compute-2021/image-assets/image-20220114003204904.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As the author mentioned, the inspiration of SRU++ comes from two lines of research:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;paralleization / speed problem of Original RNN
+&lt;ul&gt;
+&lt;li&gt;&lt;img alt=&#34;image-20220114004410134&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/tao_lei-when-attention-meets-fast-recurrence-training-language-models-with-reduced-compute-2021/image-assets/image-20220114004410134.png&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;leveraging recurrence in conjunction with self-attention&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Structure of SRU++&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20220114005227231&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/tao_lei-when-attention-meets-fast-recurrence-training-language-models-with-reduced-compute-2021/image-assets/image-20220114005227231.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;New discovery :little attention is needed given recurrence.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Similar to the observation of &lt;a href=&#34;https://arxiv.org/abs/1911.11423&#34;&gt;Merity (2019)&lt;/a&gt;, they found using a couple of attention layers sufficient to obtain SOTA results.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

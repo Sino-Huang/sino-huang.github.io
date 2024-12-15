@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Yuetian_weng an Efficient Spatio Temporal Pyramid Transformer for Action Detection 2022 | Sukai Huang</title>
+<meta content="action detection, future work" name="keywords"/>
+<meta content="[TOC]
+
+Title: An Efficient Spatio-Temporal Pyramid Transformer for Action Detection
+Author: Yuetian Weng et. al.
+Publish Year: Jul 2022
+Review Date: Thu, Oct 20, 2022
+
+Summary of paper
+Motivation
+
+the task of action detection aims at deducing both the action category and localisation of the start and end moment for each action instance in a long, untrimmed video.
+it is non-trivial to design an efficient architecture for action detection due to the prohibitively expensive self-attentions over a long sequence of video clips
+To this end, they present an efficient hierarchical spatial temporal transformer for action detection
+Building upon the fact that the early self-attention layer in Transformer still focus on local patterns.
+
+Background
+
+to date, the majority of action detection methods are driven by 3D convolutional neural networks (CNNs), e.g., C3D, I3D, to encode video segment features from video RGB frames and optical flows
+
+however, the limited receptive field hinders the CNN-based models to capture long-term spatio-temporal dependencies. alternatively, vision transformers have shown the advantage of capturing global dependencies via the self-attention mechanism.
+
+
+Hierarchical ViTs divide Transformer blocks into several stages and progressively reduce the spatial size of feature maps when the network goes deeper.
+
+but having self-attention over a sequence of images is expensive
+also they found out that the global attention in the early layers actually only encodes local visual pattens (i.e., it only attends to its nearby tokens in adjacent frames while rarely interacting with tokens in distance frames)
+
+
+
+
+Efficient Spatio-temporal Pyramid Transformer
+" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Yuetian_weng an Efficient Spatio Temporal Pyramid Transformer for Action Detection 2022" property="og:title"/>
+<meta content="[TOC]
+Title: An Efficient Spatio-Temporal Pyramid Transformer for Action Detection Author: Yuetian Weng et. al. Publish Year: Jul 2022 Review Date: Thu, Oct 20, 2022 Summary of paper Motivation the task of action detection aims at deducing both the action category and localisation of the start and end moment for each action instance in a long, untrimmed video. it is non-trivial to design an efficient architecture for action detection due to the prohibitively expensive self-attentions over a long sequence of video clips To this end, they present an efficient hierarchical spatial temporal transformer for action detection Building upon the fact that the early self-attention layer in Transformer still focus on local patterns. Background to date, the majority of action detection methods are driven by 3D convolutional neural networks (CNNs), e.g., C3D, I3D, to encode video segment features from video RGB frames and optical flows however, the limited receptive field hinders the CNN-based models to capture long-term spatio-temporal dependencies. alternatively, vision transformers have shown the advantage of capturing global dependencies via the self-attention mechanism. Hierarchical ViTs divide Transformer blocks into several stages and progressively reduce the spatial size of feature maps when the network goes deeper. but having self-attention over a sequence of images is expensive also they found out that the global attention in the early layers actually only encodes local visual pattens (i.e., it only attends to its nearby tokens in adjacent frames while rarely interacting with tokens in distance frames) Efficient Spatio-temporal Pyramid Transformer " property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/image-assets/cover.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/image-assets/cover.png" name="twitter:image"/>
+<meta content="Yuetian_weng an Efficient Spatio Temporal Pyramid Transformer for Action Detection 2022" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://sino-huang.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Yuetian_weng an Efficient Spatio Temporal Pyramid Transformer for Action Detection 2022",
+      "item": "https://sino-huang.github.io/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/posts/">Posts</a></div>
+<h1>
+    Yuetian_weng an Efficient Spatio Temporal Pyramid Transformer for Action Detection 2022
+    <a aria-label="RSS" href="/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><p>[TOC]</p>
+<ol>
+<li>Title: An Efficient Spatio-Temporal Pyramid Transformer for Action Detection</li>
+<li>Author: Yuetian Weng et. al.</li>
+<li>Publish Year: Jul 2022</li>
+<li>Review Date: Thu, Oct 20, 2022</li>
+</ol>
+<h2 id="summary-of-paper">Summary of paper<a aria-hidden="true" class="anchor" hidden="" href="#summary-of-paper">#</a></h2>
+<h3 id="motivation">Motivation<a aria-hidden="true" class="anchor" hidden="" href="#motivation">#</a></h3>
+<ul>
+<li>the task of action detection aims at deducing both the action category and localisation of the start and end moment for each action instance in a long, untrimmed video.</li>
+<li>it is non-trivial to design an efficient architecture for action detection due to the prohibitively <strong>expensive</strong> self-attentions over a long sequence of video clips</li>
+<li>To this end, they present an efficient hierarchical spatial temporal transformer for action detection</li>
+<li>Building upon the fact that the early self-attention layer in Transformer still focus on local patterns.</li>
+</ul>
+<h3 id="background">Background<a aria-hidden="true" class="anchor" hidden="" href="#background">#</a></h3>
+<ul>
+<li>to date, the majority of action detection methods are driven by 3D convolutional neural networks (CNNs), e.g., C3D, I3D, to encode video segment features from video RGB frames and optical flows
+<ul>
+<li>however, the limited receptive field hinders the CNN-based models to capture long-term spatio-temporal dependencies. alternatively, vision transformers have shown the advantage of capturing global dependencies via the self-attention mechanism.</li>
+</ul>
+</li>
+<li>Hierarchical ViTs divide Transformer blocks into several stages and progressively reduce the spatial size of feature maps when the network goes deeper.
+<ul>
+<li>but having self-attention over a sequence of images is expensive</li>
+<li>also they found out that the <em>global attention</em> in the early layers actually only encodes local visual pattens (i.e., <u>it only attends to its nearby tokens in adjacent frames</u> while rarely interacting with tokens in distance frames)</li>
+<li><img alt="image-20221021185742980" loading="lazy" src="/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/image-assets/image-20221021185742980.png"/></li>
+</ul>
+</li>
+</ul>
+<h3 id="efficient-spatio-temporal-pyramid-transformer">Efficient Spatio-temporal Pyramid Transformer<a aria-hidden="true" class="anchor" hidden="" href="#efficient-spatio-temporal-pyramid-transformer">#</a></h3>
+<p><img alt="image-20221022182202983" loading="lazy" src="/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/image-assets/image-20221022182202983.png"/></p>
+<ul>
+<li>
+<p>some issues about redundancy</p>
+<ul>
+<li>target motions across adjacent frames are subtle, which implies large temporal redundancy when encoding video representations.</li>
+<li>they observed that the self-attention in the shallow layers mainly focuses on neighbouring tokens in a small spatial area and adjacent frames, rarely attending to other tokens in distant frames.</li>
+</ul>
+</li>
+<li>
+<p>encourage locality inductive bias</p>
+<ul>
+<li>from theoretical perspective, locality inductive bias suppresses the negative Hessian eigenvalues, thus assisting in optimisation by convexifying the loss landscape [Park, N., Kim, S.: How do vision transformers work? In: ICLR (2022)]</li>
+</ul>
+</li>
+<li>
+<p>jointly learn spatio-temporal representation</p>
+<ul>
+<li>the model used Conv3D and attention to do this jointly rather than learn separately</li>
+</ul>
+</li>
+</ul>
+<h3 id="some-key-terms">Some key terms<a aria-hidden="true" class="anchor" hidden="" href="#some-key-terms">#</a></h3>
+<p><strong>Temporal feature pyramid network</strong></p>
+<ul>
+<li>progressively reduce the spatial and temporal dimension and enlarge the receptive field into different scales.</li>
+<li>the multi-scale spatio-temporal feature representation are further utilised to predict the temporal boundaries and categories via an anchor-free prediction and refinement module</li>
+</ul>
+<p><strong>MViT</strong></p>
+<ul>
+<li>previous work lacks hierarchical structure or model spatio-temporal dependencies <strong>separately</strong>, which may not be sufficient for the task of action detection</li>
+<li>targeting these issues, MViT presents a hierarchical Transformer to progressively <strong>thrink</strong> the spatio-temporal resolution of feature maps while <strong>expanding the channels</strong> as the network goes deeper.</li>
+</ul>
+<p><strong>Relation to existing video Transformers</strong></p>
+<ol>
+<li>while others are based on separate space-time attention factorization, this method can encode the target motions by jointly aggregating spatio-temporal relations, without loss of spatio-temporal correspondence.</li>
+<li>apply local self-attention -&gt; lower computational cost</li>
+<li>LSTA is data-dependent and flexible in terms of window size</li>
+</ol>
+<p><strong>Additional Illustration of LSTA</strong></p>
+<p><img alt="image-20221022201738733" loading="lazy" src="/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/image-assets/image-20221022201738733.png"/></p>
+<h3 id="temporal-feature-pyramid">Temporal Feature Pyramid<a aria-hidden="true" class="anchor" hidden="" href="#temporal-feature-pyramid">#</a></h3>
+<ul>
+<li>given an untrimmed video, action detection aims to find the temporal boundaries and categories of action instances, with annotation denoted by ${\psi_n = (t_n^s, t_n^e, c_n)}_{n=1}^{N}$</li>
+<li>the 3D feature maps are then fed to TFPN to obtain <strong>multi-scale temporal feature</strong> maps</li>
+<li><img alt="image-20221022202635358" loading="lazy" src="/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/image-assets/image-20221022202635358.png"/></li>
+<li>motivation
+<ul>
+<li>multi-scale feature maps contribute to tackle the variation of action duration</li>
+</ul>
+</li>
+<li>specifically, we construct an M-level temporal feature pyramid ${f_m}_{m=1}^M$, where $f_m \in \mathbb R^{T_m \times C’}$ and $T_m$ is the temporal dimension of the m-th level.</li>
+<li>TFPN contains <em><strong>two 3D convolution</strong></em> layers followed by 1D Conv layer to progressively forms a feature hierarchy</li>
+</ul>
+<p><strong>Refinement</strong></p>
+<p>after we predict class label $\hat y_i^C$ and boundary distances $(\hat b_i^s, \hat b_i^e)$, they further predict an offset $(\Delta \hat b_i^s, \Delta \hat b_i^e)$ and the refinement action category label $\hat y _i^R$</p>
+<p>In the final prediction, we have the following form</p>
+<p><img alt="image-20221022204827786" loading="lazy" src="/posts/yuetian_weng-an-efficient-spatio-temporal-pyramid-transformer-for-action-detection-2022/image-assets/image-20221022204827786.png"/></p>
+<h2 id="potential-future-work">Potential future work<a aria-hidden="true" class="anchor" hidden="" href="#potential-future-work">#</a></h2>
+<p>we may use this to construct lang rew module</p>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

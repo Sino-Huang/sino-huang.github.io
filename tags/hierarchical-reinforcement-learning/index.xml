@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hierarchical Reinforcement Learning on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/hierarchical-reinforcement-learning/</link>
+    <description>Recent content in Hierarchical Reinforcement Learning on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 30 Mar 2023 15:01:16 +0800</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/hierarchical-reinforcement-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Itsugun_cho Deep Rl With Hierarchical Action Exploration for Dialogue Generation 2023</title>
+      <link>https://sino-huang.github.io/posts/itsugun_cho-deep-rl-with-hierarchical-action-exploration-for-dialogue-generation-2023/</link>
+      <pubDate>Thu, 30 Mar 2023 15:01:16 +0800</pubDate>
+      <guid>https://sino-huang.github.io/posts/itsugun_cho-deep-rl-with-hierarchical-action-exploration-for-dialogue-generation-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Deep RL With Hierarchical Action Exploration for Dialogue Generation&lt;/li&gt;
+&lt;li&gt;Author: Itsugun Cho et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 22 Mar 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, Mar 30, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2303.13465v1.pdf&#34;&gt;https://arxiv.org/pdf/2303.13465v1.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Approximate dynamic programming applied to dialogue generation involves policy improvement with action sampling. However, such a practice is inefficient for reinforcement learning because the eligible (high action value) responses are very sparse, and the greedy policy sustained by the random sampling is flabby.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;this paper shows that the performance of dialogue policy positively correlated with sampling size by theoretical and experimental.&lt;/li&gt;
+&lt;li&gt;we introduce a novel dual-granularity Q-function to alleviate this limitation by exploring the most promising response category to intervene the sampling.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;limitation of the maximum likelihood estimation (MLE) objective for the probability distribution of responses&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

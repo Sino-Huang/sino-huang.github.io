@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Pddl on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/pddl/</link>
+    <description>Recent content in Pddl on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 11 Jan 2024 19:54:29 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/pddl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gerevini Plan Constraints and Preferences in Pddl3 2005</title>
+      <link>https://sino-huang.github.io/posts/gerevini-plan-constraints-and-preferences-in-pddl3-2005/</link>
+      <pubDate>Thu, 11 Jan 2024 19:54:29 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/gerevini-plan-constraints-and-preferences-in-pddl3-2005/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Gerevini Plan Constraints and Preferences in PDDL3&lt;/li&gt;
+&lt;li&gt;Author: Alfonso Gerevini, Derek Long&lt;/li&gt;
+&lt;li&gt;Publish Year: 2005&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, Jan 11, 2024&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;http://www.cs.yale.edu/~dvm/papers/pddl-ipc5.pdf&#34;&gt;http://www.cs.yale.edu/~dvm/papers/pddl-ipc5.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240111195650738&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/gerevini-plan-constraints-and-preferences-in-pddl3-2005/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;the notion of plan quality in automated planning is a practically very important issue.&lt;/li&gt;
+&lt;li&gt;it is important to generate plans of good or optimal quality and we need to express the plan quality&lt;/li&gt;
+&lt;li&gt;the proposed extended language allows us to express strong and soft constraints on plan trajectories
+&lt;ul&gt;
+&lt;li&gt;i.e., constraints over possible actions in the plan and intermediate states reached by the plan&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;as well as strong and soft problem goals.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;some scenarios&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nir Lipo Planning With Perspectives Using Functional Strips 2022</title>
+      <link>https://sino-huang.github.io/posts/nir-lipo-planning-with-perspectives-using-functional-strips-2022/</link>
+      <pubDate>Thu, 11 Jan 2024 19:41:55 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/nir-lipo-planning-with-perspectives-using-functional-strips-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Planning With Perspectives &amp;ndash; Using Decomposing Epistemic Planning using Functional STRIPS&lt;/li&gt;
+&lt;li&gt;Author: Guang Hu, Nir Lipovetzky&lt;/li&gt;
+&lt;li&gt;Publish Year: 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, Jan 11, 2024&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://nirlipo.github.io/publication/hu-2022-planning/&#34;&gt;https://nirlipo.github.io/publication/hu-2022-planning/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240111194239165&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/nir-lipo-planning-with-perspectives-using-functional-strips-2022/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;we present a novel approach to epistemic planning called planning with perspectives (PWP) that is both more expressive and computationally more efficient than existing state of the art epistemic planning tools.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;in this paper, we decompose epistemic planning by delegating reasoning about epistemic formulae to an external solver, i.e., Functional STRIPS&lt;/li&gt;
+&lt;li&gt;F-STRIPS supports the user of external, black-box functions within action models.&lt;/li&gt;
+&lt;li&gt;Building on recent work that demonstrates the relationship between what an agent &amp;lsquo;sees&amp;rsquo; and what it knows, we define the perspective of each agent using an external function, and build a solver for epistemic logic around this.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;external functions (black-box)&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Alex_coulter Theory Alignment via a Classical Encoding of Regular Bismulation 2022</title>
+      <link>https://sino-huang.github.io/posts/alex_coulter-theory-alignment-via-a-classical-encoding-of-regular-bismulation-2022/</link>
+      <pubDate>Wed, 29 Nov 2023 17:24:08 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/alex_coulter-theory-alignment-via-a-classical-encoding-of-regular-bismulation-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Theory Alignment via a Classical Encoding of Regular Bismulation 2022&lt;/li&gt;
+&lt;li&gt;Author: Alex Coulter et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: KEPS 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Nov 29, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://icaps22.icaps-conference.org/workshops/KEPS/KEPS-22_paper_7781.pdf&#34;&gt;https://icaps22.icaps-conference.org/workshops/KEPS/KEPS-22_paper_7781.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20231129172526275&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/alex_coulter-theory-alignment-via-a-classical-encoding-of-regular-bismulation-2022/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;the main question we seek to answer is how we can test if two models align (where the fluents and action implementations may differ), and if not, where that misalignment occurs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;the work is built on a foundation of regular bisimulation&lt;/li&gt;
+&lt;li&gt;found that the proposed alignment was not only viable, with many submissions having &amp;ldquo;solutions&amp;rdquo; to the merged model showing where a modelling error occurs, but several cases demonstrated errors with the submitted domains that were subtle and detected only by this added approach.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Bisimulation&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Pascal Bercher Detecting Ai Planning Modelling Mistakes Potential Errors and Benchmark Domains 2023</title>
+      <link>https://sino-huang.github.io/posts/pascal-bercher-detecting-ai-planning-modelling-mistakes-potential-errors-and-benchmark-domains-2023/</link>
+      <pubDate>Mon, 13 Nov 2023 22:33:14 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/pascal-bercher-detecting-ai-planning-modelling-mistakes-potential-errors-and-benchmark-domains-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Detecting Ai Planning Modelling Mistakes Potential Errors and Benchmark Domains&lt;/li&gt;
+&lt;li&gt;Author: Pascal Bercher et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Mon, Nov 13, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://bercher.net/publications/2023/Sleath2023PossibleModelingErrors.pdf&#34;&gt;https://bercher.net/publications/2023/Sleath2023PossibleModelingErrors.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;the author provided a compilation of potential modelling errors&lt;/li&gt;
+&lt;li&gt;the author supply a public repository of 56 (flawed) benchmark domains&lt;/li&gt;
+&lt;li&gt;conducted an evaluation of well-known AI planning tools for their ability to diagnose those errors, showing that not a single tool is able to spot all errors, with no tool being strictly stronger than another.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;list of errors&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Christabel Wayllace Goal Recognition Design With Stochastic Agent Action Outcomes 2016</title>
+      <link>https://sino-huang.github.io/posts/christabel-wayllace-goal-recognition-design-with-stochastic-agent-action-outcomes-2016/</link>
+      <pubDate>Fri, 06 Oct 2023 18:16:28 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/christabel-wayllace-goal-recognition-design-with-stochastic-agent-action-outcomes-2016/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Christabel Wayllace Goal Recognition Design With Stochastic Agent Action Outcomes 2016&lt;/li&gt;
+&lt;li&gt;Author: Christable Wayllace et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: IJCAI 2016&lt;/li&gt;
+&lt;li&gt;Review Date: Fri, Oct 6, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://www.ijcai.org/Proceedings/16/Papers/464.pdf&#34;&gt;https://www.ijcai.org/Proceedings/16/Papers/464.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;in this paper, they generalize the Goal Recognition Design (GRD) problem to Stochastic GRD (S-GRD) problems, which handle stochastic action outcomes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Plan and goal recognition problem&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;it aims to identify the actual plan or goal of an agent given its behaviour.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Goal Recognition Design&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Alba Gragera Pddl Domain Repair Fixing Domains With Incomplete Action Effects 2023</title>
+      <link>https://sino-huang.github.io/posts/alba-gragera-pddl-domain-repair-fixing-domains-with-incomplete-action-effects-2023/</link>
+      <pubDate>Wed, 20 Sep 2023 23:17:51 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/alba-gragera-pddl-domain-repair-fixing-domains-with-incomplete-action-effects-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: PDDL Domain Repair Fixing Domains With Incomplete Action Effects&lt;/li&gt;
+&lt;li&gt;Author: Alba Gragera et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: ICAPS 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Sep 20, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://icaps23.icaps-conference.org/demos/papers/2791_paper.pdf&#34;&gt;https://icaps23.icaps-conference.org/demos/papers/2791_paper.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230920232918668&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/alba-gragera-pddl-domain-repair-fixing-domains-with-incomplete-action-effects-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;in this paper, they present a tool to repair planning models where the effects of some actions are incomplete. The received input is compiled to a new extended planning task, in which actions are permitted to insert possible missing effects. The solution is a plan that achieves the goals of the original problem while also alerting users of the modification made.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230920233613949&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/alba-gragera-pddl-domain-repair-fixing-domains-with-incomplete-action-effects-2023/image-assets/image-20230920233613949.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Alba Gragera Exploring the Limitations of Using LLMs to Fix Planning Tasks 2023</title>
+      <link>https://sino-huang.github.io/posts/alba-gragera-exploring-the-limitations-of-using-llms-to-fix-planning-tasks-2023/</link>
+      <pubDate>Wed, 20 Sep 2023 20:22:32 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/alba-gragera-exploring-the-limitations-of-using-llms-to-fix-planning-tasks-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title:  Exploring the Limitations of Using LLMs to Fix Planning Tasks&lt;/li&gt;
+&lt;li&gt;Author: Alba Gragera et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: icaps23.icaps-conference&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Sep 20, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://icaps23.icaps-conference.org/program/workshops/keps/KEPS-23_paper_3645.pdf&#34;&gt;https://icaps23.icaps-conference.org/program/workshops/keps/KEPS-23_paper_3645.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230920210538214&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/alba-gragera-exploring-the-limitations-of-using-llms-to-fix-planning-tasks-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;In this work, the authors present ongoing efforts on exploring the limitations of LLMs in task requiring reasoning and planning competences: that of assisting humans in the process of fixing planning tasks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;investigate how good LLMs are at repairing planning tasks when the prompt is given in PDDL and when it is given in natural language.&lt;/li&gt;
+&lt;li&gt;also they tested on incomplete initial state and also incomplete domains which lack a necessary action effect to achieve the goals.&lt;/li&gt;
+&lt;li&gt;in all cases, LLMs are used as stand-alone, and they directly assess the correctness of the solutions it generates.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;conclusion:&lt;/strong&gt; they demonstrate that although LLMs can in principle facilitate iterative refinement of PDDL models through user interaction, their limited reasoning abilities render them insufficient for identifying meaningful changes to ill-defined planning models that result into solvable planning tasks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tathagata Chakraborti Plan Explanations as Model Reconciliation 2017</title>
+      <link>https://sino-huang.github.io/posts/tathagata-chakraborti-plan-explanations-as-model-reconciliation-2017/</link>
+      <pubDate>Tue, 19 Sep 2023 22:04:06 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/tathagata-chakraborti-plan-explanations-as-model-reconciliation-2017/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Plan Explanations as Model Reconciliation: Moving beyond explanation as soliloquy&lt;/li&gt;
+&lt;li&gt;Author: Tathagata Chakraborti&lt;/li&gt;
+&lt;li&gt;Publish Year: 30 May 2017&lt;/li&gt;
+&lt;li&gt;Review Date: Tue, Sep 19, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/1701.08317.pdf&#34;&gt;https://arxiv.org/pdf/1701.08317.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230920160252585&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/tathagata-chakraborti-plan-explanations-as-model-reconciliation-2017/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Past work on plan explanations primarily involved AI system explaining the correctness of its plan and t he rationale for its decision in terms of its own model. Such soliloquy is inadequate (think about the case where GPT4 cannot find errors in PDDL domain file due to over confidence)&lt;/li&gt;
+&lt;li&gt;in this work, the author said that due to the domain and task model difference between human and AI system, the soliloquy is inadequate.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;They show how explanation can be seen as a &amp;ldquo;model reconciliation problem&amp;rdquo; (MRP), where AI system in effect suggests changes to the human&amp;rsquo;s model, so as to make its plan be optimal with respected to that changed human model. In other words, they need to update human&amp;rsquo;s mindset about the domain and task model such that the plan generated from the AI system fits human&amp;rsquo;s expectation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Definition of a classical planning problem&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Vishal Pallagani Plansformer Tool Demonstrating Generation of Symbolic Plans Using Transformers 2023</title>
+      <link>https://sino-huang.github.io/posts/vishal-pallagani-plansformer-tool-demonstrating-generation-of-symbolic-plans-using-transformers-2023/</link>
+      <pubDate>Sat, 16 Sep 2023 00:46:56 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/vishal-pallagani-plansformer-tool-demonstrating-generation-of-symbolic-plans-using-transformers-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Plansformer &amp;ndash; Tool Demonstrating Generation of Symbolic Plans Using Transformers&lt;/li&gt;
+&lt;li&gt;Author: Vishal Pallagani et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: IJCAI-23&lt;/li&gt;
+&lt;li&gt;Review Date: Sat, Sep 16, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://www.ijcai.org/proceedings/2023/0839.pdf&#34;&gt;https://www.ijcai.org/proceedings/2023/0839.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;making a bridge between planning in LLM and planning in traditional automatic planner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;design-of-plansformer&#34;&gt;Design of Plansformer&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230916142131826&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/vishal-pallagani-plansformer-tool-demonstrating-generation-of-symbolic-plans-using-transformers-2023/image-assets/image-20230916142131826.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;in the evaluation phase, planner testing helps to validate the plan (both the syntax validation and plan optimality validation), model testing helps to force a linguistic consistency (in this case it supervise the semantics).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;function-of-this-plansformer&#34;&gt;Function of this Plansformer&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The Plansformer operates as an AI planner designed for plan generation,  not for creating PDDLs from natural language descriptions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230916144140801&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/vishal-pallagani-plansformer-tool-demonstrating-generation-of-symbolic-plans-using-transformers-2023/image-assets/image-20230916144140801.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Alan_lindsay Framer Planning Models From Natural Language Action Descriptions 2017</title>
+      <link>https://sino-huang.github.io/posts/alan_lindsay-framer-planning-models-from-natural-language-action-descriptions-2017/</link>
+      <pubDate>Thu, 09 Mar 2023 19:28:47 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/alan_lindsay-framer-planning-models-from-natural-language-action-descriptions-2017/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Framer: Planning Models From Natural Language Action Descriptions&lt;/li&gt;
+&lt;li&gt;Author: Alan Lindsay et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2017&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, Mar 9, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://core.ac.uk/download/pdf/322329049.pdf&#34;&gt;https://core.ac.uk/download/pdf/322329049.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230309192920549&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/alan_lindsay-framer-planning-models-from-natural-language-action-descriptions-2017/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;for modelling assisting and model generation tools, there is a underlying assumption that the user can formulate the problem using some formal language.&lt;/li&gt;
+&lt;li&gt;this motivates us to generate planning domain models directly from NL descriptions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;approach&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;we start from NL descriptions of actions and use NL analysis to construct structured representation, from which we construct formal representations of action sequences
+&lt;ol&gt;
+&lt;li&gt;&lt;em&gt;? only action sequence? what about the environment&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;the generated action sequence provide the necessary structured input for inducing a PDDL domain, using domain model acquisition technology.&lt;/li&gt;
+&lt;li&gt;we use an estimate of functional similarity, so sentences that describe similar behaviour are represented by the same planning operator.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;problem modelling&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Shivam_miglani Nltopddl Learning From Nlp Manuals 2020</title>
+      <link>https://sino-huang.github.io/posts/shivam_miglani-nltopddl-learning-from-nlp-manuals-2020/</link>
+      <pubDate>Mon, 14 Mar 2022 15:08:45 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/shivam_miglani-nltopddl-learning-from-nlp-manuals-2020/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: NLtoPDDL: One-Shot Learning of PDDL Models from Natural Language Process Manuals&lt;/li&gt;
+&lt;li&gt;Author: Shivam Miglani et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2020&lt;/li&gt;
+&lt;li&gt;Review Date: Mar 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;pipeline&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20220314153211927&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/shivam_miglani-nltopddl-learning-from-nlp-manuals-2020/image-assets/image-20220314153211927.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pipeline architecture&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20220314165337096&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/shivam_miglani-nltopddl-learning-from-nlp-manuals-2020/image-assets/image-20220314165337096.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Phase 1&lt;/strong&gt; we have a DQN that learns to extract words that represent action name, action arguments, and the sequence of actions present in annotated NL process manuals. (why only action name, do we need to extract other information???) Again, why this is called DQN RL? is it just normal supervised learning&amp;hellip;  (Check EASDRL paper to understand Phase 1)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

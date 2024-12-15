@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Policy Gradient on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/policy-gradient/</link>
+    <description>Recent content in Policy Gradient on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 28 Dec 2022 14:39:25 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/policy-gradient/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alekh_agarwal PC-PG Policy Cover Directed Exploration for Provable Policy Gradient Learning 2020</title>
+      <link>https://sino-huang.github.io/posts/alekh_agarwal-pcpg-policy-cover-directed-exploration-for-provable-policy-gradient-learning-2020/</link>
+      <pubDate>Wed, 28 Dec 2022 14:39:25 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/alekh_agarwal-pcpg-policy-cover-directed-exploration-for-provable-policy-gradient-learning-2020/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: PC-PG Policy Cover Directed Exploration for Provable Policy Gradient Learning&lt;/li&gt;
+&lt;li&gt;Author: Alekh Agarwal et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year:&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Dec 28, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20221228144306599&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/alekh_agarwal-pcpg-policy-cover-directed-exploration-for-provable-policy-gradient-learning-2020/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The primary drawback of direct policy gradient methods is that, by being local in nature, they fail to adequately explore the environment.&lt;/li&gt;
+&lt;li&gt;In contrast, while model-based approach and Q-learning directly handle exploration through the use of optimism.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Policy Cover-Policy Gradient algorithm (PC-PG), a direct, model-free, policy optimisation approach which addresses exploration through the use of a learned ensemble of policies, the latter provides a policy cover over the state space.
+&lt;ul&gt;
+&lt;li&gt;the use of a learned policy cover address exploration, and also address what is the catastrophic forgetting problem in policy gradient approaches (which use reward bonuses);&lt;/li&gt;
+&lt;li&gt;the on-policy algorithm, where approximation errors due to model mispecification amplify (see [Lu et al., 2018] for discussion)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;suffering from sparse reward&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Alekh_agarwal on the Theory of Policy Gradient Methods Optimality Approximation and Distribution Shift 2020</title>
+      <link>https://sino-huang.github.io/posts/alekh_agarwal-on-the-theory-of-policy-gradient-methods-optimality-approximation-and-distribution-shift-2020/</link>
+      <pubDate>Wed, 28 Dec 2022 14:36:20 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/alekh_agarwal-on-the-theory-of-policy-gradient-methods-optimality-approximation-and-distribution-shift-2020/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: On the Theory of Policy Gradient Methods Optimality Approximation and Distribution Shift 2020&lt;/li&gt;
+&lt;li&gt;Author: Alekh Agarwal et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 14 Oct 2020&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Dec 28, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20221228143829438&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/alekh_agarwal-on-the-theory-of-policy-gradient-methods-optimality-approximation-and-distribution-shift-2020/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;little is known about even their most basic theoretical convergence properties, including: if and how fast they converge to a globally optimal solution and how they cope with approximation error due to using a restricted class of parametric policies.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;One central contribution of this work is in providing approximation guarantees that are average case - which avoid explicit worst-case dependencies on the size of state space &amp;ndash; by making a formal connection to supervised learning under distribution shift. This characterisation shows an important between estimation error, approximation error and exploration (as characterised through a precisely defined condition number)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;basic theoretical convergence questions&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Chloe_ching_yun_hsu Revisiting Design Choices in Proximal Policy Optimisation 2020</title>
+      <link>https://sino-huang.github.io/posts/chloe_ching_yun_hsu-revisiting-design-choices-in-proximal-policy-optimisation-2020/</link>
+      <pubDate>Wed, 28 Dec 2022 14:32:15 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/chloe_ching_yun_hsu-revisiting-design-choices-in-proximal-policy-optimisation-2020/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Revisiting Design Choices in Proximal Policy Optimisation&lt;/li&gt;
+&lt;li&gt;Author: Chloe Ching-Yun Hsu et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 23 Sep 2020&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Dec 28, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20221228143502296&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/chloe_ching_yun_hsu-revisiting-design-choices-in-proximal-policy-optimisation-2020/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;on discrete action space with sparse high rewards, standard PPO often gets stuck at suboptimal actions. Why analyze the reason fort these failure modes and explain why they are not exposed by standard benchmarks&lt;/li&gt;
+&lt;li&gt;In summary, our study suggests that Beta policy parameterization and KL-regularized objectives should be reconsidered for PPO, especially when alternatives improves PPO in all settings.&lt;/li&gt;
+&lt;li&gt;The author proved the convergence guarantee for PPO-KL penalty version, as it inherits convergence guarantees of mirror descent for policy families that are closed under mixture&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;design choices&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>James_queeney Generalized Proximal Policy Optimisation With Sample Reuse 2021</title>
+      <link>https://sino-huang.github.io/posts/james_queeney-generalized-proximal-policy-optimisation-with-sample-reuse-2021/</link>
+      <pubDate>Wed, 28 Dec 2022 14:00:32 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/james_queeney-generalized-proximal-policy-optimisation-with-sample-reuse-2021/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Generalized Proximal Policy Optimisation With Sample Reuse 2021&lt;/li&gt;
+&lt;li&gt;Author: James Queeney et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 29 Oct 2021&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Dec 28, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20221228140752324&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/james_queeney-generalized-proximal-policy-optimisation-with-sample-reuse-2021/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;it is critical for data-driven reinforcement learning methods to be both stable and sample efficient. On-policy methods typically generate reliable policy improvement throughout training, while off-policy methods make more efficient use of data through sample reuse.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;in this work, we combine the theoretically supported stability benefits of on-policy algorithms with the sample efficiency of off-policy algorithms.&lt;/li&gt;
+&lt;li&gt;We develop policy improvement guarantees that are suitable for off-policy setting, and connect these bounds to the clipping mechanism used in PPO&lt;/li&gt;
+&lt;li&gt;this motivate an off-policy version of the popular algorithm that we call GePPO.&lt;/li&gt;
+&lt;li&gt;we demonstrate both theoretically and empirically that our algorithm delivers improved performance by effectively balancing the competing goals of stability and sample efficiency&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;sample complexity&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

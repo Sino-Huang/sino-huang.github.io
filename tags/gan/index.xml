@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>GAN on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/gan/</link>
+    <description>Recent content in GAN on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 12 Jan 2022 16:54:01 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/gan/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alex_nichol Glide Towards Photorealistic Image Generation and Editing With Text Guided Diffusion Models 2021</title>
+      <link>https://sino-huang.github.io/posts/alex_nichol-glide-towards-photorealistic-image-generation-and-editing-with-text-guided-diffusion-models-2021/</link>
+      <pubDate>Wed, 12 Jan 2022 16:54:01 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/alex_nichol-glide-towards-photorealistic-image-generation-and-editing-with-text-guided-diffusion-models-2021/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models&lt;/li&gt;
+&lt;li&gt;Author: Alex Nichol et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: Dec 2021&lt;/li&gt;
+&lt;li&gt;Review Date: Jan 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;In author&amp;rsquo;s &lt;a href=&#34;https://arxiv.org/pdf/2105.05233.pdf&#34;&gt;previous work&lt;/a&gt;, the diffusion model can achieve photorealism in the class-conditional setting by augmenting with &lt;em&gt;classifier guidance&lt;/em&gt;, a technique which allows diffusion models to condition on a classifier&amp;rsquo;s labels.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The classifier is first trained on noised images, and during the diffusion sampling process, gradients from the classifier are used to guide the output sample towards the label.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;classifier details&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

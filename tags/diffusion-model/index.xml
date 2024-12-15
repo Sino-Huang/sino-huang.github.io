@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Diffusion Model on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/diffusion-model/</link>
+    <description>Recent content in Diffusion Model on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 09 Mar 2023 19:36:17 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/diffusion-model/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cheng_chi Diffusion Policy Visuomotor Policy Learning via Action Diffusion 2023</title>
+      <link>https://sino-huang.github.io/posts/cheng_chi-diffusion-policy-visuomotor-policy-learning-via-action-diffusion-2023/</link>
+      <pubDate>Thu, 09 Mar 2023 19:36:17 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/cheng_chi-diffusion-policy-visuomotor-policy-learning-via-action-diffusion-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Diffusion Policy Visuomotor Policy Learning via Action Diffusion&lt;/li&gt;
+&lt;li&gt;Author: Cheng Chi et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, Mar 9, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf&#34;&gt;https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230309193732709&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/cheng_chi-diffusion-policy-visuomotor-policy-learning-via-action-diffusion-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;introducing a new form of robot visuomotor policy that generates behaviour via a &amp;ldquo;conditional denoising diffusion process&amp;rdquo; on robot action space&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Explicit policy&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;learning this is like imitation learning&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Implicit policy&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;aiming to minimise the estimation of the energy function&lt;/li&gt;
+&lt;li&gt;learning this is like a standard reinforcement learning&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;diffusion policy&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Michael_janner Planning With Diffusion for Flexible Behaviour Synthesis 2022</title>
+      <link>https://sino-huang.github.io/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/</link>
+      <pubDate>Mon, 30 Jan 2023 13:43:20 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Planning With Diffusion for Flexible Behaviour Synthesis&lt;/li&gt;
+&lt;li&gt;Author: Michael Janner et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 21 Dec 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Mon, Jan 30, 2023&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230130134456046&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/michael_janner-planning-with-diffusion-for-flexible-behaviour-synthesis-2022/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;use the diffusion model to learn the dynamics&lt;/li&gt;
+&lt;li&gt;tight coupling of the modelling and planning&lt;/li&gt;
+&lt;li&gt;our goal is to break this abstraction barrier by designing a model and planning algorithm that are trained alongside one another, resulting in a non-autoregressive trajectory-level model for which sampling and planning are nearly identical.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;ideal model-based RL&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

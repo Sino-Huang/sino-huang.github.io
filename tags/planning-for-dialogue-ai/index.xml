@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Planning for Dialogue AI on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/planning-for-dialogue-ai/</link>
+    <description>Recent content in Planning for Dialogue AI on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 30 Jan 2024 16:58:06 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/planning-for-dialogue-ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Christian Muise Planning for Goal Oriented Dialgue Systems 2019</title>
+      <link>https://sino-huang.github.io/posts/christian-muise-planning-for-goal-oriented-dialgue-systems-2019/</link>
+      <pubDate>Tue, 30 Jan 2024 16:58:06 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/christian-muise-planning-for-goal-oriented-dialgue-systems-2019/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Christian Muise Planning for Goal Oriented Dialgue Systems 2019&lt;/li&gt;
+&lt;li&gt;Author:&lt;/li&gt;
+&lt;li&gt;Publish Year:&lt;/li&gt;
+&lt;li&gt;Review Date: Tue, Jan 30, 2024&lt;/li&gt;
+&lt;li&gt;url: arXiv:1910.08137v1&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;there is increasing demand for dialogue agents capable of handling specific tasks and interactions in a business context&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;the author propose a new approach that eliminates the need for manual specification of dialogue trees, a common practice in existing systems.&lt;/li&gt;
+&lt;li&gt;they suggest using a declarative representation of the dialogue agent, which can be processed by advanced planning tech (tree -&amp;gt; planning)&lt;/li&gt;
+&lt;li&gt;The paper introduces a paradigm shift in specifying complex dialogue  agents by recognizing that many aspects of these agents share  similarities or identical underlying processes. Instead of manually  creating and maintaining entire dialogue graphs, the authors propose a  declarative approach where behavior is specified compactly, and the  complete implicit graphs are generated from this specification.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;limitation of end to end trained machine learning architectures&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

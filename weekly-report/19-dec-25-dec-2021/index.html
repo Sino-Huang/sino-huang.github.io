@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>19 December -- 31 December, 2021 | Sukai Huang</title>
+<meta content="" name="keywords"/>
+<meta content="Last Week’s Work Review
+We decided that we focus on the Modular RL model and Policy Sketch idea
+Our testing environment could be normal Minecraft or IGLU competition environment
+I would like to use IGLU environment because it have very great training dataset for imitation learning as well as a group of active engineers that can help to answer questions regarding to their platform.
+Their dataset type is dialogue type. (We can try the model in different types of dataset, dialogue, walkthrough, speech etc.)
+In order to extend the previous work, we need to create additional label to the dialogue dataset so as to classify “policy sketches” in the dialogue dataset. (Then our policy sketch identification task becomes a supervised learning task. we can improve this to unsupervised clustering task later)
+
+You need password to access to the content, go to Slack *#phdsukai to find more." name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/weekly-report/19-dec-25-dec-2021/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/weekly-report/19-dec-25-dec-2021/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/weekly-report/19-dec-25-dec-2021/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/weekly-report/19-dec-25-dec-2021/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="19 December -- 31 December, 2021" property="og:title"/>
+<meta content="Last Week’s Work Review We decided that we focus on the Modular RL model and Policy Sketch idea
+Our testing environment could be normal Minecraft or IGLU competition environment
+I would like to use IGLU environment because it have very great training dataset for imitation learning as well as a group of active engineers that can help to answer questions regarding to their platform.
+Their dataset type is dialogue type. (We can try the model in different types of dataset, dialogue, walkthrough, speech etc.)
+In order to extend the previous work, we need to create additional label to the dialogue dataset so as to classify “policy sketches” in the dialogue dataset. (Then our policy sketch identification task becomes a supervised learning task. we can improve this to unsupervised clustering task later)
+You need password to access to the content, go to Slack *#phdsukai to find more." property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="19 December -- 31 December, 2021" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Weekly-Reports",
+      "item": "https://sino-huang.github.io/weekly-report/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "19 December -- 31 December, 2021",
+      "item": "https://sino-huang.github.io/weekly-report/19-dec-25-dec-2021/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/weekly-report/">Weekly-Reports</a></div>
+<h1>
+    19 December -- 31 December, 2021
+    <a aria-label="RSS" href="/weekly-report/19-dec-25-dec-2021/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><h2 id="last-weeks-work-review">Last Week’s Work Review<a aria-hidden="true" class="anchor" hidden="" href="#last-weeks-work-review">#</a></h2>
+<p>We decided that we focus on the Modular RL model and Policy Sketch idea</p>
+<p>Our testing environment could be normal Minecraft or IGLU competition environment</p>
+<p>I would like to use IGLU environment because it have very great training dataset for imitation learning as well as a group of active engineers that can help to answer questions regarding to their platform.</p>
+<p>Their dataset type is dialogue type. (We can try the model in different types of dataset, dialogue, walkthrough, speech etc.)</p>
+<p>In order to extend the previous work, we need to create additional label to the dialogue dataset so as to classify “policy sketches” in the dialogue dataset. (Then our policy sketch identification task becomes a supervised learning task. we can improve this to unsupervised clustering task later)</p>
+<hr/>
+<p>You need password to access to the content, go to Slack *#phdsukai to find more.</p>
+<div class="hugo-encryptor-container">
+<div class="hugo-encryptor-prompt">
+<p>Part of this article is encrypted with password:</p>
+</div>
+<div class="hugo-encryptor-form">
+<input class="hugo-encryptor-input" placeholder="Please input the password"/>
+<input class="hugo-encryptor-button" onclick="_click_handler(this)" type="button" value="Click to verify"/>
+</div>
+<div class="hugo-encryptor-cipher-text" style="display: none;">2KL193ngiqg12yJiDH4bw+D2Nlm45qLF/v/qafJrxuBWcpeaKoACuOYOWAlIK5SiIofGzwRhcZOhHR3LtmKaM/j9J0y2vO9Z69ZqP4Ko3UkGLexL1+U7O0+yKZZB9Dw0NBdkewbMFlw00vKHbhtiw37xANvtixAYOeEERG9wDEZPCufYK0nH6DvqP7pzJh28eiAW5I5gKKaMPGGAslvygAU14z7zdpsqrXwajbgmt8F+Z/ivDwgux9KSFtt1azUeGKNM//c1cknW3BU1itcFMZt00CuRCDDOI926oU3GBbLy6WxeHxSKQcTI73/zdTZijzKnp29m1TsH7r90cLw2DURS7k9oVPgJN430ZThN5JV48NLh+hZWHBt6bIUlKKTgbyS7MQZndQBa4upnFK2+3CnP8eEKDbAbBgFd6Emv3wkBCzy1OwYmMwq8Lmgvz+pdhLKMMRTcmUP25GdvtW/GXBrKNawUo4ofzi5400YdpX6qEYHWVBCLDofdZaOt+u1m9X93cwwTMEGel5QZM0hKpL/ctBOZIKVuNYB5oHPgaTi9FFHqabeYFxE1qsmsJRRNPj1s/iaoT86MxybhSffwJSQP7dSrmxao6EjIeMgS3xxUlqa2Jno/GqMDujROgfRwJ5iXBfTzp6y4KclTt83IKbv9Ya6BMRa31Yn/XXi0u9/ct65hCXFUiswmwYlJRZSjqR5xM0HQBz8dO8WNUUA6CfjjjdwlkWKbiLOFlH14YOoUIS3VhcK7c4ArEzz5upaJP1eQJ5ibscnO5OkCDa54FyBXkbjR212GgY3Y+0xD2HtiE5W1Rr/H35rBrL3IF8dEVaMz1QoRfSt8KHMzoQwrzVZTVKH9tVOjth5jyE/UusX7extm0f7Gm39l02VwALcu+9e6P7ARw4fcYGlTyEGGPYh9djWPrgXtmt/j084NwAbXE4KE5d1Sn9KJEc+8G8PE374vdCP5B4nwr3PChEDPAWsX8adb4lFs3FCArGHxcQVOfZR0g5Ngt1dz2bfmaq/0pxMe5wPcEG38TO/BLcaYdmyz//Bgjgu4YVQj68J2MLA60QuHvS3lv8pFAX4jUqVw7OS0/8Ait03bI2phN6F0AKm9iEZm97nAF5A1E4e83iai36gKMIs7RQHADXcIw9nVKxkrnDs4FU5rcGhPBGMgS8JN2TU+oLt1SwkFEulleolQOF2SlL30Adf7l+dGU+6yLWkLbQ3xeD+jFE1B8QQPnt5epOxsi5YxPAQPC7SnAp3R1GRdeweqvThX6nGh93WlT/Cx6ydZ04mK/CTpPCpgWtT4BR943rr17dMYBka/t6I+1/sqBG8BNepYYpRkV1tXTu5gRDdlaIoG5pluhwG4BO+ftLOdl3Y8Rq7Z6Vp4XTMGDQVvioJZpmqMucD+gTL30Kt0CEdqSg+Z6IgwIqgHTLTGNvP9x1krQZkSOv74hRDVuN5G6SSdqgzk29Qg2kqkIQBFZkBCKXYJsW0n0wkoRYhIxXcLU4qoOZuNJmipvBZgdZ4OOH+JxmvusuClDYnXPd4mGPW0wMnpFU4DqM7C0A7i3tQwaCzCUF5EJafvbdYSuINycIhd2DZez4w5D/DbnpIFj6gcnN6r/Of7FpQ6fQC3xh66dB25xrhUg3yybrrSduoZUfsQMI8TDOjgExiwuy1O07dApqAl84lwVA5W3DyWCW7vshqxglzMdkPYSv9oSzEhJwE/KHyxsqepnKQgWBxQC8xspL0n8WrKmrnDyTa2dljAL5BJJXbyIS0gsjUBsCJRZ/TyzTb1/43g21HPUX0crqU8au7Xjjz2kSWLcHZnjl9buk9CpyxIgae8h2mzPaOMUzG5VvMLanw+9y6ABuWn7WcYS1gLdEeK2GxZ6cdle5f6O8gfFZFCN9FvSgoUdX+QRhaGikCtg93A3k3VRe21CDBNdXhLmEUt4DZxR1XYBHHuQ+k2cWrkpfOCoiDdUgeRVbz0aOWXVvXoBl2v2Lf2b9pnn1JHQCV25NVZVVFDTENYh3o9ELcYEZUg0xNsP8jo6oBLLBhdKE1AwBepnvLeJgocWXpqmiOkm/ATZlyFIkyxo6RLVhPBfh5zM1uZMjvWWS8/MNc6rv1bwVP7JR4p41vFUxl1gq6j9/iR1qX0TBCim+Zhl4gwwdoL6qZJjb/rBf//f49dUbur/HTBVWUos+9awVOnMC+1o5emcZinLTXeb3jepDA6fM2e0ARiq1g84qL5AvH0Zkzpg1Amq+RdpZnGqrF7xCguEogJemXUsfS2+QZjTuJskt166uHKmYrShtygDS0Dt1kkZgIoDica1k6rAn41fvZO40L2OORshX2Yv1Vwn2YppLkJUbhitZesCFWK0x363YAQYU5aRfVMFiyeGEcKzCIRIrutXTZQthYaNLsCjHe8U2oIcgeCFrXtal0OjrLKX/UE1WzVzy8ZctpLcTHVoBlEDrrDCdCQlqadfUBfg6OWemhzHjnGXbjxG/Mnx+Ar5uM1JITicpLKKe+ardtBd1kVG+OXBsTzZ/p7mkXmr2KX+vl6pKrbcWnI2EazYZ9nIROvhUEv6+/C98R604WRidzTVDrxlAfC18lN+hSwKsxpqiOZYWnSGJSEl+53AJX5pdzM57VdJTsfORyYQopfh0PvpBtxEO3vd156QKOULJ/bUismhrb4mdwyXzFvXh0Wi8C9chwKo/VDt6YDfJBaI1ciEljsvqTE9qEJjoFvx/fZpYByOsiPEKoCHqa4QQd61YPrWlMdMBi7UphmHGUVHd3ktZ3xaXDQ9duiwNQoI4e0kyeyUFybaLjUZ6IxwzIYieW77FyyDBzOWtrzoNxNBAPrNvbR/tOUGQjO3fmghHCzII0VVW6kIDo2+576NVxoU0e2v7B8xdcB7k0a9hdzsbEeql+DWZ6gpw6RwZHYmWBXP+sM584dT09iuVk6iBJSI2mvLH3lVkVhWVNBGOckHcV3d36MiGLoKnMQGQ47gdJMmfqnzN+BGOLqrWf6GA0rB5EThYeQqBe7S6u/Q827rpyqIfntwchUQZge73hZWScRobszeoL5BNNcgqFoblqAkDbtmwuJ4kJ4Tba9JafaAVHaujrpl0qWv5Lte/Q9BfFEAuow/t3MDORkD17MwA/HGGjIaLSQyAIDii0dyYQxcpeVJcaSMHMe0UgEIDzDQGK2wEh9tfwz2pm9VIfv6/IJDCxYEAE44ZwIoRF7J5zORrj1UuLKss+dO86ovVaVDC+3IAY2YLq5QB3CuXkg/AZR5hwf2zx+biyiGSzgRm9ovOYfkD7t2iYRsX0idEidujFL50lx7m4O/6O1IMDTNebfr3504QGIHTMveDwBxoWUQHFXgmvm05xMFjwi5jgKgPkav1BQK/MRXF93q2Zw5zomeOQjzgzPNGEYEwf8hTKNLyPCCYPOTNkYQH4RwOXcn9BpsljYECTnyDqtpe2f62PT0cwNsqLjB0EpYMhRpnKW0xvvTG7kBVZmTCRgoRsMOw0JYJOb5VK+cUTIDCm2MY614P2qifCDns66MijuByttf98FymOD11Zb+FMJet/QbTWJzMj7ZsGHczL3vwyX2wb3JEuug9+31lMnB6PK7DVKgwyAlgQJA2LohtpP2RqiB1K+pKPuwDV3wKhH6m/Zoqrs4IfY0UPjRArq679zLkruzybn8ifjuNO9VJ+s6oskR+eM7o3U8xYyKpmMAAb0EMztmM03oQgCRRhT2gFMDrvJl37DXUeaWnN7ilLbvsg9IJ77zW5iRIVFmmuzmhoh+YeHgAsdRE9HWmmdE4pDmWzZf3VHlV54ISRhU3AVeIY560xp8SpJAeJSXEhfj3d9RogjynxNvfNp8fLf2QbJj7s3QkBsI9TKN+VOlaT9H81CNstZ1ZRDxbvKzDPAISXTWMlIDVSxOkrdItAEO87T5+HRLTWqCN4uxySWpb+18+qCdEJnWo/0IkLx+Vu8/x3mn5igZCuKgodjVpdjCFRCsM2wuZ5BHydDOUiNSZcQoEzeyk4+cwEiWTJZvfm9wn9AYZSGGDSeACN57HWaPc8Mou8VuPv5mWGjeV6UUCJPSOv0fEq6ZzvS+dowlc1BtWaej0l+zIcvnxq3TdyzyHqQ8FeIQ27N3k/fzxEIYDEkIKIwhKAi1EZXkLt8UmFo9ysEc5s+qiohxu/JvFskb2u59X6t16+BPr3ay5Luj8b8Ig4bNAaasfA+LC/R/m+Fe/CAsnXiPkP5g9t3loqanAaJv8qOHZ7+kdw/Ad8i47w76NcsF62glx8NHGI0ZFu2CoL10wxC91n4Rr1tQZZlml86q9mU8ZOBiOKFKse6taJqXLCLEgZvvh2Hh3QwLFICWfsfiFE01Xibp+ejLNYGJrtK57AA0IQJAAIzmeahLKVHKAZQXXlSDeBmlVXD2ycawzLTSs7B3AA2RF0TLPxajHrHoR3YXAzwb/sxfgI3oySXzCQq+QW5KTJ9TiRI+AIuWbBYrzcdEg0grO+Q4qI3UZ34RyydMViNR7RtXVgYyfR3ZpxjON4IGjmAowhop9bV74w4qIAqA7lsvyrjC6vXqWhqXKPOyC5TL7KFSU73gnvVJSpkUAhcm78BQS4lSyEtkYKv6SSi0PtSDONjagfpyf/Nd717Xa+fX2J0sq/H0p30lLI+AqpNtSwA0lq2ZIUxQ6L/6k6sjcixgSyvw68BQFFLc0XGIZqFJ7AAKZiYiQsx2iUvIP50aqnSt7CcCYqPZ8X1odPunXjJFipee4my/hxJT8Kz2Jv6jGQ5symB29Wm6BKd+4L7Tsek4c7cEpooPRUS2M9qSSc1wIs8NNpK2wt2MquCuNWB2oFkshcGQy3y/mbDzAHfbkc1ST0VIGJZZGNouPXG22Pb2rMRcd1GbARmDl55hr8CNVvMtAVKlHeziVC5WWrjyZ+46fBzNTxzWDGPwRtw79T1bkXEYPgNYj4FgyRCeLdrjTHCbjCTVlaQ5RsciECJscGKuGAILGXNd05DrwBGOiHLb0yLx0QknlylgbFZ9poEV+e0+dE0wSTDt4mZB1LroHTgZk0A0muafJ25mmMvSvHkmMLF67QHDRtXu6umVqzrrI2YtjhNtY5K/1HCPaHif4lsCTNXCGr3+b5Duds+IrOCE0kie/K44LUyT0dVh1G4mRshxwBE++MEWgyQKbP73ulM/xf/MDLJ6X/mpfk1zdm72KAUVaYKZnbJMzsDIKVvuSmVx6Znu8iBlVfLwiAx5l2BHfw6L6US22dJ4IVQwZ2p8863RvMghrqN72zVVoiGPYMcQQlPCf0HM1IW/RWluSa8ErujMc/jj/cPHdBBQchItOEUGBqAjgfUeBmTcCgFHiTUY/sNGSXj1T1k7kJinYLM0A2RMtUJFtAa07udNwauzcD7cC2KpVUkXdPhrLVEOtk/o+ALQFWIAPz1Ec6CU6jiHyJKIrg+OxebQYiAjHJLjgdKm+Y3SvAJ7nCP4gFu2E5Q0Ew61h8XHu+VoQwiYK/zjDgz/BbCpmAWTyBYkvbZ0TpjNEmAGAoD3SFd5uJ4cLNBih33rw8BXSqvh4iB2Y+7F/HhcyPrxPOHVsnPMXjld/rwMqV7sWfC5Hw4c6kYDSxJ/aWs9lwAYe//fEyHwZ9VvNF4pSv3VwuQngIa4nH4zd/W0fAhiVoxgRbLEQot14nt/HmglN30HpGdiRBfPXVdRQGpc9DL2aP8iK/1ctU6knmByBciBB0YpHzGq4862USzhY6ff9EiBDsFP425HrlZXp26dEy3Crw4tpBiMp3F4t8VKlIh/mV45GtL3BtoAuTyChvD6wJWQGXxZ6nZntWnvRaDsRfGf20VjWpug900RBh+Hc3Q5ejsSXWlpet3Pxhu9tZajUJnFQdVl4phheO/jXdpQhskDeqHMkT/WwQZLCL4ClTC1afTLw0en/bITYU+ToLlyTlhniyGievYE5xTutrsMTgDb+oLCbPgIuUzqP/PBIRVkBQthO7okWKXZ7vmL2wbMse+DffPpJ4FZ9ufXcaZXkEuuKjBN9aLFs3GV+FvxDCRWmqO0tw3LxQvYdJ9yq3/1is4FSmmUeX8dGAYR2gbpBguCWRh8tmQq5OV1KJJt8i5eDlc88mZjovK5N7lO5RZX+ERzPtKVg/oJosmMAu7qjU3ZLXFxF6uoZ1uZj/quKwrq8KLcUH6Hk4xtL3g78aMOxT86CqM/2bhKSFxW6H72mGxQd+xfbEsXD24S1BH394y1WE6JKq40l94af/EfzWw5CCcN4Sx8H3YDGApTVLlomCS3VkhYaScL2JiV5yKiRdJkbI0ec2fSe801XHyMHId472u5MuslM7EYI/x1gdrFwEXDLmcd6NGI7wOJPoTXqs/ufOjrFKZJgSwvv90oNAXCsrPykP0mmlOfymHX8oqzEmZx93p3rqsDwg205difWncZmvi2gmDvELY8aZCZ7HyrSLNdL0UousTrz0cHs6M3MgQ3CJd6YcWk3DOW8zXoR2lZ2pnrlk3mhy3yqI3qeknln0C8isGvKCn37gSz/0J2qUQ1J4ztwgyRYpICT5bEFEH3CoIKvxijq7i6NAA3n+iLjwK+UNauHfxjz5GbBXqQS8nNNvDXddNrC/AlqcqwFreVYaahKygBf3a3dAO3aZMGP1OOP6muuN/Tj1/9hmpTehg/+LkmhxlaD07y2UUoniADxQfphBeZOz6vX6SI5JqEbYSW0tO6QHriB18z/lfqCXN7X7/wD+IgnFfd5+e21NypotfVFZST9ObKOm9Mvq6sgKclMuoriybJrpVTzU181YVO3HyFGAKFP/UQgeOSDtsCHpPJPH/iiq6u4e0rdc3CrQaEU9B6zvLN2lMK0utZWF+SSotK9t+jaqWIie7ldFKhIZuc4lwefyyGF4me2bJ3JqdTY1xQy/9HhsNWA9zspsWm8VmKkiI0BN/kkcRCWP+N9X0G6gBwEU7wTKVHbOkTx/HvgrPCAZ4buU14tN3WHsNorMFoAd9egWS0sLnzIVHksNonsuGc//vJ1pFF8+mNBwpnQNevZc21mHef9mBFlKCqRrtNGNZVQFiPZ+4V//qwCpNHCwY7YGsJFzZ2IdJhZj3gUpbJaZMqJ781WmtaZAYTOWDue2elEeBYVz2PCciDd7wp1YXLRLa5sSA7uOPkXKD+OSPPhYVGK0pxuozuo2aqJR/z+ABspzM5A6YiueUodPDt6rN6c022iMKor3luotVWLr75FT7obB3n42NjGQGLFqcnwCHx1pxqVjPDZetVgAfz736h9lQUsYq2nHWk3rjk2MIdnFMSLQYnPbwExHvmXPpCfdATiF5GoVcUd1tR+zUObUeoObcXGKVQFM+HmezkAlfTdxyyBHMPpHKvW7E6ehjxbxK6v+pRutsCQM3Y26FNCX9Ee5VA97SEliyKd03SrByVe7OamUCBk3evuQhBLt6yby6Z3c93qm0PRfmhXXKfN1TXU3VzNTiQPZ17iq4m3x3ytAIiw9wF1oJwgXXUsDKBOeon4n/Jox/67qB5uFIirxjApnpPFZX4sMcL78TdBITG4ss/bl+XjY2v5N2Q4PJcrQZf2RSv2yhC7ZOwbtR2wqZIGxSMgk9+uGb8QDrSpTN9cUVa0wqQvvaKRDzTdsa6Ao97lJc263y5I1C0VpIF8va58+6zXXQdvXXGp6B15EZFgD/wP80fvl+yAWx38j/svoMyLGpIMzJsYVUKGzxguY3pq7pROdOWskE+0IzG9x9LViO6oSPb4+JegiRpu39rlim8yQjajnOIUCjW7IpzZYwNJGPBE7Ea6oE9bAkDxo+kakfRwC0+3e7xwils4zWtzosR4du7qNbDWgmz5CLF1JO8o95fej9HRfnbm7G33aCztGzD/r4H6ICC/SlLTAKpcQTnHQrVFgFEVZ772+JK8YIic9/bUVIe9yqT1pBA1tEjTr+JlRHck7dZiRhCYVDid0x8sqYG/sEfwyr5hMzQbAkH5jPGz6c23AjS5V2S2eoEwjPc50WdsdrcWOahpjrL92HewuJTKpsLWH2FHdcnGSw16wbO5sl9bp05V+ecf/2yhUCgktT21kNB9fxwGHjxlCseZ6gmnhtJ5rPHowWipURRQBb6/Bcq77xMNv4kvaaRhEs6OI5d5qrHms0uaAo5z1D/3tipm2vSZBcSpZMlEhib3U37PQUnHkxE+bWPSCtRPrPtRfYJL0H1Mtw71W5KlaLIWupXGxxkdfnVabqowDNrLGWkv4J/IMBUwpmGUbeLSPCQJXC3/dhymSLbXBS1KfpXkdJ3ggMeLKCba1/KG2MrjU6kDdvwpkyGv+7uzCL12azqcPFyAZ3yZGtsYowOVI1edPo8ou6rE5xFklvZGStXd2P7C2hJ6mrB46ERIXxqoVwE9I7ao1EztigXdSw5s/ewLduo2Ju6U2NxbuLAHsg8gNETMeVvOCxn/WMVQhCPJ8A+TvjR/t4qIv1BRJNEILxy/ct4W3QNiJyPj1AjSuZpjldzB1+Q1qQLqfDrfOCbRJVr47yn12/f9wY/L56sbyc9S8Hvrh3XdIWskgW2ceWAfhVXSjMXtdO98f9vmhQwNRsi7EzQxM5JZjh1qZQMuyMQLpc7HHrOOdJ4JNOIAlgF5xVe4lr+JKmfN5Ne5JF0/aOTLtnAKn/X/L8BcScvsay5LWSjJVcLrQ1jYR+tMztWOpoGlQMvjBoro6aT0bBD/LpcJ1Ohu+eBgv9b1oriGPhEoTH04OlH7FrJAqNjjl28QyG1grmDHInJ0wY83WR/0FvLIVHEKLRYk3SzOb4UJZq007STd1uA8Kdhwwndy3FtC/viIK9QnB64dgaPsZin7fvW3i2YXGiiYy/3N5zAR8mLQlJMFM6NU26LyICEfkBMG0prguLspncS7f47mk1WCv667wBRYSSVhBbrqsTCuxQk2kNUBA/kZ2+pCeZoQWhopGXM8dh6LopYw3iH8bS6wbDQuC1mUdTZHHV8sKfObzsylxHnRGpqY9QUaiP2bSRHqAJt5JAxdmAN52Zm6PfpZZ16wQ7J7D1vFxq7DLazJIKyPF69iMdBEXtYwnTDhWWexA5Ig3+3JRNsA3kJRrizwcLXyQeVU0L4wTJ0w3rSNODVmomLpUy/qOMlMVd3XUZ9GCDi/nSOWJ53PfvnvDVb9g6yj5JmEGlttqa+mwdLFpwj7AkUeD9ParLP9QIcEj01Pm2RIDYdHalovzV3q/dUDBNvbGA0+RVd9N1Vcbc2NKx4e+7fhWhysqb76OClbMEBijgtbd+ECQJLv8QOR9iIR7Ha6M+xr0Uoj6tEzY65Rt9SEsYLQFdxkDX8g3D5bJR30qIRecBHe4e/afZsUScw2t+FbbBpo3sgA5u/HzPinsU9BnYx2tZ9WKLWqjKm2bMPIhuPQ5URixwEkbtJfyXz7mRjMqsq8oBvt0PKdGdylTEnutvwN+tLhSM5DeDE4ogdVrH+PRyY2HhHU5/SEaJRgLVM9jUzS8k6pFXU4m7d7JXsjADxcoz3YyCJwijAmCZfuPfDy9+8hzukGcc6hM6u48I1lYcGuZd5GThDmTC/7jhwz9A2FDLabrPlVDwuPzirB2m8/IiaJSiRw8vhM39+ogebysZTuQujicnjvdWZE7vIwZbhXhKRhGXsyLJyDBKnxo2NdFjUtT/rhRvCz4p5sUghR7nZhdrqEfCam+vpMeHBnUXy0DCEq4KeVzOPAZT7J23WvzVfjdqZFChHKgUuDCMPNC7D8Z1jLD30e+FkjGNiY18Nv5eKlRv33X+HjlfiMghz1+5fKE2qUV1vwcUqUoHOpMXBq1qUMbj3Nau/FidAuNBEX6n3AlzSiIAfg42YSaZcCBiK5ekBeCQDFp5tPcaakmgkwgpC1YRlYbV+ThojI2SaE1OybNTAqg+hm2uJtXFDMQxbw8HU8ZujVwcsq7aoOKZN9JDmVmnIC3FTIya1ovEWIndhnqVCN73d2gkoOqnnhWWQj2kdRH/4ojzIRVxpTeFU3QUECxQtLkihnJpk8UvTYWWps8KD9xOxAQiF6IS+98sCKGAuchYvM0h5565Yc3zVSChy/dg1UHApwBbuUpMzlnOmbrAsT8GNGi8ZhKMemt1E4V3h0Wkg0KnriX7zbiRxOm/Cxkr4oM9C3fknCuE/hAaq97xY/f54QzjafxMlzVBiXtbdh8N9hrkSrTkwy8iDvD1Z+9c++paEZTIEjn+pQZyqGVHz0hePx0uvlhNN13mfAgkogOPIJ1HGssOCfoAgNoLSg3yOFzwjbBwO1G/WOZ5WdQo6RVGgxhSgJ9PRh+Ft+nSNIC4V7Fshd0qE5NDpzuANlcQZjDH3RMnaUyIjf7LHV1PVyJoE9W0nf75T7YC0Ph68xkj1hokFMCvTFbx6nvMqV+4xNDedtBATSQUpt1/rG/n9u90gvHaSNg4UpLTGaLUDn0kzoQhpJ1NfUXH+HnHD8BLMrTThxUx1PpOqgkkSVMeXU72VnN/mAY0BPSmXeCcPw4LZhK6ewiW5jX4eNYmJwl6H5DM+Snfh0eAK4JQ2NGzKbBYVqgzN8EkmBHs+CGC0zaK2+F4D+prO4bkvWfmENYV300dARQch2wLst6pX4riK0FQrJQ3U++sn0nT2InkmbGIZGKDJ5MHrQYCBAKG0CSs4ZkME24QykiItTMDSMAdLxNG5GY0hJfLLF2zP/JkaHRgZJwoyW9gnInvUWjEIlo5d4DAM3dbxe7D36OYLNIIjA6glgjMFN9iwqJ1mG/BAkwMONd2YMttfnGohdjMCZ2L2doZqC5jsfnARzC33rew3vko+PL5EnLcuUoG/Qz1Hx17c1uxk6ob/XvksoB6FP69Ns9Xpy7l8jMqGaNhv50SN3RbOdYDgVuX88IvjlD4bkLyzgfQzSMIroSYFgQIsDUJeq63b9nGZtVni7CAApFxKJOkAf/Ic0HchVWMkgAmkjkCl4bZcQAGkEuv1LB5TT74k5WCSrJ8rhWB+jZR5mXvkaqxsGAy+gE4g1RbCC1e1EDgzvoAoifDsfhJ6Ck8j78AeLzHfZ/C3w+WEHCMWEEsm/Zu9igwf8HdpaBKx/BW5o1Dwref34gOmPZ/1KE4mTciOaauLlEPBnxIIUQD93bLLEJ1wuhhvFkJx9PanHXTgOSd1cKSStFER9vOeE5gv5nboyonTUO1nVdqOVUuV3+zCyNJdbnt0AXdivNLccWqTQUUd2xQO78qzeVh6ev0YHognJnu4h6CxdDSB/nTdTiQrEOsoSNXGB0wh1rqdatoeo7hJ/vxuQuQHVa6s0/J3z6T27hxMOt2fIaF0zNuLAfviEHCi0fZVt/3UOyvXWIkbttCPa3CvaRpLkiP5xYNwcz8ccwpoBVeMguTQAhjpFdx8j+fF97DT6tbtxLhebkGHmRDSEwbP4hyd4UAv6/7A4pcBtE6HUEcU+QoKkGHIdQAcsKWKMCE5pzl+ieHTsqvE+9IzUxSwuCNLe7ZbvILK+TieZGYYGK1zYk7iNcduv8LQHPxkF03tiruVbV8heltUbGb6hU1rHtFnnUPAxCDNN01KXG/TFm+4SKMj1MkEBsIFnkg9oIoATG+P/gpAKN6JiBYIGSqzzzRkWpmAnt9eSA45QIrh0dUg3i29r8USTESenHhjFWBe8cHxjRBZMe4ceBGF8cjG6p9POMtFNCA2YBwkRYdh9S/Z0yY92xn3wgCitUy+DxDrYQNlssmY+PclBfbcL25g+S2kco1cRZq94/Ykil/ouLTjo4VG7xmmTpITuOah9KYjpz0suj1Ccr4On5L9pUcvQWP3cmAlQZIREopNpiMvOGYr8TuNk8kpjA81q+fbh47joobRMU6v7dfW8g1elp4GsEJDK987huwTQ3TZiDvWH251MU5dzm0X3t60vncxPtiLkJeX21uIJSQYrtUFYl1hgHn5YsAVAYs9+PrFXlozXNC3g6HtD66WDvlAkMv6ksAE+XF+Hm8x6i54ffXyftfV1U8AX69WvAi+RPWgJfRWOPD4SqO+9P4dbtqub8Fpb/WU+fHQbW4uKDYpZvasynIzrcjlAVlOLJD8Qmxw5gjuO4xdMUA3S7u3IBYSLaJIJLZHpyuwcmvWb5uJXkYVzCUvZbhiQgf2UdJBY1aXoiENdLdreEtrQ9jrNVbpR/pPmMv+W8SLpci5R+aedUmuZycRiGQn3NgDFvEHmzWiMRN1av9sRJHxXGXia71FxtjEe3RrcBKZpBusIaFKGFqeZJDi6Ch5ELNP7vkqk6+fb5GaVZTmgwcTkurrFleYLDwfQU70A6uDMz0MUOYX5Rn+rlvd5IHrmXP8CfxMgny+5GbOTID1h/hh6sJSFY/MMeXHKaRrmZq6K8TFBYZDKC5iZpb0iRx+BuvzQIyuCUU1Ght6BayH4I5Os1WFX/6RcgPj37yqzccdoS0O2sP7Atbo8kqPGQ54KaJ7uEUo3lauY/wnJ2zVHDg5Uqmr2coj/Waaba/R8TRuqVOm8RPmxm9dhswkHmLPwuJKQvqh+zQ3GaSYgtrkLOiMP9R1fsPV962JUY8RByaR/pmhVaEQLAJLtP56iQ7C9Nc1Oo5DcRKxJgLLuIqturA5Nhngfs+ijCEixG7aJivW3FAf4FZ2dG2x3ZmPCV7WTmosLaIyVnS//AN5hUoOMGnXY7wU4aStJAHathbivbkrUb0L8iNWKZgAAQ6bOfxDiVPtBI4Swy4q1qVlMUOdPNOB0yaQR3QcoYRnJ1oQZwxit26wtFaJ0uxTiK1wzn1VTX533x1KOgUqyMIe71fmc5Lkhph+nnRav4ZmA7MvnNeIJss1H07B+9ps4fF1gNL8S5q/iImh39LJoffp8XR5KHIq+9R7Q67R80V09TsufytAe8f+W/jYaSuzvNwJr+W5VJDB5KRkStXq0oYgg/Oif54tNCb0s5OJbuH3XXXVTIPlP9KHfy2CzddxzXDlkDtZkVh5ZEZ+TXPCR5SXggGrOG0Ks46/LHuT/2T2+LFOGT71Db7v16YVlwEqZ2TM0qX/0qGjUWITQRObYWY0O+Jyxc5JP0EAhDWvFws920eWGx/OnEfSsXY3ZTt76Ubm91gKqBqVK+xAAl+g3+4TVuQDkJe2lWHX1IPHWOPfdJMhx/cIN3rfHojiUiqVd343b2tAjhhH6WwDp9FzEbHYSVB9Jd9w+yJ5+oAQLx3xkFwwY1E1q4AHTQZOAOWT4qDkFaLLkuqq8zV3yuN6RBqxDJNMADJFZKXfLImC5QnyPW7LEWaP/VuyXuY5w7x/G8cMv2OuOnDcBP4U0klXlFjVw+m3AEdUadVK2ycXx4LKa0ARhXtOkKBnZnSzr3Qr1Y0G1AG/Si4+2n4McocERjAPrwsRADxFwe7nfBE4pymUZG1YsBCbi333ghOw60Jj9FFrP3x5cesNtJ9urJjH0hfOMB/5DMzXJY8vMVFsTqEV4wSC6cfgk+SHtt3O/MOMiZ4QdR9gwt1QKRyAcwP7OK6V8b3vRuq5DRow7q+uACwKSJTqCysGfkok/Y5dquJM3MSvRlHaid9eFr8qQUEhRku+8bfYyQ/DaDX6edzuS2Wu+1DAu4W12n2c9pU++pA+4+dCiihdm56+UgZH4ilJk6OUGfMYjK+ckM0gVTtd7zG9n9fh9AkDBr8RxVzDT8Zp/NK5fGggL4nLXeEG5zjV98bRuwo6kZFu4VLpdwC7Ecep+v9WoLmY4PBTcNIVV1WCZhm7VAMdsSt9c6DQzyzh4z4gn+5QCyrlhcBkMPTIcaYmfx58/2S5jGOk1/y2karMpFKmkCYWxby4rOu9oup8a0l/fz076mYGCzHIf2xc7NxIX7JITphRCTgv6ips63aSLpD7EcAThKWyJauCUN7ujdQ4uafsTTzULaJJ9MMEDBQ0BDUO5D9sqKDoVtrjWBtVB9fmKE6Gw0E9xBOxxA50lnx9hSQPPyoU8QlWezat0dUVg1fMIjmNp+jKFOkxpVzlf92waWB5/0msV01pHxSpIjimNqzP8jFjBEzceWGMtOcBurGoP9gulcR5JFz4ZGxz0J1cyMCkU9+b70hzSx6Moqth+pzQCBjeKpKKb0FlwqPl9QE/RxfV/DEhqAC84VYRTAa22twUdpYsEQhcFekX+bMoUjBsvqQlxFcNuu0B1hU6ZE3Y63T2F8euwADc2/d8IYSZs81RLH6abkSbi56m3nppTOUFu0TTMVhn6lFtH6finup/efly6Ur5brTRgEYy9f1qidxIflKifTorFW3V4ox6JbDppJzX4zc3eNYvmZromVTJGMEqJ43NG1AzkwCMTMUs9fHsv8mnhzls2/xy8aKLHrVP6F0Ja2lQcOifx3uA6Z1EM3OYlOk3E3NGTb3sFkrMsm79wIeYOsG17TdmTGXpHq+xJRRSkmdcua2GraiZoSHVh95piGh6Dm2O3jEaKW1mNVSd91/VxM+UFuQQfgmFhZ+cEMLnf1oESXtshBYN6oyokKysTkLOzkwCoRL28fIKFEwh61rB1RbdWu5OIS9V/gVAPzL9DFPqsfP6ggznTBh9Guw2CQwwndwi6WsMi7+nDeTnxl8V6w=</div>
+</div>
+<script>
+  
+  document.querySelector(".hugo-encryptor-input").addEventListener("keyup", event => {
+      if(event.key !== "Enter") return; 
+      document.querySelector(".hugo-encryptor-button").click(); 
+      event.preventDefault(); 
+  });
+</script>
+</div>
+<article class="post-entry">
+<header class="entry-header">
+<h2 class="entry-hint-parent">Modular Reinforcement Learning Details
+    </h2>
+</header>
+<div class="entry-content">
+<p>NOTES: for IGLU environment, we can test
+Winner model Decision Transformer Modular RL agent Background we consider a multitask problem in shared environment
+This environment is specified by a tuple
+$(S, A, P, \gamma)$, with $S$ a set of states, $A$ a set of low-level actions (actions are common and shared in multitasks)
+$P: S\times A\times S \rightarrow \mathbb R$ is a transition probability distribution,
+$\gamma$ is a discount factor.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2021-12-26 17:11:34 +1100 AEDT">December 26, 2021</span> · 4 min · Sukai Huang</footer>
+<a aria-label="post link to Modular Reinforcement Learning Details" class="entry-link" href="https://sino-huang.github.io/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/"></a>
+</article>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script><script src="https://sino-huang.github.io/js/decrypt.js"></script></body>
+</html>

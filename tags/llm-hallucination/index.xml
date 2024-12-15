@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Llm Hallucination on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/llm-hallucination/</link>
+    <description>Recent content in Llm Hallucination on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 28 Jan 2024 23:11:28 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/llm-hallucination/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ziwei Xu Hallucination Is Inevitable an Innate Limitation Llm 2024</title>
+      <link>https://sino-huang.github.io/posts/ziwei-xu-hallucination-is-inevitable-an-innate-limitation-llm-2024/</link>
+      <pubDate>Sun, 28 Jan 2024 23:11:28 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/ziwei-xu-hallucination-is-inevitable-an-innate-limitation-llm-2024/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title:  Hallucination Is Inevitable an Innate Limitation Llm 2024&lt;/li&gt;
+&lt;li&gt;Author: Ziwei Xu et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 22 Jan 2024&lt;/li&gt;
+&lt;li&gt;Review Date: Sun, Jan 28, 2024&lt;/li&gt;
+&lt;li&gt;url: arXiv:2401.11817v1&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;p&gt;The paper formalizes the issue of hallucination in large language models (LLMs) and argues that it is impossible to completely eliminate hallucination. It defines hallucination as inconsistencies between a computable LLM and a computable ground truth function. By drawing from learning theory, the paper demonstrates that LLMs cannot learn all computable functions, thus always prone to hallucination. The formal world is deemed a simplified representation of the real world, implying that hallucination is inevitable for real-world LLMs. Additionally, for real-world LLMs with provable time complexity constraints, the paper identifies tasks prone to hallucination and provides empirical validation. Finally, the paper evaluates existing hallucination mitigators using the formal world framework and discusses practical implications for the safe deployment of LLMs.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

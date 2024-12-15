@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Modular Reinforcement Learning Details | Sukai Huang</title>
+<meta content="" name="keywords"/>
+<meta content="NOTES: for IGLU environment, we can test
+
+Winner model
+Decision Transformer
+Modular RL agent
+
+Background
+we consider a multitask problem in shared environment
+This environment is specified by a tuple
+$(S, A, P, \gamma)$, with $S$ a set of states, $A$ a set of low-level actions (actions are common and shared in multitasks)
+$P: S\times A\times S \rightarrow \mathbb R$ is a transition probability distribution,
+$\gamma$ is a discount factor." name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Modular Reinforcement Learning Details" property="og:title"/>
+<meta content="NOTES: for IGLU environment, we can test
+Winner model Decision Transformer Modular RL agent Background we consider a multitask problem in shared environment
+This environment is specified by a tuple
+$(S, A, P, \gamma)$, with $S$ a set of states, $A$ a set of low-level actions (actions are common and shared in multitasks)
+$P: S\times A\times S \rightarrow \mathbb R$ is a transition probability distribution,
+$\gamma$ is a discount factor." property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="Modular Reinforcement Learning Details" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Weekly-Reports",
+      "item": "https://sino-huang.github.io/weekly-report/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "19 December -- 31 December, 2021",
+      "item": "https://sino-huang.github.io/weekly-report/19-dec-25-dec-2021/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Modular Reinforcement Learning Details",
+      "item": "https://sino-huang.github.io/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/weekly-report/">Weekly-Reports</a> » <a href="https://sino-huang.github.io/weekly-report/19-dec-25-dec-2021/">19 December -- 31 December, 2021</a></div>
+<h1>
+    Modular Reinforcement Learning Details
+    <a aria-label="RSS" href="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><p>NOTES: for IGLU environment, we can test</p>
+<ol>
+<li>Winner model</li>
+<li>Decision Transformer</li>
+<li>Modular RL agent</li>
+</ol>
+<h2 id="background">Background<a aria-hidden="true" class="anchor" hidden="" href="#background">#</a></h2>
+<p>we consider a multitask problem in shared environment</p>
+<p>This environment is specified by a tuple</p>
+<p>$(S, A, P, \gamma)$, with $S$ a set of states, $A$ a set of low-level actions (actions are common and shared in multitasks)</p>
+<p>$P: S\times A\times S \rightarrow \mathbb R$ is a transition probability distribution,</p>
+<p>$\gamma$ is a discount factor.</p>
+<p>for each task $\tau \in \mathcal T$ is then specified by a pair $(R_{\tau}, \rho _\tau)$ with $R$ a special reward function and $\rho$ an initial distribution over states.</p>
+<p>And we assume that tasks are annotated with <em>sketches</em> $K_\tau$, each task sketches consists of a sequence $(b_{\tau 1},b_{\tau 2},b_{\tau 3},…)$ of high-level symbolic labels drawn from a fixed vocabulary $\mathcal B$</p>
+<h2 id="model">Model<a aria-hidden="true" class="anchor" hidden="" href="#model">#</a></h2>
+<p>constructing for each sketch $b$ a corresponding sub-policy $\pi_b$</p>
+<p>this sub-policy $\pi_b$ is shared over multitasks.</p>
+<ul>
+<li>so the author believed that by sharing each policy across all tasks, this approach naturally learns the shared abstraction for the corresponding subtasks.</li>
+</ul>
+<p>at each time step $t$, a subpolicy may select ether a low-level action $a \in A$ or a special STOP action.</p>
+<ul>
+<li>potential issue
+<ul>
+<li>agent’s actions are composed in a very complex way, e.g., in IGLU, the agent moves its viewsight, walks and put building blocks in the same time.</li>
+<li>so it is quite hard to split the IGLU task into concrete, non-overlapping sub-tasks.
+<ul>
+<li>Solution: can we just allow policy overlapping ???</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>this framework is agnostic to the implementation of subpolicies:</p>
+<ul>
+<li>it means that for different sub-policies, we can use different architecture
+<ul>
+<li>e.g., use classical planning for navigation sub-policy</li>
+</ul>
+</li>
+</ul>
+<p>control is passed from $\pi_{b_{i}}$ to $\pi_{b_{i+1}}$ when STOP signal is emitted.</p>
+<p><img alt="image-20211226201043159" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211226201043159.png"/></p>
+<p>The learning problem is to optimize over all $\theta_b$ to maximise expected discounted reward</p>
+<p><img alt="image-20211226201319448" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211226201319448.png"/></p>
+<h2 id="policy-optimisation">Policy Optimisation<a aria-hidden="true" class="anchor" hidden="" href="#policy-optimisation">#</a></h2>
+<h3 id="actor---critic-method">Actor - critic method<a aria-hidden="true" class="anchor" hidden="" href="#actor---critic-method">#</a></h3>
+<p><img alt="image-20211226205752184" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211226205752184.png"/></p>
+<p><img alt="image-20211226214759357" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211226214759357.png"/></p>
+<p>Policy-based RL supports stochastic policy which is good in some cases</p>
+<p><img alt="image-20211227154539866" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211227154539866.png"/></p>
+<p><img alt="image-20211227155219600" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211227155219600.png"/></p>
+<p><strong>So what objectives we want to optimised</strong></p>
+<ul>
+<li>again, maximise the accumulative reward</li>
+<li>or maximise the value of the states</li>
+</ul>
+<p><img alt="image-20211227160013980" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211227160013980.png"/></p>
+<p>average reward per time-step -&gt; you may want to accumulate it / or just maximise the final reward</p>
+<p>actually, the $\mu$ distribution is the time ratio that we would stay in the states based on current policy</p>
+<p><img alt="image-20211227183120536" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211227183120536.png"/></p>
+<p><img alt="image-20211227183254215" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211227183254215.png"/></p>
+<p><img alt="image-20211227191004452" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211227191004452.png"/></p>
+<p><img alt="image-20211227191237079" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211227191237079.png"/></p>
+<p><img alt="image-20211227191858533" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211227191858533.png"/></p>
+<p><img alt="image-20211228140246750" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228140246750.png"/></p>
+<p><img alt="image-20211228145421057" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228145421057.png"/></p>
+<p>All the slides above is focusing on immediate reward, but we want to extend it to accumulative reward (a.k.a. value of states)</p>
+<p><img alt="image-20211228145917522" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228145917522.png"/></p>
+<p><img alt="image-20211228150043844" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228150043844.png"/></p>
+<p><img alt="image-20211228150846753" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228150846753.png"/></p>
+<p>in other words, the policy only affects the decision but it doesn’t change the dynamics of the environment.</p>
+<p><strong>Reduce the variance to make the optimisation process more stable</strong></p>
+<p><img alt="image-20211228151743008" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228151743008.png"/></p>
+<p><img alt="image-20211228154504687" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228154504687.png"/></p>
+<p>E over trajectories</p>
+<p>the “baseline” property allows us to remove some rewards R in the formula that is not dependent on the Action A</p>
+<p><strong>Continue our baseline function</strong></p>
+<p><img alt="image-20211228155923638" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228155923638.png"/></p>
+<p>this is on policy TD learning</p>
+<p><img alt="image-20211228160756929" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228160756929.png"/></p>
+<p><img alt="image-20211228161327147" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228161327147.png"/></p>
+<p>(BTW, in some cases, this is exact the same updates as Neural Q learning)</p>
+<p><img alt="image-20211228162335709" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228162335709.png"/></p>
+<p><img alt="image-20211228163337379" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228163337379.png"/></p>
+<p><img alt="image-20211228163455391" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228163455391.png"/></p>
+<p><strong>be careful of the updates, because you are changing the policy</strong></p>
+<p><img alt="image-20211228164025270" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228164025270.png"/></p>
+<p><img alt="image-20211228164128192" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228164128192.png"/></p>
+<p><img alt="image-20211228164657920" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228164657920.png"/></p>
+<p><img alt="image-20211228164712513" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228164712513.png"/></p>
+<p><img alt="image-20211228165310271" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228165310271.png"/></p>
+<hr/>
+<h3 id="back-to-the-paper">Back to the paper<a aria-hidden="true" class="anchor" hidden="" href="#back-to-the-paper">#</a></h3>
+<p>so the paper compute the gradient steps of the following form</p>
+<p><img alt="image-20211228215732135" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228215732135.png"/></p>
+<p>For a fixed sequence ${(s_i, a_i)}$ of states and actions obtained from a rollout of a given policy, we denote the empirical <strong><u>return</u></strong> starting in state $s_i$ as $q_i := \sum_{j=i+1} \gamma^{j-i-1}R(s_j)$</p>
+<p>(ok, this full return would give high variance but low bias)</p>
+<p>$c$ can achieve close to optimal variance when it is set exactly equal to the state value function $V_{\pi}(s_i) = \mathbf E_{\pi}q_i$ for the target policy $\pi$ starting in state $s_i$</p>
+<p>in modular policies, we only have one critic per task.</p>
+<ul>
+<li>because subpolicies $\pi_b$ might participate in a number of composed policies $\Pi_{\tau}$, each would associated with its own reward function $R_{\tau}$. Thus individual subpolicies are not uniquely identified with value functions.</li>
+</ul>
+<p><strong>The gradient for subpolicy $\pi_{b}$</strong></p>
+<p><img alt="image-20211228221824581" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228221824581.png"/></p>
+<p>For critic, we approximate it using a network with parameters $\eta_{\tau}$</p>
+<p>We train it by minimising a squared error criterion, with gradients given by</p>
+<p><img alt="image-20211228222738134" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228222738134.png"/></p>
+<p>(note that this is minimisation and the previous reward on is maximisation)</p>
+<p>note that this baseline function (i.e., critic function) is $c_{\tau}(s_i)$, thus it is dependent on both <em>task</em> and <em>state</em> identity</p>
+<h3 id="a-complete-procedure-for-computing-a-single-gradient-step">a complete procedure for computing a single gradient step<a aria-hidden="true" class="anchor" hidden="" href="#a-complete-procedure-for-computing-a-single-gradient-step">#</a></h3>
+<p>The complete procedure for computing a <em>single</em> gradient step is given as follow</p>
+<p><img alt="image-20211228224341468" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228224341468.png"/></p>
+<p>(well, we can add more stuffs to stablise the training process)</p>
+<h3 id="the-curriculum-learning">the curriculum learning<a aria-hidden="true" class="anchor" hidden="" href="#the-curriculum-learning">#</a></h3>
+<p><img alt="image-20211228224440839" loading="lazy" src="/weekly-report/19-dec-25-dec-2021/modular-reinforcement-learning-details/image-assets/image-20211228224440839.png"/></p>
+<p>This is the part we can use “Width”</p>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

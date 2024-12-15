@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Memory on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/memory/</link>
+    <description>Recent content in Memory on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 07 Apr 2022 12:12:20 +1000</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/memory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hao_hu Generalisable Episodic Memory for Drl 2021</title>
+      <link>https://sino-huang.github.io/posts/hao_hu-generalisable-episodic-memory-for-drl-2021/</link>
+      <pubDate>Thu, 07 Apr 2022 12:12:20 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/hao_hu-generalisable-episodic-memory-for-drl-2021/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Generalisable episodic memory for Deep Reinforcement Learning&lt;/li&gt;
+&lt;li&gt;Author: Hao Hu et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: Jun 2021&lt;/li&gt;
+&lt;li&gt;Review Date: April 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;The author proposed Generalisable Episodic Memory (GEM), which effectively organises the state-action values of episodic memory in a generalisable manner and supports implicit planning on memorised trajectories.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;so compared to traditional memory table&lt;/strong&gt;, GEM learns a virtual memory table memorized by deep neural networks to aggregate similar state-action pairs that essentially have the same nature.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

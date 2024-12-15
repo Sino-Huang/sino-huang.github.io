@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://sino-huang.github.io/sitemap.xml

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Yecheng Jason Ma Eureka Human Level Reward Design via Coding Large Language Models 2023 | Sukai Huang</title>
+<meta content="reward design, large language model, llm for reward function" name="keywords"/>
+<meta content="[TOC]
+
+Title: Eureka Human Level Reward Design via Coding Large Language Models 2023
+Author: Yecheng Jason Ma et. al.
+Publish Year: 19 Oct 2023
+Review Date: Fri, Oct 27, 2023
+url: https://arxiv.org/pdf/2310.12931.pdf
+
+Summary of paper
+
+Motivation
+
+harnessing LLMs to learn complex low-level manipulation tasks, remains an open problem.
+we bridge this fundamental gap by using LLMs to produce rewards that can be used to acquire conplex skill via reinforcement learning.
+
+Contribution
+
+Eureka generate reward functions that outperform expert human-engineered rewards.
+the generality of Eureka also enables a new gradient-free in-context learning approach to reinforcement learning from human feedback (RLHF)
+
+
+Some key terms
+
+given detailed environmental code and natural language description about the task, the LLMs can generate reward function candidate sampling.
+As many real-world RL tasks admit sparse rewards that are difficult for learning, reward shaping that provides incremental learning signals is necessary in practice
+
+reward design problem" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Yecheng Jason Ma Eureka Human Level Reward Design via Coding Large Language Models 2023" property="og:title"/>
+<meta content="[TOC]
+Title: Eureka Human Level Reward Design via Coding Large Language Models 2023 Author: Yecheng Jason Ma et. al. Publish Year: 19 Oct 2023 Review Date: Fri, Oct 27, 2023 url: https://arxiv.org/pdf/2310.12931.pdf Summary of paper Motivation harnessing LLMs to learn complex low-level manipulation tasks, remains an open problem. we bridge this fundamental gap by using LLMs to produce rewards that can be used to acquire conplex skill via reinforcement learning. Contribution Eureka generate reward functions that outperform expert human-engineered rewards. the generality of Eureka also enables a new gradient-free in-context learning approach to reinforcement learning from human feedback (RLHF) Some key terms given detailed environmental code and natural language description about the task, the LLMs can generate reward function candidate sampling. As many real-world RL tasks admit sparse rewards that are difficult for learning, reward shaping that provides incremental learning signals is necessary in practice reward design problem" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/image-assets/cover.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/image-assets/cover.png" name="twitter:image"/>
+<meta content="Yecheng Jason Ma Eureka Human Level Reward Design via Coding Large Language Models 2023" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://sino-huang.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Yecheng Jason Ma Eureka Human Level Reward Design via Coding Large Language Models 2023",
+      "item": "https://sino-huang.github.io/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/posts/">Posts</a></div>
+<h1>
+    Yecheng Jason Ma Eureka Human Level Reward Design via Coding Large Language Models 2023
+    <a aria-label="RSS" href="/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><p>[TOC]</p>
+<ol>
+<li>Title: Eureka Human Level Reward Design via Coding Large Language Models 2023</li>
+<li>Author: Yecheng Jason Ma et. al.</li>
+<li>Publish Year: 19 Oct 2023</li>
+<li>Review Date: Fri, Oct 27, 2023</li>
+<li>url: <a href="https://arxiv.org/pdf/2310.12931.pdf">https://arxiv.org/pdf/2310.12931.pdf</a></li>
+</ol>
+<h2 id="summary-of-paper">Summary of paper<a aria-hidden="true" class="anchor" hidden="" href="#summary-of-paper">#</a></h2>
+<p><img alt="image-20231027164539472" loading="lazy" src="/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/image-assets/cover.png"/></p>
+<h3 id="motivation">Motivation<a aria-hidden="true" class="anchor" hidden="" href="#motivation">#</a></h3>
+<ul>
+<li>harnessing LLMs to learn complex low-level manipulation tasks, remains an open problem.</li>
+<li>we bridge this fundamental gap by using LLMs to produce rewards that can be used to acquire conplex skill via reinforcement learning.</li>
+</ul>
+<h3 id="contribution">Contribution<a aria-hidden="true" class="anchor" hidden="" href="#contribution">#</a></h3>
+<ul>
+<li>Eureka generate reward functions that outperform expert human-engineered rewards.</li>
+<li>the generality of Eureka also enables a new gradient-free in-context learning approach to reinforcement learning from human feedback (RLHF)</li>
+<li><img alt="image-20231030132136067" loading="lazy" src="/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/image-assets/image-20231030132136067.png"/></li>
+</ul>
+<h3 id="some-key-terms">Some key terms<a aria-hidden="true" class="anchor" hidden="" href="#some-key-terms">#</a></h3>
+<ul>
+<li>given detailed environmental code and natural language description about the task, the LLMs can generate reward function candidate sampling.</li>
+<li>As many real-world RL tasks admit sparse rewards that are difficult for learning, reward shaping that provides incremental learning signals is necessary in practice</li>
+</ul>
+<p><strong>reward design problem</strong></p>
+<p><img alt="image-20231027231538244" loading="lazy" src="/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/image-assets/image-20231027231538244.png"/></p>
+<p><img alt="image-20231027231736218" loading="lazy" src="/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/image-assets/image-20231027231736218.png"/></p>
+<p><strong>Curriculum learning</strong></p>
+<p><img alt="image-20231030115254039" loading="lazy" src="/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/image-assets/image-20231030115254039.png"/></p>
+<ul>
+<li>the paper mentioned that they used curriculum learning to train the model.</li>
+<li>here are the key aspects of Curriculum learning:
+<ul>
+<li>gradual complexity increase
+<ul>
+<li>Curriculum learning starts by training models on easier or simpler tasks before gradually increasing the complexity of the tasks</li>
+</ul>
+</li>
+<li>improved learning efficiency and generalisation</li>
+<li>Structured learning path
+<ul>
+<li>the curriculum provides a structured learning path, allowing the model to build upon previously learned concepts</li>
+</ul>
+</li>
+<li>implementation
+<ul>
+<li>implementing curriculum learning may involve designing a curriculum, which is a sequence of tasks of increasing complexity</li>
+</ul>
+</li>
+<li>relation to other concepts
+<ul>
+<li>curriculum learning shares similarities with concepts like transfer learning and multi-task learning, but with a focus on the structured, gradual increase in task complexity.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="some-insights-for-the-practical-implementation">Some insights for the practical implementation<a aria-hidden="true" class="anchor" hidden="" href="#some-insights-for-the-practical-implementation">#</a></h3>
+<p><strong>How does the model ensure the (semantic) correctness of the reward function ?</strong></p>
+<ol>
+<li>EUREKA requires the environment specification to provided to the LLM. they directly feeding the raw environment code as context.
+<ul>
+<li>reason: the environment source code typically reveals what the environment semantically entails and which variables can and should be used to compose a reward function for the specified task</li>
+</ul>
+</li>
+<li>they used evolutionary search to address the execution error and sub-optimality challenges.
+<ul>
+<li>a very big <strong>assumption</strong> behind the success of this method</li>
+<li><img alt="image-20231030133130933" loading="lazy" src="/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/image-assets/image-20231030133130933.png"/></li>
+<li>evolutionary search, i.e., refine the reward in the next iteration based on the performance in the current iteration.
+<ul>
+<li>simply specifying the mutation operator as a text prompt that suggests a few general ways to modify an existing reward code based on a textual summary of policy training</li>
+<li>textual summary of policy training : after the policy training, we evaluate the policy performance
+<ul>
+<li><img alt="image-20231030133732964" loading="lazy" src="/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/image-assets/image-20231030133732964.png"/></li>
+</ul>
+</li>
+<li>basically it is a loop to refine the reward function.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>How does the model avoid the computer vision part ?</strong></p>
+<ul>
+<li>they directly access the source code to obtain “processed” observations.
+<ul>
+<li><a href="https://github.com/eureka-research/Eureka/blob/main/eureka/envs/isaac/shadow_hand_obs.py">https://github.com/eureka-research/Eureka/blob/main/eureka/envs/isaac/shadow_hand_obs.py</a></li>
+<li>some important parameters are explicitly stated (e.g., position, velocity, angle velocity)</li>
+</ul>
+</li>
+<li>maybe we shall also do this to avoid multimodal and CV part.</li>
+</ul>
+<h2 id="minor-comments">Minor comments<a aria-hidden="true" class="anchor" hidden="" href="#minor-comments">#</a></h2>
+<p><img alt="image-20231027171151010" loading="lazy" src="/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/image-assets/image-20231027171151010.png"/></p>
+<p><img alt="image-20231027171203317" loading="lazy" src="/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/image-assets/image-20231027171203317.png"/></p>
+<h2 id="potential-future-work">Potential future work<a aria-hidden="true" class="anchor" hidden="" href="#potential-future-work">#</a></h2>
+<ul>
+<li>
+<p>having LLMs to generate reward function directly to train agents is something like replacing human experts with LLMs to design reward functions for learning agents.</p>
+</li>
+<li>
+<p>The pipeline of this work is as follows:</p>
+<ul>
+<li>the human users gave the task descriptions</li>
+<li>-&gt; the LLM convert the descriptions into a reward function</li>
+<li>-&gt; the reward function helps to train the agent that can accomplish the task</li>
+<li>-&gt; the human users can give further requirements in the next iteration</li>
+<li>-&gt; the LLM will further adjust the reward function to fit the users’ need.</li>
+</ul>
+</li>
+</ul>
+<h3 id="hybrid-model">Hybrid model<a aria-hidden="true" class="anchor" hidden="" href="#hybrid-model">#</a></h3>
+<p>Nir suggested that we can have a hybrid model such that conditions and effects expressed partially in predicate logic, and partially specified through imperative programming languages</p>
+<ul>
+<li>
+<p>I think the it really depends on the type of the tasks</p>
+<ul>
+<li>if the task is about planning or scheduling, e.g., Sudoku, then imperative programming has nothing to do with this</li>
+<li>if the task is about low-level controls that have no explicit discrete procedures, then defining a reward function (<em>this work</em>) is suitable</li>
+<li>if the task description explicitly contains the steps, then converting it to imperative programming language is suitable.</li>
+</ul>
+</li>
+<li>
+<p>so it really depends on what is the task description is</p>
+<ul>
+<li>e.g., cooking task provided with steps info<img alt="image-20231030150628046" loading="lazy" src="/posts/yecheng-jason-ma-eureka-human-level-reward-design-via-coding-large-language-models-2023/image-assets/image-20231030150628046.png"/> -&gt; imperative programming</li>
+<li>e.g., “your task is to stack block A on top of B” -&gt; predicate logic as conditions and effects</li>
+</ul>
+</li>
+<li>
+<p>so the hybrid model is somehow like a big model containing multiple specialised <em>models</em> that handles various types of tasks.</p>
+</li>
+</ul>
+<h3 id="imperative-programming-version-of-the-action-definition">Imperative programming version of the action definition<a aria-hidden="true" class="anchor" hidden="" href="#imperative-programming-version-of-the-action-definition">#</a></h3>
+<p>both reward function generation for actions or direct imperative function for actions can be used as auxiliary information to tune the PDDL action definition</p>
+<p>Reward function example from GPT4</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">reward_function</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">reward</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Assuming `is_on_ladder` and `is_moving_down` are functions that </span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># determine whether the agent is on a ladder and moving down, respectively.</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">is_on_ladder</span><span class="p">(</span><span class="n">state</span><span class="p">)</span> <span class="ow">and</span> <span class="n">is_moving_down</span><span class="p">(</span><span class="n">action</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">reward</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Give a positive reward for moving down a ladder</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Optionally, penalize the agent for not moving down a ladder while on it</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">is_on_ladder</span><span class="p">(</span><span class="n">state</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_moving_down</span><span class="p">(</span><span class="n">action</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">reward</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Optionally, penalize or reward other behaviors</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">reward</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Imperative function example</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Environment</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">agent_position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Assume the agent starts at the top-left corner</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">ladder_position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># Assume there's a ladder at position (5, 5)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">get_agent_position</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent_position</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">move_agent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">direction</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent_position</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">direction</span> <span class="o">==</span> <span class="s2">"down"</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_ladder_below</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">            <span class="n">y</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">direction</span> <span class="o">==</span> <span class="s2">"left"</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">direction</span> <span class="o">==</span> <span class="s2">"right"</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">direction</span> <span class="o">==</span> <span class="s2">"up"</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">y</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">agent_position</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">is_ladder_below</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent_position</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">ladder_position</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">is_on_ladder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent_position</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">ladder_position</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">climb_down_ladder</span><span class="p">(</span><span class="n">env</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="ow">not</span> <span class="n">env</span><span class="o">.</span><span class="n">is_on_ladder</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Move towards the ladder</span>
+</span></span><span class="line"><span class="cl">        <span class="n">agent_position</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_agent_position</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ladder_position</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">ladder_position</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">agent_position</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">ladder_position</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">env</span><span class="o">.</span><span class="n">move_agent</span><span class="p">(</span><span class="s2">"right"</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">agent_position</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">ladder_position</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">env</span><span class="o">.</span><span class="n">move_agent</span><span class="p">(</span><span class="s2">"left"</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">agent_position</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">ladder_position</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">env</span><span class="o">.</span><span class="n">move_agent</span><span class="p">(</span><span class="s2">"down"</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Now on the ladder, climb down</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>  <span class="c1"># Assume ladder is 5 cells tall</span>
+</span></span><span class="line"><span class="cl">        <span class="n">env</span><span class="o">.</span><span class="n">move_agent</span><span class="p">(</span><span class="s2">"down"</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">check_climb_down_complete</span><span class="p">(</span><span class="n">env</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">agent_position</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_agent_position</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ladder_position</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">ladder_position</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Check if the agent's y-coordinate is the same or below the ladder's bottom y-coordinate</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">agent_position</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">ladder_position</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">env</span><span class="o">.</span><span class="n">is_on_ladder</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">True</span>  <span class="c1"># Climbing down the ladder is complete</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># Climbing down the ladder is not complete</span>
+</span></span><span class="line"><span class="cl">      
+</span></span><span class="line"><span class="cl"><span class="c1"># Usage:</span>
+</span></span><span class="line"><span class="cl"><span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">climb_down_ladder</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>both reward and imperative action function contains state checking (i.e., <code>is_on_ladder</code> and <code>is_moving_down</code> etc.  )</li>
+<li>the imperative programming version of the “climb_down_ladder” action contains a while loop that controls the agent to move towards the ladder before climbing down. This is different from the PDDL version action definition, where <code>is_on_ladder</code> is the precondition of the action.</li>
+</ul>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

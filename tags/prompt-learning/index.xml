@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Prompt Learning on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/prompt-learning/</link>
+    <description>Recent content in Prompt Learning on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 01 Mar 2023 19:57:49 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/prompt-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Timo_schick Toolformer Language Models Can Teach Themselves to Use Tools 2023</title>
+      <link>https://sino-huang.github.io/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/</link>
+      <pubDate>Wed, 01 Mar 2023 19:57:49 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Toolformer: Language Models Can Teach Themselves to Use Tools 2023&lt;/li&gt;
+&lt;li&gt;Author: Timo Schick et. al. META AI research&lt;/li&gt;
+&lt;li&gt;Publish Year: 9 Feb 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Mar 1, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2302.04761.pdf&#34;&gt;https://arxiv.org/pdf/2302.04761.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230301201424679&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;LMs exhibit remarkable abilities to solve new tasks from just a few examples or textual instructions, especially at scale.&lt;/li&gt;
+&lt;li&gt;They also struggle with basic functionality, such as arithmetic or factual lookup.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;In this paper, we show that LMs can teach themselves to use external tools via simple APIs and achieve the best of both worlds.&lt;/li&gt;
+&lt;li&gt;We introduce Toolformer, a model that incorporate a range of tools, including a calculator, a Q&amp;amp;A system, a search engine, a translation system and a calendar.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;limitation of language models&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Zhuosheng_zhang Multimodal Chain of Thought Reasoning in Language Models 2023</title>
+      <link>https://sino-huang.github.io/posts/zhuosheng_zhang-multimodal-chain-of-thought-reasoning-in-language-models-2023/</link>
+      <pubDate>Wed, 08 Feb 2023 22:23:45 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/zhuosheng_zhang-multimodal-chain-of-thought-reasoning-in-language-models-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Multimodal Chain of Thought Reasoning in Language Models&lt;/li&gt;
+&lt;li&gt;Author: Zhuosheng Zhang et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Feb 8, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2302.00923.pdf&#34;&gt;https://arxiv.org/pdf/2302.00923.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230208222840588&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/zhuosheng_zhang-multimodal-chain-of-thought-reasoning-in-language-models-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;LLMs have shown impressive performance on complex reasoning by leveraging chain-of-thought (CoT) prompting to generate intermediate reasoning chains as the rationale to infer the answer.&lt;/li&gt;
+&lt;li&gt;to elicit CoT reasoning in multimodality, a possible solution is to fine-tune small language models by fusing the vision and language features to perform CoT reasoning.&lt;/li&gt;
+&lt;li&gt;The key challenge is that those language models tend to generate hallucinated reasoning chains that mislead the answer inference.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;We propose Mutimodal-CoT that incorporates vision features in a decoupled training framework.&lt;/li&gt;
+&lt;li&gt;The framework separates the rationale generation and answer inference into two stages, the model is able to generate effective rationales that contribute to answer inference.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Multimodal-CoT&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Yuanhan_zhang What Makes Good Examples for Visual in Context Learning 2023</title>
+      <link>https://sino-huang.github.io/posts/yuanhan_zhang-what-makes-good-examples-for-visual-in-context-learning-2023/</link>
+      <pubDate>Mon, 06 Feb 2023 22:38:35 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/yuanhan_zhang-what-makes-good-examples-for-visual-in-context-learning-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: What Makes Good Examples for Visual in Context Learning&lt;/li&gt;
+&lt;li&gt;Author: Yuan Zhang et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 1 Feb 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Mon, Feb 6, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2301.13670.pdf&#34;&gt;https://arxiv.org/pdf/2301.13670.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230207133939704&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/yuanhan_zhang-what-makes-good-examples-for-visual-in-context-learning-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;in this paper, the main focus is on an emergent ability in large vision models, known. as in-context learning&lt;/li&gt;
+&lt;li&gt;this concept has been well-known in natural language processing but has only been studied very recently for large vision models.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;we for the first time provide a comprehensive investigation on the impact of in-context examples in computer vision, and find that the performance is highly sensitive to the choice of in-context examples.&lt;/li&gt;
+&lt;li&gt;exposing a critical issue that different in-context examples could lead to drastically different results.
+&lt;ul&gt;
+&lt;li&gt;Our methods obtain significant improvements over
+random selection under various problem settings, showing
+the potential of using prompt retrieval in vision applications
+with a Model-as-a-Service (MaaS) business structure.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;we show that a good in-context example should be semantically similar to the query and closer in context.&lt;/li&gt;
+&lt;li&gt;A model that can better balance spatial and se-
+mantic closedness in feature space would be more ideal for
+visual in-context learning.
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;yeah, it is because the model is not that smart in a way that it can directly tell the semantic regardless of what the spatial structure looks like&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;existing issue of using LLM&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Wenlong_huang Language Models as Zero Shot Planners Extracting Actionable Knowledge for Embodied Agents 2022</title>
+      <link>https://sino-huang.github.io/posts/wenlong_huang-language-models-as-zero-shot-planners-extracting-actionable-knowledge-for-embodied-agents-2022/</link>
+      <pubDate>Mon, 19 Sep 2022 21:55:13 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/wenlong_huang-language-models-as-zero-shot-planners-extracting-actionable-knowledge-for-embodied-agents-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Language Models as Zero Shot Planners: Extracting Actionable Knowledge for Embodied Agents&lt;/li&gt;
+&lt;li&gt;Author: Wenlong Huang et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: Mar 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Mon, Sep 19, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Large language models are learning general commonsense world knowledge.&lt;/li&gt;
+&lt;li&gt;so this paper, the author investigate the possibility of grounding high-level tasks, expressed as natural language (e.g., &amp;ldquo;make breakfast&amp;rdquo;) to a chosen set of action steps (&amp;ldquo;open fridge&amp;rdquo;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;they found out that if pre-trained LMs are large enough and prompted appropriately, they can effectively decompose high-level tasks into mid-level plans without any further training.&lt;/li&gt;
+&lt;li&gt;they proposed several tools to improve executability of the model generation without invasive probing or modifications to the model.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What is prompt learning&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

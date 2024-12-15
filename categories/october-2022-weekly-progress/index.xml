@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>October-2022-Weekly-Progress on Sukai Huang</title>
+    <link>https://sino-huang.github.io/categories/october-2022-weekly-progress/</link>
+    <description>Recent content in October-2022-Weekly-Progress on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Oct 2022 19:25:25 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/categories/october-2022-weekly-progress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>01 Oct -- 31 Oct, 2022</title>
+      <link>https://sino-huang.github.io/weekly-report/01-oct-31-oct-2022/</link>
+      <pubDate>Wed, 05 Oct 2022 19:25:25 +1100</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/01-oct-31-oct-2022/</guid>
+      <description>&lt;h2 id=&#34;last-weeks-work-review&#34;&gt;Last Week&amp;rsquo;s Work Review&lt;/h2&gt;
+&lt;p&gt;We finally complete both the language reward shaping module and the language reward shaping RL agent. This month we are going to upgrade and refine the reward shaping approach.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;There are some issues for the current approach
+&lt;ol&gt;
+&lt;li&gt;the RL environment config setting is not in the standard way (standard -&amp;gt; deepmind way)&lt;/li&gt;
+&lt;li&gt;The whole training is quite heavy ( 60 it/sec -&amp;gt; ~46 hours to train 10M steps )&lt;/li&gt;
+&lt;li&gt;It took too much ram space (25.1 GB for 1 gym env)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

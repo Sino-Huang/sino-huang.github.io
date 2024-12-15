@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Multimodal Learning on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/multimodal-learning/</link>
+    <description>Recent content in Multimodal Learning on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 08 Oct 2023 10:37:37 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/multimodal-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Haotian Liu Improved Baselines With Visual Instruction Tuning 2023</title>
+      <link>https://sino-huang.github.io/posts/haotian-liu-improved-baselines-with-visual-instruction-tuning-2023/</link>
+      <pubDate>Sun, 08 Oct 2023 10:37:37 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/haotian-liu-improved-baselines-with-visual-instruction-tuning-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Improved Baselines With Visual Instruction Tuning&lt;/li&gt;
+&lt;li&gt;Author: Haotian Liu et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: Oct 5 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Sun, Oct 8, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2310.03744.pdf&#34;&gt;https://arxiv.org/pdf/2310.03744.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20231008103914399&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/haotian-liu-improved-baselines-with-visual-instruction-tuning-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;we show that the fully-connected vision-language cross-modal connector in LLaVA is surprisingly powerful and data-efficient.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;with simple modifications to LLaVA, namely, using CLIP-ViT with an MLP projection and adding academic-task-oriented VQA data with simple response formatting prompts, they establish stronger baseline.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Improvement one: MLP cross modal connector&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Junnan_li BLIP Bootstrapping Language Image Pre Training for Unified Vision Language Understanding and Generation 2022</title>
+      <link>https://sino-huang.github.io/posts/junnan_li-blip-bootstrapping-language-image-pre-training-for-unified-vision-language-understanding-and-generation-2022/</link>
+      <pubDate>Mon, 22 May 2023 11:17:28 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/junnan_li-blip-bootstrapping-language-image-pre-training-for-unified-vision-language-understanding-and-generation-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title:  BLIP Bootstrapping Language Image Pre Training for Unified Vision Language Understanding and Generation 2022&lt;/li&gt;
+&lt;li&gt;Author: Junnan Li et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 15 Feb 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Mon, May 22, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2201.12086.pdf&#34;&gt;https://arxiv.org/pdf/2201.12086.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;performance improvement has been largely achieved by scaling up the dataset with noisy image-text pairs collected from the web, which is a suboptimal source of supervision&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;BLIP effectively utilises the noisy web data by bootstrapping the captions, where a captioner generates synthetic captions and a filter removes the noisy ones.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Architecture&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Rohit_gridhar Imagebind One Embedding Space to Bind Them All 2023</title>
+      <link>https://sino-huang.github.io/posts/rohit_gridhar-imagebind-one-embedding-space-to-bind-them-all-2023/</link>
+      <pubDate>Mon, 15 May 2023 15:06:48 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/rohit_gridhar-imagebind-one-embedding-space-to-bind-them-all-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: ImageBind One Embedding Space to Bind Them All&lt;/li&gt;
+&lt;li&gt;Author: Rohit Girdhar et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 9 May 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Mon, May 15, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2305.05665.pdf&#34;&gt;https://arxiv.org/pdf/2305.05665.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;we present ImageBind, an approach to learn a joint embedding across six different modalities&lt;/li&gt;
+&lt;li&gt;ImageBind can leverage recent large scale vision-language models, and extend their zero shot capabilities to new modalities just using their natural pairing with images.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;we show that all combinations of paired data are not necessary to train such a joint embedding, and only image-paired data is sufficient to bind the modalities together.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;multimodality binding&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Qinghao_hitea Hierarchical Temporal Aware Video Language Pre Training 2022</title>
+      <link>https://sino-huang.github.io/posts/qinghao_hitea-hierarchical-temporal-aware-video-language-pre-training-2022/</link>
+      <pubDate>Thu, 06 Apr 2023 10:02:22 +0800</pubDate>
+      <guid>https://sino-huang.github.io/posts/qinghao_hitea-hierarchical-temporal-aware-video-language-pre-training-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Hierarchical Temporal Aware Video Language Pre Training&lt;/li&gt;
+&lt;li&gt;Author: Qinghao Ye, Fei Huang et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 30 Dec 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, Apr 6, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2212.14546.pdf&#34;&gt;https://arxiv.org/pdf/2212.14546.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230406100437893&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/qinghao_hitea-hierarchical-temporal-aware-video-language-pre-training-2022/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;most previous methods directly inherit or adapt typical image-language pre-training paradigms to video-language pretraining, thus not fully exploiting the unique characteristic of video, i.e., temporal.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;this paper, the two novel pretraining tasks for modeling cross-modal alignment between moments and texts as well as the temporal relations of video-text pairs.&lt;/li&gt;
+&lt;li&gt;specifically, we propose a cross-modal moment exploration task to explore moments in videos, which results in detailed video moment representations&lt;/li&gt;
+&lt;li&gt;besides, the inherent temporal relations are capture by alignment video-text pairs as a whole in different time resolutions with multimodal temporal relation exploration tasks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;limitation of previous work&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Anthony_liu a Picture Is Worth a Thousand Words Language Models Plan From Pixels 2023</title>
+      <link>https://sino-huang.github.io/posts/anthony_liu-a-picture-is-worth-a-thousand-words-language-models-plan-from-pixels-2023/</link>
+      <pubDate>Mon, 03 Apr 2023 11:28:43 +0800</pubDate>
+      <guid>https://sino-huang.github.io/posts/anthony_liu-a-picture-is-worth-a-thousand-words-language-models-plan-from-pixels-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: A Picture Is Worth a Thousand Words Language Models Plan From Pixels&lt;/li&gt;
+&lt;li&gt;Author: Anthony Liu et.al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 16 Mar 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Mon, Apr 3, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2303.09031v1.pdf&#34;&gt;https://arxiv.org/pdf/2303.09031v1.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230403112936880&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/anthony_liu-a-picture-is-worth-a-thousand-words-language-models-plan-from-pixels-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;planning is a important capability of AI that perform long-horizon tasks in real-world environments.&lt;/li&gt;
+&lt;li&gt;prior PLM based approaches for planning either assume observations are available in the form of text, reason about plans from the instruction alone, or incorporate information about the visual environment in limited ways.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;in contrast, we show that PLMs can accurately plan even when observations are directly encoded as input prompts for the PLM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;why we need the ability to reason about plans&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tatsuki_kuribayashi Does Vision Accelerate Hierarchical Generalisation of Neural Language Learners 2023</title>
+      <link>https://sino-huang.github.io/posts/tatsuki_kuribayashi-does-vision-accelerate-hierarchical-generalisation-of-neural-language-learners-2023/</link>
+      <pubDate>Fri, 03 Mar 2023 15:26:55 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/tatsuki_kuribayashi-does-vision-accelerate-hierarchical-generalisation-of-neural-language-learners-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Does Vision Accelerate Hierarchical Generalisation of Neural Language Learners&lt;/li&gt;
+&lt;li&gt;Author: Tatsuki Kuribayashi&lt;/li&gt;
+&lt;li&gt;Publish Year: 1 Feb 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Fri, Mar 3, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2302.00667.pdf&#34;&gt;https://arxiv.org/pdf/2302.00667.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;we want to know if the visual information improves hierarchical generalisaiton of the language model&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230303153510788&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/tatsuki_kuribayashi-does-vision-accelerate-hierarchical-generalisation-of-neural-language-learners-2023/image-assets/image-20230303153510788.png&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230303153540288&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/tatsuki_kuribayashi-does-vision-accelerate-hierarchical-generalisation-of-neural-language-learners-2023/image-assets/image-20230303153540288.png&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230303153621365&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/tatsuki_kuribayashi-does-vision-accelerate-hierarchical-generalisation-of-neural-language-learners-2023/image-assets/image-20230303153621365.png&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;our results have exhibited that vision accelerated a proper linguistic generlisation in the simplified, artificial setting,&lt;/li&gt;
+&lt;li&gt;but LMs struggled with the proper generalisation in the noisy, realistic setting. These mixed results have indicated several possibilities; for example, an image can potentially boost language acquisition, but learners&amp;rsquo; additional visual/linguistic **&lt;u&gt;prior knowledge should be needed t&lt;/u&gt;**o robustly make use of raw images for efficient language acquisition.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Xiwen_liang Contrastive Instruction Trajectory Learning for Vision Language Navigation 2022</title>
+      <link>https://sino-huang.github.io/posts/xiwen_liang-contrastive-instruction-trajectory-learning-for-vision-language-navigation-2022/</link>
+      <pubDate>Fri, 10 Feb 2023 02:51:23 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/xiwen_liang-contrastive-instruction-trajectory-learning-for-vision-language-navigation-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title:  Contrastive Instruction Trajectory Learning for Vision Language Navigation&lt;/li&gt;
+&lt;li&gt;Author: Xiwen Liang et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: AAAI 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Fri, Feb 10, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/abs/2112.04138&#34;&gt;https://arxiv.org/abs/2112.04138&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230210025151701&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/xiwen_liang-contrastive-instruction-trajectory-learning-for-vision-language-navigation-2022/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;previous works learn to navigate step-by-step following an instruction. However, these works may fail to discriminate the similarities and discrepancies across instruction-trajectory pairs and ignore the &lt;strong&gt;&lt;u&gt;temporal continuity&lt;/u&gt;&lt;/strong&gt; of sub-instructions. These problems hinder agents from learning distinctive vision-and-language representations,&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;we propose
+&lt;ul&gt;
+&lt;li&gt;a coarse-grained &lt;strong&gt;contrastive learning&lt;/strong&gt; objective  to enhance vision-and-language representations by &lt;u&gt;contrasting semantics of full trajectory observations&lt;/u&gt; and instructions respectively;&lt;/li&gt;
+&lt;li&gt;a fine-grained contrastive learning objective to perceive instructions by leveraging the &lt;u&gt;temporal information&lt;/u&gt; of the sub-instructions.&lt;/li&gt;
+&lt;li&gt;a pairwise sample-reweighting mechanism for contrastive learning to sampling bias in contrastive learning.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Limitation of current VLN model&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Zhuosheng_zhang Multimodal Chain of Thought Reasoning in Language Models 2023</title>
+      <link>https://sino-huang.github.io/posts/zhuosheng_zhang-multimodal-chain-of-thought-reasoning-in-language-models-2023/</link>
+      <pubDate>Wed, 08 Feb 2023 22:23:45 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/zhuosheng_zhang-multimodal-chain-of-thought-reasoning-in-language-models-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Multimodal Chain of Thought Reasoning in Language Models&lt;/li&gt;
+&lt;li&gt;Author: Zhuosheng Zhang et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Feb 8, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2302.00923.pdf&#34;&gt;https://arxiv.org/pdf/2302.00923.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230208222840588&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/zhuosheng_zhang-multimodal-chain-of-thought-reasoning-in-language-models-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;LLMs have shown impressive performance on complex reasoning by leveraging chain-of-thought (CoT) prompting to generate intermediate reasoning chains as the rationale to infer the answer.&lt;/li&gt;
+&lt;li&gt;to elicit CoT reasoning in multimodality, a possible solution is to fine-tune small language models by fusing the vision and language features to perform CoT reasoning.&lt;/li&gt;
+&lt;li&gt;The key challenge is that those language models tend to generate hallucinated reasoning chains that mislead the answer inference.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;We propose Mutimodal-CoT that incorporates vision features in a decoupled training framework.&lt;/li&gt;
+&lt;li&gt;The framework separates the rationale generation and answer inference into two stages, the model is able to generate effective rationales that contribute to answer inference.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Multimodal-CoT&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Jing_yu_koh Grounding Language Models to Images for Multimodal Generation 2023</title>
+      <link>https://sino-huang.github.io/posts/jing_yu_koh-grounding-language-models-to-images-for-multimodal-generation-2023/</link>
+      <pubDate>Mon, 06 Feb 2023 22:37:53 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/jing_yu_koh-grounding-language-models-to-images-for-multimodal-generation-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Grounding Language Models to Images for Multimodal Generation&lt;/li&gt;
+&lt;li&gt;Author: Jing Yu Koh et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 31 Jan 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Mon, Feb 6, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2301.13823.pdf&#34;&gt;https://arxiv.org/pdf/2301.13823.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230207134638732&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/jing_yu_koh-grounding-language-models-to-images-for-multimodal-generation-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;we propose an efficient method to ground pre-trained text-only language models to the visual domain&lt;/li&gt;
+&lt;li&gt;How
+&lt;ul&gt;
+&lt;li&gt;we keep the language model frozen, and &lt;em&gt;&lt;strong&gt;finetune input and output linear layers&lt;/strong&gt;&lt;/em&gt; to enable cross-modality interactions. This allows our model to process arbitrarily interleaved&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;our approach works with any off-the-shelf language model and paves the way towards an effective, general solution for leveraging pre-trained language models in visually grounded settings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;related-work&#34;&gt;Related work&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;LLMs for vision-and-language&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Zhenfang_chen See Think Confirm Interactive Prompting Between Vision and Language Models for Knowledge Based Visual Reasoning 2023</title>
+      <link>https://sino-huang.github.io/posts/zhenfang_chen-see-think-confirm-interactive-prompting-between-vision-and-language-models-for-knowledge-based-visual-reasoning-2023/</link>
+      <pubDate>Mon, 06 Feb 2023 22:36:41 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/zhenfang_chen-see-think-confirm-interactive-prompting-between-vision-and-language-models-for-knowledge-based-visual-reasoning-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: See, Think, Confirm: Interactive Prompting Between Vision and Language Models for Knowledge Based Visual Reasoning&lt;/li&gt;
+&lt;li&gt;Author: Zhenfang Chen et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 12 Jan 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Mon, Feb 6, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2301.05226.pdf&#34;&gt;https://arxiv.org/pdf/2301.05226.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230207113442635&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/zhenfang_chen-see-think-confirm-interactive-prompting-between-vision-and-language-models-for-knowledge-based-visual-reasoning-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Solving the knowledge-based visual reasoning tasks remains challenging, which requires a model to comprehensively understand image content, connect external world knowledge, and perform step-by-step reasoning to answer the questions correctly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;We propose a novel framework named Interactive Prompting Visual Reasoner (IPVR) for few-shot knowledge based visual reasoning.&lt;/li&gt;
+&lt;li&gt;IPVR contains three stages, &lt;strong&gt;see, think, and confirm&lt;/strong&gt;. The see stage scans the image and &lt;u&gt;grounds the visual concept candidates&lt;/u&gt; with a visual perception model. The think stage adopts a pre-trained large language model (LLM) to attend the key concepts from candidates adaptively. It then transforms them into text context for prompting with a visual captioning model and adopts the LLM to generate the answer.&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;confirm&lt;/strong&gt; stage further uses the LLM to generate the supporting rational to the answer, verify the generated rationale with a cross-modality classifier and ensure that the rationale can infer the predicted output consistently.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;human process to handle knowledge-based visual reasoning&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Xin_wang Reinforced Cross Modal Matching and Self Supervised Imitation Learning for Vision Language Navigation 2019</title>
+      <link>https://sino-huang.github.io/posts/xin_wang-reinforced-cross-modal-matching-and-self-supervised-imitation-learning-for-vision-language-navigation-2019/</link>
+      <pubDate>Wed, 18 Jan 2023 09:48:14 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/xin_wang-reinforced-cross-modal-matching-and-self-supervised-imitation-learning-for-vision-language-navigation-2019/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Reinforced Cross Modal Matching and Self Supervised Imitation Learning for Vision Language Navigation 2019&lt;/li&gt;
+&lt;li&gt;Author: Xin Wang et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year:&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Jan 18, 2023&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230118095333795&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/xin_wang-reinforced-cross-modal-matching-and-self-supervised-imitation-learning-for-vision-language-navigation-2019/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;Visual Language Navigation (VLN) presents some unique challenges&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;first, reasoning over images and natural language instructions can be difficult.&lt;/li&gt;
+&lt;li&gt;secondly, except for strictly following expert demonstrations, the feedback is rather coarse, since the &amp;ldquo;Success&amp;rdquo; feedback is provided only when the agent reaches a target position (sparse reward)&lt;/li&gt;
+&lt;li&gt;A good &amp;ldquo;instruction following&amp;rdquo; trajectory may ended up just stop before you reaching the goal state and then receive zero rewards.&lt;/li&gt;
+&lt;li&gt;existing work suffer from generalisation problem. (need to retrain the agent in new environment)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;implementation&#34;&gt;Implementation&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;agent can infer which sub-instruction to focus on and where to look at. (automatic splitting long instruction)&lt;/li&gt;
+&lt;li&gt;with a matching critic that evaluates an executed path by the probability of reconstructing the original instruction from the executed path. P(original instruction | past trajectory)
+&lt;ol&gt;
+&lt;li&gt;cycle reconstruction: we have P(target trajectory | the instruction) = 1, and we want to measure P(original instruction | past trajectory)&lt;/li&gt;
+&lt;li&gt;this will enhance the interpretability as now you understand how the robot was thinking about&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+  </channel>
+</rss>

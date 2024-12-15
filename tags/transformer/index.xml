@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Transformer on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/transformer/</link>
+    <description>Recent content in Transformer on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Oct 2022 23:04:49 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/transformer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Andrea_banino Coberl Contrastive Bert for Reinforcement Learning 2022</title>
+      <link>https://sino-huang.github.io/posts/andrea_banino-coberl-contrastive-bert-for-reinforcement-learning-2022/</link>
+      <pubDate>Wed, 05 Oct 2022 23:04:49 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/andrea_banino-coberl-contrastive-bert-for-reinforcement-learning-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: CoBERL Contrastive BERT for Reinforcement Learning&lt;/li&gt;
+&lt;li&gt;Author: Andrea Banino et. al. DeepMind&lt;/li&gt;
+&lt;li&gt;Publish Year: Feb 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Oct 5, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2107.05431.pdf&#34;&gt;https://arxiv.org/pdf/2107.05431.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Representation learning in reinforcement learning&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;motivation:
+&lt;ul&gt;
+&lt;li&gt;if state information could be effectively extracted from raw observations it may then be possible to learn from there as fast as from states.&lt;/li&gt;
+&lt;li&gt;however, given the often sparse reward signal coming from the environment, learning representations in RL has to be achieved with little to no supervision.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;approach types
+&lt;ul&gt;
+&lt;li&gt;class 1: auxiliary self-supervised losses to accelerate the learning speed in model-free RL algorithm&lt;/li&gt;
+&lt;li&gt;class 2: learn a world model and use this to collect imagined rollouts, which then act as extra data to train the RL algorithm reducing the samples required from the environment&lt;/li&gt;
+&lt;li&gt;CoBERL is in class 1
+&lt;ul&gt;
+&lt;li&gt;​	it uses both masked language modelling and contrastive learning&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;RL using BERT architecture&lt;/strong&gt; &amp;ndash; RELIC&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Gregor_geigle Retrieve Fast Rerank Smart Cooperative and Joint Approaches for Improved Cross Modal Retrieval 2022</title>
+      <link>https://sino-huang.github.io/posts/gregor_geigle-retrieve-fast-rerank-smart-coorperative-and-joint-approaches-for-improved-cross-modal-retrieval-2022/</link>
+      <pubDate>Sat, 27 Aug 2022 00:31:38 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/gregor_geigle-retrieve-fast-rerank-smart-coorperative-and-joint-approaches-for-improved-cross-modal-retrieval-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Retrieve Fast, Rerank Smart: Cooperative and Joint Approaches for Improved Cross-Modal Retrieval&lt;/li&gt;
+&lt;li&gt;Author: Gregor Geigle et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 19 Feb, 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Sat, Aug 27, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;they want to combine the cross encoder and the bi encoder advantages and have a more efficient cross-modal search and retrieval&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;efficiency and simplicity of BE approach based on twin network&lt;/li&gt;
+&lt;li&gt;expressiveness and cutting-edge performance of CE methods.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;p&gt;We propose a novel joint Cross Encoding and Binary Encoding model (Joint-Coop), which is trained to simultaneously cross-encode and embed multi-modal input; it achieves the highest scores overall while maintaining retrieval efficiency&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kaitao_song Mpnet Masked and Permuted Retrain for Language Understanding 2020</title>
+      <link>https://sino-huang.github.io/posts/kaitao_song-mpnet-masked-and-permuted-retrain-for-language-understanding-2020/</link>
+      <pubDate>Thu, 25 Aug 2022 12:24:55 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/kaitao_song-mpnet-masked-and-permuted-retrain-for-language-understanding-2020/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: MPNet: Masked and Permuted Pre-training for Language Understanding&lt;/li&gt;
+&lt;li&gt;Author: Kaitao Song et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 2020&lt;/li&gt;
+&lt;li&gt;Review Date: Thu, Aug 25, 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;BERT adopts masked language modelling (MLM) for pre-training and is one of the most successful pre-training models.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Since BERT is all attention block and the positional embedding is the only info that care about the ordering, BERT neglects dependency among predicted tokens&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Qinqing_zheng Online Decision Transformer 2022</title>
+      <link>https://sino-huang.github.io/posts/qinqing_zheng-online-decision-transformer-2022/</link>
+      <pubDate>Mon, 21 Mar 2022 21:56:45 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/qinqing_zheng-online-decision-transformer-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Online Decision Transformer&lt;/li&gt;
+&lt;li&gt;Author: Qinqing Zheng&lt;/li&gt;
+&lt;li&gt;Publish Year: Feb 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Mar 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;p&gt;the author proposed online Decision transformer (ODT), an RL algorithm based on sequence modelling that blends offline pretraining with online fine-tuning in a unified framework.&lt;/p&gt;
+&lt;p&gt;ODT builds on the decision transformer architecture previously introduced for offline RL&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;quantify exploration&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;compared to DT, they shifted from deterministic to stochastic policies for defining exploration objectives during the online phase. They quantify exploration via the &lt;strong&gt;entropy&lt;/strong&gt; of the policy similar to max-ent RL frameworks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Junyang_lin M6 a Chinese Multimodal Pretrainer 2021</title>
+      <link>https://sino-huang.github.io/posts/junyang_lin-m6-a-chinese-multimodal-pretrainer-2021/</link>
+      <pubDate>Wed, 12 Jan 2022 13:38:14 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/junyang_lin-m6-a-chinese-multimodal-pretrainer-2021/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: M6: A Chinese Multimodal Pretrainer&lt;/li&gt;
+&lt;li&gt;Author: Junyang Lin et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: May 2021&lt;/li&gt;
+&lt;li&gt;Review Date: Jan 2022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;This paper re-emphasises that&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;large model trained on big data have extremely large capacity and it can outperform the SOTA in downstream tasks especially in the zero-shot setting.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So, the author trained a big multi-modal model&lt;/p&gt;
+&lt;p&gt;Also, they proposed a innovative way to tackle downstream tasks.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;they use masks to block cross attention between tokens so as to fit different types of downstream task&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Key idea: mask tokens during cross attention so as to solve certain tasks&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Overview&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

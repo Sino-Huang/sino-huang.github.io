@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Timo_schick Toolformer Language Models Can Teach Themselves to Use Tools 2023 | Sukai Huang</title>
+<meta content="language model, prompt learning" name="keywords"/>
+<meta content="[TOC]
+
+Title: Toolformer: Language Models Can Teach Themselves to Use Tools 2023
+Author: Timo Schick et. al. META AI research
+Publish Year: 9 Feb 2023
+Review Date: Wed, Mar 1, 2023
+url: https://arxiv.org/pdf/2302.04761.pdf
+
+Summary of paper
+
+Motivation
+
+LMs exhibit remarkable abilities to solve new tasks from just a few examples or textual instructions, especially at scale.
+They also struggle with basic functionality, such as arithmetic or factual lookup.
+
+Contribution
+
+In this paper, we show that LMs can teach themselves to use external tools via simple APIs and achieve the best of both worlds.
+We introduce Toolformer, a model that incorporate a range of tools, including a calculator, a Q&amp;A system, a search engine, a translation system and a calendar.
+
+Some key terms
+limitation of language models" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Timo_schick Toolformer Language Models Can Teach Themselves to Use Tools 2023" property="og:title"/>
+<meta content="[TOC]
+Title: Toolformer: Language Models Can Teach Themselves to Use Tools 2023 Author: Timo Schick et. al. META AI research Publish Year: 9 Feb 2023 Review Date: Wed, Mar 1, 2023 url: https://arxiv.org/pdf/2302.04761.pdf Summary of paper Motivation LMs exhibit remarkable abilities to solve new tasks from just a few examples or textual instructions, especially at scale. They also struggle with basic functionality, such as arithmetic or factual lookup. Contribution In this paper, we show that LMs can teach themselves to use external tools via simple APIs and achieve the best of both worlds. We introduce Toolformer, a model that incorporate a range of tools, including a calculator, a Q&amp;A system, a search engine, a translation system and a calendar. Some key terms limitation of language models" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/image-assets/cover.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/image-assets/cover.png" name="twitter:image"/>
+<meta content="Timo_schick Toolformer Language Models Can Teach Themselves to Use Tools 2023" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://sino-huang.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Timo_schick Toolformer Language Models Can Teach Themselves to Use Tools 2023",
+      "item": "https://sino-huang.github.io/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/posts/">Posts</a></div>
+<h1>
+    Timo_schick Toolformer Language Models Can Teach Themselves to Use Tools 2023
+    <a aria-label="RSS" href="/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><p>[TOC]</p>
+<ol>
+<li>Title: Toolformer: Language Models Can Teach Themselves to Use Tools 2023</li>
+<li>Author: Timo Schick et. al. META AI research</li>
+<li>Publish Year: 9 Feb 2023</li>
+<li>Review Date: Wed, Mar 1, 2023</li>
+<li>url: <a href="https://arxiv.org/pdf/2302.04761.pdf">https://arxiv.org/pdf/2302.04761.pdf</a></li>
+</ol>
+<h2 id="summary-of-paper">Summary of paper<a aria-hidden="true" class="anchor" hidden="" href="#summary-of-paper">#</a></h2>
+<p><img alt="image-20230301201424679" loading="lazy" src="/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/image-assets/cover.png"/></p>
+<h3 id="motivation">Motivation<a aria-hidden="true" class="anchor" hidden="" href="#motivation">#</a></h3>
+<ul>
+<li>LMs exhibit remarkable abilities to solve new tasks from just a few examples or textual instructions, especially at scale.</li>
+<li>They also struggle with basic functionality, such as arithmetic or factual lookup.</li>
+</ul>
+<h3 id="contribution">Contribution<a aria-hidden="true" class="anchor" hidden="" href="#contribution">#</a></h3>
+<ul>
+<li>In this paper, we show that LMs can teach themselves to use external tools via simple APIs and achieve the best of both worlds.</li>
+<li>We introduce Toolformer, a model that incorporate a range of tools, including a calculator, a Q&amp;A system, a search engine, a translation system and a calendar.</li>
+</ul>
+<h3 id="some-key-terms">Some key terms<a aria-hidden="true" class="anchor" hidden="" href="#some-key-terms">#</a></h3>
+<p><strong>limitation of language models</strong></p>
+<ul>
+<li>models have several inherent limitations that can at best be partially addressed by further scaling</li>
+<li>these limitations include an inability to access up-to-date information on recent event  (Komeili
+et al., 2022) and the related tendency to hallucinate facts (Maynez et al., 2020; Ji et al., 2022), difficul-
+ties in understanding low-resource languages (Lin et al., 2021), a lack of mathematical skills to perform precise calculations (Patel et al., 2021) and an unawareness of the progression of time (Dhingra et al., 2022).</li>
+</ul>
+<p><strong>Toolformer, which fulfills the following desiderata</strong></p>
+<ul>
+<li>the use of tools should be learned in a self-supervised way without requiring large amounts of human annotations. This is important not only because of the costs associated with such annotations, but also because what humans find useful may be different from what a model finds useful</li>
+<li>the LM should not lose any of its generality and should be able to decide for itself when and how to use which tool. In contrast to existing approaches, this enables a much more comprehensive use of tools that is not tied to specific tasks.</li>
+</ul>
+<h3 id="methods">Methods<a aria-hidden="true" class="anchor" hidden="" href="#methods">#</a></h3>
+<ul>
+<li>We let a LM annotate a huge language modelling dataset with potential API calls. We then use a self-supervised loss to determine which of these API calls actually help the model in predicting future tokens</li>
+<li>Finally, we finetune the LM itself on the API calls that it considers useful</li>
+<li>illustrated for a question answering tool: given an input text $x$, we first sample a position $i$ and corresponding API call candidates $c_i^1, c_i^2,…,c_i^k$. We then execute these API calls can filter out all calls which do not reduce the loss $L_i$ over the next tokens</li>
+<li><img alt="image-20230301203426824" loading="lazy" src="/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/image-assets/image-20230301203426824.png"/></li>
+<li><img alt="image-20230301203656077" loading="lazy" src="/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/image-assets/image-20230301203656077.png"/></li>
+</ul>
+<p><strong>Approach details</strong></p>
+<ul>
+<li>API call representation
+<ul>
+<li><img alt="image-20230301204024759" loading="lazy" src="/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/image-assets/image-20230301204024759.png"/></li>
+</ul>
+</li>
+<li>Filtering API calls
+<ul>
+<li><img alt="image-20230301204336366" loading="lazy" src="/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/image-assets/image-20230301204336366.png"/></li>
+<li>The loss just calculates the cumulative negation of the word prediction probability log likelihood after the $i^{th}$ position
+<ul>
+<li>this measures how the prefix $z$ , the API call and answer, affects the text generation.</li>
+</ul>
+</li>
+<li>$L_i^-$ is the baseline loss</li>
+<li><img alt="image-20230301204916278" loading="lazy" src="/posts/timo_schick-toolformer-language-models-can-teach-themselves-to-use-tools-2023/image-assets/image-20230301204916278.png"/></li>
+</ul>
+</li>
+</ul>
+<h3 id="highlight-of-this-paper">Highlight of this paper<a aria-hidden="true" class="anchor" hidden="" href="#highlight-of-this-paper">#</a></h3>
+<ol>
+<li>it offers a very practical way (based on in-context prompting) to utilise GPT-J, the Language model to combine with other AI systems to increase its performance in other tasks such as arithmetic tasks etc.</li>
+</ol>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

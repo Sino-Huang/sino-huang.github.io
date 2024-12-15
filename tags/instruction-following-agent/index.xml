@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Instruction Following Agent on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/instruction-following-agent/</link>
+    <description>Recent content in Instruction Following Agent on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 15 Mar 2023 21:09:32 +0800</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/instruction-following-agent/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Theodore_r_sumers How to Talk So Ai Will Learn 2022</title>
+      <link>https://sino-huang.github.io/posts/theodore_r_sumers-how-to-talk-so-ai-will-learn-2022/</link>
+      <pubDate>Wed, 15 Mar 2023 21:09:32 +0800</pubDate>
+      <guid>https://sino-huang.github.io/posts/theodore_r_sumers-how-to-talk-so-ai-will-learn-2022/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: How to talk so AI will learn: Instructions, descriptions, and autonomy&lt;/li&gt;
+&lt;li&gt;Author: Theodore R. Sumers et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: NeurIPS 2022&lt;/li&gt;
+&lt;li&gt;Review Date: Wed, Mar 15, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2206.07870.pdf&#34;&gt;https://arxiv.org/pdf/2206.07870.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230315211204247&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/theodore_r_sumers-how-to-talk-so-ai-will-learn-2022/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;yet today, we lack computational models explaining such language use&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;To address this challenge, we formalise learning from language in a contextual bandit setting and ask how a human might communicate preferences over behaviours.
+&lt;ul&gt;
+&lt;li&gt;(obtain intent (preference) from the presentation (behaviour))&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;we show that instructions are better in low-autonomy settings, but descriptions are better when the agent will need to act independently.&lt;/li&gt;
+&lt;li&gt;We then define a pragmatic listener agent that robustly infers the speaker&amp;rsquo;s reward function by reasoning how the speaker expresses themselves. (language reward module?)&lt;/li&gt;
+&lt;li&gt;we hope these insights facilitate a shift from developing agents that obey language to agents that learn from it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;two distinct types of language&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

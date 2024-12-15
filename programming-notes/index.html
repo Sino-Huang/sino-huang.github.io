@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Programming-Notes | Sukai Huang</title>
+<meta content="" name="keywords"/>
+<meta content="Programming-Notes - Sukai Huang" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/programming-notes/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/programming-notes/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/programming-notes/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/programming-notes/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Programming-Notes" property="og:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="Programming-Notes" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Programming-Notes",
+      "item": "https://sino-huang.github.io/programming-notes/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a></div>
+<h1>
+    Programming-Notes
+    <a aria-label="RSS" href="/programming-notes/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<article class="post-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/how-to-autostart-apps-on-your-server/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">How to Autostart Apps on Your Server
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: How to Autostart Apps on Your Server Review Date: Fri, Apr 12, 2024 url: - How to Autostart Apps on Your Server we can try systemd --user modules
+First of all, write the service in the ~/.config/systemd/user/ folder
+1 2 3 4 5 6 7 8 9 10 11 12 [Unit] Description=My TorchSErve Server Wants=network-online.target After=network-online.target [Service] Type=forking ExecStart=/datadrive/run_torchserve.sh [Install] WantedBy=multi-user.target Note that Type=forking is important if you want to maintain the session, especially when you want to maintain a tmux
+...</p>
+</div>
+<footer class="entry-footer"><span title="2024-04-12 12:23:29 +1000 AEST">April 12, 2024</span> · 6 min · 1109 words · Sukai Huang</footer>
+<a aria-label="post link to How to Autostart Apps on Your Server" class="entry-link" href="https://sino-huang.github.io/programming-notes/how-to-autostart-apps-on-your-server/"></a>
+</article>
+<article class="post-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/using-kedro-n-optuna-for-your-project/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Using Kedro And Optuna for Your Project
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Using Kedro And Optuna for Your Project Review Date: Wed, Mar 27, 2024 url: https://neptune.ai/blog/kedro-pipelines-with-optuna-hyperparameter-sweeps Use Kedro and Optuan for your ML project Kedro - manage the ML pipeline Optuna - hyperparameter tuning tool Example pyproject.toml 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 [build-system] requires = [ "setuptools",] build-backend = "setuptools.build_meta" [project] name = "kedro_hyperparameter_sweep_test" authors = [ {name = "Sukai Huang", email = "hsk6808065@163.com"} ] readme = "README.md" dynamic = [ "dependencies", "version",] [project.scripts] kedro-hyperparameter-sweep-test = "kedro_hyperparameter_sweep_test.__main__:main" [project.optional-dependencies] docs = [ "docutils&lt;0.18.0", "sphinx~=3.4.3", "sphinx_rtd_theme==0.5.1", "nbsphinx==0.8.1", "sphinx-autodoc-typehints==1.11.1", "sphinx_copybutton==0.3.1", "ipykernel&gt;=5.3, &lt;7.0", "Jinja2&lt;3.1.0", "myst-parser~=0.17.2",] [tool.kedro] package_name = "kedro_hyperparameter_sweep_test" project_name = "kedro_hyperparameter_sweep_test" kedro_init_version = "0.19.3" tools = [ "Linting", "Custom Logging", "Documentation", "Data Structure", "Kedro Viz",] example_pipeline = "False" source_dir = "src" [tool.ruff] line-length = 88 show-fixes = true select = [ "F", "W", "E", "I", "UP", "PL", "T201",] ignore = [ "E501",] [project.entry-points."kedro.hooks"] [tool.ruff.format] docstring-code-format = true [tool.setuptools.dynamic.dependencies] file = "requirements.txt" [tool.setuptools.dynamic.version] attr = "kedro_hyperparameter_sweep_test.__version__" [tool.setuptools.packages.find] where = [ "src",] namespaces = false [tool.setuptools.package-data] kedro_hyperparameter_sweep_test = ["*.csv", "*.md", "*.log"] The default Kedro project structure is as follows: 1 2 3 4 5 6 7 8 9 project-dir # Parent directory of the template ├── .gitignore # Hidden file that prevents staging of unnecessary files to `git` ├── conf # Project configuration files ├── data # Local project data (not committed to version control) ├── docs # Project documentation ├── notebooks # Project-related Jupyter notebooks (can be used for experimental code before moving the code to src) ├── pyproject.toml # Identifies the project root and contains configuration information ├── README.md # Project README └── src # Project source code Use Jupyter lab ref: https://docs.kedro.org/en/stable/notebooks_and_ipython/kedro_and_notebooks.html
+...</p>
+</div>
+<footer class="entry-footer"><span title="2024-03-27 21:50:10 +1100 AEDT">March 27, 2024</span> · 4 min · 641 words · Sukai Huang</footer>
+<a aria-label="post link to Using Kedro And Optuna for Your Project" class="entry-link" href="https://sino-huang.github.io/programming-notes/using-kedro-n-optuna-for-your-project/"></a>
+</article>
+<article class="post-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/how-to-design-your-research-project-structure/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">How to Design Your Research Project Structure
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: How to Design Your Research Project Structure Review Date: Fri, Feb 2, 2024 Basic Component Policy model Environment Reward model Evaluation Logging and Result Postprocess Training train reward train policy Dataloader Utils Logging Setup Multiprocessing Helper etc it’s better to have interface class in the __init__.py
+Separate subproject for Data collection and PreTraining Environment simulation running how to save label, how to save images, align with the requirement of dali. how to generate tasks, how to generate text Pretrained CLIP/XLIP model Dataloader Model Finetuning reward model Training Evaluation Dataloader How to git ignore data above 1M Open your terminal. Use the find command to list all files over 1M in size in your repository directory and append them to .gitignore: 1 find . -size +1M | sed 's|^\./||' &gt;&gt; .gitignore This command works as follows:
+...</p>
+</div>
+<footer class="entry-footer"><span title="2024-02-02 19:50:31 +1100 AEDT">February 2, 2024</span> · 2 min · 237 words · Sukai Huang</footer>
+<a aria-label="post link to How to Design Your Research Project Structure" class="entry-link" href="https://sino-huang.github.io/programming-notes/how-to-design-your-research-project-structure/"></a>
+</article>
+<article class="post-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/react-js-development-2024/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">React Js Development 2024
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: React Js Development 2024 Review Date: Sun, Jan 21, 2024 url: React JS development (Typescript + Vite + React) VSC extension ES7 + React NPM support for VS Coe Vite JavaScript and TypeScript Init 1 2 3 4 5 6 7 8 9 10 11 curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &amp;&amp;\ sudo apt-get install -y nodejs npm create vite@latest npm create vite@latest yourapp -- --template react-ts cd yourapp npm install npm install antd react-redux react-router-dom redux sass reset-css # can also add them to package npm i -D @types/node npm run dev add path hint in tsconfig add resolve alias @ in vite.config.ts Things to remember how to import module rather than global import think about what you want to show, layout and data think about nested route think about how to CURD with database </p>
+</div>
+<footer class="entry-footer"><span title="2024-01-21 17:40:43 +1100 AEDT">January 21, 2024</span> · 1 min · 140 words · Sukai Huang</footer>
+<a aria-label="post link to React Js Development 2024" class="entry-link" href="https://sino-huang.github.io/programming-notes/react-js-development-2024/"></a>
+</article>
+<article class="post-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/python-and-os-utils-2024/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Python and Os Utils 2024
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Python and Os Utils 2024 Review Date: Thu, Jan 18, 2024 Useful Programming Tips What does " 2&gt;&amp;1 " mean? To combine stderr and stdout into the stdout stream, we append this to a command:
+1 2&gt;&amp;1 Answer File descriptor 1 is the standard output (stdout).
+File descriptor 2 is the standard error (stderr).
+At first, 2&gt;1 may look like a good way to redirect stderr to stdout. However, it will actually be interpreted as “redirect stderr to a file named 1”.
+...</p>
+</div>
+<footer class="entry-footer"><span title="2024-01-18 18:51:51 +1100 AEDT">January 18, 2024</span> · 2 min · 325 words · Sukai Huang</footer>
+<a aria-label="post link to Python and Os Utils 2024" class="entry-link" href="https://sino-huang.github.io/programming-notes/python-and-os-utils-2024/"></a>
+</article>
+<article class="post-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/python-logger/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Python Logger
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Python Logger Review Date: Mon, Dec 4, 2023 Python Logger python logging library is a good way to logging the progress Common use case 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 logger = logging.getLogger(__name__) logger.setLevel(logging.DEBUG) formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s') # console handler stream_handler = logging.StreamHandler() stream_handler.setLevel(logging.DEBUG) stream_handler.setFormatter(formatter) logger.addHandler(stream_handler) # file handler logging_folder = Path(yourfolder) logging_fp = os.path.join(logging_folder, "your_logging_fp") # unlink previous one Path(logging_fp).unlink(missing_ok=True) file_handler = logging.FileHandler(logging_fp) file_handler.setLevel(logging.INFO) file_handler.setFormatter(formatter) logger.addHandler(file_handler) logger.removeHandler(file_handler) Common setupLogger function, tqdm logger, json formatter 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 import json import logging from logging.handlers import RotatingFileHandler from logging import FileHandler from tqdm.auto import tqdm import multiprocessing as mp from pythonjsonlogger import jsonlogger import atexit import os from utils import convert_partial_to_json def setupLogger(loggername, loggingfile = None, logginglevel = logging.INFO, loggingqueue = None, file_handler_class=FileHandler, if_json=False): """ Set up a logger with the specified name and optional logging file. Parameters: loggername (str): The name of the logger. loggingfile (str): The path to the logging file (optional). Returns: logging.Logger: The configured logger. """ if loggername not in logging.Logger.manager.loggerDict: # Create a logger in the main process logger = logging.getLogger(loggername) logger.setLevel(logginglevel) streamhandler = logging.StreamHandler() if loggingfile is not None: if if_json: loggingfile = loggingfile.replace('.log', '.json') loggingfile = loggingfile + ".partial" # register itexit atexit.register(convert_partial_to_json, loggingfile) if file_handler_class == FileHandler: filehandler = FileHandler(loggingfile, delay=True) elif file_handler_class == RotatingFileHandler: filehandler = RotatingFileHandler(loggingfile, maxBytes=1000000, backupCount=3, delay=True) else: raise ValueError(f"Unknown file_handler_class {file_handler_class}") processname = mp.current_process().name if processname == 'MainProcess': # clear the log file with open(loggingfile, 'w'): pass formatter = logging.Formatter('%(asctime)s [%(processName)s] [%(levelname)s] %(message)s') streamhandler.setFormatter(formatter) if if_json: jsonformatter = jsonlogger.JsonFormatter('%(asctime)s [%(processName)s] [%(levelname)s] %(message)s') filehandler.setFormatter(jsonformatter) else: filehandler.setFormatter(formatter) logger.addHandler(streamhandler) if loggingfile is not None: logger.addHandler(filehandler) if loggingqueue is not None: queuehandler = logging.handlers.QueueHandler(loggingqueue) logger.addHandler(queuehandler) return logger else: return logging.getLogger(loggername) class logging_tqdm(tqdm): def __init__( self, *args, loggername="logging_tqdm_logger", loggingfile = None, logginglevel = logging.INFO, loggingqueue = None, mininterval: float = 1, bar_format: str = '{desc}{percentage:3.0f}%{r_bar}', desc: str = 'progress: ', **kwargs): self._loggername = loggername self._loggingfile = loggingfile self._logginglevel = logginglevel self._loggingqueue = loggingqueue self._logger = setupLogger(loggername, loggingfile, logginglevel, loggingqueue) super().__init__( *args, mininterval=mininterval, bar_format=bar_format, desc=desc, **kwargs ) @property def logger(self): if self._logger is not None: return self._logger return setupLogger(self._loggername, self._loggingfile, self._logginglevel, self._loggingqueue) def display(self, msg=None, pos=None): if not self.n: # skip progress bar before having processed anything return if not msg: msg = self.__str__() self.logger.info(f'%s', msg) </p>
+</div>
+<footer class="entry-footer"><span title="2023-12-04 20:25:12 +1100 AEDT">December 4, 2023</span> · 3 min · 496 words · Sukai Huang</footer>
+<a aria-label="post link to Python Logger" class="entry-link" href="https://sino-huang.github.io/programming-notes/python-logger/"></a>
+</article>
+<article class="post-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/langchain-use-cases-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Langchain Use Cases 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Langchain Use Cases 2023 Review Date: Sat, Aug 26, 2023 url: https://python.langchain.com/docs/get_started/quickstart Langchain quickstart The core building block of LangChain applications is the LLMChain. This combines three things: LLM: The language model is the core reasoning engine here. In order to work with LangChain, you need to understand the different types of language models and how to work with them. Prompt Templates: This provides instructions to the language model. This controls what the language model outputs, so understanding how to construct prompts and different prompting strategies is crucial. Output Parsers: These translate the raw response from the LLM to a more workable format, making it easy to use the output downstream. PromptTemplate modify prompt format easily Chains: Combine LLMs and prompts in multi-step workflows 1 2 from langchain.chains import LLMChain chain = LLMChain(llm=llm, prompt=prompt) Agents: dynamically call chains based on user input 1 2 3 from langchain.agents import load_tools from langchain.agents import initialize_agent from langchain.llms import OpenAI we can connect Google AI with ChatGPT
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-08-26 17:36:47 +1000 AEST">August 26, 2023</span> · 4 min · 700 words · Sukai Huang</footer>
+<a aria-label="post link to Langchain Use Cases 2023" class="entry-link" href="https://sino-huang.github.io/programming-notes/langchain-use-cases-2023/"></a>
+</article>
+<article class="post-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/pytorch-multiprocessing-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Pytorch Multiprocessing 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Pytorch Multiprocessing 2023 Review Date: Tue, Jul 18, 2023 url: https://pytorch.org/docs/stable/multiprocessing.html Best Practices for Pytorch multiprocessing 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 from torch import multiprocessing from torch.multiprocessing import Pipe multiprocessing.set_start_method('spawn') # for torch multiprocessing, spawn method is required model = Model() model.share_memory() p_conn, c_conn = Pipe() tensor_1 = torch.tensor([1]) tensor_1.share_memory() # need to pass tensor to shared memeory p_conn.send(tensor_1) # the receiver end tensor_1_sub = c_conn.receive() # after using it del tensor_1_sub # safe del </p>
+</div>
+<footer class="entry-footer"><span title="2023-07-18 16:48:13 +1000 AEST">July 18, 2023</span> · 1 min · 93 words · Sukai Huang</footer>
+<a aria-label="post link to Pytorch Multiprocessing 2023" class="entry-link" href="https://sino-huang.github.io/programming-notes/pytorch-multiprocessing-2023/"></a>
+</article>
+<article class="post-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/remote-server-and-tmux-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Remote Server, Tmux and Joshuto 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Remote Server and Tmux 2023 Review Date: Sun, Jul 16, 2023 url: https://tmuxcheatsheet.com/ url: https://explainshell.com When you want to have a long-run Jupyter notebook when you ssh to a remote server and have a long-run program (e.g., using jupyter notebook for training deep learning models ) you need to detach your job to background otherwise the program will stop when you exit ssh. you need tmux some useful tmux shortcut 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 tmux new -s &lt;yourname&gt; # start a new session with the name &lt;yourname&gt; tmux kill-session -t &lt;sname&gt; # kill session with name &lt;sname&gt; tmux ls # list all sessions tmux a # attach the last session tmux a -t &lt;sname&gt; # attach the session with name &lt;sname&gt; # in the tmux ctrl + b + $ # rename the session name ctrl + b + d # detach session ctrl + b + w # list windows ctrl + b + c # new window ctrl + b + % # split a new pane # panes ctrl + b + [ # scroll mode ctrl + b + arrow # switch pane focus ctrl + b + x # close pane tqdm to file for long-run jobs when you want to have a long-run jupyter and you cannot directly use tqdm to monitor. Every time you want to reconnect to the jupyter kernel, the tqdm progress bar will be cleared. to solve this, you need to store it to file also for long-run jobs, always save your data regularly 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # example from tqdm import tqdm a_dict = dict() save_interval = 20000 a_dict_count = len(a_dict) with open('preprocess_log.txt', 'w') as log_f: for key, val in tqdm(b_dict.items(), file=log_f, mininterval=3): # temp save if len(a_dict) % save_interval == 0: with open('a_dict.pkl', 'wb') as save_f: pickle.dump(a_dict, save_f) if key not in a_dict: a_dict[key] = extract_info(val) assert len(a_dict) == a_dict_count + 1 a_dict_count = len(a_dict) Joshuto - advanced terminal file manager you want a good file manager when you are in cli, joshuto is what you want. https://github.com/kamiyaa/joshuto
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-07-16 18:45:57 +1000 AEST">July 16, 2023</span> · 3 min · 557 words · Sukai Huang</footer>
+<a aria-label="post link to Remote Server, Tmux and Joshuto 2023" class="entry-link" href="https://sino-huang.github.io/programming-notes/remote-server-and-tmux-2023/"></a>
+</article>
+<article class="post-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/web-scrawler-using-selenium-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Web Scrawler Using Selenium 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Web Scrawler Using Selenium 2023 Review Date: Thu, Jun 22, 2023 Web scrawler, ticket buying as a case study Preparation: python venv check https://www.youtube.com/watch?v=Kg1Yvry_Ydk 1 2 3 4 5 6 7 8 9 python -m venv venv source venv/bin/activate # install the following using pip selenium==4.9.1 undetected-chromedriver&gt;=3.4.6 webdriver-manager jupyterlab pyopenssl known where is the Google Chrome user file location 1 2 MAC ~/Library/Application Support/Google/Chrome Linux ~/.config/google-chrome 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 # load options options = uc.ChromeOptions() options.page_load_strategy = 'eager' # options.add_argument("--auto-open-devtools-for-tabs") # help to avoid cloudfare human verify check options.add_argument("--disable-popup-blocking") options.add_argument("--window-size=800,600") options.add_argument("--start-maximized") options.add_argument('--disable-gpu') options.add_argument("--no-sandbox") options.add_argument("--disable-setuid-sandbox") options.add_argument("--disable-extensions") options.add_argument('--disable-application-cache') options.add_argument("--disable-dev-shm-usage") if HEADLESS: options.add_argument("--headless=new") try: # check os system if os.name == "posix": time.sleep(3) # wait for chrome profile to be ready driver = uc.Chrome(options=options, driver_executable_path=ChromeDriverManager().install(), user_data_dir=chrome_profile_path, # version_main=VERSION, user_multi_procs=True) elif os.name == "nt": time.sleep(3) # wait for chrome profile to be ready options.add_argument(f"--user-data-dir={chrome_profile_path}") driver = uc.Chrome(options=options, driver_executable_path=ChromeDriverManager().install(), # driver_executable_path=os.path.join(os.path.abspath(os.getcwd()), 'chromedriver-win64/chromedriver-win64/chromedriver.exe'), user_multi_procs=True, ) else: raise Exception("Unknown OS") driver.implicitly_wait(5) Some known issue about selenium to avoid memory leak in multiprocessing env, please import the driver inside the subprocess (e.g., inside the function) wait until presence is very slow, try the sleepy find element we need to setup logging queue to avoid crash for multiprocessing logging module list(tqdm(pool.imap(*), total = len(*))) is a good way to record multiprocess progress Utils functions sleep find element 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 def sleepy_find_element(by, query, attempt_count :int =30, sleep_duration =0.3): ''' Finds the web element using the locator and query. This function attempts to find the element multiple times with a specified sleep duration between attempts. If the element is found, the function returns the element. Args: by (selenium.webdriver.common.by.By): The method used to locate the element. query (str): The query string to locate the element. attempt_count (int, optional): The number of attempts to find the element. Default: 20. sleep_duration (int, optional): The duration to sleep between attempts. Default: 1. Returns: selenium.webdriver.remote.webelement.WebElement: Web element or None if not found. ''' global browser for _count in range(attempt_count): item = browser.find_elements(by, query) if len(item) &gt; 0: item = item[0] logging.info(f'Element {query} has found') break logging.info(f'Element {query} is not present, attempt: {_count+1}') time.sleep(sleep_duration) if item is list: logging.warning("Element not find!") return item move to element 1 2 3 4 5 6 7 8 # import Action chains from selenium.webdriver import ActionChains #element source = driver.find_element_by_id("name") #action chain object action = ActionChains(driver) # move to element operation action.move_to_element(source).click().perform() useful imports 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 from selenium.webdriver.common.by import By from selenium.webdriver.common.keys import Keys from selenium.webdriver.support.wait import WebDriverWait from selenium.webdriver.support import expected_conditions as EC from selenium.common.exceptions import TimeoutException, NoSuchElementException import logging from pathlib import Path from tqdm.auto import tqdm import os import pickle import csv import time import threading from glob import glob import argparse lxml html xpath with requests used for requests (simpler and faster in some cases) 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 from lxml import html response = requests.get(complete_url) content = response.content tree = html.fromstring(content) # read byte content # print("start loading") # latitude latitude_xp = '//h3[contains(text(), "Coordinates")]/following-sibling::p[contains(text(), "Latitude")]' latitude_ele = tree.xpath(latitude_xp) if latitude_ele: latitude_ele = latitude_ele[0] latitude_info = latitude_ele.text_content().strip().split("Latitude: ")[1] # print('latitude_info', latitude_info) temp = dict() temp['latitude'] = latitude_info else: return text_content() will get all the text in the node, which is same as .text in selenium multiprocessing with tqdm 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 from tqdm.contrib.concurrent import process_map from multiprocessing import Pool, Process, Manager, Lock manager = Manager() # Manager dictionary must be used for multiprocessing # m_saved_postcode_lst = manager.list(saved_postcode_lst) # m_no_data_lst = manager.list(no_data_lst) m_chromelock = manager.Lock() m_nodatalock = manager.Lock() m_savedpstcdlock = manager.Lock() m_profile_path_list = manager.list(profile_path_list) # %% postcode_list_chunks = [postcode_list[x:x+CHUNK_SIZE] for x in range(0, len(postcode_list), CHUNK_SIZE)] # %% args = [(chunk, m_chromelock,m_nodatalock,m_savedpstcdlock, m_profile_path_list, loggername, loggingfile, data_index) for chunk in postcode_list_chunks] try: with mp.Pool(PROCESS_NUM) as pool: results = list(logging_tqdm(pool.imap(helperf, args, chunksize=1), total=len(args), loggername=loggername, loggingfile=loggingfile, desc="Progress Status in Main Process")) except Exception as e: logger.error(e) raise e finally: active_children = mp.active_children() for p in active_children: p.kill() p.join() logger.info("Killing all processes") # IMPORTANT we must attach dict to the manager dict, nest dict update is banned in multiprocessing temp = { "United States": "New York", "Italy": "Naples", "England": "London" } postcode_info_dict[postcode] = temp # OK postcode_info_dict[postcode]['United States'] = "New York" # BAD </p>
+</div>
+<footer class="entry-footer"><span title="2023-06-22 22:38:28 +1000 AEST">June 22, 2023</span> · 4 min · 813 words · Sukai Huang</footer>
+<a aria-label="post link to Web Scrawler Using Selenium 2023" class="entry-link" href="https://sino-huang.github.io/programming-notes/web-scrawler-using-selenium-2023/"></a>
+</article>
+<article class="post-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/python-module-and-package-management-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Python Module and Package Management 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Python Module and Package Management 2023 url: https://www.youtube.com/watch?v=v6tALyc4C10 Python module common issue 1: python -m dir vs python dir python dir will use the dir as the PYTHONPATH as run __main__.py file. however, python -m dir will not use the dir as PYTHONPATH but rather it will search the local library. thus ModuleNotFoundError may appear Standard way of import when you want to create a module use absolute path -&gt; from moduledir/packagename import filename avoid using relative path e.g., from .xxx import yyy if within the same module, you can just use from xxx import yyy However, in a complicated project where there are too many modules. one workaround is that we still make it a module, but try to append folder path to the system path. 1 2 import os, sys sys.path.append(os.path.dirname(os.path.realpath(__file__))) always use it as the last resort. Solution: setup pyproject.toml and install it as a proper module python -m venv .venv
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-05-28 11:56:47 +1000 AEST">May 28, 2023</span> · 5 min · 1024 words · Sukai Huang</footer>
+<a aria-label="post link to Python Module and Package Management 2023" class="entry-link" href="https://sino-huang.github.io/programming-notes/python-module-and-package-management-2023/"></a>
+</article>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

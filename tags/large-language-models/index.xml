@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Large Language Models on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/large-language-models/</link>
+    <description>Recent content in Large Language Models on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 02 Jul 2023 21:24:50 +1000</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/large-language-models/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lionel_wong From Word Models to World Models 2023</title>
+      <link>https://sino-huang.github.io/posts/lionel_wong-from-word-models-to-world-models-2023/</link>
+      <pubDate>Sun, 02 Jul 2023 21:24:50 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/lionel_wong-from-word-models-to-world-models-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: From Word Models to World Models: Translating from Natural Language to the Probabilistic Language of Thought&lt;/li&gt;
+&lt;li&gt;Author: Lionel Wong et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 23 Jun 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Sun, Jul 2, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2306.12672.pdf&#34;&gt;https://arxiv.org/pdf/2306.12672.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;leverage a theory of linguistic meaning to build machines that think in more human-like ways.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;we frame linguistic meaning as a context-sensitive mapping from NL into a probabilistic language of thought (PLoT) &amp;ndash; a general-purpose &lt;strong&gt;symbolic substrate for probabilistic, generative world modelling&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Jianning_wang Boosting Language Models Reasoning With Chain of Knowledge Prompting 2023</title>
+      <link>https://sino-huang.github.io/posts/jianning_wang-boosting-language-models-reasoning-with-chain-of-knowledge-prompting-2023/</link>
+      <pubDate>Sun, 02 Jul 2023 16:09:58 +1000</pubDate>
+      <guid>https://sino-huang.github.io/posts/jianning_wang-boosting-language-models-reasoning-with-chain-of-knowledge-prompting-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Boosting Language Models Reasoning With Chain of Knowledge Prompting&lt;/li&gt;
+&lt;li&gt;Author: Jianing Wang et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 10 Jun 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Sun, Jul 2, 2023&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://arxiv.org/pdf/2306.06427.pdf&#34;&gt;https://arxiv.org/pdf/2306.06427.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230702162535381&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/jianning_wang-boosting-language-models-reasoning-with-chain-of-knowledge-prompting-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;Chain of Thought (CoT)&amp;rdquo; aims at designing a simple prompt like &amp;ldquo;Let&amp;rsquo;s think step by step&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;however, the generated rationales often come with mistakes, making unfactual and unfaithful reasoning chain&lt;/li&gt;
+&lt;li&gt;To mitigate this brittleness, we propose a novel Chain-of-Knowlege knowledge evidence in the form of structure triple&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Benefiting from CoK, we additional introduce a F^2 -Verification method to estimate the reliable response, the wrong evidence can be indicated to prompt the LLM to rethink.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20230702174714043&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/jianning_wang-boosting-language-models-reasoning-with-chain-of-knowledge-prompting-2023/image-assets/image-20230702174714043.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

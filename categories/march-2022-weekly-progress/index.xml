@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>March-2022-Weekly-Progress on Sukai Huang</title>
+    <link>https://sino-huang.github.io/categories/march-2022-weekly-progress/</link>
+    <description>Recent content in March-2022-Weekly-Progress on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 21 Mar 2022 14:29:31 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/categories/march-2022-weekly-progress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>20 March -- 2 April, 2022</title>
+      <link>https://sino-huang.github.io/weekly-report/20-mar-26-mar-2022/</link>
+      <pubDate>Mon, 21 Mar 2022 14:29:31 +1100</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/20-mar-26-mar-2022/</guid>
+      <description>&lt;h2 id=&#34;last-weeks-work-review&#34;&gt;Last Week&amp;rsquo;s Work Review&lt;/h2&gt;
+&lt;p&gt;Our first step should be writing codes for our baseline RL model, and after that we can try to add additional language interpreter on it and see if we can improve the performance by interpreting the guidebook&lt;/p&gt;
+&lt;p&gt;we now have two things to do&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;build baseline RL model for both NetHack and MiniHack environment
+&lt;ul&gt;
+&lt;li&gt;then we try to feed language data into the model.&lt;/li&gt;
+&lt;li&gt;decision transformer model seems a future proof model to embed language information&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;build a user-friendly and useful annotation tool for annotators.
+&lt;ul&gt;
+&lt;li&gt;can record the gameplay&lt;/li&gt;
+&lt;li&gt;can annotate the objects&lt;/li&gt;
+&lt;li&gt;can add instructions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>13 March -- 19 March, 2022</title>
+      <link>https://sino-huang.github.io/weekly-report/13-mar-19-mar-2022/</link>
+      <pubDate>Mon, 14 Mar 2022 14:29:03 +1100</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/13-mar-19-mar-2022/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;last-weeks-work-review&#34;&gt;Last Week&amp;rsquo;s Work Review&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;do not restrict what people annotate, do not limit the vocabulary&amp;hellip; we can use modern BERT model to interpret natural language utterances.&lt;/li&gt;
+&lt;li&gt;before we dive into the conversion from natural language utterances into logical forms, we can try to use general NLP models to give a end to end trial first&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>06 March -- 12 March 2022</title>
+      <link>https://sino-huang.github.io/weekly-report/06-mar-12-mar-2022/</link>
+      <pubDate>Fri, 04 Mar 2022 11:32:45 +1100</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/06-mar-12-mar-2022/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;last-weeks-work-review&#34;&gt;Last Week&amp;rsquo;s Work Review&lt;/h2&gt;
+&lt;p&gt;NIL&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>20 February -- 5 March, 2022</title>
+      <link>https://sino-huang.github.io/weekly-report/20-feb-26-feb-2022/</link>
+      <pubDate>Fri, 18 Feb 2022 14:52:59 +1100</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/20-feb-26-feb-2022/</guid>
+      <description>&lt;h2 id=&#34;last-weeks-work-review&#34;&gt;Last Week&amp;rsquo;s Work Review&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Feedback from the pre-confirmation meeting&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;annotation process is complicated, a concrete plan is required
+&lt;ul&gt;
+&lt;li&gt;need to know how to solve misinterpretation and quality issue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;concrete my research, get the timeline and deadline for each research steps before next confirmation meeting.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Annotations&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Explain what is your purpose for this annotation work. what do you want to prove? what is the problem, what is the input and output and what is your solution.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;think about how to design an annotation protocol, an annotation interface (tools)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; You make some annotations first to demonstrate, using IGLU data, NetHack data, Angry Birds data. MineRL data&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Maybe think about the annotation process details&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://nethackchallenge.com/&#34;&gt;https://nethackchallenge.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://minerl.io/dataset/&#34;&gt;https://minerl.io/dataset/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Readings&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Read related works and papers &amp;ldquo;Linear Temporal Logic&amp;rdquo;, &amp;ldquo;NetHack&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; check this out &lt;a href=&#34;https://ai.facebook.com/blog/minihack-a-new-sandbox-for-open-ended-reinforcement-learning&#34;&gt;https://ai.facebook.com/blog/minihack-a-new-sandbox-for-open-ended-reinforcement-learning&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Spartan&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; take my desktop back home&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; check how to use Spartan resource&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Python Logger | Sukai Huang</title>
+<meta content="" name="keywords"/>
+<meta content="[TOC]
+
+Title: Python Logger
+Review Date: Mon, Dec 4, 2023
+
+Python Logger
+
+python logging library is a good way to logging the progress
+
+Common use case
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+# console handler
+stream_handler = logging.StreamHandler()
+stream_handler.setLevel(logging.DEBUG)
+stream_handler.setFormatter(formatter)
+logger.addHandler(stream_handler)
+
+
+# file handler 
+logging_folder = Path(yourfolder)
+logging_fp = os.path.join(logging_folder, &quot;your_logging_fp&quot;)
+# unlink previous one 
+Path(logging_fp).unlink(missing_ok=True)
+file_handler = logging.FileHandler(logging_fp)
+file_handler.setLevel(logging.INFO)
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
+logger.removeHandler(file_handler)
+
+
+Common setupLogger function, tqdm logger, json formatter
+
+
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+
+
+
+ import json
+import logging
+from logging.handlers import RotatingFileHandler
+from logging import FileHandler
+from tqdm.auto import tqdm
+import multiprocessing as mp
+from pythonjsonlogger import jsonlogger
+import atexit
+import os 
+from utils import convert_partial_to_json
+
+    
+def setupLogger(loggername, loggingfile = None, logginglevel = logging.INFO, loggingqueue = None, file_handler_class=FileHandler, if_json=False):
+    &quot;&quot;&quot;
+    Set up a logger with the specified name and optional logging file.
+
+    Parameters:
+    loggername (str): The name of the logger.
+    loggingfile (str): The path to the logging file (optional).
+
+    Returns:
+    logging.Logger: The configured logger.
+    &quot;&quot;&quot;
+    if loggername not in logging.Logger.manager.loggerDict:
+        # Create a logger in the main process
+        logger = logging.getLogger(loggername)
+        logger.setLevel(logginglevel)
+        streamhandler = logging.StreamHandler()
+        if loggingfile is not None:
+            if if_json:
+                loggingfile = loggingfile.replace('.log', '.json')
+                loggingfile = loggingfile + &quot;.partial&quot;
+                # register itexit 
+                atexit.register(convert_partial_to_json, loggingfile)
+                
+            if file_handler_class == FileHandler:
+                filehandler = FileHandler(loggingfile, delay=True)
+            elif file_handler_class == RotatingFileHandler:
+                filehandler = RotatingFileHandler(loggingfile, maxBytes=1000000, backupCount=3, delay=True)
+            else:
+                raise ValueError(f&quot;Unknown file_handler_class {file_handler_class}&quot;)
+            processname = mp.current_process().name
+            if processname == 'MainProcess':
+                # clear the log file
+                with open(loggingfile, 'w'):
+                    pass
+        formatter = logging.Formatter('%(asctime)s [%(processName)s] [%(levelname)s] %(message)s')
+        streamhandler.setFormatter(formatter)
+        if if_json:
+            jsonformatter = jsonlogger.JsonFormatter('%(asctime)s [%(processName)s] [%(levelname)s] %(message)s')
+            filehandler.setFormatter(jsonformatter)
+        else:
+            filehandler.setFormatter(formatter)
+        logger.addHandler(streamhandler)
+        if loggingfile is not None:
+            logger.addHandler(filehandler)
+        if loggingqueue is not None:
+            queuehandler = logging.handlers.QueueHandler(loggingqueue)
+            logger.addHandler(queuehandler)
+        return logger
+    else:
+        return logging.getLogger(loggername)
+
+
+class logging_tqdm(tqdm):
+    def __init__(
+            self,
+            *args,
+            loggername=&quot;logging_tqdm_logger&quot;,
+            loggingfile = None,
+            logginglevel = logging.INFO,
+            loggingqueue = None,
+            mininterval: float = 1,
+            bar_format: str = '{desc}{percentage:3.0f}%{r_bar}',
+            desc: str = 'progress: ',
+            **kwargs):
+        self._loggername = loggername
+        self._loggingfile = loggingfile
+        self._logginglevel = logginglevel
+        self._loggingqueue = loggingqueue
+        self._logger = setupLogger(loggername, loggingfile, logginglevel, loggingqueue)
+        
+        super().__init__(
+            *args,
+            mininterval=mininterval,
+            bar_format=bar_format,
+            desc=desc,
+            **kwargs
+        )
+
+    @property
+    def logger(self):
+        if self._logger is not None:
+            return self._logger
+        return setupLogger(self._loggername, self._loggingfile, self._logginglevel, self._loggingqueue)
+
+    def display(self, msg=None, pos=None):
+        if not self.n:
+            # skip progress bar before having processed anything
+            return
+        if not msg:
+            msg = self.__str__()
+        self.logger.info(f'%s', msg)
+
+
+" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/programming-notes/python-logger/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/programming-notes/python-logger/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/programming-notes/python-logger/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/programming-notes/python-logger/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Python Logger" property="og:title"/>
+<meta content="[TOC]
+Title: Python Logger Review Date: Mon, Dec 4, 2023 Python Logger python logging library is a good way to logging the progress Common use case 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 logger = logging.getLogger(__name__) logger.setLevel(logging.DEBUG) formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s') # console handler stream_handler = logging.StreamHandler() stream_handler.setLevel(logging.DEBUG) stream_handler.setFormatter(formatter) logger.addHandler(stream_handler) # file handler logging_folder = Path(yourfolder) logging_fp = os.path.join(logging_folder, &quot;your_logging_fp&quot;) # unlink previous one Path(logging_fp).unlink(missing_ok=True) file_handler = logging.FileHandler(logging_fp) file_handler.setLevel(logging.INFO) file_handler.setFormatter(formatter) logger.addHandler(file_handler) logger.removeHandler(file_handler) Common setupLogger function, tqdm logger, json formatter 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 import json import logging from logging.handlers import RotatingFileHandler from logging import FileHandler from tqdm.auto import tqdm import multiprocessing as mp from pythonjsonlogger import jsonlogger import atexit import os from utils import convert_partial_to_json def setupLogger(loggername, loggingfile = None, logginglevel = logging.INFO, loggingqueue = None, file_handler_class=FileHandler, if_json=False): &quot;&quot;&quot; Set up a logger with the specified name and optional logging file. Parameters: loggername (str): The name of the logger. loggingfile (str): The path to the logging file (optional). Returns: logging.Logger: The configured logger. &quot;&quot;&quot; if loggername not in logging.Logger.manager.loggerDict: # Create a logger in the main process logger = logging.getLogger(loggername) logger.setLevel(logginglevel) streamhandler = logging.StreamHandler() if loggingfile is not None: if if_json: loggingfile = loggingfile.replace('.log', '.json') loggingfile = loggingfile + &quot;.partial&quot; # register itexit atexit.register(convert_partial_to_json, loggingfile) if file_handler_class == FileHandler: filehandler = FileHandler(loggingfile, delay=True) elif file_handler_class == RotatingFileHandler: filehandler = RotatingFileHandler(loggingfile, maxBytes=1000000, backupCount=3, delay=True) else: raise ValueError(f&quot;Unknown file_handler_class {file_handler_class}&quot;) processname = mp.current_process().name if processname == 'MainProcess': # clear the log file with open(loggingfile, 'w'): pass formatter = logging.Formatter('%(asctime)s [%(processName)s] [%(levelname)s] %(message)s') streamhandler.setFormatter(formatter) if if_json: jsonformatter = jsonlogger.JsonFormatter('%(asctime)s [%(processName)s] [%(levelname)s] %(message)s') filehandler.setFormatter(jsonformatter) else: filehandler.setFormatter(formatter) logger.addHandler(streamhandler) if loggingfile is not None: logger.addHandler(filehandler) if loggingqueue is not None: queuehandler = logging.handlers.QueueHandler(loggingqueue) logger.addHandler(queuehandler) return logger else: return logging.getLogger(loggername) class logging_tqdm(tqdm): def __init__( self, *args, loggername=&quot;logging_tqdm_logger&quot;, loggingfile = None, logginglevel = logging.INFO, loggingqueue = None, mininterval: float = 1, bar_format: str = '{desc}{percentage:3.0f}%{r_bar}', desc: str = 'progress: ', **kwargs): self._loggername = loggername self._loggingfile = loggingfile self._logginglevel = logginglevel self._loggingqueue = loggingqueue self._logger = setupLogger(loggername, loggingfile, logginglevel, loggingqueue) super().__init__( *args, mininterval=mininterval, bar_format=bar_format, desc=desc, **kwargs ) @property def logger(self): if self._logger is not None: return self._logger return setupLogger(self._loggername, self._loggingfile, self._logginglevel, self._loggingqueue) def display(self, msg=None, pos=None): if not self.n: # skip progress bar before having processed anything return if not msg: msg = self.__str__() self.logger.info(f'%s', msg) " property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/posts/python-logger/image-assets/cover.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/posts/python-logger/image-assets/cover.png" name="twitter:image"/>
+<meta content="Python Logger" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Programming-Notes",
+      "item": "https://sino-huang.github.io/programming-notes/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Python Logger",
+      "item": "https://sino-huang.github.io/programming-notes/python-logger/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/programming-notes/">Programming-Notes</a></div>
+<h1>
+    Python Logger
+    <a aria-label="RSS" href="/programming-notes/python-logger/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><p>[TOC]</p>
+<ol>
+<li>Title: Python Logger</li>
+<li>Review Date: Mon, Dec 4, 2023</li>
+</ol>
+<h2 id="python-logger">Python Logger<a aria-hidden="true" class="anchor" hidden="" href="#python-logger">#</a></h2>
+<ul>
+<li>python logging library is a good way to logging the progress</li>
+</ul>
+<h2 id="common-use-case">Common use case<a aria-hidden="true" class="anchor" hidden="" href="#common-use-case">#</a></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s1">'</span><span class="si">%(asctime)s</span><span class="s1"> - </span><span class="si">%(name)s</span><span class="s1"> - </span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">'</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># console handler</span>
+</span></span><span class="line"><span class="cl"><span class="n">stream_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">stream_handler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">stream_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">stream_handler</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># file handler </span>
+</span></span><span class="line"><span class="cl"><span class="n">logging_folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">yourfolder</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">logging_fp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">logging_folder</span><span class="p">,</span> <span class="s2">"your_logging_fp"</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># unlink previous one </span>
+</span></span><span class="line"><span class="cl"><span class="n">Path</span><span class="p">(</span><span class="n">logging_fp</span><span class="p">)</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">missing_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">file_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="n">logging_fp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">file_handler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">file_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">file_handler</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">logger</span><span class="o">.</span><span class="n">removeHandler</span><span class="p">(</span><span class="n">file_handler</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="common-setuplogger-function-tqdm-logger-json-formatter">Common setupLogger function, tqdm logger, json formatter<a aria-hidden="true" class="anchor" hidden="" href="#common-setuplogger-function-tqdm-logger-json-formatter">#</a></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> <span class="kn">import</span> <span class="nn">json</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">logging</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">logging.handlers</span> <span class="kn">import</span> <span class="n">RotatingFileHandler</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">logging</span> <span class="kn">import</span> <span class="n">FileHandler</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">multiprocessing</span> <span class="k">as</span> <span class="nn">mp</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pythonjsonlogger</span> <span class="kn">import</span> <span class="n">jsonlogger</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">atexit</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span> 
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">convert_partial_to_json</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">setupLogger</span><span class="p">(</span><span class="n">loggername</span><span class="p">,</span> <span class="n">loggingfile</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">logginglevel</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="n">loggingqueue</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">file_handler_class</span><span class="o">=</span><span class="n">FileHandler</span><span class="p">,</span> <span class="n">if_json</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">"""
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Set up a logger with the specified name and optional logging file.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Parameters:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    loggername (str): The name of the logger.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    loggingfile (str): The path to the logging file (optional).
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Returns:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    logging.Logger: The configured logger.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    """</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">loggername</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">loggerDict</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Create a logger in the main process</span>
+</span></span><span class="line"><span class="cl">        <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">loggername</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logginglevel</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">streamhandler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">loggingfile</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">if_json</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">loggingfile</span> <span class="o">=</span> <span class="n">loggingfile</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'.log'</span><span class="p">,</span> <span class="s1">'.json'</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">loggingfile</span> <span class="o">=</span> <span class="n">loggingfile</span> <span class="o">+</span> <span class="s2">".partial"</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># register itexit </span>
+</span></span><span class="line"><span class="cl">                <span class="n">atexit</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">convert_partial_to_json</span><span class="p">,</span> <span class="n">loggingfile</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">file_handler_class</span> <span class="o">==</span> <span class="n">FileHandler</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">filehandler</span> <span class="o">=</span> <span class="n">FileHandler</span><span class="p">(</span><span class="n">loggingfile</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">elif</span> <span class="n">file_handler_class</span> <span class="o">==</span> <span class="n">RotatingFileHandler</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">filehandler</span> <span class="o">=</span> <span class="n">RotatingFileHandler</span><span class="p">(</span><span class="n">loggingfile</span><span class="p">,</span> <span class="n">maxBytes</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="n">backupCount</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Unknown file_handler_class </span><span class="si">{</span><span class="n">file_handler_class</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">processname</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">current_process</span><span class="p">()</span><span class="o">.</span><span class="n">name</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">processname</span> <span class="o">==</span> <span class="s1">'MainProcess'</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># clear the log file</span>
+</span></span><span class="line"><span class="cl">                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">loggingfile</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">        <span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s1">'</span><span class="si">%(asctime)s</span><span class="s1"> [</span><span class="si">%(processName)s</span><span class="s1">] [</span><span class="si">%(levelname)s</span><span class="s1">] </span><span class="si">%(message)s</span><span class="s1">'</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">streamhandler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">if_json</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">jsonformatter</span> <span class="o">=</span> <span class="n">jsonlogger</span><span class="o">.</span><span class="n">JsonFormatter</span><span class="p">(</span><span class="s1">'</span><span class="si">%(asctime)s</span><span class="s1"> [</span><span class="si">%(processName)s</span><span class="s1">] [</span><span class="si">%(levelname)s</span><span class="s1">] </span><span class="si">%(message)s</span><span class="s1">'</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">filehandler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">jsonformatter</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">filehandler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">streamhandler</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">loggingfile</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">filehandler</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">loggingqueue</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">queuehandler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">handlers</span><span class="o">.</span><span class="n">QueueHandler</span><span class="p">(</span><span class="n">loggingqueue</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">queuehandler</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">logger</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">loggername</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">logging_tqdm</span><span class="p">(</span><span class="n">tqdm</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">loggername</span><span class="o">=</span><span class="s2">"logging_tqdm_logger"</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">loggingfile</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">logginglevel</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">loggingqueue</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">mininterval</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">bar_format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'</span><span class="si">{desc}{percentage:3.0f}</span><span class="s1">%</span><span class="si">{r_bar}</span><span class="s1">'</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">desc</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'progress: '</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">_loggername</span> <span class="o">=</span> <span class="n">loggername</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">_loggingfile</span> <span class="o">=</span> <span class="n">loggingfile</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">_logginglevel</span> <span class="o">=</span> <span class="n">logginglevel</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">_loggingqueue</span> <span class="o">=</span> <span class="n">loggingqueue</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span> <span class="o">=</span> <span class="n">setupLogger</span><span class="p">(</span><span class="n">loggername</span><span class="p">,</span> <span class="n">loggingfile</span><span class="p">,</span> <span class="n">logginglevel</span><span class="p">,</span> <span class="n">loggingqueue</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">mininterval</span><span class="o">=</span><span class="n">mininterval</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">bar_format</span><span class="o">=</span><span class="n">bar_format</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">desc</span><span class="o">=</span><span class="n">desc</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="o">**</span><span class="n">kwargs</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@property</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">logger</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">setupLogger</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_loggername</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_loggingfile</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_logginglevel</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_loggingqueue</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># skip progress bar before having processed anything</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="n">msg</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">'%s'</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

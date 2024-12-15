@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>NeurIPS-2021 on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/neurips-2021/</link>
+    <description>Recent content in NeurIPS-2021 on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 10 Dec 2021 06:18:31 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/neurips-2021/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Iglu Neurips 2021 Workshop</title>
+      <link>https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/</link>
+      <pubDate>Fri, 10 Dec 2021 06:18:31 +1100</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&#34;iglu-minecraft-challenge-neurips-2021-workshop&#34;&gt;IGLU Minecraft challenge NeurIPS 2021 workshop&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://nips.cc/virtual/2021/competition/22444&#34;&gt;https://nips.cc/virtual/2021/competition/22444&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The organiser introduced a Web environment for data collection&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CraftAssist and VoxelWorld.js
+&lt;ul&gt;
+&lt;li&gt;&lt;img alt=&#34;image-20211210065730299&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210065730299.png&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;architect-task&#34;&gt;Architect task&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Baseline model&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211210070437284&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210070437284.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Ha! No winner that outperforms the baseline?!&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211210070601738&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210070601738.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;hellip;. which means I have a chance !&lt;/p&gt;
+&lt;h3 id=&#34;builder-task&#34;&gt;Builder task&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211210070730935&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210070730935.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211210070753279&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210070753279.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211210071041719&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210071041719.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211210071153129&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210071153129.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the organiser found out that the reward function would motivate the agent to break blocks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;their-future-direction&#34;&gt;Their Future direction&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211210071234132&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210071234132.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;breakout-session&#34;&gt;Breakout session&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211210072219363&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210072219363.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211210073221055&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/iglu-neurips-2021-workshop/image-assets/image-20211210073221055.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Interesting Tutorial Slides in Neurips 2021</title>
+      <link>https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/interesting-slides-in-neurips-2021/</link>
+      <pubDate>Wed, 08 Dec 2021 17:14:57 +1100</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/interesting-slides-in-neurips-2021/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&#34;interesting-tutorial-slides-in-neurips-2021&#34;&gt;Interesting Tutorial Slides in NeurIPS 2021&lt;/h2&gt;
+&lt;p&gt;I am going to gather interesting Slides from each Workshops I watched&lt;/p&gt;
+&lt;h3 id=&#34;deepmind-neurosymbolic-ai&#34;&gt;DeepMind NeuroSymbolic AI&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211208171945794&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/interesting-slides-in-neurips-2021/image-assets/image-20211208171945794.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211208172055446&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/interesting-slides-in-neurips-2021/image-assets/image-20211208172055446.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;the-art-of-gaussian-process&#34;&gt;The Art of Gaussian Process&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211208172336404&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/interesting-slides-in-neurips-2021/image-assets/image-20211208172336404.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;self-supervised-learning&#34;&gt;Self supervised learning&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211208180808760&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/interesting-slides-in-neurips-2021/image-assets/image-20211208180808760.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211208181111100&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/interesting-slides-in-neurips-2021/image-assets/image-20211208181111100.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211208181338601&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/interesting-slides-in-neurips-2021/image-assets/image-20211208181338601.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;emergent-communication&#34;&gt;Emergent Communication&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211210103038252&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/interesting-slides-in-neurips-2021/image-assets/image-20211210103038252.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211210103228531&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/interesting-slides-in-neurips-2021/image-assets/image-20211210103228531.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;attention-over-learned-object-embeddings-enables-complex-visual-reasoning&#34;&gt;Attention over learned object embeddings enables complex visual reasoning&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; read the paper !&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/deepmind/deepmind-research/tree/master/object_attention_for_reasoning&#34;&gt;https://github.com/deepmind/deepmind-research/tree/master/object_attention_for_reasoning&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211210121105943&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/interesting-slides-in-neurips-2021/image-assets/image-20211210121105943.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211210121156831&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/interesting-slides-in-neurips-2021/image-assets/image-20211210121156831.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20211210121452920&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/weekly-report/05-dec-11-dec-2021/interesting-slides-in-neurips-2021/image-assets/image-20211210121452920.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

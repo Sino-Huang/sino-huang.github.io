@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Reinforcement Learning | Sukai Huang</title>
+<meta content="" name="keywords"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/tags/reinforcement-learning/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/tags/reinforcement-learning/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/tags/reinforcement-learning/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/tags/reinforcement-learning/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Reinforcement Learning" property="og:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="Reinforcement Learning" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/tags/">Tags</a></div>
+<h1>
+    Reinforcement Learning
+    <a aria-label="RSS" href="/tags/reinforcement-learning/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/theodore_r_sumers-how-to-talk-so-ai-will-learn-2022/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Theodore_r_sumers How to Talk So Ai Will Learn 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: How to talk so AI will learn: Instructions, descriptions, and autonomy Author: Theodore R. Sumers et. al. Publish Year: NeurIPS 2022 Review Date: Wed, Mar 15, 2023 url: https://arxiv.org/pdf/2206.07870.pdf Summary of paper Motivation yet today, we lack computational models explaining such language use Contribution To address this challenge, we formalise learning from language in a contextual bandit setting and ask how a human might communicate preferences over behaviours. (obtain intent (preference) from the presentation (behaviour)) we show that instructions are better in low-autonomy settings, but descriptions are better when the agent will need to act independently. We then define a pragmatic listener agent that robustly infers the speaker’s reward function by reasoning how the speaker expresses themselves. (language reward module?) we hope these insights facilitate a shift from developing agents that obey language to agents that learn from it. Some key terms two distinct types of language
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-03-15 21:09:32 +0800 +0800">March 15, 2023</span> · 3 min · 591 words · Sukai Huang</footer>
+<a aria-label="post link to Theodore_r_sumers How to Talk So Ai Will Learn 2022" class="entry-link" href="https://sino-huang.github.io/posts/theodore_r_sumers-how-to-talk-so-ai-will-learn-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/cheng_chi-diffusion-policy-visuomotor-policy-learning-via-action-diffusion-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Cheng_chi Diffusion Policy Visuomotor Policy Learning via Action Diffusion 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Diffusion Policy Visuomotor Policy Learning via Action Diffusion Author: Cheng Chi et. al. Publish Year: 2023 Review Date: Thu, Mar 9, 2023 url: https://diffusion-policy.cs.columbia.edu/diffusion_policy_2023.pdf Summary of paper Contribution introducing a new form of robot visuomotor policy that generates behaviour via a “conditional denoising diffusion process” on robot action space Some key terms Explicit policy
+learning this is like imitation learning Implicit policy
+aiming to minimise the estimation of the energy function learning this is like a standard reinforcement learning diffusion policy
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-03-09 19:36:17 +1100 AEDT">March 9, 2023</span> · 1 min · 205 words · Sukai Huang</footer>
+<a aria-label="post link to Cheng_chi Diffusion Policy Visuomotor Policy Learning via Action Diffusion 2023" class="entry-link" href="https://sino-huang.github.io/posts/cheng_chi-diffusion-policy-visuomotor-policy-learning-via-action-diffusion-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/tianjun_zhang-the-wisdom-of-hindsight-makes-language-models-better-instruction-followers-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Tianjun_zhang the Wisdom of Hindsight Makes Language Models Better Instruction Followers 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: The Wisdom of Hindsight Makes Language Models Better Instruction Followers Author: Tianjun Zhang et. al. Publish Year: 10 Feb 2023 Review Date: Thu, Mar 2, 2023 url: https://arxiv.org/pdf/2302.05206.pdf Summary of paper Motivation Reinforcement learning with Human Feedback (RLHF) demonstrates impressive performance on the GPT series models. However, the pipeline for reward and value networks Contribution in this paper, we consider an alternative approach: converting feedback to instruction by relabeling the original one and training the model for better alignment in a supervised manner. Such an algorithm doesn’t require any additional parameters except for the original language model and maximally reuses the pretraining pipeline. To achieve this, we formulate instruction alignment problem in decision making. We propose Hindsight Instruction Relabeling (HIR), a novel algorithm for alignment language models with instructions. The resulting two-stage algorithm shed light to a family of reward-free approaches that utilise the hindsightly relabeled instructions based on feedback. Some key terms fine-tuning language model
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-03-02 19:06:35 +1100 AEDT">March 2, 2023</span> · 3 min · 427 words · Sukai Huang</footer>
+<a aria-label="post link to Tianjun_zhang the Wisdom of Hindsight Makes Language Models Better Instruction Followers 2023" class="entry-link" href="https://sino-huang.github.io/posts/tianjun_zhang-the-wisdom-of-hindsight-makes-language-models-better-instruction-followers-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/alexander_nikulin-anti-exploration-by-random-network-distillation-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Alexander_nikulin Anti Exploration by Random Network Distillation 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Anti Exploration by Random Network Distillation Author: Alexander Nikulin et. al. Publish Year: 31 Jan 2023 Review Date: Wed, Mar 1, 2023 url: https://arxiv.org/pdf/2301.13616.pdf Summary of paper Motivation despite the success of Random Network Distillation (RND) in various domains, it was shown as not discriminative enough to be used as an uncertainty estimator for penalizing out-of-distribution actions in offline reinforcement learning ?? wait, why we want to penalizing out-of-distribution actions? Contribution With a naive choice of conditioning for the RND prior, it becomes infeasible for the actor to effectively minimize the anti-exploration bonus and discriminativity is not an issue. We show that this limitation can be avoided with conditioning based on Feature-wise Linear Modulation (FiLM), resulting in a simple and efficient ensemble-free algorithm based on Soft Actor-Critic. Some key terms why we want uncertainty-based penalization
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-03-01 22:14:11 +1100 AEDT">March 1, 2023</span> · 2 min · 359 words · Sukai Huang</footer>
+<a aria-label="post link to Alexander_nikulin Anti Exploration by Random Network Distillation 2023" class="entry-link" href="https://sino-huang.github.io/posts/alexander_nikulin-anti-exploration-by-random-network-distillation-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/edoardo_cetin-learning-pessimism-for-reinforcement-learning-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Edoardo_cetin Learning Pessimism for Reinforcement Learning 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Learning Pessimism for Reinforcement Learning Author: Edoardo Cetin et. al. Publish Year: 2023 Review Date: Wed, Mar 1, 2023 url: https://kclpure.kcl.ac.uk/portal/files/196848783/10977.CetinE.pdf Summary of paper Motivation Off-policy deep RL algorithms commonly compensate for overestimation bias during temporal difference learning by utilizing pessimistic estimates of the expected target returns Contribution we propose Generalised Pessimism Learning (GPL), a strategy employing a novel learnable penalty to enact such pessimism. In particular we propose to learn this penalty alongside the critic with dual TD-learning, a new procedure to estimate and minimise the magnitude of the target returns bias with trivial computational cost. Some key terms We attribute recent improvements on RL algs to two main linked advances:
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-03-01 21:02:25 +1100 AEDT">March 1, 2023</span> · 2 min · 222 words · Sukai Huang</footer>
+<a aria-label="post link to Edoardo_cetin Learning Pessimism for Reinforcement Learning 2023" class="entry-link" href="https://sino-huang.github.io/posts/edoardo_cetin-learning-pessimism-for-reinforcement-learning-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/danijar_hafner-mastering-diverse-domains-through-world-models-2023/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Danijar_hafner Mastering Diverse Domains Through World Models 2023
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Mastering Diverse Domains Through World Models Author: Danijar Hafner et. al. Publish Year: 10 Jan 2023 Review Date: Tue, Feb 7, 2023 url: https://www.youtube.com/watch?v=vfpZu0R1s1Y Summary of paper Motivation general intelligence requires solving tasks across many domains. Current reinforcement learning algorithms carry this potential but held back by the resources and knowledge required tune them for new task. Contribution we present DreamerV3, a general and scalable algorithm based on world models that outperforms previous approaches across a wide range of domains with fixed hyperparameters. we observe favourable scaling properties of DreamerV3, with larger models directly translating to higher data-efficiency and final performance. Some key terms World Model learning
+...</p>
+</div>
+<footer class="entry-footer"><span title="2023-02-07 18:18:37 +1100 AEDT">February 7, 2023</span> · 2 min · 291 words · Sukai Huang</footer>
+<a aria-label="post link to Danijar_hafner Mastering Diverse Domains Through World Models 2023" class="entry-link" href="https://sino-huang.github.io/posts/danijar_hafner-mastering-diverse-domains-through-world-models-2023/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/alekh_agarwal-pcpg-policy-cover-directed-exploration-for-provable-policy-gradient-learning-2020/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Alekh_agarwal PC-PG Policy Cover Directed Exploration for Provable Policy Gradient Learning 2020
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: PC-PG Policy Cover Directed Exploration for Provable Policy Gradient Learning Author: Alekh Agarwal et. al. Publish Year: Review Date: Wed, Dec 28, 2022 Summary of paper Motivation The primary drawback of direct policy gradient methods is that, by being local in nature, they fail to adequately explore the environment. In contrast, while model-based approach and Q-learning directly handle exploration through the use of optimism. Contribution Policy Cover-Policy Gradient algorithm (PC-PG), a direct, model-free, policy optimisation approach which addresses exploration through the use of a learned ensemble of policies, the latter provides a policy cover over the state space. the use of a learned policy cover address exploration, and also address what is the catastrophic forgetting problem in policy gradient approaches (which use reward bonuses); the on-policy algorithm, where approximation errors due to model mispecification amplify (see [Lu et al., 2018] for discussion) Some key terms suffering from sparse reward
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-12-28 14:39:25 +1100 AEDT">December 28, 2022</span> · 2 min · 271 words · Sukai Huang</footer>
+<a aria-label="post link to Alekh_agarwal PC-PG Policy Cover Directed Exploration for Provable Policy Gradient Learning 2020" class="entry-link" href="https://sino-huang.github.io/posts/alekh_agarwal-pcpg-policy-cover-directed-exploration-for-provable-policy-gradient-learning-2020/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/alekh_agarwal-on-the-theory-of-policy-gradient-methods-optimality-approximation-and-distribution-shift-2020/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Alekh_agarwal on the Theory of Policy Gradient Methods Optimality Approximation and Distribution Shift 2020
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: On the Theory of Policy Gradient Methods Optimality Approximation and Distribution Shift 2020 Author: Alekh Agarwal et. al. Publish Year: 14 Oct 2020 Review Date: Wed, Dec 28, 2022 Summary of paper Motivation little is known about even their most basic theoretical convergence properties, including: if and how fast they converge to a globally optimal solution and how they cope with approximation error due to using a restricted class of parametric policies. Contribution One central contribution of this work is in providing approximation guarantees that are average case - which avoid explicit worst-case dependencies on the size of state space – by making a formal connection to supervised learning under distribution shift. This characterisation shows an important between estimation error, approximation error and exploration (as characterised through a precisely defined condition number) Some key terms basic theoretical convergence questions
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-12-28 14:36:20 +1100 AEDT">December 28, 2022</span> · 3 min · 557 words · Sukai Huang</footer>
+<a aria-label="post link to Alekh_agarwal on the Theory of Policy Gradient Methods Optimality Approximation and Distribution Shift 2020" class="entry-link" href="https://sino-huang.github.io/posts/alekh_agarwal-on-the-theory-of-policy-gradient-methods-optimality-approximation-and-distribution-shift-2020/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/chloe_ching_yun_hsu-revisiting-design-choices-in-proximal-policy-optimisation-2020/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Chloe_ching_yun_hsu Revisiting Design Choices in Proximal Policy Optimisation 2020
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Revisiting Design Choices in Proximal Policy Optimisation Author: Chloe Ching-Yun Hsu et. al. Publish Year: 23 Sep 2020 Review Date: Wed, Dec 28, 2022 Summary of paper Motivation Contribution on discrete action space with sparse high rewards, standard PPO often gets stuck at suboptimal actions. Why analyze the reason fort these failure modes and explain why they are not exposed by standard benchmarks In summary, our study suggests that Beta policy parameterization and KL-regularized objectives should be reconsidered for PPO, especially when alternatives improves PPO in all settings. The author proved the convergence guarantee for PPO-KL penalty version, as it inherits convergence guarantees of mirror descent for policy families that are closed under mixture Some key terms design choices
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-12-28 14:32:15 +1100 AEDT">December 28, 2022</span> · 3 min · 467 words · Sukai Huang</footer>
+<a aria-label="post link to Chloe_ching_yun_hsu Revisiting Design Choices in Proximal Policy Optimisation 2020" class="entry-link" href="https://sino-huang.github.io/posts/chloe_ching_yun_hsu-revisiting-design-choices-in-proximal-policy-optimisation-2020/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/james_queeney-generalized-proximal-policy-optimisation-with-sample-reuse-2021/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">James_queeney Generalized Proximal Policy Optimisation With Sample Reuse 2021
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Generalized Proximal Policy Optimisation With Sample Reuse 2021 Author: James Queeney et. al. Publish Year: 29 Oct 2021 Review Date: Wed, Dec 28, 2022 Summary of paper Motivation it is critical for data-driven reinforcement learning methods to be both stable and sample efficient. On-policy methods typically generate reliable policy improvement throughout training, while off-policy methods make more efficient use of data through sample reuse. Contribution in this work, we combine the theoretically supported stability benefits of on-policy algorithms with the sample efficiency of off-policy algorithms. We develop policy improvement guarantees that are suitable for off-policy setting, and connect these bounds to the clipping mechanism used in PPO this motivate an off-policy version of the popular algorithm that we call GePPO. we demonstrate both theoretically and empirically that our algorithm delivers improved performance by effectively balancing the competing goals of stability and sample efficiency Some key terms sample complexity
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-12-28 14:00:32 +1100 AEDT">December 28, 2022</span> · 5 min · 1033 words · Sukai Huang</footer>
+<a aria-label="post link to James_queeney Generalized Proximal Policy Optimisation With Sample Reuse 2021" class="entry-link" href="https://sino-huang.github.io/posts/james_queeney-generalized-proximal-policy-optimisation-with-sample-reuse-2021/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/young_wu-reward-poisoning-attacks-on-offline-multi-agent-reinforcement-learning-2022/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Young_wu Reward Poisoning Attacks on Offline Multi Agent Reinforcement Learning 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Reward Poisoning Attacks on Offline Multi Agent Reinforcement Learning Author: Young Wu et. al. Publish Year: 1 Dec 2022 Review Date: Tue, Dec 27, 2022 Summary of paper Motivation Contribution unlike attacks on single-agent RL, we show that the attacker can install the target poilcy as a Markov Perfect Dominant Strategy Equilibrium (MPDSE), which rational agents are guaranteed to follow. This attack can be significantly cheaper than separate single-agent attacks. Limitation
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-12-27 22:50:14 +1100 AEDT">December 27, 2022</span> · 1 min · 146 words · Sukai Huang</footer>
+<a aria-label="post link to Young_wu Reward Poisoning Attacks on Offline Multi Agent Reinforcement Learning 2022" class="entry-link" href="https://sino-huang.github.io/posts/young_wu-reward-poisoning-attacks-on-offline-multi-agent-reinforcement-learning-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/kiarash_banihashem-defense-against-reward-poisoning-attacks-in-reinforcement-learning-2021/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Kiarash_banihashem Defense Against Reward Poisoning Attacks in Reinforcement Learning 2021
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Defense Against Reward Poisoning Attacks in Reinforcement Learning Author: Kiarash Banihashem et. al. Publish Year: 20 Jun 2021 Review Date: Tue, Dec 27, 2022 Summary of paper Motivation our goal is to design agents that are robust against such attacks in terms of the worst-case utility w.r.t. the true unpoisoned rewards while computing their policies under the poisoned rewards. Contribution we formalise this reasoning and characterize the utility of our novel framework for designing defense policies. In summary, the key contributions include
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-12-27 18:27:17 +1100 AEDT">December 27, 2022</span> · 2 min · 303 words · Sukai Huang</footer>
+<a aria-label="post link to Kiarash_banihashem Defense Against Reward Poisoning Attacks in Reinforcement Learning 2021" class="entry-link" href="https://sino-huang.github.io/posts/kiarash_banihashem-defense-against-reward-poisoning-attacks-in-reinforcement-learning-2021/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/amin_rakhsha-reward-poisoning-in-reinforcement-learning-attacks-against-unknown-learners-in-unknown-environments-2021/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Amin_rakhsha Reward Poisoning in Reinforcement Learning Attacks Against Unknown Learners in Unknown Environments 2021
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Reward Poisoning in Reinforcement Learning Attacks Against Unknown Learners in Unknown Environments Author: Amin Rakhsha et. al. Publish Year: 16 Feb 2021 Review Date: Tue, Dec 27, 2022 Summary of paper Motivation Our attack makes minimum assumptions on the prior knowledge of the environment or the learner’s learning algorithm. most of the prior work makes strong assumptions on the knowledge of adversary – it often assumed that the adversary has full knowledge of the environment or the agent’s learning algorithm or both. under such assumptions, attack strategies have been proposed that can mislead the agent to learn a nefarious policy with minimal perturbation to the rewards. Contribution We design a novel black-box attack, U2, that can provably achieve a near-matching performance to the SOTA white-box attack, demonstrating the feasibility of reward poisoning even in the most challenging black-box setting. limitation
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-12-27 15:50:22 +1100 AEDT">December 27, 2022</span> · 2 min · 233 words · Sukai Huang</footer>
+<a aria-label="post link to Amin_rakhsha Reward Poisoning in Reinforcement Learning Attacks Against Unknown Learners in Unknown Environments 2021" class="entry-link" href="https://sino-huang.github.io/posts/amin_rakhsha-reward-poisoning-in-reinforcement-learning-attacks-against-unknown-learners-in-unknown-environments-2021/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/xuezhou_zhang-adaptive-reward-poisoning-attacks-against-reinforcement-learning-2020/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Xuezhou_zhang Adaptive Reward Poisoning Attacks Against Reinforcement Learning 2020
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Adaptive Reward Poisoning Attacks Against Reinforcement Learning Author: Xuezhou Zhang et. al. Publish Year: 22 Jun, 2020 Review Date: Tue, Dec 27, 2022 Summary of paper Motivation Non-adaptive attacks have been the focus of prior works. However, we show that under mild conditions, adaptive attacks can achieve the nefarious policy in steps polynomial in state-space size $|S|$ whereas non-adaptive attacks require exponential steps. Contribution we provide a lower threshold below which reward-poisoning attack is infeasible and RL is certified to be safe. similar to this paper, it shows that reward attack has its limit we provide a corresponding upper threshold above which the attack is feasible. we characterise conditions under which such attacks are guaranteed to fail (thus RL is safe), and vice versa in the case where attack is feasible, we provide upper bounds on the attack cost in the processing of achieving bad poliy we show that effective attacks can be found empirically using deep RL techniques. Some key terms feasible attack category
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-12-27 00:21:15 +1100 AEDT">December 27, 2022</span> · 2 min · 283 words · Sukai Huang</footer>
+<a aria-label="post link to Xuezhou_zhang Adaptive Reward Poisoning Attacks Against Reinforcement Learning 2020" class="entry-link" href="https://sino-huang.github.io/posts/xuezhou_zhang-adaptive-reward-poisoning-attacks-against-reinforcement-learning-2020/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/proximal-policy-optimisation-explained-blog/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Proximal Policy Optimisation Explained Blog
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Proximal Policy Optimisation Explained Blog Author: Xiao-Yang Liu; DI engine Publish Year: May 4, 2021 Review Date: Mon, Dec 26, 2022 Highly recommend reading this blog https://lilianweng.github.io/posts/2018-04-08-policy-gradient/ https://zhuanlan.zhihu.com/p/487754664 Difference between on-policy and off-policy
+For on-policy algorithms, they update the policy network based on the transitions generated by the current policy network. The critic network would make a more accurate value-prediction for the current policy network in common environments. For off-policy algorithms, they allow to update the current policy network using the transitions from old policies. Thus, the old transitions could be reutilized, as shown in Fig. 1 the points are scattered on trajectories that are generated by different policies, which improves the sample efficiency and reduces the total training steps. Question: is there a way to improve the sample efficiency of on-policy algorithms without losing their benefit. PPO solves the problem of sample efficiency by utilizing surrogate objectives to avoid the new policy changing too far from the old policy. The surrogate objective is the key feature of PPO since it both 1. regularizes the policy update and enables the 2. reuse of training data. Algorithm ...</p>
+</div>
+<footer class="entry-footer"><span title="2022-12-26 19:50:35 +1100 AEDT">December 26, 2022</span> · 1 min · 196 words · Sukai Huang</footer>
+<a aria-label="post link to Proximal Policy Optimisation Explained Blog" class="entry-link" href="https://sino-huang.github.io/posts/proximal-policy-optimisation-explained-blog/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/tom_everitt-reinforcement-learning-with-a-corrupted-reward-channel-2017/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Tom_everitt Reinforcement Learning With a Corrupted Reward Channel 2017
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Reinforcement Learning With a Corrupted Reward Channel Author: Tom Everitt Publish Year: August 22, 2017 Review Date: Mon, Dec 26, 2022 Summary of paper Motivation we formalise this problem as a generalised Markov Decision Problem called Corrupt Reward MDP Traditional RL methods fare poorly in CRMDPs, even under strong simplifying assumptions and when trying to compensate for the possibly corrupt rewards Contribution two ways around the problem are investigated. First, by giving the agent richer data, such as in inverse reinforcement learning and semi-supervised reinforcement learning, reward corruption stemming from systematic sensory errors may sometimes be completely managed second, by using randomisation to blunt the agent’s optimisation, reward corruption can be partially managed under some assumption Limitation
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-12-26 01:11:23 +1100 AEDT">December 26, 2022</span> · 4 min · 757 words · Sukai Huang</footer>
+<a aria-label="post link to Tom_everitt Reinforcement Learning With a Corrupted Reward Channel 2017" class="entry-link" href="https://sino-huang.github.io/posts/tom_everitt-reinforcement-learning-with-a-corrupted-reward-channel-2017/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/yunhan_huang-manipulating-reinforcement-learning-stealthy-attacks-on-cost-signals-2020/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Yunhan_huang Manipulating Reinforcement Learning Stealthy Attacks on Cost Signals 2020
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Manipulating Reinforcement Learning Stealthy Attacks on Cost Signals Deceptive Reinforcement Learning Under Adversarial Manipulations on Cost Signals Author: Yunhan Huang et. al. Publish Year: 2020 Review Date: Sun, Dec 25, 2022 Summary of paper Motivation understand the impact of the falsification of cost signals on the convergence of Q-learning algorithm
+Contribution In Q-learning, we show that Q-learning algorithms converge under stealthy attacks and bounded falsifications on cost signals. and there is a robust region within which the adversarial attacks cannot achieve its objective. The robust region of the cost can be utilised by both offensive and defensive side. An RL agent can leverage the robust region to evaluate the robustness to malicious falsification. we provide conditions on the falsified cost which can mislead the agent to learn an adversary’s favoured policy. Some key terms Stealthy Attacks
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-12-25 19:12:17 +1100 AEDT">December 25, 2022</span> · 2 min · 336 words · Sukai Huang</footer>
+<a aria-label="post link to Yunhan_huang Manipulating Reinforcement Learning Stealthy Attacks on Cost Signals 2020" class="entry-link" href="https://sino-huang.github.io/posts/yunhan_huang-manipulating-reinforcement-learning-stealthy-attacks-on-cost-signals-2020/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/vincent_zhuang-no-regret-reinforcement-learning-with-heavy-tailed-rewards-2021/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Vincent_zhuang No Regret Reinforcement Learning With Heavy Tailed Rewards 2021
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: No-Regret Reinforcement Learning With Heavy Tailed Rewards Author: Vincent Zhuang et. al. Publish Year: 2021 Review Date: Sun, Dec 25, 2022 Summary of paper Motivation To the best of our knowledge, no prior work has considered our setting of heavy-tailed rewards in the MDP setting. Contribution We demonstrate that robust mean estimation techniques can be broadly applied to reinforcement learning algorithms (specifically confidence-based methods) in order to provably han- dle the heavy-tailed reward setting Some key terms Robust UCB algorithm
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-12-25 18:15:53 +1100 AEDT">December 25, 2022</span> · 2 min · 225 words · Sukai Huang</footer>
+<a aria-label="post link to Vincent_zhuang No Regret Reinforcement Learning With Heavy Tailed Rewards 2021" class="entry-link" href="https://sino-huang.github.io/posts/vincent_zhuang-no-regret-reinforcement-learning-with-heavy-tailed-rewards-2021/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/wenshuai_zhao-towards-closing-the-sim-to-real-gap-in-collaborative-multi-robot-deep-reinforcement-learning-2020/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Wenshuai_zhao Towards Closing the Sim to Real Gap in Collaborative Multi Robot Deep Reinforcement Learning 2020
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Towards Closing the Sim to Real Gap in Collaborative Multi Robot Deep Reinforcement Learning Author: Wenshuai Zhao et. al. Publish Year: 2020 Review Date: Sun, Dec 25, 2022 Summary of paper Motivation we introduce the effect of sensing, calibration, and accuracy mismatches in distributed reinforcement learning we discuss on how both the different types of perturbations and how the number of agents experiencing those perturbations affect the collaborative learning effort Contribution This is, to the best of our knowledge, the first work exploring the limitation of PPO in multi-robot systems when considering that different robots might be exposed to different environment where their sensors or actuators have induced errors
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-12-25 16:54:11 +1100 AEDT">December 25, 2022</span> · 2 min · 365 words · Sukai Huang</footer>
+<a aria-label="post link to Wenshuai_zhao Towards Closing the Sim to Real Gap in Collaborative Multi Robot Deep Reinforcement Learning 2020" class="entry-link" href="https://sino-huang.github.io/posts/wenshuai_zhao-towards-closing-the-sim-to-real-gap-in-collaborative-multi-robot-deep-reinforcement-learning-2020/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/jan_corazza-reinforcement-learning-with-stochastic-reward-machines-2022/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Jan_corazza Reinforcement Learning With Stochastic Reward Machines 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Reinforcement Learning With Stochastic Reward Machines Author: Jan Corazza et. al. Publish Year: AAAI 2022 Review Date: Sat, Dec 24, 2022 Summary of paper Motivation reward machines are an established tool for dealing with reinforcement learning problems in which rewards are sparse and depend on complex sequence of actions. However, existing algorithms for learning reward machines assume an overly idealized setting where rewards have to be free of noise. to overcome this practical limitation, we introduce a novel type of reward machines called stochastic reward machines, and an algorithm for learning them. Contribution Discussing the handling of noisy reward for non-markovian reward function. limitation: the solution introduces multiple sub value function models, which is different from the standard RL algorithm. The work does not emphasise on the sample efficiency of the algorithm. Some key terms Reward machine
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-12-24 22:36:07 +1100 AEDT">December 24, 2022</span> · 3 min · 465 words · Sukai Huang</footer>
+<a aria-label="post link to Jan_corazza Reinforcement Learning With Stochastic Reward Machines 2022" class="entry-link" href="https://sino-huang.github.io/posts/jan_corazza-reinforcement-learning-with-stochastic-reward-machines-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/oguzhan_dogru-reinforcement-learning-with-constrained-uncertain-reward-function-through-particle-filtering-2022/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Oguzhan_dogru Reinforcement Learning With Constrained Uncertain Reward Function Through Particle Filtering 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Reinforcement Learning With Constrained Uncertain Reward Function Through Particle Filtering Author: Oguzhan Dogru et. al. Publish Year: July 2022 Review Date: Sat, Dec 24, 2022 Summary of paper Motivation this study consider a type of uncertainty, which is caused by the sensor that are utilised for reward function. When the noise is Gaussian and the system is linear Contribution this work used “particle filtering” technique to estimate the true reward function from the perturbed discrete reward sampling points. Some key terms Good things about the paper (one paragraph) Major comments Citation
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-12-24 19:32:25 +1100 AEDT">December 24, 2022</span> · 2 min · 297 words · Sukai Huang</footer>
+<a aria-label="post link to Oguzhan_dogru Reinforcement Learning With Constrained Uncertain Reward Function Through Particle Filtering 2022" class="entry-link" href="https://sino-huang.github.io/posts/oguzhan_dogru-reinforcement-learning-with-constrained-uncertain-reward-function-through-particle-filtering-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/inaam_ilahi-challenges-and-countermeasures-for-adversarial-attacks-on-reinforcement-learning-2022/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Inaam_ilahi Challenges and Countermeasures for Adversarial Attacks on Reinforcement Learning 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Challenges and Countermeasures for Adversarial Attacks on Reinforcement Learning Author: Inaam Ilahi et. al. Publish Year: 13 Sep 2021 Review Date: Sat, Dec 24, 2022 Summary of paper Motivation DRL is susceptible to adversarial attacks, which precludes its use in real-life critical system and applications. Therefore, we provide a comprehensive survey that discusses emerging attacks on DRL-based system and the potential countermeasures to defend against these attacks. Contribution we provide the DRL fundamentals along with a non-exhaustive taxonomy of advanced DRL algorithms we present a comprehensive survey of adversarial attacks on DRL and their potential countermeasures we discuss the available benchmarks and metrics for the robustness of DRL finally, we highlight the open issues and research challenges in the robustness of DRL and introduce some potential research directions . Some key terms organisation of this article
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-12-24 17:06:12 +1100 AEDT">December 24, 2022</span> · 3 min · 517 words · Sukai Huang</footer>
+<a aria-label="post link to Inaam_ilahi Challenges and Countermeasures for Adversarial Attacks on Reinforcement Learning 2022" class="entry-link" href="https://sino-huang.github.io/posts/inaam_ilahi-challenges-and-countermeasures-for-adversarial-attacks-on-reinforcement-learning-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/zuxin_liu-on-the-robustness-of-safe-reinforcement-learning-under-observational-perturbations-2022/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Zuxin_liu on the Robustness of Safe Reinforcement Learning Under Observational Perturbations 2022
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: On the Robustness of Safe Reinforcement Learning Under Observational Perturbations Author: Zuxin Liu et. al. Publish Year: 3 Oct 2022 Review Date: Thu, Dec 22, 2022 Summary of paper Motivation While many recent safe RL methods with deep policies can achieve outstanding constraint satisfaction in noise-free simulation environment, such a concern regarding their vulnerability under adversarial perturbation has not been studies in the safe RL setting. Contribution we are the first to formally analyze the unique vulnerability of the optimal policy in safe RL under observational corruptions. We define the state-adversarial safe RL problem and investigate its fundamental properties. We show that optimal solutions of safe RL problems are theoretically vulnerable under observational adversarial attacks we show that existing adversarial attack algorithms focusing on minimizing agent rewards do not always work, and propose two effective attack algorithms with theoretical justifications – one directly maximise the constraint violation cost, and one maximise the task reward to induce a tempting but risky policy. Surprisingly, the maximum reward attack is very strong in inducing unsafe behaviors, both in theory and practice we propose an adversarial training algorithm with the proposed attackers and show contraction properties of their Bellman operators. Extensive experiments in continuous control tasks show that our method is more robust against adversarial perturbations in terms of constraint satisfaction. Some key terms Safe reinforcement learning definition
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-12-22 22:38:13 +1100 AEDT">December 22, 2022</span> · 3 min · 532 words · Sukai Huang</footer>
+<a aria-label="post link to Zuxin_liu on the Robustness of Safe Reinforcement Learning Under Observational Perturbations 2022" class="entry-link" href="https://sino-huang.github.io/posts/zuxin_liu-on-the-robustness-of-safe-reinforcement-learning-under-observational-perturbations-2022/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/ruben_majadas-disturbing-reinforcement-learning-agents-with-corrupted-rewards-2021/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Ruben_majadas Disturbing Reinforcement Learning Agents With Corrupted Rewards 2021
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Disturbing Reinforcement Learning Agents With Corrupted Rewards Author: Ruben Majadas et. al. Publish Year: Feb 2021 Review Date: Sat, Dec 17, 2022 Summary of paper Motivation recent works have shown how the performance of RL algorithm decreases under the influence of soft changes in the reward function. However, little work has been done about how sensitive these disturbances are depending on the aggressiveness of the attack and the learning learning exploration strategy. it chooses a subclass of MDPs: episodic, stochastic goal-only rewards MDPs Contribution it demonstrated that smoothly crafting adversarial rewards are able to mislead the learner the policy that is learned using low exploration probability values is more robust to corrupt rewards. (though this conclusion seems valid only for the proposed experiment setting) the agent is completely lost with attack probabilities higher that than p=0.4 Some key terms deterministic goal only reward MDP
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-12-17 00:38:35 +1100 AEDT">December 17, 2022</span> · 2 min · 383 words · Sukai Huang</footer>
+<a aria-label="post link to Ruben_majadas Disturbing Reinforcement Learning Agents With Corrupted Rewards 2021" class="entry-link" href="https://sino-huang.github.io/posts/ruben_majadas-disturbing-reinforcement-learning-agents-with-corrupted-rewards-2021/"></a>
+</article>
+<article class="post-entry tag-entry">
+<figure class="entry-cover"><img alt="" loading="lazy" src="https://sino-huang.github.io/posts/jingkang_wang-reinforcement-learning-with-perturbed-rewards-2020/image-assets/cover.png"/>
+</figure>
+<header class="entry-header">
+<h2 class="entry-hint-parent">Jingkang_wang Reinforcement Learning With Perturbed Rewards 2020
+    </h2>
+</header>
+<div class="entry-content">
+<p>[TOC]
+Title: Reinforcement Learning With Perturbed Rewards Author: Jingkang Wang et. al. Publish Year: 1 Feb 2020 Review Date: Fri, Dec 16, 2022 Summary of paper Motivation this paper studies RL with perturbed rewards, where a technical challenge is to revert the perturbation process so that the right policy is learned. Some experiments are used to support the algorithm (i.e., estimate the confusion matrix and revert) using existing techniques from the supervised learning (and crowdsourcing) literature. Limitation reviewers had concerns over the scope / significance of this work, mostly about how the confusion matrix is learned. If this matrix is known, correcting reward perturbation is easy, and standard RL can be applied to the corrected rewards. Specifically, the work seems to be limited in two substantial ways, both related to how confusion matrix is learned the reward function needs to be deterministic majority voting requires the number of states to be finite the significance of this work is therefore limited to finite-state problems with deterministic rewards, which is quite restricted. overall, the setting studied here, together with a thorough treatment of an (even restricted) case, could make an interesting paper that inspires future work. However, the exact problem setting is not completely clear in the paper, and the limitation of the technical contribution is somewhat unclear. Contribution The SOTA PPO algorithm is able to obtain 84.6% and 80.8% improvements on average score for five Atari games, with error rates as 10% and 30% respectively Some key terms reward function is often perturbed
+...</p>
+</div>
+<footer class="entry-footer"><span title="2022-12-16 20:48:51 +1100 AEDT">December 16, 2022</span> · 2 min · 402 words · Sukai Huang</footer>
+<a aria-label="post link to Jingkang_wang Reinforcement Learning With Perturbed Rewards 2020" class="entry-link" href="https://sino-huang.github.io/posts/jingkang_wang-reinforcement-learning-with-perturbed-rewards-2020/"></a>
+</article>
+<footer class="page-footer">
+<nav class="pagination">
+<a class="next" href="https://sino-huang.github.io/tags/reinforcement-learning/page/2/">Next 2/3 »
+    </a>
+</nav>
+</footer>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>

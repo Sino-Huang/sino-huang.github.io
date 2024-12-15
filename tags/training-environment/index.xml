@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Training Environment on Sukai Huang</title>
+    <link>https://sino-huang.github.io/tags/training-environment/</link>
+    <description>Recent content in Training Environment on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 21 Jan 2024 00:34:56 +1100</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/tags/training-environment/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jun Wang Conformal Temporal Logic Planning Using Llm 2023</title>
+      <link>https://sino-huang.github.io/posts/jun-wang-conformal-temporal-logic-planning-using-llm-2023/</link>
+      <pubDate>Sun, 21 Jan 2024 00:34:56 +1100</pubDate>
+      <guid>https://sino-huang.github.io/posts/jun-wang-conformal-temporal-logic-planning-using-llm-2023/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title:  Conformal Temporal Logic Planning Using Llm 2023&lt;/li&gt;
+&lt;li&gt;Author: Jun Wang et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: 19 Dec, 2023&lt;/li&gt;
+&lt;li&gt;Review Date: Sun, Jan 21, 2024&lt;/li&gt;
+&lt;li&gt;url: arXiv:2309.10092v2&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20240121004104715&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/jun-wang-conformal-temporal-logic-planning-using-llm-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Unlike previous methods that focus on low-level system configurations, this approach focuses on NL-based atomic propositions.
+&lt;ul&gt;
+&lt;li&gt;now the LTL tasks are defined over NL-based atomic propositions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Robots are required to perform high-level sub tasks specified in natural language.
+&lt;ul&gt;
+&lt;li&gt;To formally define the overarching mission, they leverage LTL defined over atomic predicates modelling these NL-based sub-tasks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;contribution&#34;&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;To address the challenge of ensuring the correctness of robot plans with respect to these LTL-encoded tasks, the authors propose HERACLEs, a  hierarchical conformal natural language planner. HERACLEs employs  automata theory to determine the next NL-specified sub-tasks for mission progress, employs Large Language Models to design robot plans to  fulfill these sub-tasks, and uses conformal prediction to assess the  probabilistic correctness of the plans, deciding whether external  assistance is needed. The paper provides theoretical probabilistic  guarantees for mission satisfaction and presents extensive comparative  experiments on mobile manipulation tasks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Limitation for previous work&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

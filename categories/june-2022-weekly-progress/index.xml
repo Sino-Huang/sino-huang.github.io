@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>June-2022-Weekly-Progress on Sukai Huang</title>
+    <link>https://sino-huang.github.io/categories/june-2022-weekly-progress/</link>
+    <description>Recent content in June-2022-Weekly-Progress on Sukai Huang</description>
+    <image>
+      <title>Sukai Huang</title>
+      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
+      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 19 Jun 2022 23:28:00 +1000</lastBuildDate>
+    <atom:link href="https://sino-huang.github.io/categories/june-2022-weekly-progress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>19 Jun -- 25 Jun, 2022</title>
+      <link>https://sino-huang.github.io/weekly-report/19-jun-25-jun-2022/</link>
+      <pubDate>Sun, 19 Jun 2022 23:28:00 +1000</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/19-jun-25-jun-2022/</guid>
+      <description>&lt;h2 id=&#34;last-weeks-work-review&#34;&gt;Last Week&amp;rsquo;s Work Review&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;for vision modules, start with the simple ones
+&lt;ul&gt;
+&lt;li&gt;ConvNext&lt;/li&gt;
+&lt;li&gt;Go-Explore object recognition (Montezuma’s Revenge-specific)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/mcmachado/b-pro&#34;&gt;https://github.com/mcmachado/b-pro&lt;/a&gt; B-PRO&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;implement the code based on the notes in &lt;a href=&#34;https://sino-huang.github.io/weekly-report/12-jun-18-jun-2022/&#34;&gt;https://sino-huang.github.io/weekly-report/12-jun-18-jun-2022/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>12 Jun -- 18 Jun, 2022</title>
+      <link>https://sino-huang.github.io/weekly-report/12-jun-18-jun-2022/</link>
+      <pubDate>Thu, 09 Jun 2022 12:39:31 +1000</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/12-jun-18-jun-2022/</guid>
+      <description>&lt;h2 id=&#34;last-weeks-work-review&#34;&gt;Last Week&amp;rsquo;s Work Review&lt;/h2&gt;
+&lt;p&gt;We decided that we should reproduce Goyal&amp;rsquo;s work first, with a little bit modification.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>05 Jun -- 11 Jun, 2022</title>
+      <link>https://sino-huang.github.io/weekly-report/05-jun-11-jun-2022/</link>
+      <pubDate>Thu, 02 Jun 2022 13:41:59 +1000</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/05-jun-11-jun-2022/</guid>
+      <description>&lt;h2 id=&#34;last-weeks-work-review&#34;&gt;Last Week&amp;rsquo;s Work Review&lt;/h2&gt;
+&lt;p&gt;We decided our concrete next steps to do.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>29 May -- 04 Jun, 2022</title>
+      <link>https://sino-huang.github.io/weekly-report/29-may-04-jun-2022/</link>
+      <pubDate>Mon, 30 May 2022 14:47:30 +1000</pubDate>
+      <guid>https://sino-huang.github.io/weekly-report/29-may-04-jun-2022/</guid>
+      <description>&lt;h2 id=&#34;last-weeks-work-review&#34;&gt;Last Week&amp;rsquo;s Work Review&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Option recognition&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The choice of actions and policies based on natural language walkthrough is highly similar to &amp;ldquo;option recognition&amp;rdquo; in traditional AI study, where natural language walkthrough will help agents to make options for subpolicies selection.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;When to start /end&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;When we want to let agent utilise walkthrough data, the agent needs to know when to execute the walkthrough.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;it needs to know what the current situation is and then know
+&lt;ul&gt;
+&lt;li&gt;what we have already done&lt;/li&gt;
+&lt;li&gt;where are we, what to execute next&lt;/li&gt;
+&lt;li&gt;what to do next if the previous execution failed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;currently they are not explicitly handled&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Reuse object recognition module&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We can use &lt;a href=&#34;https://github.com/uber-research/go-explore&#34;&gt;go-explore&lt;/a&gt;&amp;rsquo;s object recognition module&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;You need password to access to the content, go to Slack *#phdsukai to find more.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

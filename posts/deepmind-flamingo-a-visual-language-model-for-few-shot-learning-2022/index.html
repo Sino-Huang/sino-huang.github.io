@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head><meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<meta content="index, follow" name="robots"/>
+<title>Deepmind Flamingo a Visual Language Model for Few Shot Learning 2022 | Sukai Huang</title>
+<meta content="natural language processing, multimodal, future work" name="keywords"/>
+<meta content="[TOC]
+
+Title: Flamingo: a Visual Language Model for Few-Shot Learning
+Author: Jean-Baptiste Alayrac et. al.
+Publish Year: Apr 2022
+Review Date: May 2022
+
+Summary of paper
+Flamingo architecture
+Pretrained vision encoder: from pixels to features
+the model’s vision encoder is a pretrained Normalizer-Free ResNet (NFNet)
+they pretrain the vision encoder using a contrastive objective on their datasets of image and text pairs, using the two term contrastive loss from paper “Learning Transferable Visual Models From Natural Language Supervision”" name="description"/>
+<meta content="Sukai Huang" name="author"/>
+<link href="https://sino-huang.github.io/posts/deepmind-flamingo-a-visual-language-model-for-few-shot-learning-2022/" rel="canonical"/>
+<meta content="IFgzhtDTVCjONQMwQsBfuf0ZyHdzUR5WFYzbWsf2Gf8" name="google-site-verification"/>
+<link as="style" crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet"/>
+<link href="https://sino-huang.github.io/favicon.ico" rel="icon"/>
+<link href="https://sino-huang.github.io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://sino-huang.github.io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://sino-huang.github.io/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://sino-huang.github.io/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#2e2e33" name="theme-color"/>
+<meta content="#2e2e33" name="msapplication-TileColor"/>
+<link href="https://sino-huang.github.io/posts/deepmind-flamingo-a-visual-language-model-for-few-shot-learning-2022/index.xml" rel="alternate" type="application/rss+xml"/>
+<link href="https://sino-huang.github.io/posts/deepmind-flamingo-a-visual-language-model-for-few-shot-learning-2022/" hreflang="en" rel="alternate"/>
+<noscript>
+<style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+<style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TTFTV1EWH5"></script>
+<script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TTFTV1EWH5');
+        }
+      </script><meta content="https://sino-huang.github.io/posts/deepmind-flamingo-a-visual-language-model-for-few-shot-learning-2022/" property="og:url"/>
+<meta content="Sukai Huang" property="og:site_name"/>
+<meta content="Deepmind Flamingo a Visual Language Model for Few Shot Learning 2022" property="og:title"/>
+<meta content="[TOC]
+Title: Flamingo: a Visual Language Model for Few-Shot Learning Author: Jean-Baptiste Alayrac et. al. Publish Year: Apr 2022 Review Date: May 2022 Summary of paper Flamingo architecture Pretrained vision encoder: from pixels to features
+the model’s vision encoder is a pretrained Normalizer-Free ResNet (NFNet)
+they pretrain the vision encoder using a contrastive objective on their datasets of image and text pairs, using the two term contrastive loss from paper “Learning Transferable Visual Models From Natural Language Supervision”" property="og:description"/>
+<meta content="en" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="Deepmind Flamingo a Visual Language Model for Few Shot Learning 2022" name="twitter:title"/>
+<meta content="Sukai's academic blog - storing weekly reports and research paper reviews" name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://sino-huang.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Deepmind Flamingo a Visual Language Model for Few Shot Learning 2022",
+      "item": "https://sino-huang.github.io/posts/deepmind-flamingo-a-visual-language-model-for-few-shot-learning-2022/"
+    }
+  ]
+}
+</script>
+</head>
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<header class="header">
+<nav class="nav">
+<div class="logo">
+<a accesskey="h" href="https://sino-huang.github.io/" title="Sukai Huang (Alt + H)">Sukai Huang</a>
+<div class="logo-switches">
+<button accesskey="t" id="theme-toggle" title="(Alt + T)">
+<svg fill="none" height="18" id="moon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+<svg fill="none" height="18" id="sun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" x2="12" y1="1" y2="3"></line>
+<line x1="12" x2="12" y1="21" y2="23"></line>
+<line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+<line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+<line x1="1" x2="3" y1="12" y2="12"></line>
+<line x1="21" x2="23" y1="12" y2="12"></line>
+<line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+<line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+</svg>
+</button>
+</div>
+</div>
+<ul id="menu">
+<li>
+<a href="https://sino-huang.github.io/biography/" title="Biography">
+<span>Biography</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/archives" title="Archive">
+<span>Archive</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/tags/" title="Tags">
+<span>Tags</span>
+</a>
+</li>
+<li>
+<a href="https://sino-huang.github.io/categories/" title="Categories">
+<span>Categories</span>
+</a>
+</li>
+<li>
+<a accesskey="/" href="https://sino-huang.github.io/search/" title="Search (Alt + /)">
+<span>Search</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class="main">
+<header class="page-header"><div class="breadcrumbs"><a href="https://sino-huang.github.io/">Home</a> » <a href="https://sino-huang.github.io/posts/">Posts</a></div>
+<h1>
+    Deepmind Flamingo a Visual Language Model for Few Shot Learning 2022
+    <a aria-label="RSS" href="/posts/deepmind-flamingo-a-visual-language-model-for-few-shot-learning-2022/index.xml" title="RSS">
+<svg fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 11a9 9 0 0 1 9 9"></path>
+<path d="M4 4a16 16 0 0 1 16 16"></path>
+<circle cx="5" cy="19" r="1"></circle>
+</svg>
+</a>
+</h1>
+</header>
+<div class="post-content"><p>[TOC]</p>
+<ol>
+<li>Title: Flamingo: a Visual Language Model for Few-Shot Learning</li>
+<li>Author: Jean-Baptiste Alayrac et. al.</li>
+<li>Publish Year: Apr 2022</li>
+<li>Review Date: May 2022</li>
+</ol>
+<h2 id="summary-of-paper">Summary of paper<a aria-hidden="true" class="anchor" hidden="" href="#summary-of-paper">#</a></h2>
+<h3 id="flamingo-architecture">Flamingo architecture<a aria-hidden="true" class="anchor" hidden="" href="#flamingo-architecture">#</a></h3>
+<p><strong>Pretrained</strong> <strong>vision encoder: from pixels to features</strong></p>
+<p>the model’s vision encoder is a pretrained Normalizer-Free ResNet (NFNet)</p>
+<p>they pretrain the vision encoder using a contrastive objective on their datasets of image and text pairs, using the two term contrastive loss from paper “Learning Transferable Visual Models From Natural Language Supervision”</p>
+<p><img alt="image-20220511204113119" loading="lazy" src="/posts/deepmind-flamingo-a-visual-language-model-for-few-shot-learning-2022/image-assets/image-20220511204113119.png"/></p>
+<p>Having contrastive objective means that the visual encoder model is already stay in the same latent space of the BERT language model.</p>
+<p>The output of the final stage is a 2D spatial grid of feature $X_f$, later 2D feature will be flattened to 1D</p>
+<p><strong>trainable</strong> <strong>Perceiver Resampler</strong>: from varying-size large feature maps to few visual tokens.</p>
+<p>the Perceiver Resampler module connects the vision encoder to the frozen language model</p>
+<p><u>input</u>: a variable number of image features</p>
+<p><u>output</u>: a fixed number of visual outputs (in practical 64)</p>
+<p><u>motivation</u>: significantly reduce the computational complexity of vision text cross attention. (particularly important when dealing with multiple long videos)</p>
+<p>what do they need: in order to get the fixed number of output, we need to have a fixed number of query tokens</p>
+<p>so, we learn a predefined number of latent input queries. these latent queries are fed to a transformer stack and cross attend to the flattened visual features $X_f$</p>
+<p>The keys and values computed from the learnt latents are concatenated to the keys and values obtained from $X_f$, which we found to perform slightly better.</p>
+<p><img alt="image-20220511223348735" loading="lazy" src="/posts/deepmind-flamingo-a-visual-language-model-for-few-shot-learning-2022/image-assets/image-20220511223348735.png"/></p>
+<p><strong>frozen language model</strong></p>
+<p>the pretrained text-only model is a decoder-only model.</p>
+<p>but in order to let the frozen language model fit the current situation, they introduced a gated xatten-dense layer</p>
+<p>they also apply layer normalisation to the keys, values and queries</p>
+<p><img alt="image-20220511224452155" loading="lazy" src="/posts/deepmind-flamingo-a-visual-language-model-for-few-shot-learning-2022/image-assets/image-20220511224452155.png"/></p>
+<p><strong>multi-image attention</strong></p>
+<p>They limit the number of visual tokens that a certain text token sees.</p>
+<p>Typically, they allow each token to attend to the tokens of the image that appeared just before it in the interleaved sequence. (this means we have temporal matching when we do cross attention between images and text)</p>
+<p><img alt="image-20220511230849495" loading="lazy" src="/posts/deepmind-flamingo-a-visual-language-model-for-few-shot-learning-2022/image-assets/image-20220511230849495.png"/></p>
+<p>Although the model can only directly attend to a single image at any given point, there is still a causal dependency on all previous images in the sequence via causal self-attention in the text decoder.</p>
+<h3 id="how-to-train-the-models-parameters">How to train the model’s parameters<a aria-hidden="true" class="anchor" hidden="" href="#how-to-train-the-models-parameters">#</a></h3>
+<p>They train the models by minimizing a weighted sum of dataset specific expected negative log likelihood of text given some visual inputs.</p>
+<p><img alt="image-20220511231410644" loading="lazy" src="/posts/deepmind-flamingo-a-visual-language-model-for-few-shot-learning-2022/image-assets/image-20220511231410644.png"/></p>
+<p>In practice, at each step of optimisation we go over each dataset D𝑚 in turn, sample a batch of size 𝐵𝑚 of visual language sequences from it, compute the gradient of the loss with respect to the minibatch and weight it by 𝜆𝑚. We then accumulate the gradients over all 𝑀 datasets before triggering an update step. We found this gradient accumulation strategy to be crucial for high performance compared to a round-robin approach. (how to deal with multiple training dataset)</p>
+<p><strong>but how to flow the gradient given that we need to freeze some modules</strong></p>
+<p><img alt="image-20220511232111835" loading="lazy" src="/posts/deepmind-flamingo-a-visual-language-model-for-few-shot-learning-2022/image-assets/image-20220511232111835.png"/></p>
+<p>actually if we set requires_grad = False, everything still works ok</p>
+<p><a href="https://discuss.pytorch.org/t/will-freezing-an-intermediate-block-influence-the-gradient-flow/88859/4">https://discuss.pytorch.org/t/will-freezing-an-intermediate-block-influence-the-gradient-flow/88859/4</a></p>
+<h2 id="potential-future-work">Potential future work<a aria-hidden="true" class="anchor" hidden="" href="#potential-future-work">#</a></h2>
+<p>yes, we can use this model for any multi-modal tasks.</p>
+</div>
+</main>
+<footer class="footer">
+<span>© 2024 <a href="https://sino-huang.github.io/">Sukai Huang</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &amp;
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+</span>
+</footer>
+<a accesskey="g" aria-label="go to top" class="top-link" href="#top" id="top-link" title="Go to Top (Alt + G)">
+<svg fill="currentColor" viewbox="0 0 12 6" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6H0l6-6z"></path>
+</svg>
+</a>
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+</html>
