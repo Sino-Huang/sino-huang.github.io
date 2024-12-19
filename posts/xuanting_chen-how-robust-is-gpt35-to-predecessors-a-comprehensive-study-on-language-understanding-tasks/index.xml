@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Xuanting_chen How Robust Is GPT 3.5 to Predecessors a Comprehensive Study on Language Understanding Tasks on Sukai Huang</title>
-    <link>https://sino-huang.github.io/posts/xuanting_chen-how-robust-is-gpt35-to-predecessors-a-comprehensive-study-on-language-understanding-tasks/</link>
+    <link>http://localhost:37849/posts/xuanting_chen-how-robust-is-gpt35-to-predecessors-a-comprehensive-study-on-language-understanding-tasks/</link>
     <description>Recent content in Xuanting_chen How Robust Is GPT 3.5 to Predecessors a Comprehensive Study on Language Understanding Tasks on Sukai Huang</description>
     <image>
       <title>Sukai Huang</title>
-      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
-      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+      <url>http://localhost:37849/cute_avatar.jpg</url>
+      <link>http://localhost:37849/cute_avatar.jpg</link>
     </image>
     <generator>Hugo -- 0.139.2</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://sino-huang.github.io/posts/xuanting_chen-how-robust-is-gpt35-to-predecessors-a-comprehensive-study-on-language-understanding-tasks/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:37849/posts/xuanting_chen-how-robust-is-gpt35-to-predecessors-a-comprehensive-study-on-language-understanding-tasks/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

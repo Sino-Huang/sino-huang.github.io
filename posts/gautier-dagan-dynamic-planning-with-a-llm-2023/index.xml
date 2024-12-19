@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Gautier Dagan Dynamic Planning With a Llm 2023 on Sukai Huang</title>
-    <link>https://sino-huang.github.io/posts/gautier-dagan-dynamic-planning-with-a-llm-2023/</link>
+    <link>http://localhost:37849/posts/gautier-dagan-dynamic-planning-with-a-llm-2023/</link>
     <description>Recent content in Gautier Dagan Dynamic Planning With a Llm 2023 on Sukai Huang</description>
     <image>
       <title>Sukai Huang</title>
-      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
-      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+      <url>http://localhost:37849/cute_avatar.jpg</url>
+      <link>http://localhost:37849/cute_avatar.jpg</link>
     </image>
     <generator>Hugo -- 0.139.2</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://sino-huang.github.io/posts/gautier-dagan-dynamic-planning-with-a-llm-2023/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:37849/posts/gautier-dagan-dynamic-planning-with-a-llm-2023/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
