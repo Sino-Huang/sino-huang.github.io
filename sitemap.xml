@@ -141,7 +141,28 @@
     <lastmod>2021-12-05T10:48:45+11:00</lastmod>
   </url><url>
     <loc>https://sino-huang.github.io/categories/</loc>
-    <lastmod>2024-06-22T11:13:50+10:00</lastmod>
+    <lastmod>2024-12-24T22:25:58+11:00</lastmod>
+  </url><url>
+    <loc>https://sino-huang.github.io/tags/llm-and-pddl/</loc>
+    <lastmod>2024-12-24T22:25:58+11:00</lastmod>
+  </url><url>
+    <loc>https://sino-huang.github.io/tags/llm-planner/</loc>
+    <lastmod>2024-12-24T22:25:58+11:00</lastmod>
+  </url><url>
+    <loc>https://sino-huang.github.io/posts/pallagani-plansformer-generating-plans-2023/</loc>
+    <lastmod>2024-12-24T22:25:58+11:00</lastmod>
+  </url><url>
+    <loc>https://sino-huang.github.io/categories/paper-review/</loc>
+    <lastmod>2024-12-24T22:25:58+11:00</lastmod>
+  </url><url>
+    <loc>https://sino-huang.github.io/posts/</loc>
+    <lastmod>2024-12-24T22:25:58+11:00</lastmod>
+  </url><url>
+    <loc>https://sino-huang.github.io/</loc>
+    <lastmod>2024-12-24T22:25:58+11:00</lastmod>
+  </url><url>
+    <loc>https://sino-huang.github.io/tags/</loc>
+    <lastmod>2024-12-24T22:25:58+11:00</lastmod>
   </url><url>
     <loc>https://sino-huang.github.io/posts/damai-dai-deepseekmoe-2024/</loc>
     <lastmod>2024-06-22T11:13:50+10:00</lastmod>
@@ -150,18 +171,6 @@
     <lastmod>2024-06-22T11:13:50+10:00</lastmod>
   </url><url>
     <loc>https://sino-huang.github.io/tags/mixture-of-experts/</loc>
-    <lastmod>2024-06-22T11:13:50+10:00</lastmod>
-  </url><url>
-    <loc>https://sino-huang.github.io/categories/paper-review/</loc>
-    <lastmod>2024-06-22T11:13:50+10:00</lastmod>
-  </url><url>
-    <loc>https://sino-huang.github.io/posts/</loc>
-    <lastmod>2024-06-22T11:13:50+10:00</lastmod>
-  </url><url>
-    <loc>https://sino-huang.github.io/</loc>
-    <lastmod>2024-06-22T11:13:50+10:00</lastmod>
-  </url><url>
-    <loc>https://sino-huang.github.io/tags/</loc>
     <lastmod>2024-06-22T11:13:50+10:00</lastmod>
   </url><url>
     <loc>https://sino-huang.github.io/posts/jessy-lin-learning-to-model-the-world-with-language-2024/</loc>
@@ -229,9 +238,6 @@
   </url><url>
     <loc>https://sino-huang.github.io/tags/revision/</loc>
     <lastmod>2024-04-25T12:49:03+10:00</lastmod>
-  </url><url>
-    <loc>https://sino-huang.github.io/tags/llm-planner/</loc>
-    <lastmod>2024-04-23T13:20:22+10:00</lastmod>
   </url><url>
     <loc>https://sino-huang.github.io/tags/llm-policy/</loc>
     <lastmod>2024-04-23T13:20:22+10:00</lastmod>
@@ -411,9 +417,6 @@
     <lastmod>2024-01-21T17:40:43+11:00</lastmod>
   </url><url>
     <loc>https://sino-huang.github.io/posts/gautier-dagan-dynamic-planning-with-a-llm-2023/</loc>
-    <lastmod>2024-01-21T01:42:23+11:00</lastmod>
-  </url><url>
-    <loc>https://sino-huang.github.io/tags/llm-and-pddl/</loc>
     <lastmod>2024-01-21T01:42:23+11:00</lastmod>
   </url><url>
     <loc>https://sino-huang.github.io/tags/instruction-following-robotics-with-pddl/</loc>

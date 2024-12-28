@@ -11,8 +11,56 @@
 </image>
 <generator>Hugo -- 0.139.2</generator>
 <language>en</language>
-<lastBuildDate>Sat, 22 Jun 2024 11:13:50 +1000</lastBuildDate>
+<lastBuildDate>Tue, 24 Dec 2024 22:25:58 +1100</lastBuildDate>
 <atom:link href="https://sino-huang.github.io/index.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title>Pallagani Plansformer Generating Plans 2023</title>
+<link>https://sino-huang.github.io/posts/pallagani-plansformer-generating-plans-2023/</link>
+<pubDate>Tue, 24 Dec 2024 22:25:58 +1100</pubDate>
+<guid>https://sino-huang.github.io/posts/pallagani-plansformer-generating-plans-2023/</guid>
+<description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Title: Pallagani Plansformer Generating Plans 2023&lt;/li&gt;
+&lt;li&gt;Author: Pallagani, Vishal et. al.&lt;/li&gt;
+&lt;li&gt;Publish Year: GenPlan 2023 Workshop&lt;/li&gt;
+&lt;li&gt;Review Date: Tue, Dec 24, 2024&lt;/li&gt;
+&lt;li&gt;url: &lt;a href="https://arxiw.org/pdf/2212.08681"&gt;https://arxiw.org/pdf/2212.08681&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bibtex" data-lang="bibtex"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# input bibtex here&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nc"&gt;@InProceedings&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nl"&gt;pallagani2023plansformer&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="na"&gt;author&lt;/span&gt;    &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;{Pallagani, Vishal and Muppasani, Bharath and Murugesan, Keerthiram and Rossi, Francesca and Horesh, Lior and Srivastava, Biplav and Fabiano, Francesco and Loreggia, Andrea}&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="na"&gt;title&lt;/span&gt;     &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;{Plansformer: Generating Symbolic Plans using Transformers}&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="na"&gt;booktitle&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;{Seventh Workshop on Generalization in Planning (GenPlan 2023)}&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="na"&gt;year&lt;/span&gt;      &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;{2023}&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="na"&gt;month&lt;/span&gt;     &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;{December}&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="na"&gt;address&lt;/span&gt;   &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;{New Orleans, USA}&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;  &lt;span class="na"&gt;venue&lt;/span&gt;     &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;{Room 238-239, New Orleans Ernest N. Morial Convention Center}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;Pallagani, Vishal, et al. &amp;#34;Plansformer: Generating Symbolic Plans using Transformers.&amp;#34; NeurIPS 2023 Workshop on Generalization in Planning.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;[!Note]&lt;/p&gt;</description>
+</item>
 <item>
 <title>Damai Dai Deepseekmoe 2024</title>
 <link>https://sino-huang.github.io/posts/damai-dai-deepseekmoe-2024/</link>
