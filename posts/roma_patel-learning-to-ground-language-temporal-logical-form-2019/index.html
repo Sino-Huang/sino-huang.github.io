@@ -114,9 +114,9 @@ Therefore, they proposed to ground language to Linear Temporal logic (LTL) and a
 <meta content="Natural Language Processing" property="article:tag"/>
 <meta content="Reinforcement Learning" property="article:tag"/>
 <meta content="Linear Temporal Logic" property="article:tag"/>
-<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="https://sino-huang.github.io/sukai_avatar.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="https://sino-huang.github.io/sukai_avatar.jpg" name="twitter:image"/>
 <meta content="Roma_patel Learning to Ground Language Temporal Logical Form 2019" name="twitter:title"/>
 <meta content="[TOC]
 
@@ -163,7 +163,7 @@ Therefore, they proposed to ground language to Linear Temporal logic (LTL) and a
   "articleBody": "[TOC]\nTitle: Learning to Ground Language to Temporal Logical Form Author: Roma Patel et. al. Publish Year: 2019 Review Date: Feb 2022 Summary of paper Motivation natural language commands often exhibits sequential (temporal) constraints e.g., “go through the kitchen and then into the living room”.\nBut this constraints cannot be expressed in the reward of Markov Decision Process setting. (see this paper)\nTherefore, they proposed to ground language to Linear Temporal logic (LTL) and after that continue to map from LTL expressions to action sequences.\nWeak supervision\nThe author believed that annotating natural language into logical forms is expensive. Instead, they would collect many demonstrations (action sequences) performed by the human players who followed the language instructions. After that,\nthey build a generative model that generate logical forms candidates from language inputs filter out invalid candidates by having a LTL Program checker Planning: DQN with LTL\nto handle temporal constraints, the author used a non-Markovian reward decision process that incorporates the LTL expression into the environment MDP. the reward function is defined over state history (otherwise the constraints cannot be expressed)\nSome key terms Linear Temporal Logic\nMajor comments We can see that LTL can only describe the temporal (causal) constraints, how can we express other constraints from the natural instructions (spatial constraints (maybe something related to the observation analysis), action constraints etc)\nIf we consider the instruction information as constraints, then we should segment it into different types of constraints… (check the book)\nPotential future work maybe we can combine this work (especially the LTL checker) with the annotation work Guided K-best Selection for Semantic Parsing Annotation\n",
   "wordCount" : "268",
   "inLanguage": "en",
-  "image": "https://sino-huang.github.io/cute_avatar.jpg","datePublished": "2022-02-28T21:40:53+11:00",
+  "image": "https://sino-huang.github.io/sukai_avatar.jpg","datePublished": "2022-02-28T21:40:53+11:00",
   "dateModified": "2022-02-28T21:40:53+11:00",
   "author":{
     "@type": "Person",

@@ -113,9 +113,9 @@ The classifier is first trained on noised images, and during the diffusion sampl
 <meta content="2022-01-12T16:54:01+11:00" property="article:modified_time"/>
 <meta content="GAN" property="article:tag"/>
 <meta content="Natural Language Processing" property="article:tag"/>
-<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="https://sino-huang.github.io/sukai_avatar.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="https://sino-huang.github.io/sukai_avatar.jpg" name="twitter:image"/>
 <meta content="Alex_nichol Glide Towards Photorealistic Image Generation and Editing With Text Guided Diffusion Models 2021" name="twitter:title"/>
 <meta content="[TOC]
 
@@ -163,7 +163,7 @@ classifier details" name="twitter:description"/>
   "articleBody": "[TOC]\nTitle: GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models Author: Alex Nichol et. al. Publish Year: Dec 2021 Review Date: Jan 2022 Summary of paper In author’s previous work, the diffusion model can achieve photorealism in the class-conditional setting by augmenting with classifier guidance, a technique which allows diffusion models to condition on a classifier’s labels.\nThe classifier is first trained on noised images, and during the diffusion sampling process, gradients from the classifier are used to guide the output sample towards the label. classifier details\nonce you have class label, I add additional probability distribution in the formula to guide the model Algorithm of previous work (classifier guided sampling)\nSo this work extend label classifier to Natural language\nby encoding texts into embeddings and feed into each diffusion layer Some key terms diffusion model\ndiffusion models sample from a distribution by reversing a gradual noising process\nsampling starts with noise x_T and produce gradually less noisy samples x_T-1, x_T-2, .. until reach a final sample x_0. each timestep t corresponds to a certain noise level. and x_t can be thought of as a mixture of a signal x_0 with some noise e where the signal to noise ratio is determined by timestep t. a diffusion model learns to produce a slightly more “denoised” x_t-1 from x_t Theory behind diffusion model\nwe can add noise again and again and eventually we can get random noise image then we try to invert it. Improvements\nRather than model the denoised image’s mean, it predict the noise itself. fix the covariance of the gaussian distribution is good enough further more, learning a interpolation covariance parameter is even better than fixed one give different weight to gradient at different step t (the first few steps are much more important) Good things about the paper (one paragraph) Major comments Minor comments Check the paper reading video:\nhttps://www.youtube.com/watch?v=W-O7AZNzbzQ https://www.youtube.com/watch?v=gwI6g1pBD84 Incomprehension Potential future work “text to image” task has some similarity with “text to goal state/desired action” task for Text-based RL environment.\ndiffusion model and denoising process share some similarity with the “training with masking” idea.\n",
   "wordCount" : "353",
   "inLanguage": "en",
-  "image": "https://sino-huang.github.io/cute_avatar.jpg","datePublished": "2022-01-12T16:54:01+11:00",
+  "image": "https://sino-huang.github.io/sukai_avatar.jpg","datePublished": "2022-01-12T16:54:01+11:00",
   "dateModified": "2022-01-12T16:54:01+11:00",
   "author":{
     "@type": "Person",

@@ -113,9 +113,9 @@ In this paper, they look to take advantage of this formulation of reinforcement 
 <meta content="2022-03-16T21:18:24+11:00" property="article:modified_time"/>
 <meta content="Reinforcement Learning" property="article:tag"/>
 <meta content="Natural Language Processing" property="article:tag"/>
-<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="https://sino-huang.github.io/sukai_avatar.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="https://sino-huang.github.io/sukai_avatar.jpg" name="twitter:image"/>
 <meta content="Machel_reid Can Wikipedia Help Offline Rl 2022" name="twitter:title"/>
 <meta content="[TOC]
 
@@ -162,7 +162,7 @@ In this paper, they look to take advantage of this formulation of reinforcement 
   "articleBody": "[TOC]\nTitle: Can Wikipedia Help Offline Reinforcement Learning Author: Machel Reid et. al. Publish Year: Mar 2022 Review Date: Mar 2022 Summary of paper Motivation Fine-tuning reinforcement learning (RL) models has been challenging because of a lack of large scale off-the-shelf datasets as well as high variance in transferability among different environments.\nMoreover, when the model is trained from scratch, it suffers from slow convergence speeds\nIn this paper, they look to take advantage of this formulation of reinforcement learning as sequence modelling and investigate the transferability of pre-trained sequence models on other domains (vision, language) when fine tuned on offline RL tasks (control, games).\nHow do they do\nencouraging similarity between language representations and offline RL input representations\nthey add one term in the objective named L_cos\nthis objective wants that each input representation should at least be corresponded to one word. (this is wired…)\nbut they said that they tested mean pooling and they found out that the model cannot converge.\nI is the input (either reward, action or state), E is the word embedding\nSome key terms the zero-shot performance of transformer based language models\noffline RL and sequence modelling\noffline reinforcement learning (RL) has been seen as analogous to sequence modelling, framed as simply supervised learning to fit return-augmented trajectories in an offline dataset.\noffline RL model\nthis paper wants to adapt pre-trained language model (from Wikipedia) to offline RL (in continuous control and games)\noffline reinforcement learning\nin offline RL, the objective remains the same, but has to be optimised with no interactive data collection on a fixed set of trajectory $\\tau_i$ $$ \\tau = (r_1,s_1,a_1,r_2,s_2,a_2,…,r_N,s_N,a_N) $$\nGood things about the paper (one paragraph) Major comments Minor comments decision transformer\nIn the Abstract it said “recent work has looked at tackling offline RL from the perspective of sequence modelling with improved results as result of the introduction of the Transformer architecture”\nIncomprehension I don’t why this is a good way to encourage similarity between language representations and offline RL input representations.\nPotential future work Is there a better way to encourage RL input embedding and word embeddings stay in the same latent space?\n",
   "wordCount" : "358",
   "inLanguage": "en",
-  "image": "https://sino-huang.github.io/cute_avatar.jpg","datePublished": "2022-03-16T21:18:24+11:00",
+  "image": "https://sino-huang.github.io/sukai_avatar.jpg","datePublished": "2022-03-16T21:18:24+11:00",
   "dateModified": "2022-03-16T21:18:24+11:00",
   "author":{
     "@type": "Person",

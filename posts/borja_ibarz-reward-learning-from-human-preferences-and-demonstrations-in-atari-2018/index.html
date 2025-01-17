@@ -112,9 +112,9 @@ The author proposed a method that uses human expert’s annotation rather than e
 <meta content="2021-11-27T19:14:04+11:00" property="article:modified_time"/>
 <meta content="Reinforcement Learning" property="article:tag"/>
 <meta content="Atari-2600" property="article:tag"/>
-<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="https://sino-huang.github.io/sukai_avatar.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="https://sino-huang.github.io/sukai_avatar.jpg" name="twitter:image"/>
 <meta content="Borja_ibarz Reward Learning From Human Preferences and Demonstrations in Atari 2018" name="twitter:title"/>
 <meta content="[TOC]
 
@@ -161,7 +161,7 @@ The author proposed a method that uses human expert’s annotation rather than e
   "articleBody": "[TOC]\nTitle: Reward learning from human preferences and demonstractions in Atari Author: Borja Ibarz et. al. Publish Year: 2018 Review Date: Nov 2021 Summary of paper This needs to be only 1-3 sentences, but it demonstrates that you understand the paper and, moreover, can summarize it more concisely than the author in his abstract.\nThe author proposed a method that uses human expert’s annotation rather than extrinsic reward from the environment to guide the reinforcement learning.\nthe proposed trainnig algorithm two feedback channels are provided:\nDemonstrations: several trajectories of human behavour on the task Preferences: the human compare pairwise short trajectory segments of the agent’s behaviour and prefer those that are closer to the intended goal. When training the policy, they use TD error to train.\nThe training objective for the agent’s policy is the cost function $$ J(Q) = J_{PDDQ_n}(Q) + \\lambda_2J_E(Q) + \\lambda_3J_{L2}(Q) $$\nthe first is the prioritized dueling double Q-loss,\nthe second is the large-margin supervised loss, applied only to expert demonstrations\nthe third is the regularization loss\nWhen training the reward function, the model is trained by predicting the probability of preferring a segment $\\sigma_1$ over the other. This is trained by minimizing the cross-entropy loss between the prediction and the actual juedgement labels provided by the human experts.\nThe author claimed that this method outperform the imitation learning where the agent is trained by only the demonstrations from the human experts.\n",
   "wordCount" : "237",
   "inLanguage": "en",
-  "image": "https://sino-huang.github.io/cute_avatar.jpg","datePublished": "2021-11-27T19:14:04+11:00",
+  "image": "https://sino-huang.github.io/sukai_avatar.jpg","datePublished": "2021-11-27T19:14:04+11:00",
   "dateModified": "2021-11-27T19:14:04+11:00",
   "author":{
     "@type": "Person",

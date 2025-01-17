@@ -115,9 +115,9 @@ The author mentioned some properties about natural language instructions" proper
 <meta content="2021-12-15T13:11:05+11:00" property="article:modified_time"/>
 <meta content="Hierarchical Rl" property="article:tag"/>
 <meta content="Natural Language Processing" property="article:tag"/>
-<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="https://sino-huang.github.io/sukai_avatar.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="https://sino-huang.github.io/sukai_avatar.jpg" name="twitter:image"/>
 <meta content="Hengyuan_hu Hierarchical Decision Making by Generating and Following Natural Language Instructions 2019" name="twitter:title"/>
 <meta content="[TOC]
 
@@ -166,7 +166,7 @@ The author mentioned some properties about natural language instructions" name="
   "articleBody": "[TOC]\nTitle: Hierarchical Decision Making by Generating and Following Natural Language Instructions Author: Hengyuan Hu et. al. FAIR Publish Year: 2019 Review Date: Dec 2021 Summary of paper One line summary: they build a Architect Builder model to clone human behaviour for playing RTS game\nTheir task environment is very similar to IGLU competition setting, but their model is too task-specific\nThe author mentioned some properties about natural language instructions\nhow to solve composition, spatial reference, qualifier, anaphora, conditionals. ellipsis this is a common challenge to all kinds of Grounded Language learning problems Similar to Modular MultiTask paper, this model require a TERMINATE signal for builder to pass the work to instructor and vice versa\nthis shows that TERMINATE signal may be quite necessary element in NLP RL model Major comments Incomprehension of this work\na little bit broad not significantly novel not significantly contributing And obviously this task environment is a language assisted RL environment but the author stoped at supervised behaviour cloning. They should test RL agent without providing language and test if language can improve the performance\nIn Architect and Builder setting setting, the instructor should have more intelligence because they have to have a big picture when they perceive the state information, so as to provide valuable instruction to the executor. But it is still an open question about how to build a good architect that can have a big picture, strong knowledge about the task only based on the current frame of visual input?\nMaybe something like DreamV2 imaginary state prediction?\nAssumption: Architect is more intelligent than Builder. Architect can also solve the task using its knowledge.\nMinor comments I think the author put too many trivial implementation details in the main body\nIncomprehension not really understand why they split many sub-modules. They should compare the performance between their proposed model and some other baseline\nPotential future work This RTS game is quite challenging and their data is also valuable. This game provides a very difficult language assisted RL environment\nIt might be interesting if we migrate their behaviour cloning task into RL task\nIt is important to decouple language from policy model, so that the model can still perform without providing instructions. but this model does not have such option\nPossible experiment: remove the language signals periodically when training the policy model and check what would happen\n",
   "wordCount" : "393",
   "inLanguage": "en",
-  "image": "https://sino-huang.github.io/cute_avatar.jpg","datePublished": "2021-12-15T13:11:05+11:00",
+  "image": "https://sino-huang.github.io/sukai_avatar.jpg","datePublished": "2021-12-15T13:11:05+11:00",
   "dateModified": "2021-12-15T13:11:05+11:00",
   "author":{
     "@type": "Person",

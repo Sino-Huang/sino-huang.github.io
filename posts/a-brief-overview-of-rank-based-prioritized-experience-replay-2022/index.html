@@ -108,9 +108,9 @@ Replay memory is essential in RL Replay memory has been successfully deployed in
 <meta content="posts" property="article:section"/>
 <meta content="2022-06-02T11:47:17+10:00" property="article:published_time"/>
 <meta content="2022-06-02T11:47:17+10:00" property="article:modified_time"/>
-<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="https://sino-huang.github.io/sukai_avatar.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="https://sino-huang.github.io/sukai_avatar.jpg" name="twitter:image"/>
 <meta content="A Brief Overview of Rank Based Prioritized Experience Replay 2016" name="twitter:title"/>
 <meta content="[TOC]
 
@@ -155,7 +155,7 @@ Replay memory has been successfully deployed in both value based and  policy gra
   "articleBody": "[TOC]\nTitle: Prioritised Experience Replay Author: Neuralnet.ai Publish Year: 25 Feb, 2016 Review Date: Thu, Jun 2, 2022 https://www.neuralnet.ai/a-brief-overview-of-rank-based-prioritized-experience-replay/\nReplay memory is essential in RL Replay memory has been successfully deployed in both value based and policy gradient based reinforcement learning algorithms, to great success. The reasons for this success cut right to the heart of reinforcement learning. In particular, replay memory simultaneously solves two outstanding problems with the field.\nwe shuffle the dataset and sample historic experience at random, we can obtain independent and uncorrelated inputs, which is important for deep neural network training. This is precisely what underpins the Markov property of the system. (In probability theory and statistics, the term Markov property refers to the memoryless property of a stochastic process.) we revisited and make attention to the historic experience with the hope that the agent learns something generalisable. Improvement Direction we can improve on how we sample the agent’s memories. The default is to simply sample them at random, which works, but leaves much to be desired.\nInput aliasing to be improved One issue that can be improved upon is that neural networks introduce a sort of aliasing into the problem.\nImages that may be completely distinct from a human perspective could very well turn out to be nearly identical to the neural network. (i.e., the semantic meaning is completely different for a little bit changes in visuals). And this is a sort of aliasing of the input So the question become “would the agent learn more from sampling totally distinct experiences”\npossible solution: introduce the idea of priority. We can assign some sort of priority to our memories, and then sample them according to that priority. A natural candidate for this priority is the temporal difference error. so the idea is: we prioritise learning on the things we don’t understand $$ \\delta_t = r_t + \\gamma Q_{target}(S_{t+1}, argmax_a Q(S_{t+1}, a)) - Q(S_t, a_t) $$\ndrawback: this only really holds in the case that the rewards from the environment aren’t particularly noisy. For “hard lessons”, these TD errors shrink slowly over time. This means that the agent is bound to sample the same memories over and over, which leads to overfitting. ",
   "wordCount" : "365",
   "inLanguage": "en",
-  "image": "https://sino-huang.github.io/cute_avatar.jpg","datePublished": "2022-06-02T11:47:17+10:00",
+  "image": "https://sino-huang.github.io/sukai_avatar.jpg","datePublished": "2022-06-02T11:47:17+10:00",
   "dateModified": "2022-06-02T11:47:17+10:00",
   "author":{
     "@type": "Person",

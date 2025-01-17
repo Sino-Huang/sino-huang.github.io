@@ -6,10 +6,10 @@
     <description>Recent content in Posts on Sukai Huang</description>
     <image>
       <title>Sukai Huang</title>
-      <url>https://sino-huang.github.io/cute_avatar.jpg</url>
-      <link>https://sino-huang.github.io/cute_avatar.jpg</link>
+      <url>https://sino-huang.github.io/sukai_avatar.jpg</url>
+      <link>https://sino-huang.github.io/sukai_avatar.jpg</link>
     </image>
-    <generator>Hugo -- 0.139.2</generator>
+    <generator>Hugo -- 0.140.2</generator>
     <language>en</language>
     <lastBuildDate>Tue, 24 Dec 2024 22:25:58 +1100</lastBuildDate>
     <atom:link href="https://sino-huang.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -200,7 +200,7 @@ the predicted and original condition values&lt;/li&gt;
 &lt;li&gt;Author: Silviu Pitis&lt;/li&gt;
 &lt;li&gt;Publish Year: ICML workshop 2023&lt;/li&gt;
 &lt;li&gt;Review Date: Fri, May 10, 2024&lt;/li&gt;
-&lt;li&gt;url: &lt;a href=&#34;https://openreview.net/forum?id=NjOoxFRZA4&amp;noteId=niZsZfTPPt&#34;&gt;https://openreview.net/forum?id=NjOoxFRZA4&amp;noteId=niZsZfTPPt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://openreview.net/forum?id=NjOoxFRZA4&amp;amp;noteId=niZsZfTPPt&#34;&gt;https://openreview.net/forum?id=NjOoxFRZA4&amp;noteId=niZsZfTPPt&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
 &lt;p&gt;&lt;img alt=&#34;image-20240510222642292&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/silviu-pitis-failure-modes-of-learning-reward-models-for-sequence-model-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
@@ -1222,7 +1222,7 @@ with a discriminative forward model.&lt;/li&gt;
 &lt;li&gt;Author: Baptiste Roziere et. al. META AI&lt;/li&gt;
 &lt;li&gt;Publish Year: 2023&lt;/li&gt;
 &lt;li&gt;Review Date: Mon, Oct 16, 2023&lt;/li&gt;
-&lt;li&gt;url: &lt;a href=&#34;https://scontent.fmel13-1.fna.fbcdn.net/v/t39.2365-6/369856151_1754812304950972_1159666448927483931_n.pdf?_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=3c67a6&amp;_nc_ohc=Hcg6QsYJx1wAX_okEZO&amp;_nc_ht=scontent.fmel13-1.fna&amp;oh=00_AfAYtfHJfYeomAQWiMUTRo96iP8d4sZrlIfD_KAeYlYaDQ&amp;oe=6531E8CF&#34;&gt;https://scontent.fmel13-1.fna.fbcdn.net/v/t39.2365-6/369856151_1754812304950972_1159666448927483931_n.pdf?_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=3c67a6&amp;_nc_ohc=Hcg6QsYJx1wAX_okEZO&amp;_nc_ht=scontent.fmel13-1.fna&amp;oh=00_AfAYtfHJfYeomAQWiMUTRo96iP8d4sZrlIfD_KAeYlYaDQ&amp;oe=6531E8CF&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;url: &lt;a href=&#34;https://scontent.fmel13-1.fna.fbcdn.net/v/t39.2365-6/369856151_1754812304950972_1159666448927483931_n.pdf?_nc_cat=107&amp;amp;ccb=1-7&amp;amp;_nc_sid=3c67a6&amp;amp;_nc_ohc=Hcg6QsYJx1wAX_okEZO&amp;amp;_nc_ht=scontent.fmel13-1.fna&amp;amp;oh=00_AfAYtfHJfYeomAQWiMUTRo96iP8d4sZrlIfD_KAeYlYaDQ&amp;amp;oe=6531E8CF&#34;&gt;https://scontent.fmel13-1.fna.fbcdn.net/v/t39.2365-6/369856151_1754812304950972_1159666448927483931_n.pdf?_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=3c67a6&amp;_nc_ohc=Hcg6QsYJx1wAX_okEZO&amp;_nc_ht=scontent.fmel13-1.fna&amp;oh=00_AfAYtfHJfYeomAQWiMUTRo96iP8d4sZrlIfD_KAeYlYaDQ&amp;oe=6531E8CF&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
 &lt;p&gt;&lt;img alt=&#34;image-20231016025929381&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/baptiste-roziere-code-llama-open-foundation-model-for-code-2023/image-assets/cover.png&#34;&gt;&lt;/p&gt;
@@ -4508,7 +4508,7 @@ dle the heavy-tailed reward setting&lt;/li&gt;
 &lt;h2 id=&#34;summary-of-paper&#34;&gt;Summary of paper&lt;/h2&gt;
 &lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://lh3.googleusercontent.com/owoi-mhzvc1Jb8T_jENqF3jzsCYlizdoTPCJQYp0cNmv6AM5nZWqPUi2juwMuDYJrZ4Z6Pnsi5TF7J56GvL6CEyJTZF5AQBqSw-1njMf4Jy9El-Uck_iscK1PU1Y5gC_1w=w1280&#34;&gt;&lt;/p&gt;
-&lt;p&gt;TL:DR: &lt;a href=&#34;https://www.google.com/url?q=https%3A%2F%2Farxiv.org%2Fabs%2F2111.06377&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw1IDxCsGFfXTiNsfRJw8iat&#34;&gt;Masked autoencoders (MAE)&lt;/a&gt; has emerged as a scalable and effective self-supervised learning technique. Can MAE be also effective for visual model-based RL? Yes! with the recipe of convolutional feature masking and reward prediction to capture fine-grained and task-relevant information.&lt;/p&gt;
+&lt;p&gt;TL:DR: &lt;a href=&#34;https://www.google.com/url?q=https%3A%2F%2Farxiv.org%2Fabs%2F2111.06377&amp;amp;sa=D&amp;amp;sntz=1&amp;amp;usg=AOvVaw1IDxCsGFfXTiNsfRJw8iat&#34;&gt;Masked autoencoders (MAE)&lt;/a&gt; has emerged as a scalable and effective self-supervised learning technique. Can MAE be also effective for visual model-based RL? Yes! with the recipe of convolutional feature masking and reward prediction to capture fine-grained and task-relevant information.&lt;/p&gt;
 &lt;h3 id=&#34;some-key-terms&#34;&gt;Some key terms&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Decouple visual representation learning and dynamics learning&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
@@ -5271,7 +5271,7 @@ dle the heavy-tailed reward setting&lt;/li&gt;
       <pubDate>Thu, 18 Nov 2021 12:08:53 +1100</pubDate>
       <guid>https://sino-huang.github.io/posts/tuomas_haarnoja-soft-actor-critic-off-policy-maximum-entropy-deep-reinforcement-learning-with-a-stochastic-actor-2018-paper-review/</guid>
       <description>&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&#34;论文简析sac-soft-actor-critic-part-1180101290httpswwwbilibilicomvideobv1yk4y1t7b6fromsearchseid13778340264869221460&#34;&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1YK4y1T7b6?from=search&amp;seid=13778340264869221460&#34;&gt;[论文简析]SAC: Soft Actor-Critic Part 1[1801.01290]&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;论文简析sac-soft-actor-critic-part-1180101290httpswwwbilibilicomvideobv1yk4y1t7b6fromsearchseid13778340264869221460&#34;&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1YK4y1T7b6?from=search&amp;amp;seid=13778340264869221460&#34;&gt;[论文简析]SAC: Soft Actor-Critic Part 1[1801.01290]&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;img alt=&#34;image-20211123221032880&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/tuomas_haarnoja-soft-actor-critic-off-policy-maximum-entropy-deep-reinforcement-learning-with-a-stochastic-actor-2018-paper-review/image-assets/image-20211123221032880.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;image-20211123221054067&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/tuomas_haarnoja-soft-actor-critic-off-policy-maximum-entropy-deep-reinforcement-learning-with-a-stochastic-actor-2018-paper-review/image-assets/image-20211123221054067.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;image-20211123221439305&#34; loading=&#34;lazy&#34; src=&#34;https://sino-huang.github.io/posts/tuomas_haarnoja-soft-actor-critic-off-policy-maximum-entropy-deep-reinforcement-learning-with-a-stochastic-actor-2018-paper-review/image-assets/image-20211123221439305.png&#34;&gt;&lt;/p&gt;

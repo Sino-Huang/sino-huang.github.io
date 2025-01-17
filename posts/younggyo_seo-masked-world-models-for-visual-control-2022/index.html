@@ -117,9 +117,9 @@ Some key terms Decouple visual representation learning and dynamics learning" pr
 <meta content="2022-07-01T12:03:57+10:00" property="article:modified_time"/>
 <meta content="Future Work" property="article:tag"/>
 <meta content="Reinforcement Learning" property="article:tag"/>
-<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="https://sino-huang.github.io/sukai_avatar.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="https://sino-huang.github.io/sukai_avatar.jpg" name="twitter:image"/>
 <meta content="Younggyo_seo Masked World Models for Visual Control 2022" name="twitter:title"/>
 <meta content="[TOC]
 
@@ -169,7 +169,7 @@ Decouple visual representation learning and dynamics learning" name="twitter:des
   "articleBody": "[TOC]\nTitle: Masked World Models for Visual Control 2022 Author: Younggyo Seo et. al. Publish Year: 2022 Review Date: Fri, Jul 1, 2022 https://arxiv.org/abs/2206.14244?context=cs.AI\nhttps://sites.google.com/view/mwm-rl\nSummary of paper Motivation TL:DR: Masked autoencoders (MAE) has emerged as a scalable and effective self-supervised learning technique. Can MAE be also effective for visual model-based RL? Yes! with the recipe of convolutional feature masking and reward prediction to capture fine-grained and task-relevant information.\nSome key terms Decouple visual representation learning and dynamics learning\ncompared to DreamerV2, the new model try to decouple visual learning and dynamics learning in model based RL.\nspecifically, for visual learning, we train a autoencoder with convolutional layers and vision transformer (ViT) to reconstruct pixels given masked convolutional features. we also introduce auxiliary reward prediction objective for the observation autoencoder for model based RL part, we learn a latent dynamics model that operates on the representation from the autoencoder. Early convolutional layers and masking out convolutional features instead of pixel patches\nthis approach enables the world model to capture fine-grained visual details from complex visual observations. we compare convolutional feature masking with pixel masking (i.e., MAE), which shows that convolutional feature masking significantly outperforms pixel masking. some possible reasons: raw pixel is noisy and less focused conv features is more robust Potential future work We can use this model on our project\nConv feature masking Dynamics learning ",
   "wordCount" : "227",
   "inLanguage": "en",
-  "image": "https://sino-huang.github.io/cute_avatar.jpg","datePublished": "2022-07-01T12:03:57+10:00",
+  "image": "https://sino-huang.github.io/sukai_avatar.jpg","datePublished": "2022-07-01T12:03:57+10:00",
   "dateModified": "2022-07-01T12:03:57+10:00",
   "author":{
     "@type": "Person",

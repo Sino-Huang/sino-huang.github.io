@@ -126,9 +126,9 @@ Do BERT-based models trained on GLUE care about the order of words in a sentence
 <meta content="2022-02-28T18:58:52+11:00" property="article:modified_time"/>
 <meta content="GLUE" property="article:tag"/>
 <meta content="Natural Language Understanding" property="article:tag"/>
-<meta content="https://sino-huang.github.io/cute_avatar.jpg" property="og:image"/>
+<meta content="https://sino-huang.github.io/sukai_avatar.jpg" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="https://sino-huang.github.io/cute_avatar.jpg" name="twitter:image"/>
+<meta content="https://sino-huang.github.io/sukai_avatar.jpg" name="twitter:image"/>
 <meta content="Thang_m_pham Out of Order How Important Is the Sequential Order of Words in a Sentence in Natural Language Understanding Tasks 2021" name="twitter:title"/>
 <meta content="[TOC]
 
@@ -188,7 +188,7 @@ Results" name="twitter:description"/>
   "articleBody": "[TOC]\nTitle: Out of Order: How Important Is The Sequential Order of Words in a Sentence in Natural Language Understanding Tasks? Author: Thang M. Pham Publish Year: Jul 2021 Review Date: Feb 2022 Summary of paper The author found out that BERT-based models trained on GLUE have low sensitivity to word orders.\nThe research questions are the following\nDo BERT-based models trained on GLUE care about the order of words in a sentence? ANS: NO, except one task named CoLA, which is to detecting grammatically incorrect sentences. Surprisingly, for the rest of the 5 out of 6 binary-classification tasks (i.e. except CoLA), between75% and 90% of the originally correct predictions remain constant after 1-grams are randomly re-ordered Are SOTA BERT-based models using word order information when solving NLU tasks? If not, what cues do they rely on? ANS: they heavily rely on the word itself rather than the ordering. The results showed that if the top - 1 most important word measured by LIME has a positive meaning, then there is 100% probability that the sentence’s label is “positive” Results\nSome key terms STS-B (Cer et al.,2017)\na regression task of predicting the semantic similarity of two sentences\nRandom shuffling methods\nthe author experimented with three tests: randomly shuffling n-grams where n = {1,2,3}\n(Sukai’s opinion: randomly shuffling looks weird, can we shuffle based on the syntax so that the grammar is still correct while the semantic meaning is different?)\nLIME\ncomputes a score between [−1,1] for each token in the input denoting how much its presence contributes for or against the network’s predicted label. The importance score per word w is intuitively the mean confidence-score drop over a set of randomly-masked versions of the input when w is masked out.\nPotential future work The vanilla BERT model trained by GLUE is not sensitive to the word ordering and thus may not be very effective in solving the causality in the sentence. Thus it may not be very helpful to directly conduct end to end natural utterance to action sequence mapping for our project.\n",
   "wordCount" : "344",
   "inLanguage": "en",
-  "image": "https://sino-huang.github.io/cute_avatar.jpg","datePublished": "2022-02-28T18:58:52+11:00",
+  "image": "https://sino-huang.github.io/sukai_avatar.jpg","datePublished": "2022-02-28T18:58:52+11:00",
   "dateModified": "2022-02-28T18:58:52+11:00",
   "author":{
     "@type": "Person",
