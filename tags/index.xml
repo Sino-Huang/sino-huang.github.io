@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- 0.140.2</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 24 Dec 2024 22:25:58 +1100</lastBuildDate>
+    <lastBuildDate>Sun, 09 Feb 2025 21:07:11 +1100</lastBuildDate>
     <atom:link href="https://sino-huang.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Llm Reasoning</title>
+      <link>https://sino-huang.github.io/tags/llm-reasoning/</link>
+      <pubDate>Sun, 09 Feb 2025 21:07:11 +1100</pubDate>
+      <guid>https://sino-huang.github.io/tags/llm-reasoning/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Llm and Pddl</title>
       <link>https://sino-huang.github.io/tags/llm-and-pddl/</link>
